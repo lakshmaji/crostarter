@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  website: MyString
+  description: MyText
+  end_date: 2022-10-19
+  funding_goal: 9.99
+  details: MyText
+  category: one
+  creator: one
+
+two:
+  title: MyString
+  website: MyString
+  description: MyText
+  end_date: 2022-10-19
+  funding_goal: 9.99
+  details: MyText
+  category: two
+  creator: two
