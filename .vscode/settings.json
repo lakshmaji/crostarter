@@ -1,4 +1,6 @@
 {
     "ruby.useLanguageServer": true,
-    "ruby.intellisense": "rubyLocate"
+    "ruby.intellisense": "rubyLocate",
+    "solargraph.useBundler": false,
+    "solargraph.commandPath": "/Users/lakshmajimutyala/.rbenv/shims/solargraph"
 }
