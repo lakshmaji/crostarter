@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   get 'profile', to: "profile#index"
 
   resources :users, only: [:new, :create]
+  resources :sessions, only: [:new]
 end
