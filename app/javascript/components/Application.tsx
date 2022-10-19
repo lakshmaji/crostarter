@@ -2,9 +2,14 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import { createInertiaApp } from "@inertiajs/inertia-react";
 
-createInertiaApp({
+const pages = import.meta.glob('../pages/**/*.tsx')
+
+const app = () => createInertiaApp({
   resolve: async (name) => {
-    return import(`./${name}`);
+    const page = (await pages[`../pages/${name}.tsx`]()).default;
+
+    return page
+    // return import(`./${name}`);
   },
   setup({ el, App, props }) {
     const container = document.getElementById(el.id);
@@ -12,3 +17,5 @@ createInertiaApp({
     root.render(<App {...props} />);
   },
 });
+
+export default app
