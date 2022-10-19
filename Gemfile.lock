@@ -173,6 +173,8 @@ GEM
     reline (0.3.1)
       io-console (~> 0.5)
     rexml (3.2.5)
+    ruby-debug-ide (0.7.3)
+      rake (>= 0.8.1)
     ruby-vips (2.1.4)
       ffi (~> 1.12)
     rubyzip (2.3.2)
@@ -238,6 +240,7 @@ DEPENDENCIES
   jsbundling-rails
   puma (~> 5.0)
   rails (~> 7.0.4)
+  ruby-debug-ide (~> 0.7.3)
   selenium-webdriver
   sprockets-rails
   sqlite3 (~> 1.4)

@@ -1,0 +1,4 @@
+{
+    "ruby.useLanguageServer": true,
+    "ruby.intellisense": "rubyLocate"
+}

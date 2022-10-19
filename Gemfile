@@ -76,3 +76,5 @@ gem "inertia_rails", "~> 3.0"
 gem "vite_rails", "~> 3.0"
 
 gem "faker", "~> 2.23"
+
+gem "ruby-debug-ide", "~> 0.7.3", :group => :development
