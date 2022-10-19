@@ -1,12 +1,14 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import { createInertiaApp } from "@inertiajs/inertia-react";
+import Layout from './Layout';
 
 const pages = import.meta.glob('../pages/**/*.tsx')
 
 const app = () => createInertiaApp({
   resolve: async (name) => {
     const page = (await pages[`../pages/${name}.tsx`]()).default;
+    page.layout = page.layout || Layout
 
     return page
     // return import(`./${name}`);

@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Profile = ({name}) => {
+export default function Profile({name}) {
   return (
     <div>Profile {name}</div>
   )
 }
 
-export default Profile
+// export default Profile

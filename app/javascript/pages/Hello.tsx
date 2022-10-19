@@ -6,7 +6,7 @@ interface Props {
     name: string
 }
 
-const Hello: FC<Props> = ({name}) => {
+export default function Hello({name}) {
   return (
     <div>
     <div>Hello {name}!</div>
@@ -14,5 +14,3 @@ const Hello: FC<Props> = ({name}) => {
     </div>
   )
 }
-
-export default Hello
