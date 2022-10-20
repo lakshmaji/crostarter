@@ -77,6 +77,5 @@ gem "vite_rails", "~> 3.0"
 
 gem "faker", "~> 2.23"
 
-gem "ruby-debug-ide", "~> 0.7.3", :group => :development
 
 gem "solargraph", "~> 0.47.2", :group => :development
