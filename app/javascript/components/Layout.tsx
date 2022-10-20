@@ -1,12 +1,9 @@
-import { InertiaLink } from "@inertiajs/inertia-react";
+import { InertiaLink, Link, usePage } from "@inertiajs/inertia-react";
 import React, { useState } from 'react'
-import { Link } from '@inertiajs/inertia-react'
-import { usePage } from '@inertiajs/inertia-react'
 
 const Layout = ({children}) => {
   const { auth } = usePage().props
-  // const [loggedIn, setLoggedIn]= useState<boolean>(!!auth)
-  // console.log("bello auth", auth)
+  const { flash } = usePage<any>().props
 
 
 
@@ -31,6 +28,16 @@ const Layout = ({children}) => {
   </nav>
 
   <div className="py-10">
+  <>
+        {flash.message && (
+          <div className="alert">{flash.message}</div>
+        )}
+
+{flash.alert && (
+          <div className="alert">{flash.alert}</div>
+        )}
+      </>
+
     <main>
       <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
         

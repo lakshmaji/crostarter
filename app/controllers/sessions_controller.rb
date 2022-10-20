@@ -12,11 +12,13 @@ class SessionsController < ApplicationController
             if user.authenticate(params[:user][:password])
                 # login from `Authenticate` concern
                 login user
-                redirect_to root_path
+                redirect_to root_path, notice: "signed in"
             else
+                flash[:alert] = "incorrect email or password"
                 redirect_to new_session_path, inertia: { errors: "Invalid credentials" }
             end
         else
+            flash[:alert] = "incorrect email or password"
             redirect_to new_session_path, inertia: { errors: "Invalid credentials" }
         end
     end

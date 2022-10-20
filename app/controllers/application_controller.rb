@@ -12,5 +12,12 @@ class ApplicationController < ActionController::Base
         }
         end
     end
+
+    inertia_share flash: -> {
+        {
+            message: flash.notice,
+            alert: flash.alert
+        }
+    }
   
 end
