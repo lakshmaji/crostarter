@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
     include Authentication
 
+    include InertiaFlash
+
     inertia_share app_name: Rails.env['app.name']
 
 
@@ -12,12 +14,5 @@ class ApplicationController < ActionController::Base
         }
         end
     end
-
-    inertia_share flash: -> {
-        {
-            message: flash.notice,
-            alert: flash.alert
-        }
-    }
   
 end
