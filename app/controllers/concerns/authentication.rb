@@ -15,7 +15,7 @@ module Authentication
     # And it is also encrypted so anyone with access to it can't read its contents.
     def login(user)
         reset_session
-        sessions[:current_user_id] = user.id
+        session[:current_user_id] = user.id
     end
 
     # The current_user method returns a User and sets it as the user on the Current class we created. 

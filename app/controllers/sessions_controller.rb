@@ -8,6 +8,8 @@ class SessionsController < ApplicationController
         if user
             # We're able to call user.authenticate because of has_secure_password
             if user.authenticate(params[:user][:password])
+                # login from `Authenticate` concern
+                login user
                 redirect_to root_path
             else
                 redirect_to new_session_path, inertia: { errors: "Invalid credentials" }
