@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import type { FC } from "react";
 import { useForm } from "react-hook-form";
 import { Inertia } from "@inertiajs/inertia";
+import { Link } from '@inertiajs/inertia-react'
 
 interface Props {
   errors: string
@@ -34,6 +35,7 @@ const SignIn: FC<Props> = ({errors}) => {
 
           <input type="submit" />
         </form>
+        <Link href="/users/new" as="button" type="button">Create account</Link>
       </div>
     </div>
   );
