@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+    before_action :redirect_if_authenticated, only: [:new, :create]
+    
     def new
         render inertia: 'users/SignUp'
     end

@@ -6,6 +6,7 @@ module Authentication
     included do
         # call the before_action filter so that we have access to the current user before each request.
         before_action :current_user
+        helper_method :current_user, :user_signed_in?
     end
 
     # The login method first resets the session to account for session fixation.
@@ -25,4 +26,13 @@ module Authentication
     def current_user
         Current.user ||= session[:current_user_id] && User.find_by(id: session[:current_user_id])
     end
+
+    def user_signed_in?
+        Current.user.present?
+    end
+
+    def redirect_if_authenticated
+        redirect_to root_path if user_signed_in? 
+    end
+
 end
