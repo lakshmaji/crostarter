@@ -1,9 +1,15 @@
 import { InertiaLink } from "@inertiajs/inertia-react";
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from '@inertiajs/inertia-react'
+import { usePage } from '@inertiajs/inertia-react'
 
 const Layout = ({children}) => {
-  
+  const { auth } = usePage().props
+  // const [loggedIn, setLoggedIn]= useState<boolean>(!!auth)
+  // console.log("bello auth", auth)
+
+
+
   return (
   <>
 <div className="min-h-full">
@@ -17,7 +23,7 @@ const Layout = ({children}) => {
           </div>
           <div className="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
             <InertiaLink href="/" className="border-transparent text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" aria-current="page">Dashboard</InertiaLink>
-            <Link href="/exit" method="get" as="button" type="button">Logout</Link>
+            {!!auth && <Link href="/exit" method="get" as="button" type="button">Logout</Link>}
           </div>
         </div>
       </div>
