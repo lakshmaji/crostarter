@@ -1,5 +1,5 @@
 import { InertiaLink, Link, usePage } from "@inertiajs/inertia-react";
-import React, { useState } from 'react'
+import React, { Fragment } from 'react'
 
 const Layout = ({children}) => {
   const { auth } = usePage().props
@@ -21,6 +21,12 @@ const Layout = ({children}) => {
           <div className="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
             <InertiaLink href="/" className="border-transparent text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" aria-current="page">Dashboard</InertiaLink>
             {!!auth && <Link href="/exit" method="get" as="button" type="button">Logout</Link>}
+            {!auth && <Fragment>
+                  <Link href="/users/new" method="get" as="button" type="button">Sign Up</Link>
+                  <Link href="/sessions/new" method="get" as="button" type="button">Sign In</Link>
+              </Fragment>
+            }
+
           </div>
         </div>
       </div>
