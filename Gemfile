@@ -69,6 +69,7 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
+  gem 'rspec-rails', '~> 6.0.0'
 end
 
 gem "inertia_rails", "~> 3.0"
