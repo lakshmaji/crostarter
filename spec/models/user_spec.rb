@@ -17,4 +17,18 @@ RSpec.describe User, type: :model do
             expect(subject).to_not be_valid
         end
     end
+
+    it 'does not allow duplicate username' do
+        described_class.create(
+            username: 'minion',
+            password: 'donottellanyone'
+        )
+
+        other_user = described_class.new(
+            username: 'minion',
+            password: 'donottellanyone'
+        )
+        other_user.valid?
+        expect(other_user.errors[:username]).to include("has already been taken")
+    end
 end
