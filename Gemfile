@@ -81,3 +81,5 @@ gem "faker", "~> 2.23"
 
 
 gem "solargraph", "~> 0.47.2", :group => :development
+
+gem "factory_bot_rails", "~> 6.2", :group => :test
