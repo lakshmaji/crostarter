@@ -4,4 +4,6 @@ class Project < ApplicationRecord
 
   # could use bin/rails g model project avatar:attachment, when model is not generated
   has_one_attached :avatar 
+
+  validates :title, presence: true
 end
