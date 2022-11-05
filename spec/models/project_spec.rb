@@ -57,5 +57,15 @@ RSpec.describe Project, type: :model do
         subject.category_id = nil
         expect(subject).to_not be_valid
     end   
+
+    it 'is not valid with invalid funding goal data type' do
+        subject.funding_goal = "twenty"
+        expect(subject).to_not be_valid
+    end
+
+    it 'is valid with funding goal as string' do
+        subject.funding_goal = "20"
+        expect(subject).to be_valid
+    end
    end
 end

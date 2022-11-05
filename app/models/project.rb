@@ -7,5 +7,5 @@ class Project < ApplicationRecord
 
   validates :title, presence: true
   validates :end_date, presence: true
-  validates :funding_goal, presence: true
+  validates :funding_goal, presence: true, numericality: true
 end
