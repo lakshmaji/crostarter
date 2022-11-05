@@ -8,10 +8,11 @@ class CreateProjects < ActiveRecord::Migration[7.0]
       t.decimal :funding_goal
       t.text :details
       t.belongs_to :category, null: false, foreign_key: true
-      t.belongs_to :creator, null: false, foreign_key: true
+      t.integer :creator_id, null: false
 
       t.timestamps
     end
     add_index :projects, :title, unique: true
+    add_index :projects, :creator_id
   end
 end

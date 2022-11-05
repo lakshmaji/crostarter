@@ -96,6 +96,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_19_134547) do
   add_foreign_key "contributions", "rewards"
   add_foreign_key "contributions", "users"
   add_foreign_key "projects", "categories"
-  add_foreign_key "projects", "creators"
   add_foreign_key "rewards", "projects"
 end
