@@ -27,6 +27,35 @@ RSpec.describe Project, type: :model do
         subject.title = nil
         expect(subject).to_not be_valid
     end
-    
+
+    it 'is not valid with no end date' do
+        subject.end_date = nil
+        expect(subject).to_not be_valid
+    end
+
+    it 'is not valid with no funding goal amount' do
+        subject.funding_goal = nil
+        expect(subject).to_not be_valid
+    end
+   
+    it 'is not valid with no creator' do
+        subject.creator = nil
+        expect(subject).to_not be_valid
+    end
+
+    it 'is not valid with no creator id' do
+        subject.creator_id = nil
+        expect(subject).to_not be_valid
+    end
+
+    it 'is not valid with no category' do
+        subject.category = nil
+        expect(subject).to_not be_valid
+    end   
+
+    it 'is not valid with no category id' do
+        subject.category_id = nil
+        expect(subject).to_not be_valid
+    end   
    end
 end

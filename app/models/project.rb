@@ -6,4 +6,6 @@ class Project < ApplicationRecord
   has_one_attached :avatar 
 
   validates :title, presence: true
+  validates :end_date, presence: true
+  validates :funding_goal, presence: true
 end
