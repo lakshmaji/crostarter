@@ -68,4 +68,12 @@ RSpec.describe Project, type: :model do
         expect(subject).to be_valid
     end
    end
+
+   describe 'Associations' do
+    it { should belong_to(:creator) }
+    it { should belong_to(:category) }
+    it { should have_one_attached(:avatar) }
+   end
+
+
 end
