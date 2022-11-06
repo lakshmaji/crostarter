@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: action/checkout@v3
+        uses: actions/checkout@v3
       # Pronto docs suggest limiting the depth of the clone
       # to speed things up.
       - run: |
