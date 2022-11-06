@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.configure do |_config|
   Shoulda::Matchers.configure do |config|
     config.integrate do |with|

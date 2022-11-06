@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Usage: bin/rails db:recreate:seed
 # Source: https://edgeguides.rubyonrails.org/command_line.html#custom-rake-tasks
 namespace :db do

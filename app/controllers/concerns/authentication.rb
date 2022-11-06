@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # The Authentication Concern provides an interface for logging the user in.
 # We load it into the ApplicationController so that it will be used across the whole application.
 module Authentication

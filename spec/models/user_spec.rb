@@ -4,20 +4,20 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   describe 'validations' do
-    subject { described_class.new(username: 'minion', password: 'donottellanyone') }
+    subject(:user) { described_class.new(username: 'minion', password: 'donottellanyone') }
 
     it 'is valid with valid attributes' do
-      expect(subject).to be_valid
+      expect(user).to be_valid
     end
 
     it 'is not valid with no username' do
-      subject.username = nil
-      expect(subject).not_to be_valid
+      user.username = nil
+      expect(user).not_to be_valid
     end
 
     it 'is not valid with no password' do
-      subject.password = nil
-      expect(subject).not_to be_valid
+      user.password = nil
+      expect(user).not_to be_valid
     end
   end
 
