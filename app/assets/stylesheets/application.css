@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+
+ body{
+    background: #353535;
+    font-family: Helvetica;
+    color: #f4f5f6;
+  }
+  button, input[type=submit]{
+    cursor: pointer;
+  }
+  
