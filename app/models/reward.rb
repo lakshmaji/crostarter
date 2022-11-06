@@ -4,5 +4,4 @@ class Reward < ApplicationRecord
   validates :title, presence: true
   validates :amount, presence: true
   validates :description, presence: true, length: { in: 5..100 }
-
 end
