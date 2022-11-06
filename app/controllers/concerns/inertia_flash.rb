@@ -1,12 +1,12 @@
 module InertiaFlash
-    extend ActiveSupport::Concern
+  extend ActiveSupport::Concern
 
-    included do
-        inertia_share flash: -> {
-            {
-                message: flash.notice,
-                alert: flash.alert
-            }
-        }
-    end
+  included do
+    inertia_share flash: lambda {
+      {
+        message: flash.notice,
+        alert: flash.alert,
+      }
+    }
+  end
 end

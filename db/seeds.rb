@@ -7,5 +7,5 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 Dir[File.join(Rails.root, 'db', 'seeds', '*.rb')].sort_by { |file| File.ctime(file) }.each do |seed|
-    load seed
+  load seed
 end
