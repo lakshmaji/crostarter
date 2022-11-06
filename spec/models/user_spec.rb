@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  context 'validations' do
+  describe 'validations' do
     subject { described_class.new(username: 'minion', password: 'donottellanyone') }
 
     it 'is valid with valid attributes' do

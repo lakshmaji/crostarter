@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 require 'inertia_rails/rspec'
 
@@ -18,7 +20,7 @@ RSpec.describe CategoriesController, type: :request do
       expect(inertia.component).to eq 'categories/Categories'
     end
 
-    it 'has a component name' do
+    it 'has a valid empty props' do
       get categories_path
       expect_inertia.to include_props({ categories: [] })
     end
