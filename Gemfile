@@ -83,3 +83,9 @@ gem "faker", "~> 2.23"
 gem "solargraph", "~> 0.47.2", :group => :development
 
 gem "factory_bot_rails", "~> 6.2", :group => :test
+
+gem "rubocop-rails", "~> 2.17", :group => :development
+
+gem "rubocop-performance", "~> 1.15", :group => :development
+
+gem "rubocop-rspec", "~> 2.15", :group => :development
