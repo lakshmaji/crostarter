@@ -1,6 +1,6 @@
 # Kickstarter 🎉
 
-[![Deploy](https://github.com/lakshmaji/kickstarter/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/lakshmaji/kickstarter/actions/workflows/build.yml) [![Run Spec](https://github.com/lakshmaji/kickstarter/actions/workflows/spec.yml/badge.svg?branch=main)](https://github.com/lakshmaji/kickstarter/actions/workflows/spec.yml) [![Pronto](https://github.com/lakshmaji/kickstarter/actions/workflows/pronto.yml/badge.svg?branch=main)](https://github.com/lakshmaji/kickstarter/actions/workflows/pronto.yml) [![Rails Style Guide](https://img.shields.io/badge/code_style-rubocop-brightgreen.svg)](https://github.com/rubocop/rubocop-rails) [![Rails Style Guide](https://img.shields.io/badge/code_style-community-brightgreen.svg)](https://rails.rubystyle.guide)
+[![Deploy](https://github.com/lakshmaji/kickstarter/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/lakshmaji/kickstarter/actions/workflows/build.yml) [![Run Spec](https://github.com/lakshmaji/kickstarter/actions/workflows/spec.yml/badge.svg?branch=main)](https://github.com/lakshmaji/kickstarter/actions/workflows/spec.yml) [![Rails Style Guide](https://img.shields.io/badge/code_style-rubocop-brightgreen.svg)](https://github.com/rubocop/rubocop-rails) [![Rails Style Guide](https://img.shields.io/badge/code_style-community-brightgreen.svg)](https://rails.rubystyle.guide)
 
 
 Demo: [Live](https://crostarter.fly.dev/)
@@ -46,6 +46,7 @@ flyctl apps create
 flyctl list apps
 flyctl deploy --remote-only
 flyctl logs -a crostarter
+fly secrets list
 ```
 
 
