@@ -52,6 +52,11 @@ RSpec.describe Reward, type: :model do
     end
 
     it { is_expected.to validate_presence_of(:title) }
+    
+    it 'is not valid with less no of chars in description ' do
+        subject.description = "abcd"
+        expect(subject).to_not be_valid
+    end
    end
 
    describe 'Associations' do

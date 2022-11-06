@@ -67,6 +67,11 @@ RSpec.describe Project, type: :model do
         subject.funding_goal = "20"
         expect(subject).to be_valid
     end
+
+    it 'is not valid with a shorter title (less than 2 characters long)' do
+        subject.title = "I"
+        expect(subject).to_not be_valid
+    end
    end
 
    describe 'Associations' do
