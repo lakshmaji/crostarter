@@ -1,0 +1,48 @@
+name: Run Spec
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+    types:
+      - opened
+      - reopened
+      - synchronize
+
+env:
+  CI: true
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+
+jobs:
+  run-spec:
+    name: Run Spec
+    runs-on: ubuntu-latest
+    env:
+      RAILS_ENV: test
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Setup ruby
+        uses: ruby/setup-ruby@v1.120.0
+        with:
+          ruby-version: 3.1.2
+          bundler-cache: true
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Setup database schema
+        # 💣 Do not use `db:schema:load` in your production server
+        run: bin/rails db:schema:load
+      - name: Install React dependencies
+        run: |
+          yarn install --frozen-lockfile
+      - name: Run tests
+        run: bundle exec rspec

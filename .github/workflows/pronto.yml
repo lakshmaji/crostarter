@@ -1,0 +1,48 @@
+name: Pronto
+
+on:
+  pull_request:
+    branches:
+      - main
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  pull-requests: read
+  statuses: write
+
+jobs:
+  linters:
+    name: Linters
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          # https://github.com/prontolabs/pronto/issues/404
+          # RCA: repository.rb:87:in `merge_base': object not found - no match for id (6378c7fa381ab33635bb41b9fd638876286a3d85) (Rugged::OdbError)
+          fetch-depth: 25
+      # Pronto docs suggest limiting the depth of the clone
+      # to speed things up.
+      - run: |
+          git fetch --no-tags --prune --depth=10 origin +refs/heads/*:refs/remotes/origin/*
+      # Install the runners you'd like Pronto to use on each
+      # scan. This setup includes the Standard Ruby style
+      # guide, and Brakeman security analyzer
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1.120.0
+        with:
+          ruby-version: 3.1.2
+          bundler-cache: true
+      # Perform a scan on the diff between your branch and
+      # your PR's target branch (e.g, staging, main ...)
+      - name: Setup pronto
+        run: gem install pronto pronto-rubocop rubocop rubocop-rspec rubocop-performance rubocop-rails
+      - name: Run pronto
+        run: pronto run -f github_status github_pr -c origin/${{ github.base_ref }}
+        env:
+          PRONTO_GITHUB_ACCESS_TOKEN: ${{ github.token }}
+          PRONTO_PULL_REQUEST_ID: ${{ github.event.pull_request.number  }}
