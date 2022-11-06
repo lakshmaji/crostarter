@@ -10,8 +10,8 @@ concurrency:
   cancel-in-progress: true
 
 permissions:
-  id-token: write
-  contents: write
+  id-token: read
+  contents: read
   pull-requests: read
   statuses: write
 
@@ -45,5 +45,5 @@ jobs:
       - name: Run pronto
         run: pronto run -f github_status github_pr -c origin/${{ github.base_ref }}
         env:
-          PRONTO_GITHUB_ACCESS_TOKEN: "${{ github.token }}"
+          PRONTO_GITHUB_ACCESS_TOKEN: ${{ github.token }}
           PRONTO_PULL_REQUEST_ID: ${{ github.event.pull_request.number  }}
