@@ -109,7 +109,12 @@ RSpec.describe 'Users', type: :request do
              params: {
                user: valid_attributes,
              }
-        expect(session[:inertia_errors]).to include({ password_confirmation: 'Password confirmation doesn\'t match Password' })
+        expect(session[:inertia_errors]).to include(
+          {
+            password_confirmation:
+            'Password confirmation doesn\'t match Password',
+          },
+        )
       end
     end
 

@@ -2,11 +2,9 @@
 
 require 'rails_helper'
 
-require 'rails_helper'
-
 RSpec.describe Reward, type: :model do
   describe 'validation' do
-    subject do
+    subject(:reward) do
       user = User.create(
         username: 'minion',
         password: 'donottellanyone',
@@ -31,34 +29,34 @@ RSpec.describe Reward, type: :model do
     end
 
     it 'is valid with valid attributes' do
-      expect(subject).to be_valid
+      expect(reward).to be_valid
     end
 
     it 'is not valid with no title' do
-      subject.title = nil
-      expect(subject).not_to be_valid
+      reward.title = nil
+      expect(reward).not_to be_valid
     end
 
     it 'is not valid with no amount' do
-      subject.amount = nil
-      expect(subject).not_to be_valid
+      reward.amount = nil
+      expect(reward).not_to be_valid
     end
 
     it 'is not valid with no description' do
-      subject.description = nil
-      expect(subject).not_to be_valid
+      reward.description = nil
+      expect(reward).not_to be_valid
     end
 
     it 'is not valid with no project' do
-      subject.project = nil
-      expect(subject).not_to be_valid
+      reward.project = nil
+      expect(reward).not_to be_valid
     end
 
     it { is_expected.to validate_presence_of(:title) }
 
     it 'is not valid with less no of chars in description ' do
-      subject.description = 'abcd'
-      expect(subject).not_to be_valid
+      reward.description = 'abcd'
+      expect(reward).not_to be_valid
     end
   end
 

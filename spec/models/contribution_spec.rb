@@ -2,11 +2,9 @@
 
 require 'rails_helper'
 
-require 'rails_helper'
-
 RSpec.describe Contribution, type: :model do
   describe 'validation' do
-    subject do
+    subject(:contribution) do
       user = User.create(
         username: 'minion',
         password: 'donottellanyone',
@@ -36,17 +34,17 @@ RSpec.describe Contribution, type: :model do
     end
 
     it 'is valid with valid attributes' do
-      expect(subject).to be_valid
+      expect(contribution).to be_valid
     end
 
     it 'is not valid with no reward' do
-      subject.reward = nil
-      expect(subject).not_to be_valid
+      contribution.reward = nil
+      expect(contribution).not_to be_valid
     end
 
     it 'is not valid with no user' do
-      subject.user = nil
-      expect(subject).not_to be_valid
+      contribution.user = nil
+      expect(contribution).not_to be_valid
     end
   end
 
