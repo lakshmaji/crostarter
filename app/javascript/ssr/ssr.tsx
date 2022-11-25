@@ -1,6 +1,7 @@
 import ReactDOMServer from 'react-dom/server'
 import { createInertiaApp } from '@inertiajs/inertia-react'
 import cjsCreateServer from '@inertiajs/server'
+import Layout from '../components/Layout'
 
 const pages = import.meta.globEagerDefault('../pages/**/*.tsx')
 
@@ -11,8 +12,10 @@ createServer((page) => createInertiaApp({
   page,
   render: ReactDOMServer.renderToString,
   resolve: name => {
-    console.log("bello ", pages)
-    return pages[`../pages/${name}.tsx`]
+    const page = pages[`../pages/${name}.tsx`];
+    page.layout = page.layout || Layout
+
+    return page
   },
   setup: ({ App, props }) => <App {...props} />,
 }))

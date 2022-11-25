@@ -6,7 +6,7 @@ interface Props {
     name: string
 }
 
-export default function Hello({name}) {
+const Hello: FC<Props> = ({name}): JSX.Element => {
   return (
     <div>
     <div>Hello {name}!</div>
@@ -14,3 +14,5 @@ export default function Hello({name}) {
     </div>
   )
 }
+
+export default Hello
