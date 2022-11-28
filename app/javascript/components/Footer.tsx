@@ -4,6 +4,7 @@ import styles from "./footer.module.scss";
 const Footer = () => {
   return (
     <div className={styles.container}>
+      <h2>Crostarter</h2>
       <ul className={styles.items}>
         <li className={styles.item}>
           <a href="mailto:lakshmajim@gmail.com">Email</a>
