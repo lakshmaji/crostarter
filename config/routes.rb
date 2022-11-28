@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  root 'home#index'
+  get '/', to: 'projects#index'
+
   get 'profile', to: 'profile#index'
 
   resources :users, only: [:new, :create]
