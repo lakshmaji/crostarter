@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create]
   get 'exit', to: 'sessions#destroy', as: :logout
   resources :categories, only: :index
-  resources :projects, only: :index
+  resources :projects, only: [:index, :show]
 end

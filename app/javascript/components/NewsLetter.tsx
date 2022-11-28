@@ -18,7 +18,7 @@ const NewsLetter = () => {
                 className={styles["subscribe-form"]}
                 action="assets/php/subscribe.php"
                 method="post"
-                accept-charset="UTF-8"
+                acceptCharset="UTF-8"
                 encType="application/x-www-form-urlencoded"
                 autoComplete="off"
                 noValidate
