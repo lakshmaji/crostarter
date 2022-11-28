@@ -3,6 +3,7 @@ import React, { Fragment } from "react";
 import { Flash } from "./Flash";
 import Footer from "./Footer";
 import Header from "./Header";
+import NewsLetter from "./NewsLetter";
 
 const Layout = ({ children }) => {
   const { auth } = usePage().props;
@@ -14,12 +15,17 @@ const Layout = ({ children }) => {
       <Header />
 
       <div
-      style={{
-        marginTop: 70,
-      }}
-      >{children}</div>
+        style={{
+          marginTop: 70,
+        }}
+      >
+        {children}
+      </div>
 
-      <Footer />
+      <section style={{ background: "#1e266d" }}>
+        <NewsLetter />
+        <Footer />
+      </section>
     </>
   );
 };
