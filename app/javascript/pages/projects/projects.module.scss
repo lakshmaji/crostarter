@@ -1,0 +1,11 @@
+.container{
+  width: 100%;
+  .list{ 
+    display: flex;
+    flex-wrap: wrap;
+    padding: 41px;
+
+    margin: auto;
+    justify-content: center;
+  }
+}

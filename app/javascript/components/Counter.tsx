@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-export default function Counter({name}) {
+export default function Counter({}) {
   const [counter, setCounter] = useState(10)
 
   const inc = () => {
