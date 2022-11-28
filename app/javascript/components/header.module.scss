@@ -1,0 +1,99 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  background: #fffbfb;
+  border: 1px solid #f2f2f2;
+  box-shadow: 10px 3px 33px #a3a2a2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  position: fixed;
+
+  z-index: 1;
+
+  .left,
+  .right {
+    display: flex;
+    padding: 0;
+  }
+
+  .left {
+    .explore {
+      // padding-top: 22px;
+
+      span {
+        margin-left: 10px;
+        color: black;
+        // margin-left: 10px;
+      }
+
+      .icon {
+        // margin-top: 6px;
+        margin-left: 7px;
+        margin-right: -1px;
+        font-size: 22px;
+        color: #25cb68;
+      }
+    }
+  }
+
+  .right {
+    .search {
+      &:hover {
+        color: #737373;
+      }
+    }
+  }
+
+  .nav_item {
+    font-size: 17px;
+    line-height: 24px;
+    font-weight: 500;
+    position: relative;
+    display: flex;
+    color: #020621;
+    text-decoration: none;
+    flex-shrink: 0;
+    overflow: hidden;
+    padding: 20px;
+
+
+  }
+
+  .logo {
+    font-size: 30px;
+    font-family: sans-serif;
+    font-weight: 900;
+    font-family: "Baloo Bhaina", cursive;
+
+    .crank {
+      color: #25cb68;
+    }
+  }
+
+  .explore,
+  .start,
+  .logo,
+  .search,
+  .greeting {
+    padding: 10px;
+    border: black 1px;
+    text-align: center;
+    margin: auto;
+    font-size: 17px;
+  }
+
+  #logo {
+    font-size: 27px;
+    border-radius: 61px;
+  }
+
+  .green-hover {
+    display: block;
+
+    &:hover {
+      color: #25cb68;
+    }
+  }
+}

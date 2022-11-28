@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   inertia_share do
     if user_signed_in?
       {
-        'auth': { user: { id: current_user.id } },
+        'auth': { user: { id: current_user.id, name: current_user.username } },
       }
     end
   end
