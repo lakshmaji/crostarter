@@ -2,21 +2,25 @@ import React from "react";
 import type { FC } from "react";
 import { IProject } from "../../models/project";
 import ProjectCard from "./ProjectCard";
-import './projects.css'
+import styles from "./projects.module.scss";
+import { classNames } from "../../utils/styles";
 
 interface Props {
-    projects: IProject[]
+  projects: IProject[];
 }
 
-const Projects: FC<Props> = ({projects}) => {
-    
+const Projects: FC<Props> = ({ projects }) => {
+  console.log(
+    projects
+  )
   return (
-    <div className="listing-section">
-        {
-            projects.map(project => {
-                return <ProjectCard key={project.id} project={project}  />
-            })
-        }
+    <div className={styles.container}>
+      <div className={styles.list}>
+      {projects.map((project) => {
+        return <ProjectCard key={project.id} project={project} />;
+      })}
+      </div>
+
     </div>
   );
 };

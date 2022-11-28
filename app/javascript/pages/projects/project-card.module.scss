@@ -1,0 +1,163 @@
+.project {
+  margin: 20px;
+  height: 553px;
+  width: 400px;
+  display: relative;
+  box-shadow: 0px 3px 6px #cbc6c6;
+  &:hover {
+    box-shadow: 2px 4px 9px #cbc6c6;
+  }
+
+  .description {
+    padding: 31px;
+
+    .category {
+      font-size: 15px;
+      color: #4c4b4b;
+      margin-bottom: 19px;
+    }
+
+    .title-wrapper {
+      height: 90px;
+      .title {
+        color: black;
+        font-family: sans-serif;
+        font-size: 18px;
+      }
+
+      .modified {
+        color: #95959e;
+        font-size: 18px;
+        font-weight: 100;
+      }
+    }
+
+    .author {
+      color: #95959e;
+      font-size: 16px;
+      margin: 18px 0;
+      font-weight: 100;
+
+      .avatar {
+          height: 24px;
+          width: 25px;
+          border-radius: 100%;
+          margin-right: 10px;
+          margin-bottom: -8px;
+
+        
+      }
+    }
+
+    .pledged {
+      margin-top: 15px;
+      color: #4c4949;
+    }
+
+    .pledged,
+    .funded,
+    .remaining {
+      padding: 3px;
+    }
+
+    .stats {
+      color: #95959e;
+      font-weight: 200;
+    }
+  }
+}
+
+@media screen and (min-width: 1301px) and (max-width: 1905px) {
+  .project {
+    margin: 20px;
+    height: 553px;
+    width: 400px;
+    display: relative;
+    box-shadow: 0px 3px 6px #cbc6c6;
+    &:hover {
+      box-shadow: 2px 4px 9px #cbc6c6;
+    }
+  }
+
+  .index-title {
+    width: 99%;
+    margin: auto;
+    padding-top: 70px;
+  }
+
+  .indexContainer {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 41px;
+    width: 90%;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 1481px) {
+  .project {
+    margin: 20px;
+    height: 553px;
+    width: 356px;
+    display: relative;
+    box-shadow: 0px 3px 6px #cbc6c6;
+    &:hover {
+      box-shadow: 2px 4px 9px #cbc6c6;
+    }
+  }
+
+  .index-title {
+    width: 94%;
+    margin: auto;
+    padding-top: 70px;
+  }
+
+  .indexContainer {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 41px;
+    width: 94%;
+    margin: auto;
+    justify-content: center;
+  }
+}
+
+.project-img {
+  max-width: 100%;
+  height: 210px;
+}
+
+.img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  display: block;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+
+
+.author span {
+  color: black;
+  font-size: 19px;
+  font-weight: 400;
+}
+
+.view-proj-button {
+  position: absolute;
+  margin-top: 356px;
+  display: block;
+  color: white;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.view-proj-button button {
+  background: #25cb68;
+  color: white;
+  padding: 15px;
+  border-radius: 7px;
+}
+
