@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  get '/', to: 'projects#index'
+  root to: 'projects#index'
 
   get 'profile', to: 'profile#index'
 
