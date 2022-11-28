@@ -2,5 +2,12 @@
     "ruby.useLanguageServer": true,
     "ruby.intellisense": "rubyLocate",
     "solargraph.useBundler": false,
-    "solargraph.commandPath": "/Users/lakshmajimutyala/.rbenv/shims/solargraph"
+    "solargraph.commandPath": "/Users/lakshmajimutyala/.rbenv/shims/solargraph",
+    "[ruby]": {
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true,
+        "editor.defaultFormatter": "rebornix.ruby"
+    },
+    "editor.formatOnSave": true,
+    "ruby.format": "rubocop",
 }
