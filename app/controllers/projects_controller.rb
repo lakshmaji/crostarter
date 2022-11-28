@@ -34,8 +34,8 @@ class ProjectsController < ApplicationController
     render(
       inertia: 'project/ProjectDetails',
       props: {
-        project: project
+        project:,
       },
     )
-   end
+  end
 end
