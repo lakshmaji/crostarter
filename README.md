@@ -35,8 +35,6 @@ bin/rails db:create RAILS_ENV=test
 ```
 
 
-- [ ] CI/CD pipeline
-  - [ ] fix fly deployment issue
 - [ ] Feature development
 - [ ] Playwright testing (e2e)
 
