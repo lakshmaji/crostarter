@@ -1,9 +1,16 @@
 .container {
-    background-color: #0e0f10;
+    background-color: #1e266d;
     font-family: Menlo, monospace;
-    padding: 16px;
+    padding: 35px 0;
+    border-top: 2px solid #2e2d72;
 
+    display: flex;
+    align-items: center;
 
+    h2 {
+        padding-left: 32px;
+        font-weight: 100;
+    }
     .items {
         margin: 16px;
         display: flex;
@@ -11,6 +18,13 @@
         justify-content: space-between;
         list-style-type: none;
         align-items: center;
+        
+
+        li {
+            padding: 15px;
+
+            
+        }
 
         a {
             color: white;

@@ -4,8 +4,6 @@ import { InertiaLink, Link, usePage } from "@inertiajs/inertia-react";
 import { classNames } from "../utils/styles";
 import Greeting from "./Greeting";
 
-
-
 const Header = () => {
   return (
     <div className={styles.container}>
@@ -42,7 +40,7 @@ const Header = () => {
         className={classNames(styles.logo, styles.nav_item)}
       >
         <span id="logo">
-          Crank<span className={styles.crank}>starter</span>
+          Cro<span className={styles.crank}>starter</span>
         </span>
       </InertiaLink>
 
