@@ -1,3 +1,5 @@
+import { Category } from "./category";
+
 export interface IProject {
     id: string;
     title: string;
@@ -10,4 +12,6 @@ export interface IProject {
     creator_id: string;
     created_at: string;
     updated_at: string;
+    funded?: number
+    category?: Category
 }

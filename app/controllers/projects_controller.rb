@@ -2,11 +2,14 @@
 
 class ProjectsController < ApplicationController
     def index
-        projects = Project.all
+        projects = Project
+        .includes(:category)
+
         render(
             inertia: 'projects/Projects',
             props: {
-                projects: projects.as_json(
+                projects: projects
+                .as_json(
                     only: [
                         :id,
                         :title,
@@ -19,7 +22,8 @@ class ProjectsController < ApplicationController
                         :creator_id,
                         :created_at, # started at
                         :updated_at, # last seen
-                    ]
+                    ],
+                    include: { category: { only: :name}},
                 )
             }
         )
