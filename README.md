@@ -1,10 +1,22 @@
-# Kickstarter 🎉
+# Crostarter 🎉
 
-[![Deploy](https://github.com/lakshmaji/kickstarter/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/lakshmaji/kickstarter/actions/workflows/build.yml) [![Run Spec](https://github.com/lakshmaji/kickstarter/actions/workflows/spec.yml/badge.svg?branch=main)](https://github.com/lakshmaji/kickstarter/actions/workflows/spec.yml) [![Rails Style Guide](https://img.shields.io/badge/code_style-rubocop-brightgreen.svg)](https://github.com/rubocop/rubocop-rails) [![Rails Style Guide](https://img.shields.io/badge/code_style-community-brightgreen.svg)](https://rails.rubystyle.guide)
+[![Deployment][deploy-image]][deploy-url] [![Unit Tests][rspec-image]][rspec-url] [![Rails code style][rubocop-code-style-image]][rubocop-code-style-url] [![Rails Style Guide][rails-code-style-image]][rails-code-style-url]
+[![npm][npm-image]][npm-url] [![ESLint][eslint-image]][eslint-url]
 
+[deploy-image]: https://github.com/lakshmaji/kickstarter/actions/workflows/build.yml/badge.svg?branch=main
+[deploy-url]: https://github.com/lakshmaji/kickstarter/actions/workflows/build.yml
+[rspec-image]: https://github.com/lakshmaji/kickstarter/actions/workflows/spec.yml/badge.svg?branch=main
+[rspec-url]: https://github.com/lakshmaji/kickstarter/actions/workflows/spec.yml
+[rubocop-code-style-image]: https://img.shields.io/badge/code_style-rubocop-brightgreen.svg
+[rubocop-code-style-url]: https://github.com/rubocop/rubocop-rails
+[rails-code-style-image]: https://img.shields.io/badge/code_style-community-brightgreen.svg
+[rails-code-style-url]: https://rails.rubystyle.guide
+[npm-image]: https://img.shields.io/npm/v/eslint-config-standard.svg
+[npm-url]: https://npmjs.org/package/eslint-config-standard
+[eslint-image]: https://badges.aleen42.com/src/eslint.svg
+[eslint-url]: https://eslint.org/
 
 Demo: [Live](https://crostarter.fly.dev/)
-
 
 ## Getting started
 
@@ -18,7 +30,6 @@ yarn install
 ```
 
 ### Development
-
 
 ```bash
 cp .env.example .env
@@ -54,13 +65,12 @@ bundle exec rubocop --safe-auto-correct
 bundle exec rubocop --A # force - better not use it
 ```
 
-
 ## TODO
 
 - [ ] Feature development
   - [ ] Run seeds in fly deployment
   - [ ] create project
-    - [ ] File Upload s3 
+    - [ ] File Upload s3
   - [ ] contribute
   - [ ] delete project
   - [ ] edit project
@@ -70,7 +80,7 @@ bundle exec rubocop --A # force - better not use it
   - [ ] payment gateway integration (stripe)
   - [ ] product listing updates
   - [ ] Use SASS variable, mixins
-  - [ ] Elastic search integration 
+  - [ ] Elastic search integration
     - [ ] search projects
     - [ ] recommended projects
   - [ ] Welcome email using sidekiq and redis
@@ -84,5 +94,3 @@ bundle exec rubocop --A # force - better not use it
   - [ ] serializer
   - [ ] jwt
 - [ ] GraphQL
-
-
