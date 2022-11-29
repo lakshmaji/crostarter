@@ -19,7 +19,7 @@ permissions:
   statuses: write
 
 jobs:
-  linters:
+  ruby-linter:
     name: Linters
     runs-on: ubuntu-latest
     steps:
@@ -50,3 +50,16 @@ jobs:
         env:
           PRONTO_GITHUB_ACCESS_TOKEN: ${{ github.token }}
           PRONTO_PULL_REQUEST_ID: ${{ github.event.pull_request.number  }}
+
+  react-linters:
+    runs-on: ubuntu-latest
+    name: Lint & build
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+      - name: Install
+        run: yarn install --immutable
+      - name: Lint
+        run: yarn lint
+      - name: Build
+        run: yarn build:ssr
