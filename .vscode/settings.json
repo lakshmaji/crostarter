@@ -9,5 +9,14 @@
         "editor.defaultFormatter": "rebornix.ruby"
     },
     "editor.formatOnSave": true,
+    "[javascript]": {
+        "editor.formatOnSave": false
+    },
+    "[typescript]": {
+        "editor.formatOnSave": false
+    },
+    "[typescriptreact]": {
+        "editor.formatOnSave": false
+    },
     "ruby.format": "rubocop",
 }
