@@ -1,5 +1,7 @@
 .vscode
-app
+!app
+app/*.rb
+!app/javascript/*
 bin
 config
 db

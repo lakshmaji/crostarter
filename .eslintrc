@@ -44,6 +44,7 @@
                 "endOfLine": "auto",
                 "singleQuote": true
             }
-        ]
+        ],
+        "react/jsx-uses-react": "error"
     }
 }

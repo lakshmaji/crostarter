@@ -31,7 +31,8 @@
         "vite.config.ts",
         "app.d.ts",
         "**/*.ts",
-        "**/*.tsx"
+        "**/*.tsx",
+        "node_modules"
     ],
     "exclude": [
         "node_modules",
