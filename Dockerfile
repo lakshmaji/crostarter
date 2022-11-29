@@ -45,8 +45,8 @@ RUN mkdir -p tmp/pids
 RUN curl https://get.volta.sh | bash
 ENV VOLTA_HOME /root/.volta
 ENV PATH $VOLTA_HOME/bin:/usr/local/bin:$PATH
-RUN volta install node@${NODE_VERSION} yarn@${YARN_VERSION} && \
-    gem update --system --no-document && \
+RUN volta install node@${NODE_VERSION} yarn@${YARN_VERSION} &&
+    gem update --system --no-document &&
     gem install -N bundler -v ${BUNDLER_VERSION}
 
 #######################################################################
@@ -60,9 +60,9 @@ ENV BUILD_PACKAGES ${BUILD_PACKAGES}
 
 RUN --mount=type=cache,id=dev-apt-cache,sharing=locked,target=/var/cache/apt \
     --mount=type=cache,id=dev-apt-lib,sharing=locked,target=/var/lib/apt \
-    apt-get update -qq && \
-    apt-get install --no-install-recommends -y ${BUILD_PACKAGES} \
-    && rm -rf /var/lib/apt/lists /var/cache/apt/archives
+    apt-get update -qq &&
+    apt-get install --no-install-recommends -y ${BUILD_PACKAGES} &&
+    rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 #######################################################################
 
@@ -71,7 +71,7 @@ RUN --mount=type=cache,id=dev-apt-cache,sharing=locked,target=/var/cache/apt \
 FROM build_deps as gems
 
 COPY Gemfile* ./
-RUN bundle install &&  rm -rf vendor/bundle/ruby/*/cache
+RUN bundle install && rm -rf vendor/bundle/ruby/*/cache
 
 #######################################################################
 
@@ -94,10 +94,10 @@ ENV DEPLOY_PACKAGES=${DEPLOY_PACKAGES}
 
 RUN --mount=type=cache,id=prod-apt-cache,sharing=locked,target=/var/cache/apt \
     --mount=type=cache,id=prod-apt-lib,sharing=locked,target=/var/lib/apt \
-    apt-get update -qq && \
+    apt-get update -qq &&
     apt-get install --no-install-recommends -y \
-    ${DEPLOY_PACKAGES} \
-    && rm -rf /var/lib/apt/lists /var/cache/apt/archives
+        ${DEPLOY_PACKAGES} &&
+    rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 # copy installed gems
 COPY --from=gems /app /app
@@ -113,8 +113,8 @@ COPY --from=node_modules /app/node_modules /app/node_modules
 COPY . .
 
 # Adjust binstubs to run on Linux and set current working directory
-RUN chmod +x /app/bin/* && \
-    sed -i 's/ruby.exe/ruby/' /app/bin/* && \
+RUN chmod +x /app/bin/* &&
+    sed -i 's/ruby.exe/ruby/' /app/bin/* &&
     sed -i '/^#!/aDir.chdir File.expand_path("..", __dir__)' /app/bin/*
 
 # The following enable assets to precompile on the build server.  Adjust
@@ -127,6 +127,9 @@ ENV SECRET_KEY_BASE 1
 # Run build task defined in lib/tasks/fly.rake
 ARG BUILD_COMMAND="bin/rails fly:build"
 RUN ${BUILD_COMMAND}
+
+ARG DB_SEED_COMMAND="bin/rails fly:db:seed RAILS_ENV=production"
+RUN ${DB_SEED_COMMAND}
 
 # Default server start instructions.  Generally Overridden by fly.toml.
 ENV PORT 8080
