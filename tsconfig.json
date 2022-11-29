@@ -25,7 +25,10 @@
         "noEmit": true,
         "jsx": "preserve",
         "incremental": true,
-        "baseUrl": "."
+        "baseUrl": ".",
+        "types": [
+            "vite/client"
+        ]
     },
     "include": [
         "vite.config.ts",
@@ -37,7 +40,6 @@
     "exclude": [
         "node_modules",
         ".vscode",
-        "app",
         "bin",
         "config",
         "db",
