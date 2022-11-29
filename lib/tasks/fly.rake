@@ -40,7 +40,7 @@ namespace :fly do
   end
 
   namespace :db do
-    task seed: do
+    task :seed do
       sh 'bin/rails db:recreate:seed'
     end
   end
