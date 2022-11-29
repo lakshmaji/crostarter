@@ -1,11 +1,14 @@
-import { InertiaLink, Link, usePage } from "@inertiajs/inertia-react";
-import React, { Fragment } from "react";
-import { Flash } from "./Flash";
-import Footer from "./Footer";
-import Header from "./Header";
-import NewsLetter from "./NewsLetter";
+import { InertiaLink, Link, usePage } from '@inertiajs/inertia-react';
+import React, { FC, Fragment, ReactNode } from 'react';
+import { Flash } from './Flash';
+import Footer from './Footer';
+import Header from './Header';
+import NewsLetter from './NewsLetter';
 
-const Layout = ({ children }) => {
+interface Props {
+  children: ReactNode;
+}
+const Layout: FC<Props> = ({ children }) => {
   const { auth } = usePage().props;
   const { flash } = usePage<any>().props;
 
@@ -22,7 +25,7 @@ const Layout = ({ children }) => {
         {children}
       </div>
 
-      <section style={{ background: "#1e266d" }}>
+      <section style={{ background: '#1e266d' }}>
         <NewsLetter />
         <Footer />
       </section>
@@ -30,4 +33,16 @@ const Layout = ({ children }) => {
   );
 };
 
-export default (page) => <Layout>{page}</Layout>;
+const Wrapper = (
+  page:
+    | string
+    | number
+    | boolean
+    | React.ReactElement<any, string | React.JSXElementConstructor<any>>
+    | React.ReactFragment
+    | React.ReactPortal
+    | null
+    | undefined,
+) => <Layout>{page}</Layout>;
+Wrapper.displayName = 'LayoutWrapper';
+export default Wrapper;

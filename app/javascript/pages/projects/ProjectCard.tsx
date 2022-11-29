@@ -1,22 +1,20 @@
-import React, { FC } from "react";
-import { IProject } from "../../models/project";
-import styles from "./project-card.module.scss";
-import { Link } from "@inertiajs/inertia-react";
+import React, { FC } from 'react';
+import { IProject } from '../../models/project';
+import styles from './project-card.module.scss';
+import { Link } from '@inertiajs/inertia-react';
 
 interface Props {
   project: IProject;
 }
 
 const ProjectCard: FC<Props> = ({ project }) => {
-  const numberWithCommas = (x) =>
-    x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  const numberWithCommas = (x) => x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 
   const dateRemaining = (end_date: string) => {
     return end_date;
   };
 
-  const calculatePercent = () =>
-    Math.floor(project.funded || (0 / project.funding_goal) * 100);
+  const calculatePercent = () => Math.floor(project.funded || (0 / project.funding_goal) * 100);
 
   return (
     <div className={styles.project}>
@@ -28,20 +26,18 @@ const ProjectCard: FC<Props> = ({ project }) => {
         <div className={styles.category}>
           <h4>{project.category?.name}</h4>
         </div>
-        <div className={styles["title-wrapper"]}>
-          <span className={styles.title}>{project.title}:</span>{" "}
+        <div className={styles['title-wrapper']}>
+          <span className={styles.title}>{project.title}:</span>{' '}
           <span className={styles.modified}>{project.updated_at}</span>
         </div>
 
         <div className={styles.author}>
           <img
-            src={
-              "https://sc01.alicdn.com/kf/UT8.CaXX2NXXXagOFbXC/fresh-navel-oranges.jpg"
-            }
-            alt="User icon"
+            src={'https://sc01.alicdn.com/kf/UT8.CaXX2NXXXagOFbXC/fresh-navel-oranges.jpg'}
+            alt='User icon'
             className={styles.avatar}
           />
-          by: <span>{"project.creator"}</span>
+          by: <span>{'project.creator'}</span>
         </div>
         {/* <Line percent={percent} strokeWidth="2" strokeColor="#2BDE73" /> */}
         <div className={styles.pledged}>
