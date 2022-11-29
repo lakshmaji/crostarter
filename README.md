@@ -68,7 +68,7 @@ bundle exec rubocop --A # force - better not use it
 ## TODO
 
 - [ ] Feature development
-  - [ ] Run seeds in fly deployment
+  - [x] Run seeds in fly deployment
   - [ ] create project
     - [ ] File Upload s3
   - [ ] contribute

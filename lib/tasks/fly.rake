@@ -39,9 +39,11 @@ namespace :fly do
     sh 'swapon /swapfile'
   end
 
+  # FIXME: not really required
+  #   - adding this to have some information to be shown to end user 😛.
   namespace :db do
     task :seed do
-      sh 'bin/rails db:recreate:seed'
+      sh 'bin/rails db:recreate:seed RAILS_ENV=production'
     end
   end
 end
