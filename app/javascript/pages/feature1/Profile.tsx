@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { FC } from 'react';
 
-export default function Profile({ name }) {
-  return <div>Profile {name}</div>;
+interface Props {
+  name: string;
 }
+const Profile: FC<Props> = ({ name }) => {
+  return <div>Profile {name}</div>;
+};
 
-// export default Profile
+export default Profile;

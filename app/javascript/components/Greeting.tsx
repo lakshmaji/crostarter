@@ -1,8 +1,8 @@
-import React, { FC, Fragment } from 'react';
+import React, { FC } from 'react';
 import styles from './greeting.module.scss';
-import { InertiaLink, Link, usePage } from '@inertiajs/inertia-react';
-import { classNames } from '../utils/styles';
-import { User } from '../models/auth';
+import { Link, usePage } from '@inertiajs/inertia-react';
+import { UsePageProps } from '../inertia';
+import { Page } from '@inertiajs/inertia';
 
 const SessionLinks = () => {
   return (
@@ -18,7 +18,7 @@ const SessionLinks = () => {
 };
 
 const PersonalGreeting = () => {
-  const { auth } = usePage().props;
+  const { auth } = usePage<Page<UsePageProps>>().props;
 
   return (
     <div className={styles.dropdown}>
@@ -27,7 +27,7 @@ const PersonalGreeting = () => {
       <div className={styles['dropdown-content']}>
         <div className={styles.background} />
         <p>
-          You&apos;re logged in as <span>{(auth as { user: User }).user.name}</span>
+          You&apos;re logged in as <span>{auth.user.name}</span>
           <Link
             href='/exit'
             method='get'

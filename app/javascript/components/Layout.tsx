@@ -1,5 +1,4 @@
-import { InertiaLink, Link, usePage } from '@inertiajs/inertia-react';
-import React, { FC, Fragment, ReactNode } from 'react';
+import React, { FC, ReactNode } from 'react';
 import { Flash } from './Flash';
 import Footer from './Footer';
 import Header from './Header';
@@ -9,9 +8,6 @@ interface Props {
   children: ReactNode;
 }
 const Layout: FC<Props> = ({ children }) => {
-  const { auth } = usePage().props;
-  const { flash } = usePage<any>().props;
-
   return (
     <>
       <Flash />

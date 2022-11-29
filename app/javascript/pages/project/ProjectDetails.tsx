@@ -1,3 +1,4 @@
+import { InertiaLink } from '@inertiajs/inertia-react';
 import React, { Suspense } from 'react';
 import { classNames } from '../../utils/styles';
 import styles from './project-details.module.scss';
@@ -54,9 +55,9 @@ const ProjectDetails = () => {
                     Grow your business with our secure storage, powerful computing, and integrated
                     analytics at affordable price.
                   </p>
-                  <a className={classNames(styles.btn_action, styles.btn_alt)} href='#'>
+                  <InertiaLink className={classNames(styles.btn_action, styles.btn_alt)} href='#'>
                     Get Started
-                  </a>
+                  </InertiaLink>
                 </div>
               </div>
               <div className={styles.yd_flex_2}>

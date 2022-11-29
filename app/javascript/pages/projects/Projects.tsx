@@ -3,7 +3,6 @@ import type { FC } from 'react';
 import { IProject } from '../../models/project';
 import ProjectCard from './ProjectCard';
 import styles from './projects.module.scss';
-import { classNames } from '../../utils/styles';
 
 interface Props {
   projects: IProject[];

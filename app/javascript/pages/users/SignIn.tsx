@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import type { FC } from 'react';
 import { useForm } from 'react-hook-form';
-import { Inertia } from '@inertiajs/inertia';
+import { Inertia, RequestPayload } from '@inertiajs/inertia';
 import { Link } from '@inertiajs/inertia-react';
 import styles from './signin.module.scss';
 import { classNames } from '../../utils/styles';
@@ -10,14 +10,19 @@ interface Props {
   errors: string;
 }
 
+interface SignInFormData {
+  username: string;
+  password: string;
+}
 const SignIn: FC<Props> = ({ errors }) => {
   const {
     register,
     handleSubmit,
     formState: { errors: formErrors },
-  } = useForm<{ username: string; password: string }>();
-  const onSubmit = (data) => {
-    Inertia.post('/sessions', { user: data });
+  } = useForm<SignInFormData>();
+
+  const onSubmit = (data: SignInFormData) => {
+    Inertia.post('/sessions', { user: data } as unknown as RequestPayload);
   };
 
   return (
@@ -28,12 +33,12 @@ const SignIn: FC<Props> = ({ errors }) => {
           <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
             <h1>Login</h1>
             <div className={styles.social_container}>
-              <a href='#' className='social'>
+              <Link href='#' className='social'>
                 <i className='fa fa-facebook fa-2x'></i>
-              </a>
-              <a href='#' className='social'>
+              </Link>
+              <Link href='#' className='social'>
                 <i className='fab fa fa-twitter fa-2x'></i>
-              </a>
+              </Link>
             </div>
             <span>or use your account</span>
             <input

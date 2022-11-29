@@ -8,8 +8,6 @@ interface Props {
 }
 
 const ProjectCard: FC<Props> = ({ project }) => {
-  const numberWithCommas = (x) => x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-
   const dateRemaining = (end_date: string) => {
     return end_date;
   };

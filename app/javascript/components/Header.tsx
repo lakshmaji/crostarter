@@ -1,6 +1,6 @@
-import React, { FC, Fragment } from 'react';
+import React from 'react';
 import styles from './header.module.scss';
-import { InertiaLink, Link, usePage } from '@inertiajs/inertia-react';
+import { InertiaLink } from '@inertiajs/inertia-react';
 import { classNames } from '../utils/styles';
 import Greeting from './Greeting';
 

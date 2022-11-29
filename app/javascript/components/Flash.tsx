@@ -1,8 +1,10 @@
 import React from 'react';
-import { InertiaLink, Link, usePage } from '@inertiajs/inertia-react';
+import { usePage } from '@inertiajs/inertia-react';
+import { UsePageProps } from '../inertia';
+import { Page } from '@inertiajs/inertia';
 
 export const Flash = () => {
-  const { flash } = usePage<any>().props;
+  const { flash } = usePage<Page<UsePageProps>>().props;
 
   return (
     <>

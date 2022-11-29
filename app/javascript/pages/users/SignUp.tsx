@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import type { FC } from 'react';
 import { useForm } from 'react-hook-form';
 import { Inertia } from '@inertiajs/inertia';
-import { Link } from '@inertiajs/inertia-react';
+import { InertiaLink, Link } from '@inertiajs/inertia-react';
 import styles from './signin.module.scss';
 import { classNames } from '../../utils/styles';
 
@@ -14,10 +14,10 @@ const SignUp: FC<Props> = ({ errors }) => {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors: formErrors },
     setError,
   } = useForm<{ username: string; password: string }>();
+
   const onSubmit = (data) => {
     Inertia.post('/users', {
       user: { ...data, password_confirmation: data.password },
@@ -27,7 +27,7 @@ const SignUp: FC<Props> = ({ errors }) => {
   useEffect(() => {
     if (errors) {
       if (Object.keys(errors).length) {
-        errors.forEach((err, i) => {
+        errors.forEach((err) => {
           const key = Object.keys(err).toString();
           setError(key as 'username' | 'password', {
             type: 'manual',
@@ -36,7 +36,7 @@ const SignUp: FC<Props> = ({ errors }) => {
         });
       }
     }
-  }, [errors]);
+  }, [errors, setError]);
 
   return (
     <section className={styles.section}>
@@ -46,12 +46,12 @@ const SignUp: FC<Props> = ({ errors }) => {
           <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
             <h1>Create new account</h1>
             <div className={styles.social_container}>
-              <a href='#' className='social'>
+              <InertiaLink href='#' className='social'>
                 <i className='fa fa-facebook fa-2x'></i>
-              </a>
-              <a href='#' className='social'>
+              </InertiaLink>
+              <InertiaLink href='#' className='social'>
                 <i className='fab fa fa-twitter fa-2x'></i>
-              </a>
+              </InertiaLink>
             </div>
             <span>or use your account</span>
             <input

@@ -1,11 +1,6 @@
 import ReactDOMServer from 'react-dom/server';
-import {
-  createInertiaApp,
-  InertiaAppOptionsForCSR,
-  ReactComponent,
-  ReactInstance,
-} from '@inertiajs/inertia-react';
-import type { Page, PageProps } from '@inertiajs/core';
+import { createInertiaApp, InertiaAppOptionsForCSR } from '@inertiajs/inertia-react';
+import type { Page } from '@inertiajs/core';
 import cjsCreateServer from '@inertiajs/server';
 import Layout from '../components/Layout';
 import { ComponentType } from 'react';

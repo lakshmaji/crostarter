@@ -1,7 +1,10 @@
 import React from 'react';
 import type { FC } from 'react';
 
-interface Props {}
+interface Props {
+  // FIXME:
+  category: any;
+}
 
 const Categories: FC<Props> = (props) => {
   return (
