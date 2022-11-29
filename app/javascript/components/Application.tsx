@@ -13,26 +13,10 @@ const app = () => {
 
   return createInertiaApp<InertiaAppOptionsForCSR<Props>>({
     resolve: async (name) => {
-      // const page = (await pages[`../pages/${name}.tsx`]()).default;
-      // page.layout = page.layout || Layout
-      // return page
-
       const module = await pages[`../pages/${name}.tsx`]();
       const page = (module as never as { default: { layout: React.ReactFragment } }).default;
       page.layout = page.layout || Layout;
       return page;
-
-      // return pages[`../pages/${name}.tsx`]().then((page: any) => {
-      //   page.default.layout = page.default.layout || Layout;
-      //   return page
-      // });
-
-      // return import(`../pages/${name}.tsx`).then((module) => {
-      //   const page = module.default
-
-      //   page.layout = Layout
-      //   return page
-      // })
     },
     setup({ el, App, props }) {
       const container = document.getElementById(el.id);

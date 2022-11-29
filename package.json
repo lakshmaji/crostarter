@@ -25,7 +25,9 @@
     "lint:fix": "npm run lint -- --fix",
     "prettier": "npx prettier app/javascript --check",
     "prettier:fix": "npm run prettier -- --write",
-    "format": "npm run prettier:fix && npm run lint:fix"
+    "format": "npm run prettier:fix && npm run lint:fix",
+    "prepare": "husky install",
+    "pretty-quick": "pretty-quick --staged"
   },
   "devDependencies": {
     "@types/react": "18.0.21",
@@ -41,7 +43,9 @@
     "eslint-plugin-prettier": "4.0.0",
     "eslint-plugin-react": "7.30.0",
     "eslint-plugin-react-hooks": "4.5.0",
-    "prettier": "2.6.2",
+    "husky": "^8.0.2",
+    "prettier": "^2.8.0",
+    "pretty-quick": "^3.1.3",
     "sass": "1.56.1",
     "typescript": "4.7.4",
     "vite": "3.0.0",
