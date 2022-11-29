@@ -128,7 +128,7 @@ ENV SECRET_KEY_BASE 1
 ARG BUILD_COMMAND="bin/rails fly:build"
 RUN ${BUILD_COMMAND}
 
-ARG DB_SEED_COMMAND="bin/rails fly:db:seed"
+ARG DB_SEED_COMMAND="bin/rails fly:db:seed RAILS_ENV=production"
 RUN ${DB_SEED_COMMAND}
 
 # Default server start instructions.  Generally Overridden by fly.toml.

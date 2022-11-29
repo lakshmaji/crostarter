@@ -42,8 +42,8 @@ namespace :fly do
   # FIXME: not really required
   #   - adding this to have some information to be shown to end user 😛.
   namespace :db do
-    task :seed do
-      sh 'bin/rails db:recreate:seed RAILS_ENV=production'
+    task seed: :environment do
+      sh 'bin/rails db:recreate:seed'
     end
   end
 end
