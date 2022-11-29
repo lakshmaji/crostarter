@@ -6,17 +6,40 @@
 Demo: [Live](https://crostarter.fly.dev/)
 
 
+## Getting started
+
+Follow along to run app in your local machine
+
+### Installation
+
 ```bash
-bin/vite ssr
-bin/vite build --ssr
-bin/vite dev
-bin/rails server
+bundle install
+yarn install
 ```
+
+### Development
+
 
 ```bash
 cp .env.example .env
-foreman -f Procfile start
+
+bin/rails server
+yarn dev # This will launch app in non-SSR mode
+
+# Run in SSR mode
+yarn dev:ssr
+# Build for SSR
+yarn build:ssr
 ```
+
+OR
+
+```bash
+cp .env.example .env
+foreman -f Procfile.dev start
+```
+
+### Testing
 
 ```bash
 bin/rails g rspec:request user
@@ -24,33 +47,42 @@ rspec
 bundle exec rspec
 ```
 
+### Linting
+
 ```bash
 bundle exec rubocop --safe-auto-correct
 bundle exec rubocop --A # force - better not use it
 ```
 
-```bash
-bin/rails db:recreate
-bin/rails db:create RAILS_ENV=test
-```
 
+## TODO
 
 - [ ] Feature development
+  - [ ] Run seeds in fly deployment
+  - [ ] create project
+    - [ ] File Upload s3 
+  - [ ] contribute
+  - [ ] delete project
+  - [ ] edit project
+  - [ ] pagination
+  - [ ] slider (with few random projects)
+  - [ ] react-vis
+  - [ ] payment gateway integration (stripe)
+  - [ ] product listing updates
+  - [ ] Use SASS variable, mixins
+  - [ ] Elastic search integration 
+    - [ ] search projects
+    - [ ] recommended projects
+  - [ ] Welcome email using sidekiq and redis
+  - [ ] Newsletter using aws SNS
+  - [ ] rate limiter
+  - [ ] PDF report generation for fund, and contributions (background job using sidekiq)
 - [ ] Playwright testing (e2e)
+- [ ] Github action for playwright
+- [ ] REST API
+  - [ ] versioning
+  - [ ] serializer
+  - [ ] jwt
+- [ ] GraphQL
 
-
-```bash
-flyctl apps create 
-flyctl list apps
-flyctl deploy --remote-only
-flyctl logs -a crostarter
-fly secrets list
-```
-
-
-# curl and ca-certificates are needed for volta installation
-RUN apt-get update \
-    && apt-get install -y \
-    ca-certificates \
-    --no-install-recommends
 

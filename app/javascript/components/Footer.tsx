@@ -1,5 +1,5 @@
-import React from "react";
-import styles from "./footer.module.scss";
+import React from 'react';
+import styles from './footer.module.scss';
 
 const Footer = () => {
   return (
@@ -7,16 +7,16 @@ const Footer = () => {
       <h2>Crostarter</h2>
       <ul className={styles.items}>
         <li className={styles.item}>
-          <a href="mailto:lakshmajim@gmail.com">Email</a>
+          <a href='https://github.com/lakshmaji'>Github</a>
         </li>
         <li className={styles.item}>
-          <a href="https://github.com/lakshmaji">Github</a>
+          <a href='https://lakshmaji.medium.com/'>Medium</a>
         </li>
         <li className={styles.item}>
-          <a href="https://lakshmaji.medium.com/">Medium</a>
+          <a href='https://dev.to/@lakshmaji'>Dev.to</a>
         </li>
         <li className={styles.item}>
-          <a href="https://dev.to/@lakshmaji">Dev.to</a>
+          <a href='https://in.linkedin.com/in/lakshmajee'>LinkedIN</a>
         </li>
         <li className={styles.item}>
           <p>👋</p>

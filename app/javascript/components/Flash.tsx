@@ -1,14 +1,16 @@
-import React from 'react'
-import { InertiaLink, Link, usePage } from "@inertiajs/inertia-react";
+import React from 'react';
+import { usePage } from '@inertiajs/inertia-react';
+import { UsePageProps } from '../inertia';
+import { Page } from '@inertiajs/inertia';
 
 export const Flash = () => {
-  const { flash } = usePage<any>().props;
+  const { flash } = usePage<Page<UsePageProps>>().props;
 
   return (
     <>
-    {flash.message && <div className="alert">{flash.message}</div>}
+      {flash.message && <div className='alert'>{flash.message}</div>}
 
-    {flash.alert && <div className="alert">{flash.alert}</div>}
-  </>
-  )
-}
+      {flash.alert && <div className='alert'>{flash.alert}</div>}
+    </>
+  );
+};

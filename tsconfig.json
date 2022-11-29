@@ -1,0 +1,57 @@
+{
+    "compilerOptions": {
+        "target": "ESNext",
+        "useDefineForClassFields": true,
+        "lib": [
+            "DOM",
+            "DOM.Iterable",
+            "ESNext"
+        ],
+        "allowJs": true,
+        "skipLibCheck": true,
+        "esModuleInterop": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noFallthroughCasesInSwitch": true,
+        "allowSyntheticDefaultImports": true,
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "module": "ESNext",
+        "moduleResolution": "Node",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "noEmit": true,
+        "jsx": "preserve",
+        "incremental": true,
+        "baseUrl": ".",
+        "types": [
+            "vite/client"
+        ]
+    },
+    "include": [
+        "vite.config.ts",
+        "app.d.ts",
+        "**/*.ts",
+        "**/*.tsx",
+        "node_modules"
+    ],
+    "exclude": [
+        "node_modules",
+        ".vscode",
+        "bin",
+        "config",
+        "db",
+        "lib",
+        "log",
+        "node_modules",
+        "public",
+        "spec",
+        "storage",
+        "tmp",
+        "vendor",
+        "yarn.lock",
+        "haus",
+    ]
+}

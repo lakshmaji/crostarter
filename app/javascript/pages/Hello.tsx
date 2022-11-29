@@ -1,18 +1,18 @@
-import React from 'react'
-import type { FC } from 'react'
-import Counter from '../components/Counter'
+import React from 'react';
+import type { FC } from 'react';
+import Counter from '../components/Counter';
 
 interface Props {
-    name: string
+  name: string;
 }
 
-const Hello: FC<Props> = ({name}): JSX.Element => {
+const Hello: FC<Props> = ({ name }): JSX.Element => {
   return (
     <div>
-    <div>Hello {name}!</div>
-    <Counter />
+      <div>Hello {name}!</div>
+      <Counter />
     </div>
-  )
-}
+  );
+};
 
-export default Hello
+export default Hello;

@@ -1,95 +1,85 @@
 .container {
-    vertical-align: baseline;
-    .cta_box {
-        background: #1e266d;
-        border-radius: 0;
-        display: flex;
-        margin: auto;
-        height: 420px;
-        max-width: 800px;   
-        .cta_box_inner {
-            padding: 0 50px;
-            margin: auto;
-    
+  vertical-align: baseline;
+  .cta_box {
+    background: #1e266d;
+    border-radius: 0;
+    display: flex;
+    margin: auto;
+    height: 420px;
+    max-width: 800px;
+    .cta_box_inner {
+      padding: 0 50px;
+      margin: auto;
 
-                .col {
-                    -webkit-box-flex: 0;
-                    -ms-flex: 0 0 100%;
-                    flex: 0 0 100%;
-                    max-width: 100%;
-                    text-align: center;
+      .col {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+        text-align: center;
 
-                    h4 {
-                        font-size: 16px;
-    font-weight: 400;
-    line-height: 1.2;
-    color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 20px;
-                    }
-
-                    h2 {
-                        font-size: 24px;
-                        font-weight: 400;
-                        line-height: 1.6;
-                        color: #FFFFFF;
-                    
-                        font-size: 28px;
-                        line-height: 1.6;
-                    
-                    }
-
-                    .form {
-                        padding-top: 25px;
-                        position: relative;
-                        text-align: none;
-
-                        .subscribe-form {
-                         
-                            input {
-                                color: #222222;
-                                font-family: 'Montserrat';
-                                padding: 0;
-                                font-size: 13px;
-                                font-weight: 500;
-                                height: 45px;
-                                border: 0;
-                                border-radius: 30px;
-                                background-color: #F3F3F3;
-                                outline: none;
-                                padding: 0 100px 0 20px;
-                                box-shadow: 0 5px 30px rgb(255 255 255 / 10%);
-                            
-                            }
-
-                            .submit-button {
-                                height: 45px;
-                                border: 0;
-                                border-radius: 30px;
-                                margin-left: -35px;
-                                padding: 0 25px 0 25px;
-                                background: #23D3D3;
-                                font-family: 'Montserrat';
-                                font-size: 14px;
-                                font-weight: 500;
-                                text-transform: capitalize;
-                                letter-spacing: 0;
-                                color: #FFFFFF;
-                                cursor: pointer;
-                                outline: none;
-                                box-shadow: 0 5px 30px rgb(255 255 255 / 5%);
-                                -webkit-transition: 500ms;
-                                -moz-transition: 500ms;
-                                transition: 500ms;
-                            
-                            }
-                        }
-                    }
-                    
-                
-
-                }
-
+        h4 {
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 1.2;
+          color: rgba(255, 255, 255, 0.8);
+          margin-bottom: 20px;
         }
-    }
 
+        h2 {
+          font-size: 24px;
+          font-weight: 400;
+          line-height: 1.6;
+          color: #ffffff;
+
+          font-size: 28px;
+          line-height: 1.6;
+        }
+
+        .form {
+          padding-top: 25px;
+          position: relative;
+          text-align: none;
+
+          .subscribe-form {
+            input {
+              color: #222222;
+              font-family: 'Montserrat';
+              padding: 0;
+              font-size: 13px;
+              font-weight: 500;
+              height: 45px;
+              border: 0;
+              border-radius: 30px;
+              background-color: #f3f3f3;
+              outline: none;
+              padding: 0 100px 0 20px;
+              box-shadow: 0 5px 30px rgb(255 255 255 / 10%);
+            }
+
+            .submit-button {
+              height: 45px;
+              border: 0;
+              border-radius: 30px;
+              margin-left: -35px;
+              padding: 0 25px 0 25px;
+              background: #23d3d3;
+              font-family: 'Montserrat';
+              font-size: 14px;
+              font-weight: 500;
+              text-transform: capitalize;
+              letter-spacing: 0;
+              color: #ffffff;
+              cursor: pointer;
+              outline: none;
+              box-shadow: 0 5px 30px rgb(255 255 255 / 5%);
+              -webkit-transition: 500ms;
+              -moz-transition: 500ms;
+              transition: 500ms;
+            }
+          }
+        }
+      }
+    }
+  }
 }

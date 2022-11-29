@@ -1,0 +1,17 @@
+.vscode
+!app
+app/*.rb
+!app/javascript/*
+bin
+config
+db
+lib
+log
+node_modules
+public
+spec
+storage
+tmp
+vendor
+yarn.lock
+haus
