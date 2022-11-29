@@ -27,7 +27,8 @@
     "prettier:fix": "npm run prettier -- --write",
     "format": "npm run prettier:fix && npm run lint:fix",
     "prepare": "husky install",
-    "pretty-quick": "pretty-quick --staged"
+    "pretty-quick": "pretty-quick --staged",
+    "ci:build:ssr": "vite build --ssr"
   },
   "devDependencies": {
     "@types/react": "18.0.21",
