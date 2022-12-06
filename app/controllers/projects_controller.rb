@@ -52,6 +52,8 @@ class ProjectsController < ApplicationController
 
   def create
     project = Project.new(project_params)
+    project.creator = current_user
+    project.category = Category.find(project.category_id)
 
     if project.save
       redirect_to(root_path)
@@ -68,6 +70,6 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:name)
+    params.require(:project).permit(:title, :category_id, :end_date, :funding_goal)
   end
 end

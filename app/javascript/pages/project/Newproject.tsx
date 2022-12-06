@@ -85,22 +85,17 @@ interface Props {
 export interface CategoryOption {
   readonly value: string;
   readonly label: string;
-  readonly color: string;
-  // readonly isFixed?: boolean;
-  // readonly isDisabled?: boolean;
 }
 const NewProject: FC<Props> = ({ errors, categories }) => {
   const [selectedDay, setSelectedDay] = useState<string>();
 
   const [categoryOptions, setCategoryOptions] = useState<CategoryOption[]>([]);
-  const [selectedCategoryOptions, setSelectedCategoryOptions] = useState<CategoryOption[]>([]);
+  const [selectedCategoryOptions, setSelectedCategoryOptions] = useState<CategoryOption>();
 
   useEffect(() => {
     const options = categories.map((category) => ({
       value: category.id,
       label: category.name,
-
-      color: getRandomColor(),
     }));
     setCategoryOptions(options);
   }, [categories]);
@@ -115,8 +110,8 @@ const NewProject: FC<Props> = ({ errors, categories }) => {
     setSelectedDay(value);
   };
 
-  const onChange = (option: readonly CategoryOption[], actionMeta: ActionMeta<CategoryOption>) => {
-    setSelectedCategoryOptions(option as CategoryOption[]);
+  const onChange = (option: CategoryOption | null) => {
+    setSelectedCategoryOptions(option as CategoryOption);
   };
 
   const {
@@ -132,7 +127,7 @@ const NewProject: FC<Props> = ({ errors, categories }) => {
     Inertia.post('/projects', {
       project: {
         ...data,
-        category_ids: selectedCategoryOptions.map((category) => category.value),
+        category_id: selectedCategoryOptions?.value,
         end_date: selectedDay,
       },
     } as unknown as RequestPayload);
@@ -225,12 +220,11 @@ const NewProject: FC<Props> = ({ errors, categories }) => {
           </label>
           <div className={styles.wrap_input100}>
             <Select
-              closeMenuOnSelect={false}
-              defaultValue={[]}
-              isMulti
+              // closeMenuOnSelect={false}
               options={categoryOptions}
-              styles={colourStyles}
+              // styles={colourStyles}
               onChange={onChange}
+              defaultValue={selectedCategoryOptions}
             />
 
             {/* <input
