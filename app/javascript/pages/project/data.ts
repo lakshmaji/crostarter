@@ -6,6 +6,21 @@ export interface ColourOption {
   readonly isDisabled?: boolean;
 }
 
+export const COLORS = [
+  '#00B8D9',
+  '#0052CC',
+  '#5243AA',
+  '#FF5630',
+  '#FF8B00',
+  '#FFC400',
+  '#36B37E',
+  '#00875A',
+  '#253858',
+  '#666666',
+];
+
+export const getRandomColor = () => COLORS[Math.floor(Math.random() * COLORS.length)];
+
 export const colourOptions: readonly ColourOption[] = [
   { value: 'ocean', label: 'Ocean', color: '#00B8D9', isFixed: true },
   { value: 'blue', label: 'Blue', color: '#0052CC', isDisabled: true },

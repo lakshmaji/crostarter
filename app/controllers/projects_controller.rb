@@ -40,8 +40,13 @@ class ProjectsController < ApplicationController
   end
 
   def new
+    categories = Category.all
+
     render(
       inertia: 'project/Newproject',
+      props: {
+        categories:,
+      },
     )
   end
 
@@ -53,7 +58,7 @@ class ProjectsController < ApplicationController
     else
       error_fields = project.errors.attribute_names
       errors = error_fields.map do |attribute|
-        { attribute => user.errors.where(attribute).first.full_message }
+        { attribute => project.errors.where(attribute).first.full_message }
       end.to_a
 
       redirect_to(new_project_path, inertia: { errors: })

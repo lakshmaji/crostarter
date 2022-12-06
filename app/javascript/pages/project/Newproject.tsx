@@ -5,8 +5,9 @@ import React, { FC, RefObject, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import styles from './new-project.module.scss';
 import chroma from 'chroma-js';
-import Select, { StylesConfig } from 'react-select';
-import { ColourOption, colourOptions } from './data';
+import Select, { ActionMeta, StylesConfig } from 'react-select';
+import { ColourOption, colourOptions, getRandomColor } from './data';
+import { useEffect } from 'react';
 
 const DateInput = React.lazy(() => import('./DateInput'));
 
@@ -73,18 +74,50 @@ interface ProjectFormData {
   category_id: string;
   funded?: number;
   category?: Category;
+  tagline?: string;
 }
 
 interface Props {
   errors: Array<Record<string, string>>;
+  categories: Category[];
 }
 
-const NewProject: FC<Props> = ({ errors }) => {
+export interface CategoryOption {
+  readonly value: string;
+  readonly label: string;
+  readonly color: string;
+  // readonly isFixed?: boolean;
+  // readonly isDisabled?: boolean;
+}
+const NewProject: FC<Props> = ({ errors, categories }) => {
+  const [selectedDay, setSelectedDay] = useState<string>();
+
+  const [categoryOptions, setCategoryOptions] = useState<CategoryOption[]>([]);
+  const [selectedCategoryOptions, setSelectedCategoryOptions] = useState<CategoryOption[]>([]);
+
+  useEffect(() => {
+    const options = categories.map((category) => ({
+      value: category.id,
+      label: category.name,
+
+      color: getRandomColor(),
+    }));
+    setCategoryOptions(options);
+  }, [categories]);
+
   const options = [
     { value: 'chocolate', label: 'Chocolate' },
     { value: 'strawberry', label: 'Strawberry' },
     { value: 'vanilla', label: 'Vanilla' },
   ];
+
+  const onChooseEndDate = (value: string) => {
+    setSelectedDay(value);
+  };
+
+  const onChange = (option: readonly CategoryOption[], actionMeta: ActionMeta<CategoryOption>) => {
+    setSelectedCategoryOptions(option as CategoryOption[]);
+  };
 
   const {
     register,
@@ -96,13 +129,23 @@ const NewProject: FC<Props> = ({ errors }) => {
   //   const [day, setDay] = React.useState<DayValue>(null);
 
   const onSubmit = (data: ProjectFormData) => {
-    Inertia.post('/projects', { user: data } as unknown as RequestPayload);
+    Inertia.post('/projects', {
+      project: {
+        ...data,
+        category_ids: selectedCategoryOptions.map((category) => category.value),
+        end_date: selectedDay,
+      },
+    } as unknown as RequestPayload);
   };
 
   return (
     <div className={styles.container_contact100}>
       <div className={styles.wrap_contact100}>
-        <form className={classNames(styles.contact100_form, 'validate-form')}>
+        <form
+          className={classNames(styles.contact100_form, 'validate-form')}
+          onSubmit={handleSubmit(onSubmit)}
+        >
+          {JSON.stringify(errors)}
           <span className={styles.contact100_form_title}>New Project</span>
           <label className={styles.label_input100} htmlFor='project-title'>
             Project Title
@@ -112,14 +155,19 @@ const NewProject: FC<Props> = ({ errors }) => {
               id='project-title'
               className={styles.input100}
               type='text'
-              name='project-title'
               placeholder='Project title'
+              {...register('title', { required: 'provide project title' })}
             />
             <span className={styles.focus_input100}></span>
           </div>
 
           <div className={classNames(styles.wrap_input100, styles.rs1, styles.validate_input)}>
-            <input className={styles.input100} type='text' name='tag-line' placeholder='tag line' />
+            <input
+              className={styles.input100}
+              type='text'
+              placeholder='tag line'
+              {...register('tagline', { required: 'provide tag line' })}
+            />
             <span className={styles.focus_input100}></span>
           </div>
           <label className={styles.label_input100} htmlFor='website'>
@@ -130,7 +178,7 @@ const NewProject: FC<Props> = ({ errors }) => {
               id='website'
               className={styles.input100}
               type='text'
-              name='website'
+              {...register('website', { required: 'provide website' })}
               placeholder='Eg. https://www.website.com'
             />
             <span className={styles.focus_input100}></span>
@@ -157,7 +205,7 @@ const NewProject: FC<Props> = ({ errors }) => {
               id='goal'
               className={styles.input100}
               type='text'
-              name='goal'
+              {...register('funding_goal', { required: 'provide goal amount' })}
               placeholder='Eg. 800,000'
             />
             <span className={styles.focus_input100}></span>
@@ -167,7 +215,7 @@ const NewProject: FC<Props> = ({ errors }) => {
             End Date
           </label>
           <div className={styles.wrap_input100}>
-            <DateInput />
+            <DateInput onChooseEndDate={onChooseEndDate} />
 
             <span className={styles.focus_input100}></span>
           </div>
@@ -178,10 +226,11 @@ const NewProject: FC<Props> = ({ errors }) => {
           <div className={styles.wrap_input100}>
             <Select
               closeMenuOnSelect={false}
-              defaultValue={[colourOptions[0], colourOptions[1]]}
+              defaultValue={[]}
               isMulti
-              options={colourOptions}
+              options={categoryOptions}
               styles={colourStyles}
+              onChange={onChange}
             />
 
             {/* <input
@@ -201,8 +250,8 @@ const NewProject: FC<Props> = ({ errors }) => {
             <textarea
               id='message'
               className={styles.input100}
-              name='message'
               placeholder='Please enter your comments...'
+              {...register('description', { required: 'provide goal amount' })}
             ></textarea>
             <span className={styles.focus_input100}></span>
           </div>
