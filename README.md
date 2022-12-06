@@ -68,12 +68,19 @@ bundle exec rubocop --A # force - better not use it
 ## TODO
 
 - [ ] Feature development
+
   - [x] Run seeds in fly deployment
+
+        ```bash
+          flyctl auth token
+          flyctl ssh console --command '/app/bin/rails db:seed RAILS_ENV=production DISABLE_DATABASE_ENVIRONMENT_CHECK=1' -t <token>
+        ```
+
   - [ ] create project
     - [ ] File Upload s3
       - [ ] create `cdk` project in typescript (bootstrap is not required for small project)
       - [ ] Run on CI actions
-      - [ ] RoR code to upload file (https://elliott-king.github.io/2020/09/s3-heroku-rails/)
+      - [ ] RoR code to upload file (<https://elliott-king.github.io/2020/09/s3-heroku-rails/>)
   - [ ] contribute
   - [ ] delete project
   - [ ] edit project
@@ -91,6 +98,7 @@ bundle exec rubocop --A # force - better not use it
   - [ ] PDF report generation for fund, and contributions (background job using sidekiq)
   - [ ] Use SASS variable, mixins
   - [ ] edit project
+
 - [ ] Playwright testing (e2e)
 - [ ] Github action for playwright
 - [ ] REST API
