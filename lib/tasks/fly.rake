@@ -38,12 +38,4 @@ namespace :fly do
     sh 'echo 10 > /proc/sys/vm/swappiness'
     sh 'swapon /swapfile'
   end
-
-  # FIXME: not really required
-  #   - adding this to have some information to be shown to end user 😛.
-  namespace :db do
-    task seed: :environment do
-      sh 'bin/rails db:recreate:seed'
-    end
-  end
 end
