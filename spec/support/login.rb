@@ -6,7 +6,10 @@ module UserLoginSpecHelpers
   include BCrypt
 
   def sign_in
-    user = { username: 'minion', password: Password.create(SecureRandom.hex) }
+    password = SecureRandom.hex
+    password_escaped = password.sub(/.*/, '[redacted]')
+
+    user = { username: 'minion', password: password_escaped }
     User.create(user)
     post sessions_path,
          params: {
