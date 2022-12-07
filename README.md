@@ -83,7 +83,6 @@ bundle exec rubocop --A # force - better not use it
       - [ ] RoR code to upload file (<https://elliott-king.github.io/2020/09/s3-heroku-rails/>)
   - [ ] contribute
   - [ ] delete project
-  - [ ] edit project
   - [ ] pagination
   - [ ] slider (with few random projects)
   - [ ] react-vis
