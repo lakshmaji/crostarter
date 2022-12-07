@@ -4,7 +4,7 @@ import { classNames } from '../../utils/styles';
 import React, { FC, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import styles from './new-project.module.scss';
-import Select, { ActionMeta, MultiValue, SingleValue, StylesConfig } from 'react-select';
+import Select, { MultiValue, SingleValue, StylesConfig } from 'react-select';
 import { useEffect } from 'react';
 import { faker } from '@faker-js/faker';
 import { ColourOption, getRandomColor } from './data';
