@@ -1,8 +1,7 @@
 import React, { FC, Suspense, useState } from 'react';
 import styles from './new-project.module.scss';
 import '@hassanmojab/react-modern-calendar-datepicker/lib/DatePicker.css';
-import DatePicker, { DayValue, DayRange, Day } from '@hassanmojab/react-modern-calendar-datepicker';
-import type { RenderInputProps } from '@hassanmojab/react-modern-calendar-datepicker';
+import DatePicker, { DayValue } from '@hassanmojab/react-modern-calendar-datepicker';
 
 interface Props {
   onChooseEndDate: (value: string) => void;

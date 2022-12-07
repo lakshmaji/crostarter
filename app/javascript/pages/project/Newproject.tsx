@@ -1,12 +1,10 @@
 import { Inertia, RequestPayload } from '@inertiajs/inertia';
 import { Category } from '../../models/category';
 import { classNames } from '../../utils/styles';
-import React, { FC, RefObject, useState } from 'react';
+import React, { FC, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import styles from './new-project.module.scss';
-import chroma from 'chroma-js';
-import Select, { ActionMeta, StylesConfig } from 'react-select';
-import { ColourOption, colourOptions, getRandomColor } from './data';
+import Select from 'react-select';
 import { useEffect } from 'react';
 import { faker } from '@faker-js/faker';
 
@@ -22,59 +20,6 @@ const defaultValues: ProjectFormData = {
   category_id: '',
   funded: +faker.commerce.price(1000, 2000),
   tagline: faker.company.catchPhrase(),
-};
-
-const colourStyles: StylesConfig<ColourOption, true> = {
-  control: (styles) => ({ ...styles, backgroundColor: 'white' }),
-  option: (styles, { data, isDisabled, isFocused, isSelected }) => {
-    const color = chroma(data.color);
-    return {
-      ...styles,
-      backgroundColor: isDisabled
-        ? undefined
-        : isSelected
-        ? data.color
-        : isFocused
-        ? color.alpha(0.1).css()
-        : undefined,
-      color: isDisabled
-        ? '#ccc'
-        : isSelected
-        ? chroma.contrast(color, 'white') > 2
-          ? 'white'
-          : 'black'
-        : data.color,
-      cursor: isDisabled ? 'not-allowed' : 'default',
-
-      ':active': {
-        ...styles[':active'],
-        backgroundColor: !isDisabled
-          ? isSelected
-            ? data.color
-            : color.alpha(0.3).css()
-          : undefined,
-      },
-    };
-  },
-  multiValue: (styles, { data }) => {
-    const color = chroma(data.color);
-    return {
-      ...styles,
-      backgroundColor: color.alpha(0.1).css(),
-    };
-  },
-  multiValueLabel: (styles, { data }) => ({
-    ...styles,
-    color: data.color,
-  }),
-  multiValueRemove: (styles, { data }) => ({
-    ...styles,
-    color: data.color,
-    ':hover': {
-      backgroundColor: data.color,
-      color: 'white',
-    },
-  }),
 };
 
 interface ProjectFormData {
@@ -113,12 +58,6 @@ const NewProject: FC<Props> = ({ errors, categories }) => {
     setCategoryOptions(options);
   }, [categories]);
 
-  const options = [
-    { value: 'chocolate', label: 'Chocolate' },
-    { value: 'strawberry', label: 'Strawberry' },
-    { value: 'vanilla', label: 'Vanilla' },
-  ];
-
   const onChooseEndDate = (value: string) => {
     setSelectedDay(value);
   };
@@ -131,10 +70,11 @@ const NewProject: FC<Props> = ({ errors, categories }) => {
     register,
     handleSubmit,
     formState: { errors: formErrors },
-    setError,
   } = useForm<ProjectFormData>({
     defaultValues,
   });
+
+  console.log(formErrors);
 
   //   const [day, setDay] = React.useState<DayValue>(null);
 

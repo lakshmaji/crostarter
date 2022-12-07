@@ -36,13 +36,13 @@ RSpec.describe ProjectsController, type: :request do
       }
     end
     let(:user) { User.create(username: 'minion', password: 'donottellanyone') }
+    let(:category) { Category.create(name: 'IoT') }
 
     before do
       # user = build(:user)
       # allow(controller).to receive(:current_user).and_return(user)
       # controller.stub(:current_user).and_return(user)
-      @category = Category.create(name: 'IoT')
-      allow(Category).to receive(:find).and_return(@category)
+      allow(Category).to receive(:find).and_return(category)
     end
 
     # before do
