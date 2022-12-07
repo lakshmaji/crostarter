@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
 
   include InertiaFlash
 
+  include InertiaCsrf
+
   inertia_share app_name: Rails.env['app.name']
 
   # Lazily
