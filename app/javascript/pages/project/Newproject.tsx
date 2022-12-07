@@ -4,22 +4,69 @@ import { classNames } from '../../utils/styles';
 import React, { FC, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import styles from './new-project.module.scss';
-import Select from 'react-select';
+import Select, { ActionMeta, MultiValue, SingleValue, StylesConfig } from 'react-select';
 import { useEffect } from 'react';
 import { faker } from '@faker-js/faker';
+import { ColourOption, getRandomColor } from './data';
+import chroma from 'chroma-js';
 
 const DateInput = React.lazy(() => import('./DateInput'));
 
-const defaultValues: ProjectFormData = {
-  title: faker.commerce.productName(),
-  website: faker.internet.domainName(),
-  description: faker.commerce.productDescription(),
-  end_date: '',
-  funding_goal: +faker.commerce.price(1000, 12000),
-  details: faker.lorem.paragraphs(3),
-  category_id: '',
-  funded: +faker.commerce.price(1000, 2000),
-  tagline: faker.company.catchPhrase(),
+const dot = (color = 'transparent') => ({
+  alignItems: 'center',
+  display: 'flex',
+
+  ':before': {
+    backgroundColor: color,
+    borderRadius: 10,
+    content: '" "',
+    display: 'block',
+    marginRight: 8,
+    height: 10,
+    width: 10,
+  },
+});
+
+const colourStyles: StylesConfig<ColourOption> = {
+  control: (styles) => ({ ...styles, backgroundColor: 'white' }),
+  option: (styles, { data, isDisabled, isFocused, isSelected }) => {
+    const color = chroma(data.color);
+    return {
+      ...styles,
+      backgroundColor: isDisabled
+        ? undefined
+        : isSelected
+        ? data.color
+        : isFocused
+        ? color.alpha(0.1).css()
+        : undefined,
+      color: isDisabled
+        ? '#ccc'
+        : isSelected
+        ? chroma.contrast(color, 'white') > 2
+          ? 'white'
+          : 'black'
+        : data.color,
+      cursor: isDisabled ? 'not-allowed' : 'default',
+
+      ':active': {
+        ...styles[':active'],
+        backgroundColor: !isDisabled
+          ? isSelected
+            ? data.color
+            : color.alpha(0.3).css()
+          : undefined,
+      },
+    };
+  },
+  input: (styles) => ({ ...styles, ...dot() }),
+  placeholder: (styles) => ({ ...styles, ...dot('#ccc') }),
+  singleValue: (styles, { data }) => ({ ...styles, ...dot(data.color) }),
+  clearIndicator: (base, state) => ({
+    ...base,
+    cursor: 'pointer',
+    color: state.isFocused ? 'blue' : 'black',
+  }),
 };
 
 interface ProjectFormData {
@@ -43,18 +90,34 @@ interface Props {
 export interface CategoryOption {
   readonly value: string;
   readonly label: string;
+  readonly color: string;
 }
 const NewProject: FC<Props> = ({ errors, categories }) => {
+  const defaultValues: ProjectFormData = {
+    title: faker.commerce.productName(),
+    website: faker.internet.domainName(),
+    description: faker.commerce.productDescription(),
+    end_date: '',
+    funding_goal: +faker.commerce.price(1000, 12000),
+    details: faker.lorem.paragraphs(3),
+    category_id: '',
+    funded: +faker.commerce.price(1000, 2000),
+    tagline: faker.company.catchPhrase(),
+  };
   const [selectedDay, setSelectedDay] = useState<string>();
 
   const [categoryOptions, setCategoryOptions] = useState<CategoryOption[]>([]);
   const [selectedCategoryOptions, setSelectedCategoryOptions] = useState<CategoryOption>();
 
   useEffect(() => {
-    const options = categories.map((category) => ({
-      value: category.id,
-      label: category.name,
-    }));
+    const options = categories.map(
+      (category) =>
+        ({
+          value: category.id,
+          label: category.name,
+          color: getRandomColor(),
+        } as CategoryOption),
+    );
     setCategoryOptions(options);
   }, [categories]);
 
@@ -62,7 +125,7 @@ const NewProject: FC<Props> = ({ errors, categories }) => {
     setSelectedDay(value);
   };
 
-  const onChange = (option: CategoryOption | null) => {
+  const onChange = (option: SingleValue<CategoryOption> | MultiValue<CategoryOption>): void => {
     setSelectedCategoryOptions(option as CategoryOption);
   };
 
@@ -177,7 +240,7 @@ const NewProject: FC<Props> = ({ errors, categories }) => {
             <Select
               // closeMenuOnSelect={false}
               options={categoryOptions}
-              // styles={colourStyles}
+              styles={colourStyles}
               onChange={onChange}
               defaultValue={selectedCategoryOptions}
             />
