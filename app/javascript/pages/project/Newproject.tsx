@@ -8,8 +8,21 @@ import chroma from 'chroma-js';
 import Select, { ActionMeta, StylesConfig } from 'react-select';
 import { ColourOption, colourOptions, getRandomColor } from './data';
 import { useEffect } from 'react';
+import { faker } from '@faker-js/faker';
 
 const DateInput = React.lazy(() => import('./DateInput'));
+
+const defaultValues: ProjectFormData = {
+  title: faker.commerce.productName(),
+  website: faker.internet.domainName(),
+  description: faker.commerce.productDescription(),
+  end_date: '',
+  funding_goal: +faker.commerce.price(1000, 12000),
+  details: faker.lorem.paragraphs(3),
+  category_id: '',
+  funded: +faker.commerce.price(1000, 2000),
+  tagline: faker.company.catchPhrase(),
+};
 
 const colourStyles: StylesConfig<ColourOption, true> = {
   control: (styles) => ({ ...styles, backgroundColor: 'white' }),
@@ -73,7 +86,7 @@ interface ProjectFormData {
   details: string;
   category_id: string;
   funded?: number;
-  category?: Category;
+  // category?: Category;
   tagline?: string;
 }
 
@@ -119,7 +132,9 @@ const NewProject: FC<Props> = ({ errors, categories }) => {
     handleSubmit,
     formState: { errors: formErrors },
     setError,
-  } = useForm<ProjectFormData>();
+  } = useForm<ProjectFormData>({
+    defaultValues,
+  });
 
   //   const [day, setDay] = React.useState<DayValue>(null);
 
@@ -238,7 +253,7 @@ const NewProject: FC<Props> = ({ errors, categories }) => {
           </div>
 
           <label className={styles.label_input100} htmlFor='message'>
-            Details *
+            Description *
           </label>
           <div className={classNames(styles.wrap_input100, styles.validateinput)}>
             <textarea
