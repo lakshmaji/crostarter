@@ -77,15 +77,20 @@ bundle exec rubocop --A # force - better not use it
         ```
 
   - [ ] create project
+    - [x] save project in db
     - [ ] File Upload s3
       - [ ] create `cdk` project in typescript (bootstrap is not required for small project)
       - [ ] Run on CI actions
       - [ ] RoR code to upload file (<https://elliott-king.github.io/2020/09/s3-heroku-rails/>)
+  - [x] fix csrf token issue, while creating new project
+  - [ ] my projects
+  - [x] handle http Error in a page
   - [ ] contribute
   - [ ] delete project
+  - [ ] edit project
   - [ ] pagination
   - [ ] slider (with few random projects)
-  - [ ] react-vis
+  - [x] react-vis
   - [ ] product listing updates
   - [ ] payment gateway integration (stripe)
   - [ ] Elastic search integration
@@ -96,7 +101,6 @@ bundle exec rubocop --A # force - better not use it
   - [ ] rate limiter
   - [ ] PDF report generation for fund, and contributions (background job using sidekiq)
   - [ ] Use SASS variable, mixins
-  - [ ] edit project
 
 - [ ] Playwright testing (e2e)
 - [ ] Github action for playwright
