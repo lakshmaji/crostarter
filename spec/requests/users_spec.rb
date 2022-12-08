@@ -36,7 +36,7 @@ RSpec.describe 'Users', type: :request do
              params: {
                user: valid_attributes,
              }
-        expect(response).to redirect_to(root_path)
+        expect(response).to redirect_to(new_session_path)
       end
 
       it 'has 1 new user record' do
