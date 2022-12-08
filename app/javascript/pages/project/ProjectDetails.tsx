@@ -1,11 +1,15 @@
 import { InertiaLink } from '@inertiajs/inertia-react';
-import React, { Suspense } from 'react';
+import { IProject } from 'app/javascript/models/project';
+import React, { FC, Suspense } from 'react';
 import { classNames } from '../../utils/styles';
 import styles from './project-details.module.scss';
 
 const ProjectStats = React.lazy(() => import('./ProjectStats'));
 
-const ProjectDetails = () => {
+interface Props {
+  project: IProject;
+}
+const ProjectDetails: FC<Props> = ({ project }) => {
   return (
     <>
       <section>
@@ -22,22 +26,9 @@ const ProjectDetails = () => {
                 </div>
               </div>
               <div className={styles.yd_flex_2}>
-                <h3 className={styles.subtitle}>category</h3>
-                <h2 className={styles.title}>title comes here</h2>
-                <p className={styles.description}>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita cum hic qui
-                  laborum repudiandae ipsa porro ab facere, perspiciatis, voluptatibus explicabo
-                  praesentium blanditiis. Odit voluptatem porro ullam, numquam expedita ipsa! Nam
-                  modi odio earum debitis, voluptatum laborum atque consectetur labore sapiente at?
-                  Quam dolorem aut voluptatem sapiente odit laudantium illo veritatis praesentium
-                  dolor, debitis adipisci quo qui vitae animi quae. Hic voluptas ad, possimus
-                  distinctio esse quas exercitationem vel minima quibusdam molestias nostrum, a
-                  incidunt ab sit rerum voluptates aperiam minus sunt distinctio praesentium! Enim
-                  corrupti atque odit nostrum architecto reiciendis inventore impedit? Odio
-                  provident possimus dolor ea natus sunt officia vel dolores, tempore quae suscipit
-                  sed rem maiores esse aut? Cum, assumenda id! Nemo et asperiores laborum laudantium
-                  fugit aliquam eaque veritatis.
-                </p>
+                <h3 className={styles.subtitle}>{project.category?.name}</h3>
+                <h2 className={styles.title}>{project.title}</h2>
+                <p className={styles.description}>{project.description}</p>
                 <button className={styles.contribute}>Contribute</button>
               </div>
             </div>
@@ -129,21 +120,13 @@ const ProjectDetails = () => {
           <div className={styles.container}>
             <div className={styles.yd_flex}>
               <div className={styles.yd_flex_1}>
-                <h3 className={styles.subtitle}>category</h3>
+                <h3 className={styles.subtitle}>{project.category?.name}</h3>
                 <h2 className={styles.title}>title comes here</h2>
                 <p className={styles.description}>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita cum hic qui
-                  laborum repudiandae ipsa porro ab facere, perspiciatis, voluptatibus explicabo
-                  praesentium blanditiis. Odit voluptatem porro ullam, numquam expedita ipsa! Nam
-                  modi odio earum debitis, voluptatum laborum atque consectetur labore sapiente at?
-                  Quam dolorem aut voluptatem sapiente odit laudantium illo veritatis praesentium
-                  dolor, debitis adipisci quo qui vitae animi quae. Hic voluptas ad, possimus
-                  distinctio esse quas exercitationem vel minima quibusdam molestias nostrum, a
-                  incidunt ab sit rerum voluptates aperiam minus sunt distinctio praesentium! Enim
-                  corrupti atque odit nostrum architecto reiciendis inventore impedit? Odio
-                  provident possimus dolor ea natus sunt officia vel dolores, tempore quae suscipit
-                  sed rem maiores esse aut? Cum, assumenda id! Nemo et asperiores laborum laudantium
-                  fugit aliquam eaque veritatis.
+                  {project.details}
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit, sit. At
+                  provident veniam maiores, iusto odio minus inventore saepe nesciunt unde
+                  aspernatur fugiat, voluptates in obcaecati magni perferendis quisquam tempore.
                 </p>
                 <button className={styles.contribute}>Contribute</button>
               </div>
