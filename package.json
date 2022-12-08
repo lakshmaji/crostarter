@@ -10,13 +10,12 @@
     "@inertiajs/inertia": "0.11.1",
     "@inertiajs/inertia-react": "0.8.1",
     "@inertiajs/server": "0.1.0",
-    "chart.js": "4.0.1",
     "chroma-js": "^2.4.2",
     "react": "18.2.0",
-    "react-chartjs-2": "5.0.1",
     "react-dom": "18.2.0",
     "react-hook-form": "7.38.0",
     "react-select": "^5.6.1",
+    "recharts": "^2.2.0",
     "vite-plugin-ruby": "3.1.0"
   },
   "scripts": {
@@ -38,6 +37,7 @@
     "@types/chroma-js": "^2.1.4",
     "@types/react": "18.0.21",
     "@types/react-dom": "18.0.6",
+    "@types/react-virtualized": "^9.21.21",
     "@typescript-eslint/eslint-plugin": "5.26.0",
     "@typescript-eslint/parser": "5.26.0",
     "@vitejs/plugin-react": "2.1.0",

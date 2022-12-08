@@ -1,70 +1,104 @@
+import { faker } from '@faker-js/faker';
 import React from 'react';
-import styles from './project-details.module.scss';
 import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
+  AreaChart,
+  Area,
+  XAxis,
+  YAxis,
+  CartesianGrid,
   Tooltip,
-  Filler,
   Legend,
-} from 'chart.js';
-import { Line } from 'react-chartjs-2';
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Filler,
-  Legend,
-);
+  ResponsiveContainer,
+  ReferenceLine,
+} from 'recharts';
+import styles from './project-details.module.scss';
 
-export const options = {
-  responsive: true,
-  plugins: {
-    legend: {
-      position: 'top' as const,
-    },
-    title: {
-      display: true,
-      text: 'Chart.js Line Chart',
-    },
-    customCanvasBackgroundColor: {
-      color: 'lightGreen',
-    },
-  },
-};
+const EXPECTED = 5000;
+const contributions: any[] = [];
 
-const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+let accumulated = 0;
+let current = 0;
+do {
+  const prevAcc = accumulated;
+  current += +faker.commerce.price(10, 500);
+  accumulated += current;
+  const needed = EXPECTED - accumulated;
 
-export const data = {
-  labels,
-  datasets: [
-    {
-      fill: true,
-      label: 'Dataset 2',
-      data: labels.map(() => Math.random()),
-      borderColor: 'rgb(53, 162, 235)',
-      backgroundColor: 'rgba(53, 162, 235, 0.5)',
-    },
-  ],
-};
+  const record = {
+    ts: faker.date.betweens('2020-01-01T00:00:00.000Z', '2030-01-01T00:00:00.000Z'),
+    expected: EXPECTED,
+    received: current,
+    accumulated,
+    needed: needed > 0 ? needed : 0,
+    prevAcc: prevAcc,
+  };
+  contributions.push(record);
+} while (accumulated <= EXPECTED);
+console.log('bello ', contributions, current, EXPECTED);
+
+// const data = sortByMonth(contributions);
+const data = contributions
+  .sort(function (a, b) {
+    return new Date(a.ts).getTime() - new Date(b.ts).getTime();
+  })
+  .map((c) => {
+    const d = new Date(c.ts[0]);
+    const options = {
+      weekday: undefined,
+      year: 'numeric',
+      month: 'short',
+      day: undefined,
+    };
+    console.log('bello ', d, c);
+
+    return {
+      ...c,
+      month: d.toLocaleDateString('en-IN', options),
+    };
+  });
 
 const ProjectStats = () => {
   return (
-    <div>
-      <Line options={options} data={data} />
-      <div className={styles.f_image}>
-        <img
-          className={styles.image}
-          src='http://ydirection.com/Fold/assets/images/feature4.png'
-          alt='Feature'
-        />
-      </div>
+    <div className={styles.f_image}>
+      <ResponsiveContainer width={600} height='100%'>
+        <AreaChart
+          // width={600}
+          height={400}
+          data={data}
+          margin={{
+            top: 0,
+            right: 0,
+            left: 0,
+            bottom: 0,
+          }}
+        >
+          <CartesianGrid strokeDasharray='3 3' />
+          <ReferenceLine y={4800} label='Goal' stroke='#ea8ed9' strokeDasharray='3 1' />
+
+          <XAxis dataKey='month' />
+          <Legend verticalAlign='top' height={36} />
+
+          <YAxis hide></YAxis>
+          <Tooltip />
+          <Area fillOpacity={1} type='monotone' dataKey='needed' stroke='#11b094' fill='#11b094' />
+
+          <Area
+            fillOpacity={1}
+            type='monotone'
+            dataKey='accumulated'
+            stroke='#6660f8'
+            fill='#6660f8'
+          />
+          <Area fillOpacity={1} type='monotone' dataKey='prevAcc' stroke='#e5abdc' fill='#e5abdc' />
+          <Area
+            fillOpacity={1}
+            type='monotone'
+            dataKey='received'
+            stroke='#63bffc'
+            fill='#63bffc'
+          />
+        </AreaChart>
+      </ResponsiveContainer>
     </div>
   );
 };
