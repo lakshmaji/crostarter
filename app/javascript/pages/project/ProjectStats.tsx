@@ -34,22 +34,19 @@ do {
   };
   contributions.push(record);
 } while (accumulated <= EXPECTED);
-console.log('bello ', contributions, current, EXPECTED);
 
-// const data = sortByMonth(contributions);
 const data = contributions
   .sort(function (a, b) {
     return new Date(a.ts).getTime() - new Date(b.ts).getTime();
   })
   .map((c) => {
     const d = new Date(c.ts[0]);
-    const options = {
+    const options: Intl.DateTimeFormatOptions = {
       weekday: undefined,
       year: 'numeric',
       month: 'short',
       day: undefined,
     };
-    console.log('bello ', d, c);
 
     return {
       ...c,
