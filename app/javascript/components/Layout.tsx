@@ -14,15 +14,17 @@ const Layout: FC<Props> = ({ children }) => {
       <Header />
 
       <div
-        style={{
-          marginTop: 70,
-        }}
+        style={
+          {
+            // marginTop: 70,
+          }
+        }
       >
         {children}
       </div>
 
       <section style={{ background: '#1e266d' }}>
-        <NewsLetter />
+        {<NewsLetter />}
         <Footer />
       </section>
     </>

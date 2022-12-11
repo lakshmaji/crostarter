@@ -1,0 +1,69 @@
+.container {
+  //   background: #419be0;
+}
+
+.slick_slide {
+  // border-bottom: 2px solid transparent;
+
+  div {
+    // margin-right: 1px;
+    // margin-left: 1px;
+  }
+  // .slick-active {
+  //   border-bottom: 3px solid #1b2430;
+  //   border-width: 20%;
+  // }
+}
+.arrow_color {
+  &:before {
+    color: #181d31;
+  }
+}
+
+.banana {
+  background: rebeccapurple !important;
+  margin: 20px;
+}
+
+.item {
+  text-align: center;
+  color: #717171;
+  min-width: 56px;
+  gap: 8px;
+  cursor: pointer;
+  // border: 1px dashed #717171;
+  padding: 18px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+  // margin: 5px;
+  margin-right: 5px;
+
+  .icon {
+    opacity: 0.6425339366515838;
+  }
+  .text {
+    white-space: nowrap;
+    line-height: 16px;
+    font-weight: 100;
+    font-size: 12px;
+    -webkit-tap-highlight-color: transparent;
+  }
+  &:hover {
+    color: #fff;
+    // border: 1px solid black;
+
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    // box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
+    box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    background: #1b2430;
+  }
+}
+
+.slick-current {
+  background: red !important;
+}
