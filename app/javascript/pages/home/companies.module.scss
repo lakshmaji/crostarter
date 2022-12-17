@@ -1,7 +1,7 @@
 :root {
   --color-text: white;
   --color-bg: white;
-  --color-bg-accent: rgb(255, 153, 1);
+  --color-bg-accent: #202142; // rgb(255, 153, 1);
   --size: clamp(10rem, 1rem + 40vmin, 10rem);
   --gap: calc(var(--size) / 14);
   --scroll-end: calc(-100% - var(--gap));

@@ -46,7 +46,7 @@ const Categories: FC<Props> = (props) => {
           <div className={styles.wrapper}>
             <div className={styles.slider_wrapper}>
               Categories
-              <div className={styles.slider}>
+              {/* <div className={styles.slider}>
                 {props.categories.map((item, i) => {
                   return (
                     <div
@@ -58,14 +58,14 @@ const Categories: FC<Props> = (props) => {
                       style={{
                         // background: faker.helpers.arrayElement(COLOR_CODES),
                         color: faker.helpers.arrayElement(COLOR_CODES),
-                        borderBottom: `2px dashed ${faker.helpers.arrayElement(COLOR_CODES)}`,
+                        // borderBottom: `2px dashed ${faker.helpers.arrayElement(COLOR_CODES)}`,
                       }}
                     >
                       {item.name}
                     </div>
                   );
                 })}
-              </div>
+              </div> */}
             </div>
             <p>Lorem ipsum adipisicing elit. Reprehenderit magnam laboriosam, , minima laborum.</p>
           </div>

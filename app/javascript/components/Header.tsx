@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './header.module.scss';
-import { InertiaLink, usePage } from '@inertiajs/inertia-react';
+import { InertiaLink, Link, usePage } from '@inertiajs/inertia-react';
 import { classNames } from '../utils/styles';
 import Greeting from './Greeting';
 import {
@@ -27,7 +27,9 @@ const Header = () => {
         className={styles.logo}
       /> */}
       <div className={styles.logo_category}>
-        <Logo />
+        <Link href='/'>
+          <Logo />
+        </Link>
         {/* <ul className={styles.menu}>
           <li>
             <a href='https://lakki.com' className={styles.menu_item}>
@@ -44,14 +46,14 @@ const Header = () => {
       <div className={styles.user}>
         <ul className={styles.menu}>
           <li>
-            <a href='https://lakki.com' className={styles.menu_item}>
+            <Link href='/categories' className={styles.menu_item}>
               Explore
-            </a>
+            </Link>
           </li>
           <li>
-            <a href='https://lakki.com' className={styles.menu_item}>
+            <Link href='/projects/new' className={styles.menu_item}>
               Start project
-            </a>
+            </Link>
           </li>
         </ul>
 
@@ -68,12 +70,12 @@ const Header = () => {
             />
 
             <div className={styles.logout_btn}>
-              <a href='/' className={styles.link}>
+              <Link className={styles.link} href='/exit' method='get' as='button' type='button'>
                 Logout
                 <span className={styles.icon}>
                   <IoLockClosedOutline />
                 </span>
-              </a>
+              </Link>
             </div>
           </>
         ) : (
@@ -81,12 +83,12 @@ const Header = () => {
             <IoLogoGithub className={styles.ionicon} />
             <IoLogoLinkedin className={styles.ionicon} />
             <div className={styles.logout_btn}>
-              <a href='/' className={styles.link}>
+              <Link href='/sessions/new' className={styles.link}>
                 Get started
                 <span className={styles.icon}>
                   <IoChevronForwardCircle />
                 </span>
-              </a>
+              </Link>
             </div>
           </>
         )}

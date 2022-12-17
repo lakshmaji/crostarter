@@ -1,6 +1,6 @@
 .content {
   width: 100vw;
-  height: 45vh;
+  height: 20vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -80,11 +80,13 @@
 
 .container {
   padding: 10rem;
+  padding-top: 1rem;
+
   .my_masonry_grid {
     display: -webkit-box; /* Not needed if autoprefixing */
     display: -ms-flexbox; /* Not needed if autoprefixing */
     display: flex;
-    margin-left: -30px; /* gutter size offset */
+    margin: 0 auto; /* gutter size offset */
     width: auto;
   }
   .my_masonry_grid_column {
@@ -109,13 +111,17 @@
         color: #fff;
       }
       .text {
-        font-size: 5rem;
+        font-size: 3rem;
         color: #fff;
+        line-height: 9rem;
+        font-family: 'Lora rev=1', Helvetica, serif;
+        font-weight: 100;
       }
       .desc {
-        padding: 10px;
-        font-size: 2rem;
+        padding: 15px;
+        font-size: 1.2rem;
         color: #fff;
+        font-family: 'Lora rev=1', Helvetica, serif;
       }
     }
   }

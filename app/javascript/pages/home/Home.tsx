@@ -1,5 +1,6 @@
 import { faker } from '@faker-js/faker';
-import React from 'react';
+import { Category } from '../../models/category';
+import React, { FC } from 'react';
 import {
   IoAddCircleSharp,
   IoBusiness,
@@ -18,8 +19,15 @@ import styles from './home.module.scss';
 import HowItWorks from './HowItWorks';
 import RecommendedProjects from './RecommendedProjects';
 import Stats from './stats';
+import { IProject } from '../../models/project';
 
-const Home = () => {
+interface Props {
+  categories: Category[];
+  trending_projects: IProject[];
+  recommended_projects: IProject[];
+}
+
+const Home: FC<Props> = ({ categories, trending_projects, recommended_projects }) => {
   function renderIcon(step: any) {
     const Com = step.icon;
     return (
@@ -35,12 +43,12 @@ const Home = () => {
           <div className={styles.card}>
             <div className={styles.header}>
               <div className={styles.header_body}>
-                <h1 className={styles.title}>Illustration Design</h1>
+                <h1 className={styles.title}>Crowd funding</h1>
                 <p className={styles.tag_line}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Lorem ipsum sit amet consectetur dolor, adipiscing elit.
                 </p>
                 <div className={styles.footer}>
-                  <a href='/' className={styles.btn}>
+                  <a href='/projects' className={styles.btn}>
                     {/* <span className={styles.icon} > */}
                     {/* </span> */}
                     Get Started
@@ -60,7 +68,7 @@ const Home = () => {
         </div>
       </section>
       <Stats />
-      <FeaturedProjects />
+      <FeaturedProjects trending_projects={trending_projects} />
       <HowItWorks />
       {/* <section>
         <div className={styles.how_it_works}>
@@ -104,9 +112,9 @@ const Home = () => {
           })}
         </div>
       </section> */}
-      <FaeturedCat />
+      <FaeturedCat categories={categories} />
 
-      <RecommendedProjects />
+      <RecommendedProjects recommended_projects={recommended_projects} />
       <CompaniesList />
     </>
   );
