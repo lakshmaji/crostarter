@@ -64,7 +64,7 @@ const Header = () => {
         {auth ? (
           <>
             <img
-              src='https://images.unsplash.com/photo-1639149888905-fb39731f2e6c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fHVzZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=400&q=60'
+              src='https://avatars.githubusercontent.com/u/14037682?v=4'
               alt=''
               className={styles.user_image}
             />
@@ -80,8 +80,12 @@ const Header = () => {
           </>
         ) : (
           <>
-            <IoLogoGithub className={styles.ionicon} />
-            <IoLogoLinkedin className={styles.ionicon} />
+            <a className={styles.icon_btn} href='https://github.com/lakshmaji'>
+              <IoLogoGithub className={styles.ionicon} />
+            </a>
+            <a className={styles.icon_btn} href='https://in.linkedin.com/in/lakshmajee'>
+              <IoLogoLinkedin className={styles.ionicon} />
+            </a>
             <div className={styles.logout_btn}>
               <Link href='/sessions/new' className={styles.link}>
                 Get started
