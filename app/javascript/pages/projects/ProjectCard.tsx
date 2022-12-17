@@ -1,16 +1,16 @@
 import React, { FC } from 'react';
 import { IProject } from '../../models/project';
 import styles from './project-card.module.scss';
-import { Link } from '@inertiajs/inertia-react';
+import { IoChevronForwardCircle } from 'react-icons/io5';
 
 interface Props {
   project: IProject;
 }
 
 const ProjectCard: FC<Props> = ({ project }) => {
-  const dateRemaining = (end_date: string) => {
-    return end_date;
-  };
+  // const dateRemaining = () => {
+  //   return project.end_date;
+  // };
 
   const calculatePercent = () => Math.floor(project.funded || (0 / project.funding_goal) * 100);
 
@@ -20,38 +20,57 @@ const ProjectCard: FC<Props> = ({ project }) => {
       <img className="img" src={props.project.project_img} />
     </Link> */}
 
-      <div className={styles.description}>
-        <div className={styles.category}>
-          <h4>{project.category?.name}</h4>
-        </div>
-        <div className={styles['title-wrapper']}>
-          <span className={styles.title}>{project.title}:</span>{' '}
-          <span className={styles.modified}>{project.updated_at}</span>
-        </div>
-
+      <div className={styles.header}>
         <div className={styles.author}>
           <img
             src={'https://sc01.alicdn.com/kf/UT8.CaXX2NXXXagOFbXC/fresh-navel-oranges.jpg'}
             alt='User icon'
             className={styles.avatar}
           />
-          by: <span>{'project.creator'}</span>
+          <span>{'project.creator'}</span>
         </div>
-        {/* <Line percent={percent} strokeWidth="2" strokeColor="#2BDE73" /> */}
+        <h2 className={styles.title}>{project.title}</h2>
+      </div>
+      <div className={styles.project_image}>
+        <img
+          src='https://mobirise.com/extensions/toolm5/illustration-design/assets/images/features1.jpg'
+          alt='pro name'
+        />
+      </div>
+      <div className={styles.footer}>
+        <div className={styles.computes}>
+          <a href='/' className={styles.chip}>
+            {project.category?.name}
+          </a>
+          <p className={styles.funded}>{calculatePercent()}% funded</p>
+        </div>
+        <div className={styles.eye}>
+          <a href='/' className={styles.btn}>
+            Contribute
+            <IoChevronForwardCircle className={styles.btn_icon} />
+          </a>
+          <p className={styles.funded}>$7675</p>
+        </div>
+      </div>
+
+      {/* <div className={styles.description}>
+        <div className={styles.category}>
+          <h4>{project.category?.name}</h4>
+        </div>
+        <div className={styles['title-wrapper']}>
+          
+          <span className={styles.modified}>{project.updated_at}</span>
+        </div>
         <div className={styles.pledged}>
           $<span>{project.funding_goal}</span>
           <span className={styles.stats}>pledged</span>
-        </div>
-        <div className={styles.funded}>
-          <span>{calculatePercent()}%</span>
-          <span className={styles.stats}>funded</span>
         </div>
         <div className={styles.remaining}>
           <span>{dateRemaining(project.end_date)}</span>
           <span className={styles.stats}>days to go</span>
         </div>
         <Link href={`/projects/${project.id}`}>View</Link>
-      </div>
+      </div> */}
     </div>
   );
 };

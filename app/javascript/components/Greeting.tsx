@@ -27,6 +27,30 @@ const PersonalGreeting = () => {
       <div className={styles['dropdown-content']}>
         <div className={styles.background} />
         <p>
+          My Projects
+          <Link
+            href='/myprojects'
+            method='get'
+            as='button'
+            type='button'
+            className={styles['header-button']}
+          >
+            Manage
+          </Link>
+        </p>
+        <p>
+          My Profile
+          <Link
+            href='/profile'
+            method='get'
+            as='button'
+            type='button'
+            className={styles['header-button']}
+          >
+            Profile
+          </Link>
+        </p>
+        <p>
           You&apos;re logged in as <span>{auth.user.name}</span>
           <Link
             href='/exit'

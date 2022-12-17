@@ -11,6 +11,12 @@ categories = %w[
   Productivity
   Sports
   Technology
+  Craft
+  Publishing
+  Fashion
+  For\ Kids
+  Robots
+  Sci-Fi\ and\ Fantasy
 ]
 
 categories.each { |category| Category.create(name: category) }

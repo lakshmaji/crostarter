@@ -109,3 +109,5 @@ bundle exec rubocop --A # force - better not use it
   - [ ] serializer
   - [ ] jwt
 - [ ] GraphQL
+
+---

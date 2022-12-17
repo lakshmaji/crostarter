@@ -1,0 +1,150 @@
+$color_1: #242e4c;
+$color_2: #5956d9;
+$color_3: white;
+$color_4: #ef5480;
+
+.container {
+  font-size: 12px;
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+  display: flex;
+  .sidebar {
+    width: 100%;
+    max-width: 23rem;
+    padding: 2rem;
+    color: $color_1;
+    .heading {
+      font-size: 2.5rem;
+      padding: 1rem;
+      margin-bottom: 2rem;
+    }
+    a {
+      display: inline-block;
+      color: $color_1;
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 2rem;
+      margin-bottom: 1rem;
+      border: solid 1px transparent;
+      &:hover {
+        background: #fcfcff;
+        border: solid 1px #202142;
+      }
+    }
+  }
+
+  .account_setting {
+    color: $color_1;
+    width: 45rem;
+    padding: 2rem;
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    hr {
+      border: solid 0.01rem #efefff;
+    }
+    .section {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .heading {
+      font-size: 2.5rem;
+      margin: 1rem 0;
+    }
+    .sub_heading {
+      font-size: 1.6rem;
+      font-weight: 600;
+      a {
+        color: $color_2;
+        font-weight: 600;
+      }
+    }
+    .row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .col {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+      }
+    }
+    span {
+      font-weight: 700;
+    }
+    .password {
+      .form_input {
+        width: 19rem;
+        font-size: 1.2rem;
+        outline: none;
+        padding: 1rem;
+        border: solid 0.2rem #efefff;
+        border-radius: 0.5rem;
+      }
+      button {
+        display: flex;
+        justify-content: center;
+        background: #202142;
+        color: $color_3;
+        font-size: 1.3rem;
+        width: 15rem;
+        padding: 1rem;
+        border: none;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        &:hover {
+          opacity: 0.9;
+        }
+      }
+      a {
+        color: $color_2;
+        font-weight: 600;
+      }
+    }
+    .delete {
+      a {
+        color: $color_4;
+      }
+    }
+  }
+}
+
+#change {
+  display: none;
+}
+@media only screen and (max-width: 975px) {
+  header {
+    .menu {
+      display: none;
+    }
+  }
+}
+@media only screen and (max-width: 785px) {
+  html {
+    font-size: 10px;
+  }
+}
+@media only screen and (max-width: 660px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+  #sidebar {
+    max-width: none;
+    text-align: center;
+    ul {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+@media only screen and (max-width: 445px) {
+  html {
+    font-size: 8px;
+  }
+}

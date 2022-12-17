@@ -7,8 +7,11 @@ const NewsLetter = () => {
       <div className={styles.cta_box}>
         <div className={styles.cta_box_inner}>
           <div className={styles.col}>
-            <h4>Start working</h4>
-            <h2>Fold is designed to meet all your needs. Ready to create your landing page ?</h2>
+            <h4>Receive Updates</h4>
+            <h2>
+              CroStarter is designed to fund all your needs. Forgot to mention company or project
+              idea, may be your own idea ?
+            </h2>
             <div className={styles.form}>
               <form
                 id='chimp-form'
@@ -28,7 +31,7 @@ const NewsLetter = () => {
                   placeholder='Type your email address'
                   autoComplete='off'
                 />
-                <input className={styles['submit-button']} type='submit' value='Sign me Up' />
+                <input className={styles['submit-button']} type='submit' value='Subscribe' />
               </form>
               <div id='response'></div>
             </div>

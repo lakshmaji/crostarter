@@ -1,45 +1,104 @@
 import React from 'react';
 import styles from './header.module.scss';
-import { InertiaLink } from '@inertiajs/inertia-react';
-import { classNames } from '../utils/styles';
-import Greeting from './Greeting';
+import { Link, usePage } from '@inertiajs/inertia-react';
+import {
+  IoChevronForwardCircle,
+  IoLockClosedOutline,
+  IoLogoGithub,
+  IoLogoLinkedin,
+} from 'react-icons/io5';
+import Logo from './logo/Logo';
+import { Page } from '@inertiajs/inertia';
+import { UsePageProps } from '../inertia';
 
 const Header = () => {
+  const { auth } = usePage<Page<UsePageProps>>().props;
+
   return (
-    <div className={styles.container}>
-      <div className={styles.left}>
-        <InertiaLink
-          href='/categories'
-          className={classNames(styles.nav_item, styles.explore, styles['green-hover'])}
-        >
-          <i className={classNames(styles.icon, 'fa fa-compass  compass')} aria-hidden='true'></i>
-          <span>Explore</span>
-        </InertiaLink>
-
-        <InertiaLink
-          href='/projects/new'
-          className={classNames(styles.nav_item, styles.start, styles['green-hover'])}
-        >
-          <span>Start a project</span>
-        </InertiaLink>
+    <header>
+      {/* <img
+        src='https://uidesigndaily.com/public/img/uidesigndaily-logo.svg'
+        alt=''
+        className={styles.logo}
+      /> */}
+      <div className={styles.logo_category}>
+        <Link href='/'>
+          <Logo />
+        </Link>
+        {/* <ul className={styles.menu}>
+          <li>
+            <a href='https://lakki.com' className={styles.menu_item}>
+              Explore
+            </a>
+          </li>
+          <li>
+            <a href='https://lakki.com' className={styles.menu_item}>
+              Start project
+            </a>
+          </li>
+        </ul> */}
       </div>
+      <div className={styles.user}>
+        <ul className={styles.menu}>
+          <li>
+            <Link href='/categories' className={styles.menu_item}>
+              Explore
+            </Link>
+          </li>
+          <li>
+            <Link href='/projects/new' className={styles.menu_item}>
+              Start project
+            </Link>
+          </li>
+        </ul>
 
-      <InertiaLink href='/' className={classNames(styles.logo, styles.nav_item)}>
-        <span id='logo'>
-          Cro<span className={styles.crank}>starter</span>
-        </span>
-      </InertiaLink>
+        {/* <div className={styles.notification}>
+          <IoNotificationsOutline className={styles.ionicon} />
+          <div className={styles.notification_status} />
+        </div> */}
+        {auth ? (
+          <>
+            <img
+              src='https://avatars.githubusercontent.com/u/14037682?v=4'
+              alt=''
+              className={styles.user_image}
+            />
 
-      <div className={classNames(styles.right)}>
-        <InertiaLink href='/search' className={classNames(styles.search)}>
-          <i className='fa fa-search' aria-hidden='true'></i>
-        </InertiaLink>
-
-        <div className={classNames(styles.nav_item, 'greeting')}>
-          <Greeting />
-        </div>
+            <div className={styles.logout_btn}>
+              <Link className={styles.link} href='/exit' method='get' as='button' type='button'>
+                Logout
+                <span className={styles.icon}>
+                  <IoLockClosedOutline />
+                </span>
+              </Link>
+            </div>
+          </>
+        ) : (
+          <>
+            <a className={styles.icon_btn} href='https://github.com/lakshmaji'>
+              <IoLogoGithub className={styles.ionicon} />
+            </a>
+            <a className={styles.icon_btn} href='https://in.linkedin.com/in/lakshmajee'>
+              <IoLogoLinkedin className={styles.ionicon} />
+            </a>
+            <div className={styles.logout_btn}>
+              <Link href='/sessions/new' className={styles.link}>
+                Get started
+                <span className={styles.icon}>
+                  <IoChevronForwardCircle />
+                </span>
+              </Link>
+            </div>
+          </>
+        )}
+        {/* <div className={styles.upload_image}>
+          <div className={styles.logout}>
+          <IoCloudUploadOutline className={styles.ionicon} />
+            Logout
+          </div>
+        </div> */}
       </div>
-    </div>
+    </header>
   );
 };
 

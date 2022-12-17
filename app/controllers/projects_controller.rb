@@ -5,6 +5,8 @@ class ProjectsController < ApplicationController
     projects = Project
       .includes(:category)
 
+    categories = Category.all
+
     render(
       inertia: 'projects/Projects',
       props: {
@@ -25,16 +27,32 @@ class ProjectsController < ApplicationController
               ],
               include: { category: { only: :name } },
             ),
+        categories:,
       },
     )
   end
 
   def show
-    project = Project.find(params[:id])
+    project = Project.includes(:category).find(params[:id])
     render(
       inertia: 'project/ProjectDetails',
       props: {
-        project:,
+        project: project.as_json(
+          only: [
+            :id,
+            :title,
+            :website,
+            :description,
+            :end_date, # ends at
+            :funding_goal,
+            :details,
+            :category_id,
+            :creator_id,
+            :created_at, # started at
+            :updated_at, # last seen
+          ],
+          include: { category: { only: :name } },
+        ),
       },
     )
   end
@@ -65,6 +83,35 @@ class ProjectsController < ApplicationController
 
       redirect_to(new_project_path, inertia: { errors: })
     end
+  end
+
+  def myprojects
+    projects = Project
+      .includes(:category)
+      .where(creator_id: current_user.id)
+
+    render(
+      inertia: 'users/projects/Projects',
+      props: {
+        projects: projects
+            .as_json(
+              only: [
+                :id,
+                :title,
+                :website,
+                :description,
+                :end_date, # ends at
+                :funding_goal,
+                :details,
+                :category_id,
+                :creator_id,
+                :created_at, # started at
+                :updated_at, # last seen
+              ],
+              include: { category: { only: :name } },
+            ),
+      },
+    )
   end
 
   private

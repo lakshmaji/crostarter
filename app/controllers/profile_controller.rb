@@ -5,7 +5,7 @@ require 'faker'
 class ProfileController < ApplicationController
   def index
     render(
-      inertia: 'feature1/Profile',
+      inertia: 'users/profile/Profile',
       props: {
         name: Faker::Name.name,
       },
