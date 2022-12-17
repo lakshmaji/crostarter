@@ -14,9 +14,9 @@ categories = %w[
   Craft
   Publishing
   Fashion
-  "For Kids"
+  For\ Kids
   Robots
-  "Sci-Fi and Fantasy"
+  Sci-Fi\ and\ Fantasy
 ]
 
 categories.each { |category| Category.create(name: category) }
