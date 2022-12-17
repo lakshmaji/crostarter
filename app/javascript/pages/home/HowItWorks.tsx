@@ -1,7 +1,5 @@
-import { classNames } from '../../utils/styles';
 import React from 'react';
 import styles from './how.module.scss';
-import { IoBandageOutline } from 'react-icons/io5';
 import Bro from './Bro';
 
 const HowItWorks = () => {

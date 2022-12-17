@@ -1,17 +1,6 @@
-import { faker } from '@faker-js/faker';
 import { Category } from '../../models/category';
 import React, { FC } from 'react';
-import {
-  IoAddCircleSharp,
-  IoBusiness,
-  IoChevronForwardCircle,
-  IoCloudUploadOutline,
-  IoLogoGithub,
-  IoLogoLinkedin,
-  IoLogoUsd,
-  IoNotificationsOutline,
-  IoNotificationsSharp,
-} from 'react-icons/io5';
+import { IoChevronForwardCircle } from 'react-icons/io5';
 import CompaniesList from './CompaniesList';
 import FaeturedCat from './FaeturedCat';
 import FeaturedProjects from './FeaturedProjects';
@@ -28,14 +17,14 @@ interface Props {
 }
 
 const Home: FC<Props> = ({ categories, trending_projects, recommended_projects }) => {
-  function renderIcon(step: any) {
-    const Com = step.icon;
-    return (
-      <div className={styles.icon}>
-        <Com />
-      </div>
-    );
-  }
+  // function renderIcon(step: any) {
+  //   const Com = step.icon;
+  //   return (
+  //     <div className={styles.icon}>
+  //       <Com />
+  //     </div>
+  //   );
+  // }
   return (
     <>
       <section className={styles.container}>

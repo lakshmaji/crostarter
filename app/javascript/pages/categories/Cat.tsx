@@ -3,7 +3,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider, { Settings } from 'react-slick';
 import styles from './cat.module.scss';
-import { IoChevronForwardCircleOutline, IoTrainOutline } from 'react-icons/io5';
+import { IoTrainOutline } from 'react-icons/io5';
 import { classNames } from '../../utils/styles';
 
 const SampleNextArrow: FC<any> = (props): JSX.Element => {

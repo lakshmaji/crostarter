@@ -1,8 +1,6 @@
 import React, { FC } from 'react';
 import styles from './rec.module.scss';
 import { IProject } from '../../models/project';
-import { IoChevronForwardCircle } from 'react-icons/io5';
-import { Link } from '@inertiajs/inertia-react';
 import RecommendedProject from './RecommendedProject';
 
 const IMAGES = [

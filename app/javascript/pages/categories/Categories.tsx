@@ -1,12 +1,9 @@
 import React from 'react';
 import type { FC } from 'react';
 import styles from './categories.module.scss';
-import Cat from './Cat';
 import Masonry from 'react-masonry-css';
 import { IoTrainOutline } from 'react-icons/io5';
-import chroma from 'chroma-js';
 import { faker } from '@faker-js/faker';
-import { classNames } from '../../utils/styles';
 
 const COLOR_CODES = [
   '#ff9f00',

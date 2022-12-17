@@ -1,16 +1,11 @@
 import React from 'react';
 import styles from './header.module.scss';
-import { InertiaLink, Link, usePage } from '@inertiajs/inertia-react';
-import { classNames } from '../utils/styles';
-import Greeting from './Greeting';
+import { Link, usePage } from '@inertiajs/inertia-react';
 import {
   IoChevronForwardCircle,
-  IoCloudUploadOutline,
   IoLockClosedOutline,
   IoLogoGithub,
   IoLogoLinkedin,
-  IoNotificationsOutline,
-  IoNotificationsSharp,
 } from 'react-icons/io5';
 import Logo from './logo/Logo';
 import { Page } from '@inertiajs/inertia';

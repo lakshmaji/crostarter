@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
 import { IProject } from '../../models/project';
 import styles from './project-card.module.scss';
-import { Link } from '@inertiajs/inertia-react';
 import { IoChevronForwardCircle } from 'react-icons/io5';
 
 interface Props {
@@ -9,9 +8,9 @@ interface Props {
 }
 
 const ProjectCard: FC<Props> = ({ project }) => {
-  const dateRemaining = (end_date: string) => {
-    return end_date;
-  };
+  // const dateRemaining = () => {
+  //   return project.end_date;
+  // };
 
   const calculatePercent = () => Math.floor(project.funded || (0 / project.funding_goal) * 100);
 
@@ -43,7 +42,7 @@ const ProjectCard: FC<Props> = ({ project }) => {
           <a href='/' className={styles.chip}>
             {project.category?.name}
           </a>
-          <p className={styles.funded}>20% funded</p>
+          <p className={styles.funded}>{calculatePercent()}% funded</p>
         </div>
         <div className={styles.eye}>
           <a href='/' className={styles.btn}>
