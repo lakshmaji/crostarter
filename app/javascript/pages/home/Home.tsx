@@ -1,6 +1,6 @@
 import { Category } from '../../models/category';
 import React, { FC } from 'react';
-import { IoChevronForwardCircle } from 'react-icons/io5';
+import { IoChevronForwardCircle } from '@react-icons/all-files/io5/IoChevronForwardCircle';
 import CompaniesList from './CompaniesList';
 import FaeturedCat from './FaeturedCat';
 import FeaturedProjects from './FeaturedProjects';
