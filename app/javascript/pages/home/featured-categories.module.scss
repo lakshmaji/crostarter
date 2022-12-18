@@ -1,0 +1,385 @@
+$color_1: rgb(91, 104, 123);
+$color_2: rgb(45, 57, 84);
+$color_3: rgb(74, 86, 130);
+$color_4: rgb(255, 255, 255);
+
+.section {
+  bottom: 0px;
+  box-sizing: border-box;
+
+  color: $color_1;
+
+  left: 0px;
+
+  position: relative;
+  right: 0px;
+
+  top: 0px;
+  background: rgb(254, 251, 242) none repeat scroll 0% 0% / auto padding-box border-box;
+
+  font: 15px / 22.5px Muli, sans-serif;
+
+  padding: 80px 0px;
+
+  .container {
+    color: $color_1;
+
+    border: 0px none rgb(91, 104, 123);
+    font: 15px / 22.5px Muli, sans-serif;
+    margin: 0px 120px;
+    padding: 0px 15px;
+
+    .header {
+      color: $color_1;
+
+      display: flex;
+      height: 90.5px;
+
+      transform-origin: 600px 45.25px;
+      border: 0px none rgb(91, 104, 123);
+      flex-flow: row wrap;
+      font: 15px / 22.5px Muli, sans-serif;
+      margin: 0px -15px;
+
+      .content {
+        bottom: 0px;
+        box-sizing: border-box;
+
+        color: $color_1;
+
+        height: 90.5px;
+
+        left: 0px;
+
+        max-width: 100%;
+
+        min-height: 1px;
+
+        min-width: auto;
+
+        position: relative;
+        right: 0px;
+
+        top: 0px;
+        flex: 0 0 100%;
+        font: 15px / 22.5px Muli, sans-serif;
+        padding: 0px 15px;
+
+        .title_wrapper {
+          color: $color_1;
+
+          height: 58.5px;
+
+          text-align: center;
+
+          transform-origin: 585px 29.25px;
+          border: 0px none rgb(91, 104, 123);
+          font: 15px / 22.5px Muli, sans-serif;
+          margin: 0px 0px 32px;
+          outline: rgb(91, 104, 123) none 0px;
+          .subtitle {
+            color: $color_1;
+
+            text-align: center;
+
+            transform-origin: 0px 0px;
+            border: 0px none rgb(91, 104, 123);
+            font: 15px / 22.5px Muli, sans-serif;
+            outline: rgb(91, 104, 123) none 0px;
+          }
+          .title {
+            block-size: 36px;
+
+            color: $color_2;
+
+            height: 36px;
+
+            text-align: center;
+
+            text-transform: capitalize;
+            transform-origin: 585px 18px;
+
+            border: 0px none rgb(45, 57, 84);
+            font: 600 30px / 36px Jost, sans-serif;
+            margin: 0px 0px 5px;
+            outline: rgb(45, 57, 84) none 0px;
+          }
+        }
+      }
+    }
+    .list {
+      color: $color_1;
+
+      display: flex;
+
+      flex-flow: row wrap;
+      font: 15px / 22.5px Muli, sans-serif;
+      margin: 0px -15px;
+
+      .card {
+        bottom: 0px;
+        box-sizing: border-box;
+
+        color: $color_1;
+
+        // height: 180px;
+
+        left: 0px;
+
+        // max-width: 16.6667%;
+
+        min-height: 1px;
+
+        min-width: auto;
+
+        position: relative;
+        right: 0px;
+
+        top: 0px;
+        transform-origin: 100px 90px;
+        width: 200px;
+        border: 0px none rgb(91, 104, 123);
+        flex: 0 0 16.6667%;
+        font: 15px / 22.5px Muli, sans-serif;
+        padding: 0px 15px;
+
+        .container {
+          align-items: center;
+          block-size: 150px;
+
+          color: $color_1;
+
+          display: flex;
+          height: 150px;
+
+          justify-content: center;
+
+          text-align: center;
+
+          width: 170px;
+          background: rgba(0, 0, 0, 0.03) none repeat scroll 0% 0% / auto padding-box border-box;
+          border: 1px solid rgb(241, 227, 224);
+          border-radius: 6px;
+          flex-flow: column nowrap;
+          font: 15px / 22.5px Muli, sans-serif;
+          margin: 0px 0px 30px;
+          outline: rgb(91, 104, 123) none 0px;
+          overflow: hidden;
+          transition: all 0.4s ease 0s;
+
+          .header {
+            block-size: 86px;
+            bottom: 0px;
+
+            color: $color_1;
+
+            height: 86px;
+
+            left: 0px;
+
+            max-width: 70px;
+
+            min-height: auto;
+
+            min-width: auto;
+
+            position: relative;
+            right: 0px;
+            text-align: center;
+
+            top: 0px;
+            transform-origin: 35px 43px;
+            width: 70px;
+            border: 0px none rgb(91, 104, 123);
+            font: 15px / 22.5px Muli, sans-serif;
+            outline: rgb(91, 104, 123) none 0px;
+            padding: 8px 0px;
+
+            .picture_link {
+              block-size: 70px;
+
+              color: $color_3;
+
+              display: block;
+              height: 70px;
+
+              text-align: center;
+
+              touch-action: manipulation;
+              transform-origin: 35px 35px;
+              width: 70px;
+              border: 0px none rgb(74, 86, 130);
+              font: 15px / 22.5px Muli, sans-serif;
+              outline: rgb(74, 86, 130) none 0px;
+
+              .picture {
+                block-size: 70px;
+
+                color: $color_3;
+
+                cursor: pointer;
+                height: 70px;
+
+                max-width: 100%;
+
+                text-align: center;
+
+                transform-origin: 35px 35px;
+                vertical-align: middle;
+                width: 70px;
+                border: 0px none rgb(74, 86, 130);
+                font: 15px / 22.5px Muli, sans-serif;
+                outline: rgb(74, 86, 130) none 0px;
+              }
+            }
+          }
+          .link_wrapper {
+            block-size: 34px;
+
+            color: $color_1;
+
+            height: 34px;
+
+            min-height: auto;
+
+            min-width: auto;
+            text-align: center;
+
+            transform-origin: 56.3164px 17px;
+            width: 112.633px;
+            border: 0px none rgb(91, 104, 123);
+            font: 15px / 22.5px Muli, sans-serif;
+            outline: rgb(91, 104, 123) none 0px;
+
+            .category {
+              block-size: 26px;
+
+              color: $color_2;
+
+              height: 26px;
+
+              letter-spacing: 0.5px;
+
+              text-align: center;
+
+              text-transform: capitalize;
+              transform-origin: 56.3164px 13px;
+              width: 112.633px;
+              border: 0px none rgb(45, 57, 84);
+              font: 600 13px / 26px Muli, sans-serif;
+              margin: 0px 0px 8px;
+              outline: rgb(45, 57, 84) none 0px;
+
+              .link_text {
+                color: $color_3;
+
+                letter-spacing: 0.5px;
+
+                text-align: center;
+
+                text-transform: capitalize;
+                touch-action: manipulation;
+                transform-origin: 0px 0px;
+                border: 0px none rgb(74, 86, 130);
+                font: 600 13px / 26px Muli, sans-serif;
+                outline: rgb(74, 86, 130) none 0px;
+              }
+            }
+          }
+        }
+      }
+      .footer {
+        block-size: 54px;
+        bottom: 0px;
+
+        color: $color_1;
+
+        height: 54px;
+
+        left: 0px;
+
+        max-width: 100%;
+
+        min-height: 1px;
+
+        min-width: auto;
+
+        position: relative;
+        right: 0px;
+        text-align: center;
+
+        top: 0px;
+        transform-origin: 600px 27px;
+        width: 1200px;
+        border: 0px none rgb(91, 104, 123);
+        flex: 0 0 100%;
+        font: 15px / 22.5px Muli, sans-serif;
+        outline: rgb(91, 104, 123) none 0px;
+        padding: 0px 15px;
+        &:after {
+          color: $color_1;
+
+          text-align: center;
+
+          border: 0px none rgb(91, 104, 123);
+          font: 15px / 22.5px Muli, sans-serif;
+          outline: rgb(91, 104, 123) none 0px;
+        }
+        &:before {
+          color: $color_1;
+
+          text-align: center;
+
+          border: 0px none rgb(91, 104, 123);
+          font: 15px / 22.5px Muli, sans-serif;
+          outline: rgb(91, 104, 123) none 0px;
+        }
+        .explore {
+          appearance: button;
+          block-size: 54px;
+
+          color: $color_4;
+
+          cursor: pointer;
+          height: 54px;
+
+          touch-action: manipulation;
+          transform-origin: 115.586px 27px;
+          user-select: none;
+          vertical-align: middle;
+          white-space: nowrap;
+          width: 231.172px;
+          background: rgb(93, 191, 19) none repeat scroll 0% 0% / auto padding-box border-box;
+          border: 2px solid rgb(93, 191, 19);
+          border-radius: 4px;
+          font: 16px / 20px Muli, sans-serif;
+          outline: rgb(255, 255, 255) none 0px;
+          padding: 15px 25px;
+          transition: all 0.4s ease 0s;
+          &:after {
+            color: $color_4;
+
+            cursor: pointer;
+
+            user-select: none;
+            white-space: nowrap;
+            border: 0px none rgb(255, 255, 255);
+            font: 16px / 20px Muli, sans-serif;
+            outline: rgb(255, 255, 255) none 0px;
+          }
+          &:before {
+            color: $color_4;
+
+            cursor: pointer;
+
+            user-select: none;
+            white-space: nowrap;
+            border: 0px none rgb(255, 255, 255);
+            font: 16px / 20px Muli, sans-serif;
+            outline: rgb(255, 255, 255) none 0px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,280 +1,80 @@
 .container {
-  block-size: 608.227px;
-  border-block-end-color: rgb(35, 35, 35);
-  border-block-start-color: rgb(35, 35, 35);
-  border-inline-end-color: rgb(35, 35, 35);
-  border-inline-start-color: rgb(35, 35, 35);
-  box-sizing: border-box;
-  caret-color: rgb(35, 35, 35);
   color: rgb(35, 35, 35);
-  column-rule-color: rgb(35, 35, 35);
-  height: 608.227px;
-  inline-size: 434.664px;
-  max-inline-size: 100%;
-  max-width: 100%;
-  min-block-size: auto;
+
+  width: 33%;
+
   min-height: auto;
-  min-inline-size: auto;
+
   min-width: auto;
   overflow-wrap: break-word;
-  padding-inline-end: 16px;
-  padding-inline-start: 16px;
-  perspective-origin: 217.328px 304.109px;
-  text-decoration: none solid rgb(35, 35, 35);
-  text-emphasis-color: rgb(35, 35, 35);
-  text-size-adjust: 100%;
-  transform-origin: 217.332px 304.113px;
-  width: 434.664px;
-  border: 0px none rgb(35, 35, 35);
+
   flex: 0 0 auto;
-  font: 16px / 24px Inter;
-  outline: rgb(35, 35, 35) none 0px;
   padding: 0px 16px;
 
-  &:after {
-    border-block-end-color: rgb(35, 35, 35);
-    border-block-start-color: rgb(35, 35, 35);
-    border-inline-end-color: rgb(35, 35, 35);
-    border-inline-start-color: rgb(35, 35, 35);
-    box-sizing: border-box;
-    caret-color: rgb(35, 35, 35);
-    color: rgb(35, 35, 35);
-    column-rule-color: rgb(35, 35, 35);
-    overflow-wrap: break-word;
-    text-decoration: none solid rgb(35, 35, 35);
-    text-emphasis-color: rgb(35, 35, 35);
-    text-size-adjust: 100%;
-    border: 0px none rgb(35, 35, 35);
-    font: 16px / 24px Inter;
-    outline: rgb(35, 35, 35) none 0px;
-  }
-
-  &:before {
-    border-block-end-color: rgb(35, 35, 35);
-    border-block-start-color: rgb(35, 35, 35);
-    border-inline-end-color: rgb(35, 35, 35);
-    border-inline-start-color: rgb(35, 35, 35);
-    box-sizing: border-box;
-    caret-color: rgb(35, 35, 35);
-    color: rgb(35, 35, 35);
-    column-rule-color: rgb(35, 35, 35);
-    overflow-wrap: break-word;
-    text-decoration: none solid rgb(35, 35, 35);
-    text-emphasis-color: rgb(35, 35, 35);
-    text-size-adjust: 100%;
-    border: 0px none rgb(35, 35, 35);
-    font: 16px / 24px Inter;
-    outline: rgb(35, 35, 35) none 0px;
-  }
-
   .card {
-    block-size: 608.227px;
-    border-block-end-color: rgb(35, 35, 35);
-    border-block-start-color: rgb(35, 35, 35);
-    border-end-end-radius: 32px;
-    border-end-start-radius: 32px;
-    border-inline-end-color: rgb(35, 35, 35);
-    border-inline-start-color: rgb(35, 35, 35);
-    border-start-end-radius: 32px;
-    border-start-start-radius: 32px;
     bottom: 0px;
-    box-sizing: border-box;
-    caret-color: rgb(35, 35, 35);
+
     color: rgb(35, 35, 35);
-    column-rule-color: rgb(35, 35, 35);
+
     display: flex;
-    height: 608.227px;
-    inline-size: 402.664px;
-    inset-block-end: 0px;
-    inset-block-start: 0px;
-    inset-inline-end: 0px;
-    inset-inline-start: 0px;
+
     left: 0px;
     overflow-wrap: break-word;
-    padding-block-end: 32px;
-    padding-block-start: 32px;
-    padding-inline-end: 32px;
-    padding-inline-start: 32px;
-    perspective-origin: 201.328px 304.109px;
+
     position: relative;
     right: 0px;
-    text-decoration: none solid rgb(35, 35, 35);
-    text-emphasis-color: rgb(35, 35, 35);
-    text-size-adjust: 100%;
+
     top: 0px;
-    transform-origin: 201.332px 304.113px;
-    width: 402.664px;
     background: rgb(255, 204, 1) none repeat scroll 0% 0% / auto padding-box border-box;
-    border: 0px none rgb(35, 35, 35);
     border-radius: 32px;
     flex-flow: column nowrap;
-    font: 16px / 24px Inter;
-    outline: rgb(35, 35, 35) none 0px;
     overflow: hidden;
     padding: 32px;
     transition: all 0.3s ease 0s;
 
-    &:after {
-      border-block-end-color: rgb(35, 35, 35);
-      border-block-start-color: rgb(35, 35, 35);
-      border-inline-end-color: rgb(35, 35, 35);
-      border-inline-start-color: rgb(35, 35, 35);
-      box-sizing: border-box;
-      caret-color: rgb(35, 35, 35);
-      color: rgb(35, 35, 35);
-      column-rule-color: rgb(35, 35, 35);
-      display: block;
-      overflow-wrap: break-word;
-      text-decoration: none solid rgb(35, 35, 35);
-      text-emphasis-color: rgb(35, 35, 35);
-      text-size-adjust: 100%;
-      border: 0px none rgb(35, 35, 35);
-      font: 16px / 24px Inter;
-      outline: rgb(35, 35, 35) none 0px;
-    }
-
-    &:before {
-      border-block-end-color: rgb(35, 35, 35);
-      border-block-start-color: rgb(35, 35, 35);
-      border-inline-end-color: rgb(35, 35, 35);
-      border-inline-start-color: rgb(35, 35, 35);
-      box-sizing: border-box;
-      caret-color: rgb(35, 35, 35);
-      color: rgb(35, 35, 35);
-      column-rule-color: rgb(35, 35, 35);
-      display: block;
-      overflow-wrap: break-word;
-      text-decoration: none solid rgb(35, 35, 35);
-      text-emphasis-color: rgb(35, 35, 35);
-      text-size-adjust: 100%;
-      border: 0px none rgb(35, 35, 35);
-      font: 16px / 24px Inter;
-      outline: rgb(35, 35, 35) none 0px;
-    }
-
     .header {
-      block-size: 107.047px;
-      border-block-end-color: rgb(35, 35, 35);
-      border-block-start-color: rgb(35, 35, 35);
-      border-inline-end-color: rgb(35, 35, 35);
-      border-inline-start-color: rgb(35, 35, 35);
-      box-sizing: border-box;
-      caret-color: rgb(35, 35, 35);
-      color: rgb(35, 35, 35);
-      column-rule-color: rgb(35, 35, 35);
-      height: 107.047px;
-      inline-size: 338.664px;
-      min-block-size: auto;
+      // height: 107.047px;
+
       min-height: auto;
-      min-inline-size: auto;
+
       min-width: auto;
       overflow-wrap: break-word;
-      perspective-origin: 169.328px 53.5234px;
-      text-decoration: none solid rgb(35, 35, 35);
-      text-emphasis-color: rgb(35, 35, 35);
-      text-size-adjust: 100%;
-      transform-origin: 169.332px 53.5234px;
-      width: 338.664px;
-      border: 0px none rgb(35, 35, 35);
-      font: 16px / 24px Inter;
-      outline: rgb(35, 35, 35) none 0px;
-
-      &:after {
-        border-block-end-color: rgb(35, 35, 35);
-        border-block-start-color: rgb(35, 35, 35);
-        border-inline-end-color: rgb(35, 35, 35);
-        border-inline-start-color: rgb(35, 35, 35);
-        box-sizing: border-box;
-        caret-color: rgb(35, 35, 35);
-        color: rgb(35, 35, 35);
-        column-rule-color: rgb(35, 35, 35);
-        overflow-wrap: break-word;
-        text-decoration: none solid rgb(35, 35, 35);
-        text-emphasis-color: rgb(35, 35, 35);
-        text-size-adjust: 100%;
-        border: 0px none rgb(35, 35, 35);
-        font: 16px / 24px Inter;
-        outline: rgb(35, 35, 35) none 0px;
-      }
-
-      &:before {
-        border-block-end-color: rgb(35, 35, 35);
-        border-block-start-color: rgb(35, 35, 35);
-        border-inline-end-color: rgb(35, 35, 35);
-        border-inline-start-color: rgb(35, 35, 35);
-        box-sizing: border-box;
-        caret-color: rgb(35, 35, 35);
-        color: rgb(35, 35, 35);
-        column-rule-color: rgb(35, 35, 35);
-        overflow-wrap: break-word;
-        text-decoration: none solid rgb(35, 35, 35);
-        text-emphasis-color: rgb(35, 35, 35);
-        text-size-adjust: 100%;
-        border: 0px none rgb(35, 35, 35);
-        font: 16px / 24px Inter;
-        outline: rgb(35, 35, 35) none 0px;
-      }
 
       .category {
         block-size: 28.8047px;
-        border-block-end-color: rgb(18, 18, 18);
-        border-block-start-color: rgb(18, 18, 18);
-        border-inline-end-color: rgb(18, 18, 18);
-        border-inline-start-color: rgb(18, 18, 18);
-        box-sizing: border-box;
-        caret-color: rgb(18, 18, 18);
+
         color: rgb(18, 18, 18);
-        column-rule-color: rgb(18, 18, 18);
-        height: 28.8047px;
-        inline-size: 338.664px;
-        margin-block-end: 4px;
-        margin-block-start: 0px;
+
+        // height: 28.8047px;
+
         overflow-wrap: break-word;
-        perspective-origin: 169.328px 14.3984px;
+
         text-align: center;
-        text-decoration: none solid rgb(18, 18, 18);
-        text-emphasis-color: rgb(18, 18, 18);
-        text-size-adjust: 100%;
+
         transform-origin: 169.332px 14.4023px;
-        width: 338.664px;
+        // width: 338.664px;
         word-break: break-word;
         border: 0px none rgb(18, 18, 18);
         font: 19.2px / 28.8px Inter, sans-serif;
         margin: 0px 0px 4px;
         outline: rgb(18, 18, 18) none 0px;
         &:after {
-          border-block-end-color: rgb(18, 18, 18);
-          border-block-start-color: rgb(18, 18, 18);
-          border-inline-end-color: rgb(18, 18, 18);
-          border-inline-start-color: rgb(18, 18, 18);
-          box-sizing: border-box;
-          caret-color: rgb(18, 18, 18);
           color: rgb(18, 18, 18);
-          column-rule-color: rgb(18, 18, 18);
+
           overflow-wrap: break-word;
           text-align: center;
-          text-decoration: none solid rgb(18, 18, 18);
-          text-emphasis-color: rgb(18, 18, 18);
-          text-size-adjust: 100%;
+
           word-break: break-word;
           border: 0px none rgb(18, 18, 18);
           font: 19.2px / 28.8px Inter, sans-serif;
           outline: rgb(18, 18, 18) none 0px;
         }
         &:before {
-          border-block-end-color: rgb(18, 18, 18);
-          border-block-start-color: rgb(18, 18, 18);
-          border-inline-end-color: rgb(18, 18, 18);
-          border-inline-start-color: rgb(18, 18, 18);
-          box-sizing: border-box;
-          caret-color: rgb(18, 18, 18);
           color: rgb(18, 18, 18);
-          column-rule-color: rgb(18, 18, 18);
+
           overflow-wrap: break-word;
           text-align: center;
-          text-decoration: none solid rgb(18, 18, 18);
-          text-emphasis-color: rgb(18, 18, 18);
-          text-size-adjust: 100%;
+
           word-break: break-word;
           border: 0px none rgb(18, 18, 18);
           font: 19.2px / 28.8px Inter, sans-serif;
@@ -284,64 +84,38 @@
 
       .title {
         block-size: 42.2422px;
-        border-block-end-color: rgb(18, 18, 18);
-        border-block-start-color: rgb(18, 18, 18);
-        border-inline-end-color: rgb(18, 18, 18);
-        border-inline-start-color: rgb(18, 18, 18);
-        box-sizing: border-box;
-        caret-color: rgb(18, 18, 18);
+
         color: rgb(18, 18, 18);
-        column-rule-color: rgb(18, 18, 18);
-        height: 42.2422px;
-        inline-size: 338.664px;
-        margin-block-end: 32px;
-        margin-block-start: 0px;
+
+        // height: 42.2422px;
+
         overflow-wrap: break-word;
-        perspective-origin: 169.328px 21.1172px;
         text-align: center;
-        text-decoration: none solid rgb(18, 18, 18);
-        text-emphasis-color: rgb(18, 18, 18);
-        text-size-adjust: 100%;
+
         transform-origin: 169.332px 21.1211px;
-        width: 338.664px;
+        // width: 338.664px;
         word-break: break-word;
         border: 0px none rgb(18, 18, 18);
-        font: 35.2px / 42.24px Inter, sans-serif;
+        font: 26.2px/33.24px Inter, sans-serif;
         margin: 0px 0px 32px;
         outline: rgb(18, 18, 18) none 0px;
         &:after {
-          border-block-end-color: rgb(18, 18, 18);
-          border-block-start-color: rgb(18, 18, 18);
-          border-inline-end-color: rgb(18, 18, 18);
-          border-inline-start-color: rgb(18, 18, 18);
-          box-sizing: border-box;
-          caret-color: rgb(18, 18, 18);
           color: rgb(18, 18, 18);
-          column-rule-color: rgb(18, 18, 18);
+
           overflow-wrap: break-word;
           text-align: center;
-          text-decoration: none solid rgb(18, 18, 18);
-          text-emphasis-color: rgb(18, 18, 18);
-          text-size-adjust: 100%;
+
           word-break: break-word;
           border: 0px none rgb(18, 18, 18);
           font: 35.2px / 42.24px Inter, sans-serif;
           outline: rgb(18, 18, 18) none 0px;
         }
         &:before {
-          border-block-end-color: rgb(18, 18, 18);
-          border-block-start-color: rgb(18, 18, 18);
-          border-inline-end-color: rgb(18, 18, 18);
-          border-inline-start-color: rgb(18, 18, 18);
-          box-sizing: border-box;
-          caret-color: rgb(18, 18, 18);
           color: rgb(18, 18, 18);
-          column-rule-color: rgb(18, 18, 18);
+
           overflow-wrap: break-word;
           text-align: center;
-          text-decoration: none solid rgb(18, 18, 18);
-          text-emphasis-color: rgb(18, 18, 18);
-          text-size-adjust: 100%;
+
           word-break: break-word;
           border: 0px none rgb(18, 18, 18);
           font: 35.2px / 42.24px Inter, sans-serif;
@@ -352,62 +126,37 @@
 
     .footer {
       block-size: 87.1797px;
-      border-block-end-color: rgb(35, 35, 35);
-      border-block-start-color: rgb(35, 35, 35);
-      border-inline-end-color: rgb(35, 35, 35);
-      border-inline-start-color: rgb(35, 35, 35);
-      box-sizing: border-box;
-      caret-color: rgb(35, 35, 35);
+
       color: rgb(35, 35, 35);
-      column-rule-color: rgb(35, 35, 35);
-      height: 87.1797px;
-      inline-size: 338.664px;
-      min-block-size: auto;
+
+      // height: 87.1797px;
+
       min-height: auto;
-      min-inline-size: auto;
+
       min-width: auto;
       overflow-wrap: break-word;
-      perspective-origin: 169.328px 43.5859px;
-      text-decoration: none solid rgb(35, 35, 35);
-      text-emphasis-color: rgb(35, 35, 35);
-      text-size-adjust: 100%;
+
       transform-origin: 169.332px 43.5898px;
-      width: 338.664px;
+      // width: 338.664px;
       border: 0px none rgb(35, 35, 35);
       font: 16px / 24px Inter;
       outline: rgb(35, 35, 35) none 0px;
 
       &:after {
-        border-block-end-color: rgb(35, 35, 35);
-        border-block-start-color: rgb(35, 35, 35);
-        border-inline-end-color: rgb(35, 35, 35);
-        border-inline-start-color: rgb(35, 35, 35);
-        box-sizing: border-box;
-        caret-color: rgb(35, 35, 35);
         color: rgb(35, 35, 35);
-        column-rule-color: rgb(35, 35, 35);
+
         overflow-wrap: break-word;
-        text-decoration: none solid rgb(35, 35, 35);
-        text-emphasis-color: rgb(35, 35, 35);
-        text-size-adjust: 100%;
+
         border: 0px none rgb(35, 35, 35);
         font: 16px / 24px Inter;
         outline: rgb(35, 35, 35) none 0px;
       }
 
       &:before {
-        border-block-end-color: rgb(35, 35, 35);
-        border-block-start-color: rgb(35, 35, 35);
-        border-inline-end-color: rgb(35, 35, 35);
-        border-inline-start-color: rgb(35, 35, 35);
-        box-sizing: border-box;
-        caret-color: rgb(35, 35, 35);
         color: rgb(35, 35, 35);
-        column-rule-color: rgb(35, 35, 35);
+
         overflow-wrap: break-word;
-        text-decoration: none solid rgb(35, 35, 35);
-        text-emphasis-color: rgb(35, 35, 35);
-        text-size-adjust: 100%;
+
         border: 0px none rgb(35, 35, 35);
         font: 16px / 24px Inter;
         outline: rgb(35, 35, 35) none 0px;
@@ -416,64 +165,39 @@
       .content {
         align-items: center;
         block-size: 71.1797px;
-        border-block-end-color: rgb(35, 35, 35);
-        border-block-start-color: rgb(35, 35, 35);
-        border-inline-end-color: rgb(35, 35, 35);
-        border-inline-start-color: rgb(35, 35, 35);
-        box-sizing: border-box;
-        caret-color: rgb(35, 35, 35);
+
         color: rgb(35, 35, 35);
-        column-rule-color: rgb(35, 35, 35);
+
         display: flex;
-        height: 71.1797px;
-        inline-size: 338.664px;
+        // height: 71.1797px;
+
         justify-content: space-between;
-        margin-block-start: 16px;
         overflow-wrap: break-word;
-        perspective-origin: 169.328px 35.5859px;
-        text-decoration: none solid rgb(35, 35, 35);
-        text-emphasis-color: rgb(35, 35, 35);
-        text-size-adjust: 100%;
+
         transform-origin: 169.332px 35.5898px;
-        width: 338.664px;
+        // width: 338.664px;
         border: 0px none rgb(35, 35, 35);
         font: 16px / 24px Inter;
         margin: 16px 0px 0px;
         outline: rgb(35, 35, 35) none 0px;
 
         &:after {
-          border-block-end-color: rgb(35, 35, 35);
-          border-block-start-color: rgb(35, 35, 35);
-          border-inline-end-color: rgb(35, 35, 35);
-          border-inline-start-color: rgb(35, 35, 35);
-          box-sizing: border-box;
-          caret-color: rgb(35, 35, 35);
           color: rgb(35, 35, 35);
-          column-rule-color: rgb(35, 35, 35);
+
           display: block;
           overflow-wrap: break-word;
-          text-decoration: none solid rgb(35, 35, 35);
-          text-emphasis-color: rgb(35, 35, 35);
-          text-size-adjust: 100%;
+
           border: 0px none rgb(35, 35, 35);
           font: 16px / 24px Inter;
           outline: rgb(35, 35, 35) none 0px;
         }
 
         &:before {
-          border-block-end-color: rgb(35, 35, 35);
-          border-block-start-color: rgb(35, 35, 35);
-          border-inline-end-color: rgb(35, 35, 35);
-          border-inline-start-color: rgb(35, 35, 35);
-          box-sizing: border-box;
-          caret-color: rgb(35, 35, 35);
           color: rgb(35, 35, 35);
-          column-rule-color: rgb(35, 35, 35);
+
           display: block;
           overflow-wrap: break-word;
-          text-decoration: none solid rgb(35, 35, 35);
-          text-emphasis-color: rgb(35, 35, 35);
-          text-size-adjust: 100%;
+
           border: 0px none rgb(35, 35, 35);
           font: 16px / 24px Inter;
           outline: rgb(35, 35, 35) none 0px;
@@ -481,68 +205,41 @@
 
         .navigation {
           block-size: 71.1797px;
-          border-block-end-color: rgb(18, 18, 18);
-          border-block-start-color: rgb(18, 18, 18);
-          border-inline-end-color: rgb(18, 18, 18);
-          border-inline-start-color: rgb(18, 18, 18);
-          box-sizing: border-box;
-          caret-color: rgb(18, 18, 18);
+
           color: rgb(18, 18, 18);
-          column-rule-color: rgb(18, 18, 18);
-          height: 71.1797px;
-          inline-size: 205.008px;
-          margin-inline-end: -9.6px;
-          margin-inline-start: -9.6px;
-          min-block-size: auto;
+
+          // height: 71.1797px;
+
           min-height: auto;
-          min-inline-size: auto;
+
           min-width: auto;
           overflow-wrap: break-word;
-          perspective-origin: 102.5px 35.5859px;
           text-align: center;
-          text-decoration: none solid rgb(18, 18, 18);
-          text-emphasis-color: rgb(18, 18, 18);
-          text-size-adjust: 100%;
+
           transform-origin: 102.504px 35.5898px;
-          width: 205.008px;
+          // width: 205.008px;
           border: 0px none rgb(18, 18, 18);
           font: 0px / 0px Inter;
           margin: 0px -9.6px;
           outline: rgb(18, 18, 18) none 0px;
 
           &:after {
-            border-block-end-color: rgb(18, 18, 18);
-            border-block-start-color: rgb(18, 18, 18);
-            border-inline-end-color: rgb(18, 18, 18);
-            border-inline-start-color: rgb(18, 18, 18);
-            box-sizing: border-box;
-            caret-color: rgb(18, 18, 18);
             color: rgb(18, 18, 18);
-            column-rule-color: rgb(18, 18, 18);
+
             overflow-wrap: break-word;
             text-align: center;
-            text-decoration: none solid rgb(18, 18, 18);
-            text-emphasis-color: rgb(18, 18, 18);
-            text-size-adjust: 100%;
+
             border: 0px none rgb(18, 18, 18);
             font: 0px / 0px Inter;
             outline: rgb(18, 18, 18) none 0px;
           }
 
           &:before {
-            border-block-end-color: rgb(18, 18, 18);
-            border-block-start-color: rgb(18, 18, 18);
-            border-inline-end-color: rgb(18, 18, 18);
-            border-inline-start-color: rgb(18, 18, 18);
-            box-sizing: border-box;
-            caret-color: rgb(18, 18, 18);
             color: rgb(18, 18, 18);
-            column-rule-color: rgb(18, 18, 18);
+
             overflow-wrap: break-word;
             text-align: center;
-            text-decoration: none solid rgb(18, 18, 18);
-            text-emphasis-color: rgb(18, 18, 18);
-            text-size-adjust: 100%;
+
             border: 0px none rgb(18, 18, 18);
             font: 0px / 0px Inter;
             outline: rgb(18, 18, 18) none 0px;
@@ -551,45 +248,20 @@
           .get_started {
             align-items: center;
             block-size: 51.9922px;
-            border-block-end-color: rgb(0, 0, 0);
-            border-block-end-style: solid;
-            border-block-end-width: 2px;
-            border-block-start-color: rgb(0, 0, 0);
-            border-block-start-style: solid;
-            border-block-start-width: 2px;
-            border-end-end-radius: 100px;
-            border-end-start-radius: 100px;
-            border-inline-end-color: rgb(0, 0, 0);
-            border-inline-end-style: solid;
-            border-inline-end-width: 2px;
-            border-inline-start-color: rgb(0, 0, 0);
-            border-inline-start-style: solid;
-            border-inline-start-width: 2px;
-            border-start-end-radius: 100px;
-            border-start-start-radius: 100px;
             box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 2px 0px;
             box-sizing: border-box;
-            caret-color: rgb(0, 0, 0);
+
             color: rgb(0, 0, 0);
-            column-rule-color: rgb(0, 0, 0);
+
             display: inline-flex;
-            height: 51.9922px;
-            inline-size: 185.82px;
+            // height: 51.9922px;
+
             justify-content: center;
-            margin-block-end: 9.6px;
-            margin-block-start: 9.6px;
-            margin-inline-end: 9.6px;
-            margin-inline-start: 9.6px;
+
             overflow-wrap: break-word;
-            padding-block-end: 9.6px;
-            padding-block-start: 9.6px;
-            padding-inline-end: 19.2px;
-            padding-inline-start: 19.2px;
-            perspective-origin: 92.9062px 25.9922px;
+
             text-align: center;
-            text-decoration: none solid rgb(0, 0, 0);
-            text-emphasis-color: rgb(0, 0, 0);
-            text-size-adjust: 100%;
+
             transform-origin: 92.9102px 25.9961px;
             user-select: none;
             vertical-align: middle;
@@ -604,20 +276,12 @@
             padding: 9.6px 19.2px;
             transition: all 0.2s ease-in-out 0s;
             &:after {
-              border-block-end-color: rgb(0, 0, 0);
-              border-block-start-color: rgb(0, 0, 0);
-              border-inline-end-color: rgb(0, 0, 0);
-              border-inline-start-color: rgb(0, 0, 0);
-              box-sizing: border-box;
-              caret-color: rgb(0, 0, 0);
               color: rgb(0, 0, 0);
-              column-rule-color: rgb(0, 0, 0);
+
               display: block;
               overflow-wrap: break-word;
               text-align: center;
-              text-decoration: none solid rgb(0, 0, 0);
-              text-emphasis-color: rgb(0, 0, 0);
-              text-size-adjust: 100%;
+
               user-select: none;
               word-break: break-word;
               border: 0px none rgb(0, 0, 0);
@@ -625,20 +289,12 @@
               outline: rgb(0, 0, 0) none 0px;
             }
             &:before {
-              border-block-end-color: rgb(0, 0, 0);
-              border-block-start-color: rgb(0, 0, 0);
-              border-inline-end-color: rgb(0, 0, 0);
-              border-inline-start-color: rgb(0, 0, 0);
-              box-sizing: border-box;
-              caret-color: rgb(0, 0, 0);
               color: rgb(0, 0, 0);
-              column-rule-color: rgb(0, 0, 0);
+
               display: block;
               overflow-wrap: break-word;
               text-align: center;
-              text-decoration: none solid rgb(0, 0, 0);
-              text-emphasis-color: rgb(0, 0, 0);
-              text-size-adjust: 100%;
+
               user-select: none;
               word-break: break-word;
               border: 0px none rgb(0, 0, 0);
@@ -649,28 +305,17 @@
         }
         .funded {
           block-size: 42.2422px;
-          border-block-end-color: rgb(18, 18, 18);
-          border-block-start-color: rgb(18, 18, 18);
-          border-inline-end-color: rgb(18, 18, 18);
-          border-inline-start-color: rgb(18, 18, 18);
-          box-sizing: border-box;
-          caret-color: rgb(18, 18, 18);
+
           color: rgb(18, 18, 18);
-          column-rule-color: rgb(18, 18, 18);
-          height: 42.2422px;
-          inline-size: 60.1016px;
-          margin-block-end: 0px;
-          margin-block-start: 0px;
-          min-block-size: auto;
+
+          // height: 42.2422px;
+
           min-height: auto;
-          min-inline-size: auto;
+
           min-width: auto;
           overflow-wrap: break-word;
-          perspective-origin: 30.0469px 21.1172px;
           text-align: right;
-          text-decoration: none solid rgb(18, 18, 18);
-          text-emphasis-color: rgb(18, 18, 18);
-          text-size-adjust: 100%;
+
           transform-origin: 30.0508px 21.1211px;
           width: 60.1016px;
           word-break: break-word;
@@ -679,38 +324,22 @@
           margin: 0px;
           outline: rgb(18, 18, 18) none 0px;
           &:after {
-            border-block-end-color: rgb(18, 18, 18);
-            border-block-start-color: rgb(18, 18, 18);
-            border-inline-end-color: rgb(18, 18, 18);
-            border-inline-start-color: rgb(18, 18, 18);
-            box-sizing: border-box;
-            caret-color: rgb(18, 18, 18);
             color: rgb(18, 18, 18);
-            column-rule-color: rgb(18, 18, 18);
+
             overflow-wrap: break-word;
             text-align: right;
-            text-decoration: none solid rgb(18, 18, 18);
-            text-emphasis-color: rgb(18, 18, 18);
-            text-size-adjust: 100%;
+
             word-break: break-word;
             border: 0px none rgb(18, 18, 18);
             font: 35.2px / 42.24px Inter, sans-serif;
             outline: rgb(18, 18, 18) none 0px;
           }
           &:before {
-            border-block-end-color: rgb(18, 18, 18);
-            border-block-start-color: rgb(18, 18, 18);
-            border-inline-end-color: rgb(18, 18, 18);
-            border-inline-start-color: rgb(18, 18, 18);
-            box-sizing: border-box;
-            caret-color: rgb(18, 18, 18);
             color: rgb(18, 18, 18);
-            column-rule-color: rgb(18, 18, 18);
+
             overflow-wrap: break-word;
             text-align: right;
-            text-decoration: none solid rgb(18, 18, 18);
-            text-emphasis-color: rgb(18, 18, 18);
-            text-size-adjust: 100%;
+
             word-break: break-word;
             border: 0px none rgb(18, 18, 18);
             font: 35.2px / 42.24px Inter, sans-serif;
@@ -722,99 +351,55 @@
 
     .body {
       block-size: 350px;
-      border-block-end-color: rgb(35, 35, 35);
-      border-block-start-color: rgb(35, 35, 35);
-      border-end-end-radius: 16px;
-      border-end-start-radius: 16px;
-      border-inline-end-color: rgb(35, 35, 35);
-      border-inline-start-color: rgb(35, 35, 35);
-      border-start-end-radius: 16px;
-      border-start-start-radius: 16px;
-      box-sizing: border-box;
-      caret-color: rgb(35, 35, 35);
+
       color: rgb(35, 35, 35);
-      column-rule-color: rgb(35, 35, 35);
-      height: 350px;
-      inline-size: 338.664px;
-      min-block-size: auto;
+
+      // height: 350px;
+
       min-height: auto;
-      min-inline-size: auto;
+
       min-width: auto;
       object-fit: cover;
       overflow-wrap: break-word;
-      perspective-origin: 169.328px 175px;
-      text-decoration: none solid rgb(35, 35, 35);
-      text-emphasis-color: rgb(35, 35, 35);
-      text-size-adjust: 100%;
+
       transform-origin: 169.332px 175px;
-      width: 338.664px;
+      // width: 338.664px;
       border: 0px none rgb(35, 35, 35);
       border-radius: 16px;
       font: 16px / 24px Inter;
       outline: rgb(35, 35, 35) none 0px;
 
       &:after {
-        border-block-end-color: rgb(35, 35, 35);
-        border-block-start-color: rgb(35, 35, 35);
-        border-inline-end-color: rgb(35, 35, 35);
-        border-inline-start-color: rgb(35, 35, 35);
-        box-sizing: border-box;
-        caret-color: rgb(35, 35, 35);
         color: rgb(35, 35, 35);
-        column-rule-color: rgb(35, 35, 35);
+
         overflow-wrap: break-word;
-        text-decoration: none solid rgb(35, 35, 35);
-        text-emphasis-color: rgb(35, 35, 35);
-        text-size-adjust: 100%;
+
         border: 0px none rgb(35, 35, 35);
         font: 16px / 24px Inter;
         outline: rgb(35, 35, 35) none 0px;
       }
 
       &:before {
-        border-block-end-color: rgb(35, 35, 35);
-        border-block-start-color: rgb(35, 35, 35);
-        border-inline-end-color: rgb(35, 35, 35);
-        border-inline-start-color: rgb(35, 35, 35);
-        box-sizing: border-box;
-        caret-color: rgb(35, 35, 35);
         color: rgb(35, 35, 35);
-        column-rule-color: rgb(35, 35, 35);
+
         overflow-wrap: break-word;
-        text-decoration: none solid rgb(35, 35, 35);
-        text-emphasis-color: rgb(35, 35, 35);
-        text-size-adjust: 100%;
+
         border: 0px none rgb(35, 35, 35);
         font: 16px / 24px Inter;
         outline: rgb(35, 35, 35) none 0px;
       }
 
       .picture {
-        block-size: 350px;
-        border-block-end-color: rgb(35, 35, 35);
-        border-block-start-color: rgb(35, 35, 35);
-        border-end-end-radius: 16px;
-        border-end-start-radius: 16px;
-        border-inline-end-color: rgb(35, 35, 35);
-        border-inline-start-color: rgb(35, 35, 35);
-        border-start-end-radius: 16px;
-        border-start-start-radius: 16px;
-        box-sizing: border-box;
-        caret-color: rgb(35, 35, 35);
         color: rgb(35, 35, 35);
-        column-rule-color: rgb(35, 35, 35);
+
         display: block;
         height: 350px;
-        inline-size: 338.664px;
+
         object-fit: cover;
         overflow-wrap: break-word;
-        perspective-origin: 169.328px 175px;
-        text-decoration: none solid rgb(35, 35, 35);
-        text-emphasis-color: rgb(35, 35, 35);
-        text-size-adjust: 100%;
-        transform-origin: 169.332px 175px;
+
         vertical-align: middle;
-        width: 338.664px;
+        width: 100%;
         border: 0px none rgb(35, 35, 35);
         border-radius: 16px;
         font: 16px / 24px Inter;
@@ -822,36 +407,20 @@
       }
 
       &:after {
-        border-block-end-color: rgb(35, 35, 35);
-        border-block-start-color: rgb(35, 35, 35);
-        border-inline-end-color: rgb(35, 35, 35);
-        border-inline-start-color: rgb(35, 35, 35);
-        box-sizing: border-box;
-        caret-color: rgb(35, 35, 35);
         color: rgb(35, 35, 35);
-        column-rule-color: rgb(35, 35, 35);
+
         overflow-wrap: break-word;
-        text-decoration: none solid rgb(35, 35, 35);
-        text-emphasis-color: rgb(35, 35, 35);
-        text-size-adjust: 100%;
+
         border: 0px none rgb(35, 35, 35);
         font: 16px / 24px Inter;
         outline: rgb(35, 35, 35) none 0px;
       }
 
       &:before {
-        border-block-end-color: rgb(35, 35, 35);
-        border-block-start-color: rgb(35, 35, 35);
-        border-inline-end-color: rgb(35, 35, 35);
-        border-inline-start-color: rgb(35, 35, 35);
-        box-sizing: border-box;
-        caret-color: rgb(35, 35, 35);
         color: rgb(35, 35, 35);
-        column-rule-color: rgb(35, 35, 35);
+
         overflow-wrap: break-word;
-        text-decoration: none solid rgb(35, 35, 35);
-        text-emphasis-color: rgb(35, 35, 35);
-        text-size-adjust: 100%;
+
         border: 0px none rgb(35, 35, 35);
         font: 16px / 24px Inter;
         outline: rgb(35, 35, 35) none 0px;

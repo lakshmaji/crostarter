@@ -83,45 +83,20 @@ $color_3: rgb(250, 250, 250);
       .btn {
         align-items: center;
         block-size: 51.9922px;
-        border-block-end-color: rgb(0, 0, 0);
-        border-block-end-style: solid;
-        border-block-end-width: 2px;
-        border-block-start-color: rgb(0, 0, 0);
-        border-block-start-style: solid;
-        border-block-start-width: 2px;
-        border-end-end-radius: 100px;
-        border-end-start-radius: 100px;
-        border-inline-end-color: rgb(0, 0, 0);
-        border-inline-end-style: solid;
-        border-inline-end-width: 2px;
-        border-inline-start-color: rgb(0, 0, 0);
-        border-inline-start-style: solid;
-        border-inline-start-width: 2px;
-        border-start-end-radius: 100px;
-        border-start-start-radius: 100px;
         box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 2px 0px;
         box-sizing: border-box;
-        caret-color: rgb(0, 0, 0);
+
         color: $color_2;
-        column-rule-color: rgb(0, 0, 0);
+
         display: inline-flex;
         height: 51.9922px;
-        inline-size: 185.82px;
+
         justify-content: center;
-        margin-block-end: 9.6px;
-        margin-block-start: 9.6px;
-        margin-inline-end: 9.6px;
-        margin-inline-start: 9.6px;
+
         overflow-wrap: break-word;
-        padding-block-end: 9.6px;
-        padding-block-start: 9.6px;
-        padding-inline-end: 19.2px;
-        padding-inline-start: 19.2px;
-        perspective-origin: 92.9062px 25.9922px;
+
         text-align: center;
-        text-decoration: none solid rgb(0, 0, 0);
-        text-emphasis-color: rgb(0, 0, 0);
-        text-size-adjust: 100%;
+
         transform-origin: 92.9102px 25.9961px;
         user-select: none;
         vertical-align: middle;
@@ -136,20 +111,12 @@ $color_3: rgb(250, 250, 250);
         padding: 9.6px 19.2px;
         transition: all 0.2s ease-in-out 0s;
         &:after {
-          border-block-end-color: rgb(0, 0, 0);
-          border-block-start-color: rgb(0, 0, 0);
-          border-inline-end-color: rgb(0, 0, 0);
-          border-inline-start-color: rgb(0, 0, 0);
-          box-sizing: border-box;
-          caret-color: rgb(0, 0, 0);
           color: $color_2;
-          column-rule-color: rgb(0, 0, 0);
+
           display: block;
           overflow-wrap: break-word;
           text-align: center;
-          text-decoration: none solid rgb(0, 0, 0);
-          text-emphasis-color: rgb(0, 0, 0);
-          text-size-adjust: 100%;
+
           user-select: none;
           word-break: break-word;
           border: 0px none rgb(0, 0, 0);
@@ -157,20 +124,12 @@ $color_3: rgb(250, 250, 250);
           outline: rgb(0, 0, 0) none 0px;
         }
         &:before {
-          border-block-end-color: rgb(0, 0, 0);
-          border-block-start-color: rgb(0, 0, 0);
-          border-inline-end-color: rgb(0, 0, 0);
-          border-inline-start-color: rgb(0, 0, 0);
-          box-sizing: border-box;
-          caret-color: rgb(0, 0, 0);
           color: $color_2;
-          column-rule-color: rgb(0, 0, 0);
+
           display: block;
           overflow-wrap: break-word;
           text-align: center;
-          text-decoration: none solid rgb(0, 0, 0);
-          text-emphasis-color: rgb(0, 0, 0);
-          text-size-adjust: 100%;
+
           user-select: none;
           word-break: break-word;
           border: 0px none rgb(0, 0, 0);
@@ -182,39 +141,21 @@ $color_3: rgb(250, 250, 250);
         }
         .icon {
           block-size: 28.7969px;
-          border-block-end-color: rgb(250, 250, 250);
-          border-block-start-color: rgb(250, 250, 250);
-          border-end-end-radius: 50%;
-          border-end-start-radius: 50%;
-          border-inline-end-color: rgb(250, 250, 250);
-          border-inline-start-color: rgb(250, 250, 250);
-          border-start-end-radius: 50%;
-          border-start-start-radius: 50%;
-          box-sizing: border-box;
-          caret-color: rgb(250, 250, 250);
+
           color: $color_3;
-          column-rule-color: rgb(250, 250, 250);
+
           cursor: pointer;
           display: block;
           height: 28.7969px;
-          inline-size: 28.8047px;
-          margin-inline-start: 8px;
-          min-block-size: auto;
+
           min-height: auto;
-          min-inline-size: auto;
+
           min-width: auto;
           order: 1;
           overflow-wrap: break-word;
-          padding-block-end: 8px;
-          padding-block-start: 8px;
-          padding-inline-end: 8px;
-          padding-inline-start: 8px;
-          perspective-origin: 14.3984px 14.3984px;
-          speak: none;
+
           text-align: center;
-          text-decoration: none solid rgb(250, 250, 250);
-          text-emphasis-color: rgb(250, 250, 250);
-          text-size-adjust: 100%;
+
           transform-origin: 14.4023px 14.3984px;
           user-select: none;
           vertical-align: sub;
@@ -229,21 +170,13 @@ $color_3: rgb(250, 250, 250);
           // padding: 8px;
           transition: all 0.3s ease 0s;
           &:after {
-            border-block-end-color: rgb(250, 250, 250);
-            border-block-start-color: rgb(250, 250, 250);
-            border-inline-end-color: rgb(250, 250, 250);
-            border-inline-start-color: rgb(250, 250, 250);
-            box-sizing: border-box;
-            caret-color: rgb(250, 250, 250);
             color: $color_3;
-            column-rule-color: rgb(250, 250, 250);
+
             cursor: pointer;
             overflow-wrap: break-word;
-            speak: none;
+
             text-align: center;
-            text-decoration: none solid rgb(250, 250, 250);
-            text-emphasis-color: rgb(250, 250, 250);
-            text-size-adjust: 100%;
+
             user-select: none;
             word-break: break-word;
             border: 0px none rgb(250, 250, 250);
@@ -252,26 +185,18 @@ $color_3: rgb(250, 250, 250);
           }
           &:before {
             block-size: 12.7969px;
-            border-block-end-color: rgb(250, 250, 250);
-            border-block-start-color: rgb(250, 250, 250);
-            border-inline-end-color: rgb(250, 250, 250);
-            border-inline-start-color: rgb(250, 250, 250);
-            box-sizing: border-box;
-            caret-color: rgb(250, 250, 250);
+
             color: $color_3;
-            column-rule-color: rgb(250, 250, 250);
+
             // content: '""';
             cursor: pointer;
             display: block;
             height: 12.7969px;
-            inline-size: 12.8047px;
+
             overflow-wrap: break-word;
-            perspective-origin: 6.39844px 6.39844px;
-            speak: none;
+
             text-align: center;
-            text-decoration: none solid rgb(250, 250, 250);
-            text-emphasis-color: rgb(250, 250, 250);
-            text-size-adjust: 100%;
+
             transform: matrix(1, 0, 0, 1, 1, 0);
             transform-origin: 6.40234px 6.39844px;
             user-select: none;

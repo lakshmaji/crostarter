@@ -1,12 +1,12 @@
 import React, { FC } from 'react';
-import styles from './cat.module.scss';
+import styles from './featured-categories.module.scss';
 import { Category } from '../../models/category';
 import { Link } from '@inertiajs/inertia-react';
 
 interface Props {
   categories: Category[];
 }
-const FaeturedCat: FC<Props> = ({ categories }) => {
+const FeaturedCategories: FC<Props> = ({ categories }) => {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
@@ -55,4 +55,4 @@ const FaeturedCat: FC<Props> = ({ categories }) => {
   );
 };
 
-export default FaeturedCat;
+export default FeaturedCategories;

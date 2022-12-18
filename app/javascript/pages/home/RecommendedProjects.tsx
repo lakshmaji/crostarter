@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import styles from './rec.module.scss';
+import styles from './recommended-projects.module.scss';
 import { IProject } from '../../models/project';
 import RecommendedProject from './RecommendedProject';
 

@@ -1,6 +1,6 @@
 import { IProject } from '../../models/project';
 import React, { FC } from 'react';
-import styles from './proje.module.scss';
+import styles from './featured-projects.module.scss';
 import FeaturedProject from './FeaturedProject';
 
 const IMAGES = [
@@ -20,12 +20,12 @@ interface Props {
 
 const FeaturedProjects: FC<Props> = ({ trending_projects }) => {
   return (
-    <section className={styles.SECTION_1}>
-      <div className={styles.DIV_2}>
-        <div className={styles.DIV_3}>
-          <h4 className={styles.H4_4}>Trending projects</h4>
+    <section className={styles.section}>
+      <div className={styles.container}>
+        <div className={styles.header}>
+          <h4 className={styles.title}>Trending projects</h4>
         </div>
-        <div className={styles.DIV_5}>
+        <div className={styles.list}>
           {trending_projects.map((project, index) => {
             return (
               <FeaturedProject

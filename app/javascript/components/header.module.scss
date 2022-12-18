@@ -82,27 +82,17 @@ header {
 
     .logout_btn {
       block-size: 71.1719px;
-      border-block-end-color: rgb(35, 35, 35);
-      border-block-start-color: rgb(35, 35, 35);
-      border-inline-end-color: rgb(35, 35, 35);
-      border-inline-start-color: rgb(35, 35, 35);
-      box-sizing: border-box;
-      caret-color: rgb(35, 35, 35);
+
       color: rgb(35, 35, 35);
-      column-rule-color: rgb(35, 35, 35);
+
       height: 71.1719px;
-      inline-size: 196.125px;
-      margin-inline-end: -9.6px;
-      min-block-size: auto;
+
       min-height: auto;
-      min-inline-size: auto;
+
       min-width: auto;
       overflow-wrap: break-word;
-      perspective-origin: 98.0625px 35.5859px;
       text-align: right;
-      text-decoration: none solid rgb(35, 35, 35);
-      text-emphasis-color: rgb(35, 35, 35);
-      text-size-adjust: 100%;
+
       transform-origin: 98.0625px 35.5859px;
       width: 196.125px;
       border: 0px none rgb(35, 35, 35);
@@ -111,38 +101,22 @@ header {
       outline: rgb(35, 35, 35) none 0px;
 
       &:after {
-        border-block-end-color: rgb(35, 35, 35);
-        border-block-start-color: rgb(35, 35, 35);
-        border-inline-end-color: rgb(35, 35, 35);
-        border-inline-start-color: rgb(35, 35, 35);
-        box-sizing: border-box;
-        caret-color: rgb(35, 35, 35);
         color: rgb(35, 35, 35);
-        column-rule-color: rgb(35, 35, 35);
+
         overflow-wrap: break-word;
         text-align: right;
-        text-decoration: none solid rgb(35, 35, 35);
-        text-emphasis-color: rgb(35, 35, 35);
-        text-size-adjust: 100%;
+
         border: 0px none rgb(35, 35, 35);
         font: 0px / 0px Inter;
         outline: rgb(35, 35, 35) none 0px;
       }
 
       &:before {
-        border-block-end-color: rgb(35, 35, 35);
-        border-block-start-color: rgb(35, 35, 35);
-        border-inline-end-color: rgb(35, 35, 35);
-        border-inline-start-color: rgb(35, 35, 35);
-        box-sizing: border-box;
-        caret-color: rgb(35, 35, 35);
         color: rgb(35, 35, 35);
-        column-rule-color: rgb(35, 35, 35);
+
         overflow-wrap: break-word;
         text-align: right;
-        text-decoration: none solid rgb(35, 35, 35);
-        text-emphasis-color: rgb(35, 35, 35);
-        text-size-adjust: 100%;
+
         border: 0px none rgb(35, 35, 35);
         font: 0px / 0px Inter;
         outline: rgb(35, 35, 35) none 0px;
@@ -151,45 +125,19 @@ header {
       .link {
         align-items: center;
         block-size: 51.9844px;
-        border-block-end-color: rgb(0, 0, 0);
-        border-block-end-style: solid;
-        border-block-end-width: 2px;
-        border-block-start-color: rgb(0, 0, 0);
-        border-block-start-style: solid;
-        border-block-start-width: 2px;
-        border-end-end-radius: 100px;
-        border-end-start-radius: 100px;
-        border-inline-end-color: rgb(0, 0, 0);
-        border-inline-end-style: solid;
-        border-inline-end-width: 2px;
-        border-inline-start-color: rgb(0, 0, 0);
-        border-inline-start-style: solid;
-        border-inline-start-width: 2px;
-        border-start-end-radius: 100px;
-        border-start-start-radius: 100px;
         box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 2px 0px;
         box-sizing: border-box;
-        caret-color: rgb(0, 0, 0);
+
         color: rgb(0, 0, 0);
-        column-rule-color: rgb(0, 0, 0);
+
         display: inline-flex;
         height: 51.9844px;
-        inline-size: 176.938px;
         justify-content: center;
-        margin-block-end: 9.6px;
-        margin-block-start: 9.6px;
-        margin-inline-end: 9.6px;
-        margin-inline-start: 9.6px;
+
         overflow-wrap: break-word;
-        padding-block-end: 9.6px;
-        padding-block-start: 9.6px;
-        padding-inline-end: 19.2px;
-        padding-inline-start: 19.2px;
-        perspective-origin: 88.4688px 25.9922px;
+
         text-align: center;
-        text-decoration: none solid rgb(0, 0, 0);
-        text-emphasis-color: rgb(0, 0, 0);
-        text-size-adjust: 100%;
+
         transform-origin: 88.4688px 25.9922px;
         user-select: none;
         vertical-align: middle;
@@ -209,20 +157,12 @@ header {
         }
 
         &:after {
-          border-block-end-color: rgb(0, 0, 0);
-          border-block-start-color: rgb(0, 0, 0);
-          border-inline-end-color: rgb(0, 0, 0);
-          border-inline-start-color: rgb(0, 0, 0);
-          box-sizing: border-box;
-          caret-color: rgb(0, 0, 0);
           color: rgb(0, 0, 0);
-          column-rule-color: rgb(0, 0, 0);
+
           display: block;
           overflow-wrap: break-word;
           text-align: center;
-          text-decoration: none solid rgb(0, 0, 0);
-          text-emphasis-color: rgb(0, 0, 0);
-          text-size-adjust: 100%;
+
           user-select: none;
           word-break: break-word;
           border: 0px none rgb(0, 0, 0);
@@ -231,20 +171,12 @@ header {
         }
 
         &:before {
-          border-block-end-color: rgb(0, 0, 0);
-          border-block-start-color: rgb(0, 0, 0);
-          border-inline-end-color: rgb(0, 0, 0);
-          border-inline-start-color: rgb(0, 0, 0);
-          box-sizing: border-box;
-          caret-color: rgb(0, 0, 0);
           color: rgb(0, 0, 0);
-          column-rule-color: rgb(0, 0, 0);
+
           display: block;
           overflow-wrap: break-word;
           text-align: center;
-          text-decoration: none solid rgb(0, 0, 0);
-          text-emphasis-color: rgb(0, 0, 0);
-          text-size-adjust: 100%;
+
           user-select: none;
           word-break: break-word;
           border: 0px none rgb(0, 0, 0);
