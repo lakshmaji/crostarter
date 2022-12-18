@@ -22,14 +22,41 @@ header {
     display: flex;
 
     a {
-      text-decoration: none;
-      font-size: 1.8rem;
-      color: $color_1;
-      padding: 0.5rem 1rem;
-      border-radius: 0.4rem;
-      font-weight: 500;
-      font-family: 'Lora rev=1', Helvetica, serif;
+      // text-decoration: none;
+      // font-size: 1.8rem;
+      // color: $color_1;
+      // padding: 0.5rem 1rem;
+      // border-radius: 0.4rem;
+      // font-weight: 500;
+      // font-family: 'Lora rev=1', Helvetica, serif;
 
+      align-items: center;
+      // block-size: 51.9844px;
+      // box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 2px 0px;
+
+      color: rgb(0, 0, 0);
+
+      display: inline-flex;
+      // height: 51.9844px;
+      justify-content: center;
+
+      overflow-wrap: break-word;
+
+      text-align: center;
+
+      // transform-origin: 88.4688px 25.9922px;
+      user-select: none;
+      vertical-align: middle;
+      // width: 176.938px;
+      word-break: break-word;
+      // background: rgb(255 153 1) none repeat scroll 0% 0% / auto padding-box border-box;
+      // border: 2px solid rgb(0, 0, 0);
+      border-radius: 100px;
+      font: 500 17.6px / 26.4px Inter, sans-serif;
+      // margin: 9.6px;
+      outline: rgb(0, 0, 0) none 0px;
+      padding: 9.6px 10px;
+      transition: all 0.2s ease-in-out 0s;
       &:hover {
         // background: #202142;
         // color: $color_2;
@@ -81,11 +108,7 @@ header {
     }
 
     .logout_btn {
-      block-size: 71.1719px;
-
       color: rgb(35, 35, 35);
-
-      height: 71.1719px;
 
       min-height: auto;
 

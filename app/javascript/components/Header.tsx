@@ -1,18 +1,13 @@
 import React from 'react';
 import styles from './header.module.scss';
 import { Link, usePage } from '@inertiajs/inertia-react';
-import {
-  // IoChevronForwardCircle,
-  // IoLockClosedOutline,
-  // IoLogoGithub,
-  IoLogoLinkedin,
-} from '@react-icons/all-files/io5/IoLogoLinkedin';
+import { IoLogoLinkedin } from '@react-icons/all-files/io5/IoLogoLinkedin';
 import { IoChevronForwardCircle } from '@react-icons/all-files/io5/IoChevronForwardCircle';
-import { IoLockClosedOutline } from '@react-icons/all-files/io5/IoLockClosedOutline';
 import { IoLogoGithub } from '@react-icons/all-files/io5/IoLogoGithub';
 import Logo from './logo/Logo';
 import { Page } from '@inertiajs/inertia';
 import { UsePageProps } from '../inertia';
+import DropdownMenu from './DropdownMenu/DropdownMenu';
 
 const Header = () => {
   const { auth } = usePage<Page<UsePageProps>>().props;
@@ -61,20 +56,22 @@ const Header = () => {
         </div> */}
         {auth ? (
           <>
-            <img
-              src='https://avatars.githubusercontent.com/u/14037682?v=4'
-              alt=''
-              className={styles.user_image}
-            />
+            <a className={styles.icon_btn} href='https://github.com/lakshmaji'>
+              <IoLogoGithub className={styles.ionicon} />
+            </a>
+            <a className={styles.icon_btn} href='https://in.linkedin.com/in/lakshmajee'>
+              <IoLogoLinkedin className={styles.ionicon} />
+            </a>
 
-            <div className={styles.logout_btn}>
+            <DropdownMenu />
+            {/* <div className={styles.logout_btn}>
               <Link className={styles.link} href='/exit' method='get' as='button' type='button'>
                 Logout
                 <span className={styles.icon}>
                   <IoLockClosedOutline />
                 </span>
               </Link>
-            </div>
+            </div> */}
           </>
         ) : (
           <>

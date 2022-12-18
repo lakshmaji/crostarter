@@ -68,6 +68,16 @@ class ProjectsController < ApplicationController
     )
   end
 
+  def destroy
+    project = Project.find(params[:id])
+
+    if project.destroy
+      redirect_to(myprojects_path, notice: 'Project deleted.')
+    else
+      redirect_to(myprojects_path(project), alert: 'Project cannot be deleted!')
+    end
+  end
+
   def create
     project = Project.new(project_params)
     project.creator = current_user
