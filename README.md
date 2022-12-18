@@ -82,16 +82,11 @@ bundle exec rubocop --A # force - better not use it
       - [ ] create `cdk` project in typescript (bootstrap is not required for small project)
       - [ ] Run on CI actions
       - [ ] RoR code to upload file (<https://elliott-king.github.io/2020/09/s3-heroku-rails/>)
-  - [x] fix csrf token issue, while creating new project
-  - [ ] my projects
-  - [x] handle http Error in a page
   - [ ] contribute
-  - [ ] delete project
   - [ ] edit project
+  - [ ] roles (cancancan ?)
   - [ ] pagination
   - [ ] slider (with few random projects)
-  - [x] react-vis
-  - [ ] product listing updates
   - [ ] payment gateway integration (stripe)
   - [ ] Elastic search integration
     - [ ] search projects
