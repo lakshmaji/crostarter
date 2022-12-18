@@ -1,5 +1,4 @@
 import React from 'react';
-import { IoChevronForwardCircle } from '@react-icons/all-files/io5/IoChevronForwardCircle';
 import styles from './hero.module.scss';
 import Button from '../../components/Button/Button';
 
