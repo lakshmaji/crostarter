@@ -1,15 +1,15 @@
-.cat_container {
-  padding-left: 12rem;
-  padding-right: 12rem;
-}
-.container {
-  width: 100%;
-  .list {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 41px;
-
-    margin: auto;
-    justify-content: center;
+.section {
+  .categories {
+    padding: 3rem;
+  }
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    .list {
+      display: flex;
+      flex-wrap: wrap;
+      margin: auto;
+      justify-content: center;
+    }
   }
 }

@@ -1,9 +1,12 @@
+$color_1: rgb(91, 104, 123);
+$color_2: rgb(45, 57, 84);
+
 .container {
   position: relative;
   .menu {
     z-index: 2;
     background: #ffffff;
-    border-radius: 8px;
+    border-radius: 3px;
     position: absolute;
     top: 60px;
     right: 0;
@@ -19,12 +22,30 @@
       padding: 0;
       margin: 0;
       li {
-        border-bottom: 1px solid #dddddd;
+        background: rgb(108, 103, 103) (0, 234, 255);
+        padding: 0.5rem;
         a {
           text-decoration: none;
-          color: #333333;
-          padding: 15px 20px;
+          padding: 5px 10px;
           display: block;
+          color: $color_2;
+
+          .title {
+            font: 600 15px / 36px Inter, sans-serif;
+            color: $color_2;
+          }
+          .subtitle {
+            font: 400 12px/21px Inter, sans-serif;
+            color: $color_2;
+          }
+          &:hover {
+            background: white;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            border-radius: 5px;
+          }
+        }
+        &:last-child {
+          text-align: center;
         }
       }
     }
@@ -53,9 +74,7 @@
     }
 
     align-items: center;
-    // block-size: 51.9844px;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 2px 0px;
-    // box-sizing: border-box;
 
     color: rgb(0, 0, 0);
 

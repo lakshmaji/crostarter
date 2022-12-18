@@ -1,11 +1,11 @@
 import { classNames } from '../../../utils/styles';
 import React, { FC } from 'react';
 import styles from './projects.module.scss';
-import Banana from './Banana';
 import { IoCreateOutline } from '@react-icons/all-files/io5/IoCreateOutline';
 import { IoTrashOutline } from '@react-icons/all-files/io5/IoTrashOutline';
 import { IProject } from '../../../models/project';
 import { Inertia } from '@inertiajs/inertia';
+import Stats from '../../../features/users/myprojects/stats/Stats';
 
 interface Props {
   projects: IProject[];
@@ -115,7 +115,7 @@ const Projects: FC<Props> = ({ projects }) => {
                 })}
               </tbody>
             </table>
-            <Banana />
+            <Stats />
           </div>
         </div>
       </div>

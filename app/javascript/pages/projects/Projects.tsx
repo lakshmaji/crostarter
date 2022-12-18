@@ -1,9 +1,10 @@
 import React from 'react';
 import type { FC } from 'react';
 import { IProject } from '../../models/project';
-import ProjectCard from './ProjectCard';
+import ProjectCard from '../../features/projects/project/ProjectCard';
 import styles from './projects.module.scss';
-import Cat from '../categories/Cat';
+import Categories from '../../features/projects/category/Categories';
+import { classNames } from '../../utils/styles';
 
 interface Props {
   projects: IProject[];
@@ -12,9 +13,9 @@ interface Props {
 
 const Projects: FC<Props> = ({ projects, categories }) => {
   return (
-    <section>
-      <div className={styles.cat_container}>
-        <Cat items={categories} />
+    <section className={styles.section}>
+      <div className={classNames(styles.container, styles.categories)}>
+        <Categories items={categories} />
       </div>
       <div className={styles.container}>
         <div className={styles.list}>

@@ -1,27 +1,38 @@
 import React, { useEffect } from 'react';
 import type { FC } from 'react';
 import { useForm } from 'react-hook-form';
-import { Inertia } from '@inertiajs/inertia';
+import { Inertia, RequestPayload } from '@inertiajs/inertia';
 import { InertiaLink, Link } from '@inertiajs/inertia-react';
 import styles from './signin.module.scss';
 import { classNames } from '../../utils/styles';
+import { IoLogoFacebook } from '@react-icons/all-files/io5/IoLogoFacebook';
+import { IoLogoTwitter } from '@react-icons/all-files/io5/IoLogoTwitter';
 
 interface Props {
   errors: Array<Record<string, string>>;
 }
 
+interface SignUpFormData {
+  username: string;
+  password: string;
+}
 const SignUp: FC<Props> = ({ errors }) => {
   const {
     register,
     handleSubmit,
     formState: { errors: formErrors },
     setError,
-  } = useForm<{ username: string; password: string }>();
+  } = useForm<SignUpFormData>();
 
-  const onSubmit = (data) => {
-    Inertia.post('/users', {
-      user: { ...data, password_confirmation: data.password },
-    });
+  const onSubmit = (data: SignUpFormData) => {
+    const payload = {
+      user: {
+        username: data.username,
+        password: data.password,
+        password_confirmation: data.password,
+      },
+    } as unknown as RequestPayload;
+    Inertia.post('/users', payload);
   };
 
   useEffect(() => {
@@ -46,11 +57,11 @@ const SignUp: FC<Props> = ({ errors }) => {
           <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
             <h1>Create new account</h1>
             <div className={styles.social_container}>
-              <InertiaLink href='#' className='social'>
-                <i className='fa fa-facebook fa-2x'></i>
+              <InertiaLink href='/' className={styles.social}>
+                <IoLogoFacebook size={40} />
               </InertiaLink>
-              <InertiaLink href='#' className='social'>
-                <i className='fab fa fa-twitter fa-2x'></i>
+              <InertiaLink href='/' className={styles.social}>
+                <IoLogoTwitter size={40} />
               </InertiaLink>
             </div>
             <span>or use your account</span>

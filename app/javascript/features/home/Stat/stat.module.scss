@@ -1,0 +1,34 @@
+$color_1: rgb(144, 145, 148);
+$color_2: rgb(26, 28, 36);
+
+.container {
+  .card {
+    display: flex;
+    border: 0px none rgb(144, 145, 148);
+    margin: 0px 0px -10px -20px;
+    outline: rgb(144, 145, 148) none 0px;
+    &:after {
+      display: block;
+    }
+    &:before {
+      display: block;
+    }
+    .header {
+      margin: 0px 0px 10px 20px;
+    }
+    .body {
+      margin: 0px 0px 10px 20px;
+      .value {
+        color: $color_2;
+        letter-spacing: -1.04px;
+        font: 500 38px / 62.0001px Heebo, -apple-system, 'system-ui', 'Segoe UI', Roboto,
+          'Helvetica Neue', Arial, sans-serif;
+      }
+      .description {
+        color: $color_2;
+        font: 11px/23px Heebo, -apple-system, 'system-ui', 'Segoe UI', Roboto, 'Helvetica Neue',
+          Arial, sans-serif;
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+.section {
+  background-position: 50% 50%;
+
+  padding: 96px 0px;
+  max-width: 1400px;
+  margin: 0 auto;
+  .wrapper {
+    margin: 0px 20px;
+    padding: 0px 32px;
+    .header {
+      overflow-wrap: break-word;
+      .title {
+        color: rgb(35, 35, 35);
+
+        overflow-wrap: break-word;
+
+        text-align: left;
+
+        word-break: break-word;
+        font: 35.2px / 42.24px Inter, sans-serif;
+        margin: 0px;
+      }
+      .subtitle {
+        color: rgb(166, 166, 166);
+
+        overflow-wrap: break-word;
+
+        text-align: left;
+
+        word-break: break-word;
+        font: 17.6px / 26.4px Inter, sans-serif;
+        margin: 8px 0px 0px;
+      }
+    }
+    .list {
+      display: flex;
+
+      overflow-wrap: break-word;
+
+      background: rgb(255, 204, 1) none repeat scroll 0% 0% / auto padding-box border-box;
+      border: 0px none rgb(35, 35, 35);
+      border-radius: 32px;
+      flex-flow: row wrap;
+      margin: 32px 0px 0px;
+      padding: 32px 16px 0px;
+    }
+  }
+}

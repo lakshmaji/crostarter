@@ -5,6 +5,8 @@ import { Inertia, RequestPayload } from '@inertiajs/inertia';
 import { Link } from '@inertiajs/inertia-react';
 import styles from './signin.module.scss';
 import { classNames } from '../../utils/styles';
+import { IoLogoFacebook } from '@react-icons/all-files/io5/IoLogoFacebook';
+import { IoLogoTwitter } from '@react-icons/all-files/io5/IoLogoTwitter';
 
 interface Props {
   errors: string;
@@ -33,11 +35,11 @@ const SignIn: FC<Props> = ({ errors }) => {
           <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
             <h1>Login</h1>
             <div className={styles.social_container}>
-              <Link href='#' className='social'>
-                <i className='fa fa-facebook fa-2x'></i>
+              <Link href='/' className={styles.social}>
+                <IoLogoFacebook size={40} />
               </Link>
-              <Link href='#' className='social'>
-                <i className='fab fa fa-twitter fa-2x'></i>
+              <Link href='/' className={styles.social}>
+                <IoLogoTwitter size={40} />
               </Link>
             </div>
             <span>or use your account</span>

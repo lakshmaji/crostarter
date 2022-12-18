@@ -1,8 +1,8 @@
 import React, { FC, ReactNode } from 'react';
 import { Flash } from './Flash';
-import Footer from './Footer';
-import Header from './Header';
-import NewsLetter from './NewsLetter';
+import Footer from './Footer/Footer';
+import Header from './Header/Header';
+import NewsLetter from './NewsLetter/NewsLetter';
 
 interface Props {
   children: ReactNode;
@@ -14,11 +14,11 @@ const Layout: FC<Props> = ({ children }) => {
       <Header />
 
       <div
-        style={
-          {
-            // marginTop: 70,
-          }
-        }
+        style={{
+          // marginTop: 70,
+          background:
+            'background: rgb(249, 249, 249) none no-repeat scroll 50% 50% / cover padding-box border-box',
+        }}
       >
         {children}
       </div>

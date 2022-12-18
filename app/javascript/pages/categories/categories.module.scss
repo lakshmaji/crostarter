@@ -1,127 +1,133 @@
-.content {
-  width: 100vw;
-  height: 20vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  p {
-    width: 60%;
-    text-align: center;
-    font-size: 19px;
-    margin: 0 auto;
-    margin-top: 25px;
-    line-height: 1.35em;
-    font-weight: 300;
-    color: #c5c5c5;
-  }
-  .slider_wrapper {
-    font-size: 3.15vw;
-    line-height: 1.175em;
-    font-weight: 400;
+.section {
+  // padding: 96px 0px;
 
-    color: #000;
-    text-transform: capitalize;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    .slider {
-      height: 50px;
-      padding-left: 15px;
-      overflow: hidden;
-      div {
-        color: #fff;
+  // .content {
+  // width: 100vw;
+  // height: 20vh;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+  .header {
+    padding-top: 3rem;
+    p {
+      // width: 60%;
+      text-align: center;
+      font-size: 19px;
+      margin: 0 auto;
+      padding-top: 2.5rem;
+      line-height: 1.35em;
+      font-weight: 300;
+      color: #c5c5c5;
+    }
+    .slider_wrapper {
+      font-size: 3.15vw;
+      line-height: 1.175em;
+      font-weight: 400;
+
+      color: #000;
+      text-transform: capitalize;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .slider {
         height: 50px;
-        margin-bottom: 50px;
-        padding: 2px 15px;
-        text-align: center;
-        box-sizing: border-box;
-      }
-      .slider_text1 {
-        background: lightgreen;
-        animation: slide 5s linear infinite;
-      }
-      .slider_text2 {
-        background: skyblue;
+        padding-left: 15px;
+        overflow: hidden;
+        div {
+          color: #fff;
+          height: 50px;
+          margin-bottom: 50px;
+          padding: 2px 15px;
+          text-align: center;
+        }
+        .slider_text1 {
+          background: lightgreen;
+          animation: slide 5s linear infinite;
+        }
+        .slider_text2 {
+          background: skyblue;
 
-        background: #fff;
-        color: black;
-        border-bottom: 2px dashed rgb(255, 95, 139);
-      }
-      .slider_text3 {
-        background: lightcoral;
+          background: #fff;
+          color: black;
+          border-bottom: 2px dashed rgb(255, 95, 139);
+        }
+        .slider_text3 {
+          background: lightcoral;
+        }
       }
     }
   }
-}
 
-@keyframes slide {
-  0% {
-    margin-top: -300px;
+  @keyframes slide {
+    0% {
+      margin-top: -300px;
+    }
+    5% {
+      margin-top: -200px;
+    }
+    33% {
+      margin-top: -200px;
+    }
+    38% {
+      margin-top: -100px;
+    }
+    66% {
+      margin-top: -100px;
+    }
+    71% {
+      margin-top: 0px;
+    }
+    100% {
+      margin-top: 0px;
+    }
   }
-  5% {
-    margin-top: -200px;
-  }
-  33% {
-    margin-top: -200px;
-  }
-  38% {
-    margin-top: -100px;
-  }
-  66% {
-    margin-top: -100px;
-  }
-  71% {
-    margin-top: 0px;
-  }
-  100% {
-    margin-top: 0px;
-  }
-}
 
-.container {
-  padding: 10rem;
-  padding-top: 1rem;
+  .container {
+    padding: 10rem 1rem;
+    max-width: 1400px;
+    margin: 0 auto;
 
-  .my_masonry_grid {
-    display: -webkit-box; /* Not needed if autoprefixing */
-    display: -ms-flexbox; /* Not needed if autoprefixing */
-    display: flex;
-    margin: 0 auto; /* gutter size offset */
-    width: auto;
-  }
-  .my_masonry_grid_column {
-    padding-left: 30px; /* gutter size */
-    background-clip: padding-box;
-    .item {
-      /* change div to reference your elements you put in <Masonry> */
-      background: grey;
-      margin-bottom: 30px;
-      padding: 20px;
-      padding-top: 150px;
-      padding-bottom: 100px;
+    .my_masonry_grid {
+      display: -webkit-box; /* Not needed if autoprefixing */
+      display: -ms-flexbox; /* Not needed if autoprefixing */
       display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      border-radius: 5px;
-      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-      text-align: center;
-      .icon {
-        margin-bottom: 20px;
-        color: #fff;
-      }
-      .text {
-        font-size: 3rem;
-        color: #fff;
-        line-height: 9rem;
-        font-family: 'Lora rev=1', Helvetica, serif;
-        font-weight: 100;
-      }
-      .desc {
-        padding: 15px;
-        font-size: 1.2rem;
-        color: #fff;
-        font-family: 'Lora rev=1', Helvetica, serif;
+      margin: 0 auto; /* gutter size offset */
+      width: auto;
+    }
+    .my_masonry_grid_column {
+      padding-left: 30px; /* gutter size */
+      background-clip: padding-box;
+      .item {
+        /* change div to reference your elements you put in <Masonry> */
+        background: grey;
+        margin-bottom: 30px;
+        padding: 20px;
+        padding-top: 150px;
+        padding-bottom: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        text-align: center;
+        .icon {
+          margin-bottom: 20px;
+          color: #fff;
+        }
+        .text {
+          font-size: 3rem;
+          color: #fff;
+          line-height: 9rem;
+          font-family: 'Lora rev=1', Helvetica, serif;
+          font-weight: 100;
+        }
+        .desc {
+          padding: 15px;
+          font-size: 1.2rem;
+          color: #fff;
+          font-family: 'Lora rev=1', Helvetica, serif;
+        }
       }
     }
   }
