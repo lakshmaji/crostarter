@@ -2,11 +2,14 @@ import React from 'react';
 import styles from './header.module.scss';
 import { Link, usePage } from '@inertiajs/inertia-react';
 import {
-  IoChevronForwardCircle,
-  IoLockClosedOutline,
-  IoLogoGithub,
+  // IoChevronForwardCircle,
+  // IoLockClosedOutline,
+  // IoLogoGithub,
   IoLogoLinkedin,
-} from 'react-icons/io5';
+} from '@react-icons/all-files/io5/IoLogoLinkedin';
+import { IoChevronForwardCircle } from '@react-icons/all-files/io5/IoChevronForwardCircle';
+import { IoLockClosedOutline } from '@react-icons/all-files/io5/IoLockClosedOutline';
+import { IoLogoGithub } from '@react-icons/all-files/io5/IoLogoGithub';
 import Logo from './logo/Logo';
 import { Page } from '@inertiajs/inertia';
 import { UsePageProps } from '../inertia';

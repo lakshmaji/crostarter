@@ -3,8 +3,8 @@
 [![Deployment][deploy-image]][deploy-url] [![Unit Tests][rspec-image]][rspec-url] [![Rails code style][rubocop-code-style-image]][rubocop-code-style-url] [![Rails Style Guide][rails-code-style-image]][rails-code-style-url]
 [![npm][npm-image]][npm-url] [![ESLint][eslint-image]][eslint-url]
 
-[deploy-image]: https://github.com/lakshmaji/kickstarter/actions/workflows/build.yml/badge.svg?branch=main
-[deploy-url]: https://github.com/lakshmaji/kickstarter/actions/workflows/build.yml
+[deploy-image]: https://github.com/lakshmaji/kickstarter/actions/workflows/deployment.yml/badge.svg?branch=main
+[deploy-url]: https://github.com/lakshmaji/kickstarter/actions/workflows/deployment.yml
 [rspec-image]: https://github.com/lakshmaji/kickstarter/actions/workflows/spec.yml/badge.svg?branch=main
 [rspec-url]: https://github.com/lakshmaji/kickstarter/actions/workflows/spec.yml
 [rubocop-code-style-image]: https://img.shields.io/badge/code_style-rubocop-brightgreen.svg

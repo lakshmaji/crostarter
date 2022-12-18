@@ -1,6 +1,6 @@
 import { classNames } from '../../utils/styles';
 import React, { FC } from 'react';
-import { IoDesktopOutline } from 'react-icons/io5';
+import { IoDesktopOutline } from '@react-icons/all-files/io5/IoDesktopOutline';
 import styles from './bro.module.scss';
 
 interface Props {

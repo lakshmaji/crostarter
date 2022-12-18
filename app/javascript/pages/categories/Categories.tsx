@@ -2,7 +2,7 @@ import React from 'react';
 import type { FC } from 'react';
 import styles from './categories.module.scss';
 import Masonry from 'react-masonry-css';
-import { IoTrainOutline } from 'react-icons/io5';
+import { IoTrainOutline } from '@react-icons/all-files/io5/IoTrainOutline';
 import { faker } from '@faker-js/faker';
 
 const COLOR_CODES = [

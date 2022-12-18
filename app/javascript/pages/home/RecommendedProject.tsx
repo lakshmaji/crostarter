@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import styles from './recommended-project.module.scss';
 import { IProject } from '../../models/project';
-import { IoChevronForwardCircle } from 'react-icons/io5';
+import { IoChevronForwardCircle } from '@react-icons/all-files/io5/IoChevronForwardCircle';
 import { Link } from '@inertiajs/inertia-react';
 
 interface Props {
