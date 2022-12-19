@@ -85,6 +85,7 @@ bundle exec rubocop --A # force - better not use it
       - [ ] Run on CI actions
       - [ ] RoR code to upload file
   - [ ] edit project
+  - [ ] Fix CLS - take help from css expert !!
   - [ ] contribute
     - [ ] payment gateway integration (stripe)
   - [ ] Elastic search integration
@@ -102,6 +103,7 @@ bundle exec rubocop --A # force - better not use it
   - [ ] services for retrieving data
   - [ ] Use SASS variable, mixins
   - [ ] roles (cancancan ?)
+  - [ ] Progress indicator route navigation
 
 - [ ] Playwright testing (e2e)
   - [ ] Github action for playwright

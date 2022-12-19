@@ -3,9 +3,9 @@ import type { FC } from 'react';
 import styles from './categories.module.scss';
 import Masonry from 'react-masonry-css';
 import { IoTrainOutline } from '@react-icons/all-files/io5/IoTrainOutline';
-import { faker } from '@faker-js/faker';
 import AppHead from '../../components/AppHead';
 import { ICategory } from '../../models/category';
+import { arrayElement, loremSentence } from '../../utils/helpers';
 
 const COLOR_CODES = [
   '#ff9f00',
@@ -88,12 +88,12 @@ const Categories: FC<Props> = (props) => {
                   key={item.id}
                   className={styles.item}
                   style={{
-                    background: faker.helpers.arrayElement(COLOR_CODES),
+                    background: arrayElement(COLOR_CODES),
                   }}
                 >
                   <IoTrainOutline size={82} className={styles.icon} />
                   <div className={styles.text}>{item.name}</div>
-                  <p className={styles.desc}>{faker.lorem.sentence()}</p>
+                  <p className={styles.desc}>{loremSentence()}</p>
                 </div>
               );
             })}
