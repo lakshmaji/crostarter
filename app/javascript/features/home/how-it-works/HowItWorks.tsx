@@ -14,8 +14,8 @@ const HowItWorks = () => {
         <div className={styles.step}>
           <div className={styles.box}>
             <div className={styles.inner_circle}>
-              <h5>STEP</h5>
-              <h2>01</h2>
+              <div className={styles.h5}>STEP</div>
+              <div className={styles.h2}>01</div>
             </div>
           </div>
           <div className={styles.bro}>
@@ -30,8 +30,8 @@ const HowItWorks = () => {
         <div className={styles.step}>
           <div className={styles.box}>
             <div className={styles.inner_circle}>
-              <h5>STEP</h5>
-              <h2>02</h2>
+              <div className={styles.h5}>STEP</div>
+              <div className={styles.h2}>02</div>
             </div>
           </div>
           <div className={styles.bro}>
@@ -45,8 +45,8 @@ const HowItWorks = () => {
         <div className={styles.step}>
           <div className={styles.box}>
             <div className={styles.inner_circle}>
-              <h5>STEP</h5>
-              <h2>03</h2>
+              <div className={styles.h5}>STEP</div>
+              <div className={styles.h2}>03</div>
             </div>
           </div>
           <div className={styles.bro}>
@@ -61,8 +61,8 @@ const HowItWorks = () => {
         <div className={styles.step}>
           <div className={styles.box}>
             <div className={styles.inner_circle}>
-              <h5>STEP</h5>
-              <h2>04</h2>
+              <div className={styles.h5}>STEP</div>
+              <div className={styles.h2}>04</div>
             </div>
           </div>
           <div className={styles.bro}>
