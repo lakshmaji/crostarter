@@ -20,6 +20,8 @@
     },
     "ruby.format": "rubocop",
     "cSpell.words": [
-        "inertiajs"
+        "blackhole",
+        "inertiajs",
+        "Pagy"
     ],
 }

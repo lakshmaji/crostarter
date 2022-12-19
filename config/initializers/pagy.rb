@@ -12,7 +12,7 @@
 # Instance variables
 # See https://ddnexus.github.io/pagy/api/pagy#instance-variables
 # Pagy::DEFAULT[:page]   = 1                                  # default
-# Pagy::DEFAULT[:items]  = 20                                 # default
+Pagy::DEFAULT[:items] = 15 # default
 # Pagy::DEFAULT[:outset] = 0                                  # default
 
 # Other Variables
@@ -97,7 +97,7 @@
 # See https://ddnexus.github.io/pagy/extras/metadata
 # you must require the frontend helpers internal extra (BEFORE the metadata extra) ONLY if you need also the :sequels
 # require 'pagy/extras/frontend_helpers'
-# require 'pagy/extras/metadata'
+require 'pagy/extras/metadata'
 # For performance reasons, you should explicitly set ONLY the metadata you use in the frontend
 # Pagy::DEFAULT[:metadata] = %i[scaffold_url page prev next last]   # example
 
