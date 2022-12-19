@@ -7,6 +7,7 @@ import { IoPhonePortraitOutline } from '@react-icons/all-files/io5/IoPhonePortra
 import { IoDesktopSharp } from '@react-icons/all-files/io5/IoDesktopSharp';
 import { IoLogoUsd } from '@react-icons/all-files/io5/IoLogoUsd';
 import { IoChatbubblesOutline } from '@react-icons/all-files/io5/IoChatbubblesOutline';
+import AppHead from '../../components/AppHead';
 
 const ProjectStats = React.lazy(() => import('./ProjectStats'));
 
@@ -16,6 +17,12 @@ interface Props {
 const ProjectDetails: FC<Props> = ({ project }) => {
   return (
     <>
+      <AppHead title='Home'>
+        <meta
+          name='description'
+          content={`Crostarter is a blackhole crowd funding application, where you can raise funds, invest in projects. This is a test application. View ${project.title}`}
+        />
+      </AppHead>
       <section>
         <div className={classNames(styles.ft_single, styles.bg_white)}>
           <div className={styles.container}>

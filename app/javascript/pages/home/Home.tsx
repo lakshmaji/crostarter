@@ -8,6 +8,7 @@ import RecommendedProjects from '../../features/home/recommened-projects/Recomme
 import OverallStats from '../../features/home/stats/OverallStats';
 import { IProject } from '../../models/project';
 import Hero from '../../features/home/hero/Hero';
+import AppHead from '../../components/AppHead';
 
 interface Props {
   categories: Category[];
@@ -18,6 +19,12 @@ interface Props {
 const Home: FC<Props> = ({ categories, trending_projects, recommended_projects }) => {
   return (
     <>
+      <AppHead title='Home'>
+        <meta
+          name='description'
+          content='Crostarter is a blackhole crowd funding application, where you can raise funds, invest in projects. This is a test application.'
+        />
+      </AppHead>
       <Hero />
       <OverallStats />
       <FeaturedProjects trending_projects={trending_projects} />
