@@ -1,5 +1,5 @@
 import { classNames } from '../../utils/styles';
-import React, { PointerEvent, useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styles from './dropdown.module.scss';
 import { Link, usePage } from '@inertiajs/inertia-react';
 import { IoLockClosedOutline } from '@react-icons/all-files/io5/IoLockClosedOutline';
@@ -17,14 +17,15 @@ const DropdownMenu = () => {
 
   useEffect(() => {
     if (linkRef?.current) {
-      const linkClickEvent = (event: Event) => {
+      const menuLink = linkRef.current;
+      const linkClickEvent = () => {
         setIsActive(false);
       };
 
-      linkRef.current.addEventListener('click', linkClickEvent);
+      menuLink.addEventListener('click', linkClickEvent);
 
       return () => {
-        linkRef.current?.removeEventListener('click', linkClickEvent);
+        menuLink.removeEventListener('click', linkClickEvent);
       };
     }
   }, [isActive]);

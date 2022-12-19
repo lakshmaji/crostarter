@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 3rem;
+    border-radius: 5px;
+    .message {
+      color: #fff;
+    }
+    .close {
+      padding-left: 1rem;
+      color: #fff;
+      line-height: 1rem;
+      cursor: pointer;
+    }
+  }
+  .info {
+    background: #14c38e;
+  }
+  .warn {
+    background: #e0144c;
+  }
+}

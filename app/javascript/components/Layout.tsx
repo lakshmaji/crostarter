@@ -1,5 +1,5 @@
 import React, { FC, ReactNode } from 'react';
-import { Flash } from './Flash';
+import { Flash } from './Alerts/Flash';
 import Footer from './Footer/Footer';
 import Header from './Header/Header';
 import NewsLetter from './NewsLetter/NewsLetter';
@@ -10,8 +10,8 @@ interface Props {
 const Layout: FC<Props> = ({ children }) => {
   return (
     <>
-      <Flash />
       <Header />
+      <Flash />
 
       <div
         style={{
