@@ -8,6 +8,7 @@ import { classNames } from '../../utils/styles';
 import Pagination from '../../components/Pagination/Pagination';
 import { ICategory } from '../../models/category';
 import { IPagy } from 'app/javascript/models/pagination';
+import AppHead from '../../components/AppHead';
 
 interface Props {
   projects: IProject[];
@@ -18,6 +19,12 @@ interface Props {
 const Projects: FC<Props> = ({ projects, categories, pagy }) => {
   return (
     <>
+      <AppHead title='Home'>
+        <meta
+          name='description'
+          content='Crostarter is a blackhole crowd funding application, where you can raise funds, invest in projects. This is a test application. Explore projects'
+        />
+      </AppHead>
       <section className={styles.section}>
         <div className={classNames(styles.container, styles.categories)}>
           <Categories items={categories} />

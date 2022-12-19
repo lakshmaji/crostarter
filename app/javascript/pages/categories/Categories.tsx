@@ -4,6 +4,8 @@ import styles from './categories.module.scss';
 import Masonry from 'react-masonry-css';
 import { IoTrainOutline } from '@react-icons/all-files/io5/IoTrainOutline';
 import { faker } from '@faker-js/faker';
+import AppHead from '../../components/AppHead';
+import { ICategory } from '../../models/category';
 
 const COLOR_CODES = [
   '#ff9f00',
@@ -24,8 +26,7 @@ const COLOR_CODES = [
 ];
 
 interface Props {
-  // FIXME:
-  categories: any[];
+  categories: ICategory[];
 }
 
 const Categories: FC<Props> = (props) => {
@@ -38,6 +39,12 @@ const Categories: FC<Props> = (props) => {
 
   return (
     <>
+      <AppHead title='Home'>
+        <meta
+          name='description'
+          content='Crostarter is a blackhole crowd funding application, where you can raise funds, invest in projects. This is a test application. Explore categories.'
+        />
+      </AppHead>
       <section className={styles.section}>
         <div className={styles.header}>
           <div className={styles.wrapper}>
