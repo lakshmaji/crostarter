@@ -6,7 +6,6 @@ import { useForm } from 'react-hook-form';
 import styles from './new-project.module.scss';
 import Select, { MultiValue, SingleValue, StylesConfig } from 'react-select';
 import { useEffect } from 'react';
-import { faker } from '@faker-js/faker';
 import { ColourOption, getRandomColor } from './data';
 import chroma from 'chroma-js';
 
@@ -94,15 +93,15 @@ export interface CategoryOption {
 }
 const NewProject: FC<Props> = ({ errors, categories }) => {
   const defaultValues: ProjectFormData = {
-    title: faker.commerce.productName(),
-    website: faker.internet.domainName(),
-    description: faker.commerce.productDescription(),
+    title: '', // faker.commerce.productName(),
+    website: '', // faker.internet.domainName(),
+    description: '', // faker.commerce.productDescription(),
     end_date: '',
-    funding_goal: +faker.commerce.price(1000, 12000),
-    details: faker.lorem.paragraphs(3),
+    funding_goal: 0, // +faker.commerce.price(1000, 12000),
+    details: '', // faker.lorem.paragraphs(3),
     category_id: '',
-    funded: +faker.commerce.price(1000, 2000),
-    tagline: faker.company.catchPhrase(),
+    funded: 0, // +faker.commerce.price(1000, 2000),
+    tagline: '', // faker.company.catchPhrase(),
   };
   const [selectedDay, setSelectedDay] = useState<string>();
 

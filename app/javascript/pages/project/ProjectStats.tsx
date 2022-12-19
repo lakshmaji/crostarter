@@ -1,4 +1,4 @@
-import { faker } from '@faker-js/faker';
+import { randomDate, randomIntFromInterval } from '../../utils/helpers';
 import React from 'react';
 import {
   AreaChart,
@@ -20,12 +20,12 @@ let accumulated = 0;
 let current = 0;
 do {
   const prevAcc = accumulated;
-  current += +faker.commerce.price(10, 500);
+  current += +randomIntFromInterval(10, 500);
   accumulated += current;
   const needed = EXPECTED - accumulated;
 
   const record = {
-    ts: faker.date.betweens('2020-01-01T00:00:00.000Z', '2030-01-01T00:00:00.000Z'),
+    ts: randomDate(new Date(2012, 0, 1), new Date()), // faker.date.betweens('2020-01-01T00:00:00.000Z', '2030-01-01T00:00:00.000Z'),
     expected: EXPECTED,
     received: current,
     accumulated,
