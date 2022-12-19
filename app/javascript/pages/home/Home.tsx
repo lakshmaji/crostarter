@@ -1,4 +1,4 @@
-import { Category } from '../../models/category';
+import { ICategory } from '../../models/category';
 import React, { FC } from 'react';
 import Companies from '../../features/home/companies/Companies';
 import FeaturedCategories from '../../features/home/categories/FeaturedCategories';
@@ -11,7 +11,7 @@ import Hero from '../../features/home/hero/Hero';
 import AppHead from '../../components/AppHead';
 
 interface Props {
-  categories: Category[];
+  categories: ICategory[];
   trending_projects: IProject[];
   recommended_projects: IProject[];
 }

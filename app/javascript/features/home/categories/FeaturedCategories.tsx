@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
 import styles from './featured-categories.module.scss';
-import { Category } from '../../../models/category';
+import { ICategory } from '../../../models/category';
 import { Link } from '@inertiajs/inertia-react';
 
 interface Props {
-  categories: Category[];
+  categories: ICategory[];
 }
 const FeaturedCategories: FC<Props> = ({ categories }) => {
   return (
@@ -24,7 +24,11 @@ const FeaturedCategories: FC<Props> = ({ categories }) => {
               <div className={styles.card} key={category.id}>
                 <div className={styles.container}>
                   <div className={styles.header}>
-                    <Link href='/categories' className={styles.picture_link}>
+                    <Link
+                      href='/categories'
+                      className={styles.picture_link}
+                      aria-label={`View ${category.name} category`}
+                    >
                       <img
                         src='https://themezhub.net/odex-live/odex/assets/img/c-1.png'
                         alt=''
@@ -33,11 +37,11 @@ const FeaturedCategories: FC<Props> = ({ categories }) => {
                     </Link>
                   </div>
                   <div className={styles.link_wrapper}>
-                    <h4 className={styles.category}>
+                    <div className={styles.category}>
                       <Link href='/' className={styles.link_text}>
                         {category.name}
                       </Link>
-                    </h4>
+                    </div>
                   </div>
                 </div>
               </div>

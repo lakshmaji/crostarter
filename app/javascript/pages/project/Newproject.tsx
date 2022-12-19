@@ -1,5 +1,5 @@
 import { Inertia, RequestPayload } from '@inertiajs/inertia';
-import { Category } from '../../models/category';
+import { ICategory } from '../../models/category';
 import { classNames } from '../../utils/styles';
 import React, { FC, useState } from 'react';
 import { useForm } from 'react-hook-form';
@@ -84,7 +84,7 @@ interface ProjectFormData {
 
 interface Props {
   errors: Array<Record<string, string>>;
-  categories: Category[];
+  categories: ICategory[];
 }
 
 export interface CategoryOption {
