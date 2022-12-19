@@ -93,3 +93,5 @@ gem "rubocop-rspec", "~> 2.15", :group => :development
 gem "pg", "~> 1.4"
 
 gem "database_cleaner", "~> 2.0", :group => :test
+
+gem "pagy", "~> 5.10"
