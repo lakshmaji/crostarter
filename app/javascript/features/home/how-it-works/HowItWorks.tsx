@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './how-it-works.module.scss';
-import Bro from './Bro';
+import StepDescriptor from './StepDescriptor';
 
 const HowItWorks = () => {
   return (
@@ -19,7 +19,7 @@ const HowItWorks = () => {
             </div>
           </div>
           <div className={styles.bro}>
-            <Bro
+            <StepDescriptor
               right
               color='#8922d5'
               title='register'
@@ -35,7 +35,7 @@ const HowItWorks = () => {
             </div>
           </div>
           <div className={styles.bro}>
-            <Bro
+            <StepDescriptor
               color='#0197f6'
               title='category'
               subtitle='Choose category in which your project fits'
@@ -50,7 +50,7 @@ const HowItWorks = () => {
             </div>
           </div>
           <div className={styles.bro}>
-            <Bro
+            <StepDescriptor
               right
               color='#ff5f8b'
               title='enlist'
@@ -66,7 +66,7 @@ const HowItWorks = () => {
             </div>
           </div>
           <div className={styles.bro}>
-            <Bro
+            <StepDescriptor
               color='#ff9f00'
               title='funds'
               subtitle='Track funds, contributed by other users, investors (crowd) '

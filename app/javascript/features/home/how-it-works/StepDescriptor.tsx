@@ -1,7 +1,7 @@
 import { classNames } from '../../../utils/styles';
 import React, { FC } from 'react';
 import { IoDesktopOutline } from '@react-icons/all-files/io5/IoDesktopOutline';
-import styles from './bro.module.scss';
+import styles from './step-descriptor.module.scss';
 
 interface Props {
   right?: boolean;
@@ -9,7 +9,7 @@ interface Props {
   title: string;
   subtitle: string;
 }
-const Bro: FC<Props> = ({ right = false, color, title, subtitle }) => {
+const StepDescriptor: FC<Props> = ({ right = false, color, title, subtitle }) => {
   return (
     <div className={classNames(styles.container)}>
       <div
@@ -61,4 +61,4 @@ const Bro: FC<Props> = ({ right = false, color, title, subtitle }) => {
   );
 };
 
-export default Bro;
+export default StepDescriptor;
