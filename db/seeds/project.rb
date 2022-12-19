@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-10.times do
+100.times do
   category = Category.all.sample
   creator = User.all.sample
   Project.create(

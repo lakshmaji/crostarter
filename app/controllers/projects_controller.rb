@@ -2,15 +2,17 @@
 
 class ProjectsController < ApplicationController
   def index
-    projects = Project
-      .includes(:category)
+    pagy, paged_projects = pagy(
+      Project
+            .includes(:category),
+    )
 
     categories = Category.all
 
     render(
       inertia: 'projects/Projects',
       props: {
-        projects: projects
+        projects: paged_projects
             .as_json(
               only: [
                 :id,
@@ -27,6 +29,7 @@ class ProjectsController < ApplicationController
               ],
               include: { category: { only: :name } },
             ),
+        pagy: pagy_metadata(pagy),
         categories:,
       },
     )
