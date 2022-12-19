@@ -1,0 +1,212 @@
+$color_1: rgb(91, 104, 123);
+$color_2: rgb(45, 57, 84);
+$color_3: rgb(74, 86, 130);
+$color_4: rgb(255, 255, 255);
+
+.section {
+  padding: 80px 0px;
+  max-width: 1400px;
+  margin: 0 auto;
+  .container {
+    margin: 0px 120px;
+    padding: 0px 15px;
+
+    .header {
+      display: flex;
+
+      flex-flow: row wrap;
+
+      .content {
+        flex: 0 0 100%;
+
+        .title_wrapper {
+          text-align: center;
+
+          margin: 0px 0px 32px;
+          .subtitle {
+            color: $color_1;
+
+            text-align: center;
+
+            font: 15px / 22.5px Muli, sans-serif;
+          }
+          .title {
+            color: $color_2;
+
+            text-align: center;
+
+            text-transform: capitalize;
+            font: 600 30px / 36px Jost, sans-serif;
+            margin: 0px 0px 5px;
+          }
+        }
+      }
+    }
+    .list {
+      display: flex;
+      justify-content: center;
+      flex-flow: row wrap;
+
+      .card {
+        width: 200px;
+        flex: 0 0 16.6667%;
+        font: 15px / 22.5px Muli, sans-serif;
+        padding: 0px 15px;
+
+        .container {
+          align-items: center;
+
+          display: flex;
+          height: 150px;
+
+          justify-content: center;
+
+          text-align: center;
+
+          width: 170px;
+          background: rgba(0, 0, 0, 0.03) none repeat scroll 0% 0% / auto padding-box border-box;
+          border: 1px solid rgb(241, 227, 224);
+          border-radius: 6px;
+          flex-flow: column nowrap;
+          margin: 0px 0px 30px;
+          outline: rgb(91, 104, 123) none 0px;
+          overflow: hidden;
+          transition: all 0.4s ease 0s;
+
+          .header {
+            max-width: 70px;
+
+            text-align: center;
+
+            width: 70px;
+            padding: 8px 0px;
+
+            .picture_link {
+              color: $color_3;
+
+              display: block;
+              height: 70px;
+
+              text-align: center;
+
+              touch-action: manipulation;
+              transform-origin: 35px 35px;
+              width: 70px;
+              border: 0px none rgb(74, 86, 130);
+              font: 15px / 22.5px Muli, sans-serif;
+              outline: rgb(74, 86, 130) none 0px;
+
+              .picture {
+                color: $color_3;
+
+                cursor: pointer;
+                height: 70px;
+
+                max-width: 100%;
+
+                text-align: center;
+
+                transform-origin: 35px 35px;
+                vertical-align: middle;
+                width: 70px;
+                border: 0px none rgb(74, 86, 130);
+                font: 15px / 22.5px Muli, sans-serif;
+                outline: rgb(74, 86, 130) none 0px;
+              }
+            }
+          }
+          .link_wrapper {
+            color: $color_1;
+
+            height: 34px;
+
+            min-height: auto;
+
+            min-width: auto;
+            text-align: center;
+
+            transform-origin: 56.3164px 17px;
+            width: 112.633px;
+            border: 0px none rgb(91, 104, 123);
+            font: 15px / 22.5px Muli, sans-serif;
+            outline: rgb(91, 104, 123) none 0px;
+
+            .category {
+              color: $color_2;
+
+              height: 26px;
+
+              letter-spacing: 0.5px;
+
+              text-align: center;
+
+              text-transform: capitalize;
+              width: 112.633px;
+              border: 0px none rgb(45, 57, 84);
+              font: 600 13px / 26px Muli, sans-serif;
+              margin: 0px 0px 8px;
+              outline: rgb(45, 57, 84) none 0px;
+
+              .link_text {
+                color: $color_3;
+
+                letter-spacing: 0.5px;
+
+                text-align: center;
+
+                text-transform: capitalize;
+                touch-action: manipulation;
+                transform-origin: 0px 0px;
+                border: 0px none rgb(74, 86, 130);
+                font: 600 13px / 26px Muli, sans-serif;
+                outline: rgb(74, 86, 130) none 0px;
+              }
+            }
+          }
+        }
+      }
+      .footer {
+        color: $color_1;
+
+        height: 54px;
+
+        max-width: 100%;
+
+        min-height: 1px;
+
+        text-align: center;
+
+        width: 1200px;
+        border: 0px none rgb(91, 104, 123);
+        flex: 0 0 100%;
+        font: 15px / 22.5px Muli, sans-serif;
+        outline: rgb(91, 104, 123) none 0px;
+        padding: 0px 15px;
+
+        .explore {
+          appearance: button;
+
+          color: $color_4;
+
+          cursor: pointer;
+          height: 54px;
+
+          touch-action: manipulation;
+          transform-origin: 115.586px 27px;
+          user-select: none;
+          vertical-align: middle;
+          white-space: nowrap;
+          width: 231.172px;
+          background: rgb(93, 191, 19) none repeat scroll 0% 0% / auto padding-box border-box;
+          border: 2px solid rgb(93, 191, 19);
+          border-radius: 4px;
+          font: 16px / 20px Muli, sans-serif;
+          outline: rgb(255, 255, 255) none 0px;
+          padding: 15px 25px;
+          transition: all 0.4s ease 0s;
+          border: 0px none rgb(255, 255, 255);
+        }
+      }
+    }
+  }
+}

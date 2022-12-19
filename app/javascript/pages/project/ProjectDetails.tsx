@@ -3,6 +3,10 @@ import { IProject } from 'app/javascript/models/project';
 import React, { FC, Suspense } from 'react';
 import { classNames } from '../../utils/styles';
 import styles from './project-details.module.scss';
+import { IoPhonePortraitOutline } from '@react-icons/all-files/io5/IoPhonePortraitOutline';
+import { IoDesktopSharp } from '@react-icons/all-files/io5/IoDesktopSharp';
+import { IoLogoUsd } from '@react-icons/all-files/io5/IoLogoUsd';
+import { IoChatbubblesOutline } from '@react-icons/all-files/io5/IoChatbubblesOutline';
 
 const ProjectStats = React.lazy(() => import('./ProjectStats'));
 
@@ -55,10 +59,7 @@ const ProjectDetails: FC<Props> = ({ project }) => {
                 <div className={styles.flex_main}>
                   <div className={styles.flex_sub}>
                     <div className={styles.sub_image}>
-                      <i
-                        className={classNames('fa fa-mobile', styles.size_xl)}
-                        aria-hidden='true'
-                      ></i>
+                      <IoPhonePortraitOutline size={45} color='#fff' />
                     </div>
                     <div className={styles.sub_text}>
                       <h4>Go Mobile</h4>
@@ -69,10 +70,7 @@ const ProjectDetails: FC<Props> = ({ project }) => {
                   </div>
                   <div className={styles.flex_sub}>
                     <div className={styles.sub_image}>
-                      <i
-                        className={classNames('fa fa-video-camera', styles.size_xl)}
-                        aria-hidden='true'
-                      ></i>
+                      <IoDesktopSharp size={45} color='#fff' />
                     </div>
                     <div className={styles.sub_text}>
                       <h4>Video</h4>
@@ -83,10 +81,7 @@ const ProjectDetails: FC<Props> = ({ project }) => {
                   </div>
                   <div className={styles.flex_sub}>
                     <div className={styles.sub_image}>
-                      <i
-                        className={classNames('fa fa-map-marker', styles.size_xl)}
-                        aria-hidden='true'
-                      ></i>
+                      <IoLogoUsd size={45} color='#fff' />
                     </div>
                     <div className={styles.sub_text}>
                       <h4>Asset Track</h4>
@@ -97,10 +92,7 @@ const ProjectDetails: FC<Props> = ({ project }) => {
                   </div>
                   <div className={styles.flex_sub}>
                     <div className={styles.sub_image}>
-                      <i
-                        className={classNames('fa fa-comments', styles.size_xl)}
-                        aria-hidden='true'
-                      ></i>
+                      <IoChatbubblesOutline size={45} color='#fff' />
                     </div>
                     <div className={styles.sub_text}>
                       <h4>Profiling</h4>

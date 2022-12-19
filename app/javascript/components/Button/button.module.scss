@@ -4,9 +4,7 @@ $color_3: rgb(250, 250, 250);
 
 .btn {
   align-items: center;
-  block-size: 51.9922px;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 2px 0px;
-  box-sizing: border-box;
 
   color: $color_2;
 
@@ -62,8 +60,6 @@ $color_3: rgb(250, 250, 250);
     font-size: 3.2rem;
   }
   .icon {
-    block-size: 28.7969px;
-
     color: $color_3;
 
     cursor: pointer;
@@ -106,8 +102,6 @@ $color_3: rgb(250, 250, 250);
       outline: rgb(250, 250, 250) none 0px;
     }
     &:before {
-      block-size: 12.7969px;
-
       color: $color_3;
 
       // content: '""';

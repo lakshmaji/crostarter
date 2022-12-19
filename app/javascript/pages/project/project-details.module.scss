@@ -37,7 +37,6 @@
   color: #ffffff;
   border: 1px solid #1e266d;
   border-radius: 50px;
-  box-sizing: border-box;
   -webkit-transition: 0.2s;
   -moz-transition: 0.2s;
   transition: 0.2s;
@@ -136,7 +135,6 @@
             color: #ffffff;
             border: 1px solid #1e266d;
             border-radius: 50px;
-            box-sizing: border-box;
             -webkit-transition: 0.2s;
             -moz-transition: 0.2s;
             transition: 0.2s;
@@ -191,10 +189,6 @@
               img {
                 width: 60px;
                 height: 60px;
-              }
-
-              .size_xl {
-                font-size: 64px;
               }
             }
 

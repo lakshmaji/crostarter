@@ -38,8 +38,8 @@ const Categories: FC<Props> = (props) => {
 
   return (
     <>
-      <section>
-        <div className={styles.content}>
+      <section className={styles.section}>
+        <div className={styles.header}>
           <div className={styles.wrapper}>
             <div className={styles.slider_wrapper}>
               Categories
@@ -68,7 +68,7 @@ const Categories: FC<Props> = (props) => {
           </div>
         </div>
       </section>
-      <section>
+      <section className={styles.section}>
         <div className={styles.container}>
           <Masonry
             breakpointCols={breakpointColumnsObj}

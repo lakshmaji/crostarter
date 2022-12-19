@@ -71,34 +71,37 @@ bundle exec rubocop --A # force - better not use it
 
   - [x] Run seeds in fly deployment
 
-        ```bash
-          flyctl auth token
-          flyctl ssh console --command '/app/bin/rails db:seed RAILS_ENV=production DISABLE_DATABASE_ENVIRONMENT_CHECK=1' -t <token>
-        ```
+    ```bash
+      flyctl auth token
+      flyctl ssh console --command '/app/bin/rails db:seed RAILS_ENV=production DISABLE_DATABASE_ENVIRONMENT_CHECK=1' -t <token>
+    ```
 
   - [ ] create project
     - [x] save project in db
     - [ ] File Upload s3
       - [ ] create `cdk` project in typescript (bootstrap is not required for small project)
       - [ ] Run on CI actions
-      - [ ] RoR code to upload file (<https://elliott-king.github.io/2020/09/s3-heroku-rails/>)
-  - [ ] contribute
+      - [ ] RoR code to upload file
   - [ ] edit project
-  - [ ] roles (cancancan ?)
   - [ ] pagination
-  - [ ] slider (with few random projects)
-  - [ ] payment gateway integration (stripe)
+  - [ ] contribute
+    - [ ] payment gateway integration (stripe)
   - [ ] Elastic search integration
     - [ ] search projects
     - [ ] recommended projects
+    - [ ] trending projects
   - [ ] Welcome email using sidekiq and redis
   - [ ] Newsletter using aws SNS
   - [ ] rate limiter
   - [ ] PDF report generation for fund, and contributions (background job using sidekiq)
+  - [ ] redis as cache layer
+    - [ ] for categories
+    - [ ] for projects
   - [ ] Use SASS variable, mixins
+  - [ ] roles (cancancan ?)
 
 - [ ] Playwright testing (e2e)
-- [ ] Github action for playwright
+  - [ ] Github action for playwright
 - [ ] REST API
   - [ ] versioning
   - [ ] serializer

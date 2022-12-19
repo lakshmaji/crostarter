@@ -1,0 +1,30 @@
+.section {
+  padding: 96px 0px;
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    overflow-wrap: break-word;
+    border: 0px none rgb(35, 35, 35);
+    padding: 0px 32px;
+
+    .header {
+      padding: 0px 0px 24px;
+      .title {
+        color: rgb(35, 35, 35);
+
+        overflow-wrap: break-word;
+        word-break: break-word;
+        font: 35.2px / 42.24px Inter, sans-serif;
+      }
+    }
+    .list {
+      display: flex;
+
+      justify-content: center;
+      background: rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box;
+      border-radius: 32px;
+      flex-flow: row wrap;
+      padding: 32px 16px;
+    }
+  }
+}
