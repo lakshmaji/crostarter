@@ -179,5 +179,14 @@
     }
     .validate_form {
     }
+
+    .rewards {
+      display: flex;
+      flex-direction: column;
+      .reward {
+        display: flex;
+        flex-direction: row;
+      }
+    }
   }
 }

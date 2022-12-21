@@ -2,7 +2,7 @@ import { Inertia, RequestPayload } from '@inertiajs/inertia';
 import { ICategory } from '../../models/category';
 import { classNames } from '../../utils/styles';
 import React, { FC, useState } from 'react';
-import { useForm } from 'react-hook-form';
+import { useFieldArray, useForm } from 'react-hook-form';
 import styles from './new-project.module.scss';
 import Select, { MultiValue, SingleValue, StylesConfig } from 'react-select';
 import { useEffect } from 'react';
@@ -68,7 +68,13 @@ const colourStyles: StylesConfig<ColourOption> = {
   }),
 };
 
-interface ProjectFormData {
+interface IReward {
+  title: string;
+  description: string;
+  amount: number;
+}
+
+interface IProjectFormData {
   title: string;
   website: string;
   description: string;
@@ -79,6 +85,7 @@ interface ProjectFormData {
   funded?: number;
   // category?: Category;
   tagline?: string;
+  rewards_attributes: IReward[];
 }
 
 interface Props {
@@ -92,7 +99,7 @@ export interface CategoryOption {
   readonly color: string;
 }
 const NewProject: FC<Props> = ({ errors, categories }) => {
-  const defaultValues: ProjectFormData = {
+  const defaultValues: IProjectFormData = {
     title: '', // faker.commerce.productName(),
     website: '', // faker.internet.domainName(),
     description: '', // faker.commerce.productDescription(),
@@ -102,6 +109,7 @@ const NewProject: FC<Props> = ({ errors, categories }) => {
     category_id: '',
     funded: 0, // +faker.commerce.price(1000, 2000),
     tagline: '', // faker.company.catchPhrase(),
+    rewards_attributes: [],
   };
   const [selectedDay, setSelectedDay] = useState<string>();
 
@@ -132,15 +140,20 @@ const NewProject: FC<Props> = ({ errors, categories }) => {
     register,
     handleSubmit,
     formState: { errors: formErrors },
-  } = useForm<ProjectFormData>({
+    control,
+  } = useForm<IProjectFormData>({
     defaultValues,
   });
 
+  const { fields, append, remove } = useFieldArray({
+    control,
+    name: 'rewards_attributes',
+  });
   console.log(formErrors);
 
   //   const [day, setDay] = React.useState<DayValue>(null);
 
-  const onSubmit = (data: ProjectFormData) => {
+  const onSubmit = (data: IProjectFormData) => {
     Inertia.post('/projects', {
       project: {
         ...data,
@@ -265,6 +278,46 @@ const NewProject: FC<Props> = ({ errors, categories }) => {
               {...register('description', { required: 'provide goal amount' })}
             ></textarea>
             <span className={styles.focus_input100}></span>
+          </div>
+          <div className={styles.rewards}>
+            {fields.map((item, index) => {
+              return (
+                <div key={item.id} className={styles.reward}>
+                  <div className={styles.wrap_input100}>
+                    <input
+                      className={styles.input100}
+                      placeholder='reward title'
+                      {...register(`rewards_attributes.${index}.title`, { required: true })}
+                    />
+                  </div>
+                  <div className={styles.wrap_input100}>
+                    <input
+                      placeholder='description'
+                      className={styles.input100}
+                      {...register(`rewards_attributes.${index}.description`, { required: true })}
+                    />
+                  </div>
+                  <div className={styles.wrap_input100}>
+                    <input
+                      placeholder='reward amount'
+                      className={styles.input100}
+                      {...register(`rewards_attributes.${index}.amount`, { required: true })}
+                    />
+                  </div>
+                  <button type='button' onClick={() => remove(index)}>
+                    Delete
+                  </button>
+                </div>
+              );
+            })}
+            <button
+              type='button'
+              onClick={() => {
+                append({ title: '', description: '', amount: 0 });
+              }}
+            >
+              Add Reward
+            </button>
           </div>
           <div className={styles.container_contact100_form_btn}>
             <button className={styles.contact100_form_btn}>
