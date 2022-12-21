@@ -8,8 +8,8 @@ $color_3: rgb(250, 250, 250);
 
   .container {
     max-width: 1400px;
-    margin-right: auto;
-    margin-left: auto;
+
+    margin: 0 auto;
     width: 100%;
     padding: 0 2rem !important;
     overflow-wrap: break-word;
@@ -71,6 +71,7 @@ $color_3: rgb(250, 250, 250);
           transition: all 0.3s ease 0s;
         }
       }
+
       .header {
         color: $color_1;
 
@@ -127,6 +128,7 @@ $color_3: rgb(250, 250, 250);
             font: 35.2px / 42.24px Inter, sans-serif;
             margin: 0px 0px 16px;
           }
+
           .footer {
             color: $color_1;
 
