@@ -77,7 +77,14 @@ const Categories: FC<Props> = ({ items }) => {
       // If any changes in filter values, then request for information
       if (!deepEqual(prevValues, values)) {
         const query = values.category ? { category: values.category } : {};
-        Inertia.get('projects', query as RequestPayload, {
+        // This works too, but we want partial loads, to fetch required information due to side effects.
+        // Inertia.get('projects', query as RequestPayload, {
+        //   replace: true,
+        //   preserveState: true,
+        // });
+        Inertia.reload({
+          only: ['projects'],
+          data: query as RequestPayload,
           replace: true,
           preserveState: true,
         });
