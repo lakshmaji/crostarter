@@ -5,6 +5,10 @@ import { classNames } from '../../../utils/styles';
 import { ICategory } from '../../../models/category';
 import { IoChevronForwardCircleOutline } from '@react-icons/all-files/io5/IoChevronForwardCircleOutline';
 import { IoChevronBackCircleOutline } from '@react-icons/all-files/io5/IoChevronBackCircleOutline';
+import { usePage } from '@inertiajs/inertia-react';
+import { Inertia, Page, PageProps, RequestPayload } from '@inertiajs/inertia';
+import usePrevious from '../../../hooks/usePrevious';
+import { deepEqual } from '../../../utils/helpers';
 
 interface Props {
   items: ICategory[];
@@ -49,16 +53,44 @@ const Filters = () => {
   return <div className={styles.filters}>Filters</div>;
 };
 
+interface ProjectsPageProps extends PageProps {
+  filters: { category: string };
+}
+
 const Categories: FC<Props> = ({ items }) => {
+  const { filters } = usePage<Page<ProjectsPageProps>>().props;
+  const [values, setValues] = useState({
+    category: filters.category || '',
+  });
+
   const scrollRef = useRef<HTMLDivElement>(null);
   // For detecting start scroll position
   const [scrollX, setScrollX] = useState(0);
   // For detecting end of scrolling
   const [scrollEnd, setScrollEnd] = useState(false);
-  const [current, setCurrent] = useState(+items[0].id);
+  const [current, setCurrent] = useState<number>();
+
+  const prevValues = usePrevious(values);
+
+  useEffect(() => {
+    if (prevValues) {
+      // If any changes in filter values, then request for information
+      if (!deepEqual(prevValues, values)) {
+        const query = values.category ? { category: values.category } : {};
+        Inertia.get('projects', query as RequestPayload, {
+          replace: true,
+          preserveState: true,
+        });
+      }
+    }
+  }, [prevValues, values]);
 
   const choose = (id: number) => {
     setCurrent(id);
+    setValues((prev) => ({
+      ...prev,
+      category: id.toString(),
+    }));
   };
   useEffect(() => {
     //Check width of the scrolling
