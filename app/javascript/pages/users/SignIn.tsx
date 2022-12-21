@@ -16,7 +16,7 @@ interface SignInFormData {
   username: string;
   password: string;
 }
-const SignIn: FC<Props> = ({ errors }) => {
+const SignIn: FC<Props> = () => {
   const {
     register,
     handleSubmit,
@@ -31,7 +31,6 @@ const SignIn: FC<Props> = ({ errors }) => {
     <section className={styles.section}>
       <div className={styles.container} id='container'>
         <div className={classNames(styles.form_container, styles.log_in_container)}>
-          {JSON.stringify(errors)}
           <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
             <h1>Login</h1>
             <div className={styles.social_container}>

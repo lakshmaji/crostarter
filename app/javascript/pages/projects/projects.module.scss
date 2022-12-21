@@ -1,10 +1,13 @@
 .section {
   .categories {
-    padding: 3rem;
+    width: calc(100% - 120px);
+    max-width: 1400px;
   }
+
   .container {
     max-width: 1400px;
     margin: 0 auto;
+
     .list {
       display: flex;
       flex-wrap: wrap;
