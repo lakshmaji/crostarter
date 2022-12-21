@@ -130,6 +130,20 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:title, :category_id, :end_date, :funding_goal)
+    params.require(:project).permit(
+      :title,
+      :website,
+      :description,
+      :end_date,
+      :funding_goal,
+      :details,
+      :category_id,
+      # TODO: add image
+      rewards_attributes: [
+        :title,
+        :description,
+        :amount,
+      ],
+    )
   end
 end
