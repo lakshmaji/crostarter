@@ -3,7 +3,7 @@
 class ProjectsController < ApplicationController
   def index
     pagy, paged_projects = pagy(
-      Project
+      Project.with_category(params[:category])
             .includes(:category),
     )
 
@@ -31,6 +31,7 @@ class ProjectsController < ApplicationController
             ),
         pagy: pagy_metadata(pagy),
         categories:,
+        filters: params.slice(:category),
       },
     )
   end
