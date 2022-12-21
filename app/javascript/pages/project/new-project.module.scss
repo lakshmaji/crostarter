@@ -177,7 +177,18 @@
         transform: scaleX(1.1) scaleY(1.3);
       }
     }
-    .validate_form {
+
+    .validate_form {}
+
+    .rewards {
+      display: flex;
+      flex-direction: column;
+
+      .reward {
+        display: flex;
+        flex-direction: row;
+      }
     }
+
   }
 }
