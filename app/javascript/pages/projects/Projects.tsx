@@ -9,6 +9,7 @@ import Pagination from '../../components/Pagination/Pagination';
 import { ICategory } from '../../models/category';
 import { IPagy } from 'app/javascript/models/pagination';
 import AppHead from '../../components/AppHead';
+import NoProjects from '../../features/projects/empty/NoProjects';
 
 interface Props {
   projects: IProject[];
@@ -35,6 +36,7 @@ const Projects: FC<Props> = ({ projects, categories, pagy }) => {
               return <ProjectCard key={project.id} project={project} />;
             })}
           </div>
+          {projects.length === 0 && <NoProjects />}
           <Pagination meta={pagy} />
         </div>
       </section>
