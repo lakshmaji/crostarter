@@ -1,8 +1,7 @@
 import React, { FC } from 'react';
 import styles from './recommended-project.module.scss';
 import { IProject } from '../../../models/project';
-import { IoChevronForwardCircle } from '@react-icons/all-files/io5/IoChevronForwardCircle';
-import { Link } from '@inertiajs/inertia-react';
+import Button from '../../../components/Button/Button';
 
 interface Props {
   project: IProject;
@@ -23,10 +22,7 @@ const RecommendedProject: FC<Props> = ({ project, picture }) => {
           <p className={styles.description}>{project.description}</p>
         </div>
         <div className={styles.footer}>
-          <Link href='projects' className={styles.btn_link}>
-            View
-            <IoChevronForwardCircle className={styles.btn_icon} />
-          </Link>
+          <Button to={`/projects/${project.id}`} title='View' primary />
         </div>
       </div>
     </div>

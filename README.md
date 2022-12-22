@@ -65,19 +65,20 @@ bundle exec rubocop --A # force - better not use it
     ```
 
   - [ ] create project
-    - [x] save project in db
     - [ ] File Upload s3
       - [ ] create `cdk` project in typescript (bootstrap is not required for small project)
       - [ ] Run on CI actions
       - [ ] RoR code to upload file
   - [ ] edit project
   - [ ] Fix CLS - take help from css expert !!
+  - [ ] No projects found for filters message
   - [ ] contribute
     - [ ] payment gateway integration (stripe)
+  - [ ] categories page search
+    - [ ] Not elasticsearch though https://github.com/activerecord-hackery/ransack
   - [ ] Elastic search integration
     - [ ] search projects
     - [ ] recommended projects
-    - [ ] trending projects
   - [ ] Welcome email using sidekiq and redis
   - [ ] Newsletter using aws SNS
   - [ ] rate limiter
@@ -85,6 +86,8 @@ bundle exec rubocop --A # force - better not use it
   - [ ] redis as cache layer
     - [ ] for categories
     - [ ] for projects
+  - [ ] trending projects (would be from redis)
+    - [ ] visitors attracted and funds raised in last 2 weeks or month
   - [ ] soft delete
   - [ ] services for retrieving data
   - [ ] Use SASS variable, mixins

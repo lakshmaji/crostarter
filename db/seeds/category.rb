@@ -19,4 +19,10 @@ categories = %w[
   Sci-Fi\ and\ Fantasy
 ]
 
-categories.each { |category| Category.create(name: category) }
+categories.each do |category|
+  Category.create(
+    name: category,
+    description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: true, random_sentences_to_add: 4),
+    icon_path_name: Faker::LoremFlickr.image(size: "50x60"),
+  )
+end

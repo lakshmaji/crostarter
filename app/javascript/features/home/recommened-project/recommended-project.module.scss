@@ -165,47 +165,6 @@
       margin: 0px -9.6px;
       outline: rgb(35, 35, 35) none 0px;
       padding: 0px 32px 32px;
-
-      .btn_link {
-        align-items: center;
-        box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 2px 0px;
-
-        color: rgb(0, 0, 0);
-
-        display: inline-flex;
-        height: 51.9844px;
-        justify-content: center;
-
-        overflow-wrap: break-word;
-
-        text-align: center;
-
-        transform-origin: 89.6289px 25.9922px;
-        user-select: none;
-        vertical-align: middle;
-        // width: 179.258px;
-        word-break: break-word;
-        background: rgb(255, 204, 1) none repeat scroll 0% 0% / auto padding-box border-box;
-        border: 2px solid rgb(0, 0, 0);
-        border-radius: 100px;
-        font: 500 17.6px / 26.4px Inter, sans-serif;
-        margin: 9.6px;
-        outline: rgb(0, 0, 0) none 0px;
-        padding: 9.6px 19.2px;
-        transition: all 0.2s ease-in-out 0s;
-
-        &:after {
-          display: block;
-
-          border: 0px none rgb(0, 0, 0);
-        }
-
-        &:before {
-          display: block;
-
-          border: 0px none rgb(0, 0, 0);
-        }
-      }
     }
   }
 }

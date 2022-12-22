@@ -1,8 +1,7 @@
 import React, { FC } from 'react';
 import { IProject } from '../../../models/project';
 import styles from './project-card.module.scss';
-import { IoChevronForwardCircle } from '@react-icons/all-files/io5/IoChevronForwardCircle';
-import { Link } from '@inertiajs/inertia-react';
+import Button from '../../../components/Button/Button';
 
 interface Props {
   project: IProject;
@@ -46,10 +45,7 @@ const ProjectCard: FC<Props> = ({ project }) => {
           <p className={styles.funded}>{calculatePercent()}% funded</p>
         </div>
         <div className={styles.eye}>
-          <Link href={`/projects/${project.id}`} className={styles.btn}>
-            Contribute
-            <IoChevronForwardCircle className={styles.btn_icon} />
-          </Link>
+          <Button to={`/projects/${project.id}`} title='Contribute' />
           <p className={styles.funded}>$7675</p>
         </div>
       </div>

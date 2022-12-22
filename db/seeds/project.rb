@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
-10.times do
+no_of_projects = 100
+no_of_projects = 10 if Rails.env.production?
+
+no_of_projects.times do
   category = Category.all.sample
   creator = User.all.sample
   Project.create(

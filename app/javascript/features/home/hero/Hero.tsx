@@ -18,7 +18,7 @@ const Hero = () => {
                   Get Started
                   <IoChevronForwardCircle className={styles.btn_icon} />
                 </a> */}
-                <Button />
+                <Button title='Get Started' to='/projects' />
               </div>
             </div>
           </div>
