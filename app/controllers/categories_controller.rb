@@ -7,7 +7,7 @@ class CategoriesController < ApplicationController
       inertia: 'categories/Categories',
       props: {
         categories: categories.as_json(
-          only: [:id, :name],
+          only: [:id, :name, :description, :icon_path_name],
         ),
       },
     )

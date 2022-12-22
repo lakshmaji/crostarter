@@ -5,7 +5,8 @@ import Masonry from 'react-masonry-css';
 import { IoTrainOutline } from '@react-icons/all-files/io5/IoTrainOutline';
 import AppHead from '../../components/AppHead';
 import { ICategory } from '../../models/category';
-import { arrayElement, loremSentence } from '../../utils/helpers';
+import { arrayElement } from '../../utils/helpers';
+import { Inertia } from '@inertiajs/inertia';
 
 const COLOR_CODES = [
   '#ff9f00',
@@ -82,7 +83,7 @@ const Categories: FC<Props> = (props) => {
             className={styles.my_masonry_grid}
             columnClassName={styles.my_masonry_grid_column}
           >
-            {props.categories.map((item) => {
+            {props.categories.map((item, idx) => {
               return (
                 <div
                   key={item.id}
@@ -90,10 +91,17 @@ const Categories: FC<Props> = (props) => {
                   style={{
                     background: arrayElement(COLOR_CODES),
                   }}
+                  onClick={() => {
+                    Inertia.get('/projects', { category: item.id });
+                  }}
+                  role='button'
+                  tabIndex={idx}
+                  // eslint-disable-next-line @typescript-eslint/no-empty-function
+                  onKeyDown={() => {}}
                 >
                   <IoTrainOutline size={82} className={styles.icon} />
                   <div className={styles.text}>{item.name}</div>
-                  <p className={styles.desc}>{loremSentence()}</p>
+                  <p className={styles.desc}>{item.description}</p>
                 </div>
               );
             })}

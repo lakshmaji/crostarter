@@ -1,8 +1,7 @@
 import React, { FC } from 'react';
 import styles from './featured-project.module.scss';
 import { IProject } from '../../../models/project';
-import { Link } from '@inertiajs/inertia-react';
-import { IoChevronForwardCircle } from '@react-icons/all-files/io5/IoChevronForwardCircle';
+import Button from '../../../components/Button/Button';
 
 interface Props {
   project: IProject;
@@ -28,10 +27,7 @@ const FeaturedProject: FC<Props> = ({ project, picture, bg }) => {
         <div className={styles.footer}>
           <div className={styles.content}>
             <div className={styles.navigation}>
-              <Link href='/' className={styles.get_started}>
-                Get Started
-                <IoChevronForwardCircle className={styles.btn_icon} />
-              </Link>
+              <Button to={`/projects/${project.id}`} title='Get Started' />
             </div>
             <p className={styles.funded}>12$</p>
           </div>
