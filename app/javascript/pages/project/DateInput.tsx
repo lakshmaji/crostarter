@@ -3,21 +3,26 @@ import styles from './new-project.module.scss';
 import '@hassanmojab/react-modern-calendar-datepicker/lib/DatePicker.css';
 import DatePicker, { DayValue } from '@hassanmojab/react-modern-calendar-datepicker';
 
+const DV = {
+  year: 2023,
+  month: 10,
+  day: 5,
+};
 interface Props {
   onChooseEndDate: (value: string) => void;
+  defaultValue?: {
+    year: number;
+    month: number;
+    day: number;
+  };
 }
-const DateInput: FC<Props> = ({ onChooseEndDate }) => {
+const DateInput: FC<Props> = ({ onChooseEndDate, defaultValue = DV }) => {
   const [selectedDay, setSelectedDay] = useState<DayValue>(null);
 
   useEffect(() => {
-    const defaultValue = {
-      year: 2023,
-      month: 10,
-      day: 5,
-    };
     setSelectedDay(defaultValue);
     onChooseEndDate(`${defaultValue?.day}/${defaultValue?.month}/${defaultValue?.year}`);
-  }, [onChooseEndDate]);
+  }, [defaultValue, onChooseEndDate]);
 
   const onChange = (value: DayValue) => {
     setSelectedDay(value);
