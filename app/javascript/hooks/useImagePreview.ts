@@ -10,8 +10,6 @@ export default function useImagePreview(files: FileList): string | undefined {
       const newUrl = URL.createObjectURL(files[0]);
 
       if (newUrl !== prevValues) {
-        console.log('bello =================================');
-
         setImgSrc(newUrl);
       }
     }
