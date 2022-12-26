@@ -8,6 +8,7 @@ import Select, { MultiValue, SingleValue, StylesConfig } from 'react-select';
 import { useEffect } from 'react';
 import { ColourOption, getRandomColor } from './data';
 import chroma from 'chroma-js';
+import useImagePreview from '../../hooks/useImagePreview';
 
 const DateInput = React.lazy(() => import('./DateInput'));
 
@@ -86,6 +87,7 @@ export interface IProjectFormData {
   // category?: Category;
   tagline?: string;
   rewards_attributes: IReward[];
+  picture: any;
 }
 
 interface Props {
@@ -94,6 +96,7 @@ interface Props {
   defaultValues: IProjectFormData;
   onSubmitHandler: (data: RequestPayload) => void;
   edit?: boolean;
+  avatar_url?: string;
 }
 
 export interface CategoryOption {
@@ -108,6 +111,7 @@ const CreateOrEditProject: FC<Props> = ({
   categories,
   defaultValues,
   onSubmitHandler,
+  avatar_url,
 }) => {
   //   const defaultValues: IProjectFormData = {
   //     title: '', // faker.commerce.productName(),
@@ -176,6 +180,7 @@ const CreateOrEditProject: FC<Props> = ({
     handleSubmit,
     formState: { errors: formErrors },
     control,
+    watch,
   } = useForm<IProjectFormData>({
     defaultValues,
   });
@@ -184,6 +189,10 @@ const CreateOrEditProject: FC<Props> = ({
     control,
     name: 'rewards_attributes',
   });
+
+  const files = watch('picture');
+  const filePreview = useImagePreview(files);
+
   console.log(formErrors);
 
   //   const [day, setDay] = React.useState<DayValue>(null);
@@ -209,6 +218,24 @@ const CreateOrEditProject: FC<Props> = ({
           <span className={styles.contact100_form_title}>
             {edit ? defaultValues.title : 'New Project'}
           </span>
+
+          <label className={styles.label_input100} htmlFor='project-picture'>
+            Upload Picture
+          </label>
+          <div className={classNames(styles.img_preview)}>
+            {/* <div  className={styles.img_preview}> */}
+            <img src={filePreview ? filePreview : avatar_url} alt={defaultValues.title} />
+            {/* </div> */}
+            <input
+              id='project-picture'
+              // className={styles.input100}
+              type='file'
+              // accept='image/jpeg'
+              {...register('picture', { required: 'Upload a picture' })}
+            />
+            <span className={styles.focus_input100}></span>
+          </div>
+
           <label className={styles.label_input100} htmlFor='project-title'>
             Project Title
           </label>

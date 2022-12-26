@@ -21,4 +21,5 @@ export interface IProject {
   funded?: number;
   category?: ICategory;
   rewards?: IReward[];
+  avatar_url?: string;
 }

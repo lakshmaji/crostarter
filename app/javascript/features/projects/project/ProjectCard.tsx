@@ -33,7 +33,11 @@ const ProjectCard: FC<Props> = ({ project }) => {
       </div>
       <div className={styles.project_image}>
         <img
-          src='https://mobirise.com/extensions/toolm5/illustration-design/assets/images/features1.jpg'
+          src={
+            project.avatar_url
+              ? project.avatar_url
+              : 'https://mobirise.com/extensions/toolm5/illustration-design/assets/images/features1.jpg'
+          }
           alt='pro name'
         />
       </div>

@@ -9,6 +9,8 @@ RSpec.describe Project, type: :model do
         username: 'minion',
         password: 'donottellanyone',
       )
+      file = fixture_file_upload('spec/fixtures/files/project.jpeg', 'image/jpeg')
+
       category = Category.create(name: 'IoT')
       described_class.new(
         title: 'Bubbla',
@@ -19,6 +21,7 @@ RSpec.describe Project, type: :model do
         details: 'none as of now',
         creator: user,
         category:,
+        avatar: file,
       )
     end
 
@@ -75,6 +78,8 @@ RSpec.describe Project, type: :model do
       project.title = 'I'
       expect(project).not_to be_valid
     end
+
+    it { is_expected.to validate_attached_of(:avatar) }
   end
 
   describe 'Associations' do
