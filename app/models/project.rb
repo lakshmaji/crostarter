@@ -17,4 +17,9 @@ class Project < ApplicationRecord
   accepts_nested_attributes_for :rewards, allow_destroy: true
 
   scope :with_category, ->(id) { where('category_id = ?', id) if id.present? }
+
+  def avatar_url
+    # Rails.application.routes.url_helpers.url_for(avatar) if avatar.attached?
+    avatar.url if avatar.attached?
+  end
 end
