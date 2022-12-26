@@ -13,3 +13,13 @@ bin/rails credentials:show --environment=development
 EDITOR="code --wait"  bin/rails credentials:edit
 EDITOR="code --wait"  bin/rails credentials:edit --environment=development
 ```
+
+## Database
+
+```bash
+flyctl postgres connect -a <database name>
+\l
+\c crostarter
+\dt
+exit
+```
