@@ -68,3 +68,8 @@ bundle exec rubocop --A # force - better not use it
 [eslint-image]: https://badges.aleen42.com/src/eslint.svg
 [eslint-url]: https://eslint.org/
 [ruby-version]: https://img.shields.io/badge/ruby-3.1+-ruby.svg?colorA=99004d&colorB=cc0066
+
+```bash
+EDITOR="code --wait"  bin/rails credentials:edit
+EDITOR="code --wait"  bin/rails credentials:edit --environment=development
+```
