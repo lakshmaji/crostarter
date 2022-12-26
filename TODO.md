@@ -14,6 +14,7 @@
     - [ ] Run on CI actions
   - [ ] Fix CLS - take help from css expert !!
   - [ ] contribute
+    - [ ] contribution by user
     - [ ] payment gateway integration (stripe)
   - [ ] categories page search
     - [ ] Not elasticsearch though https://github.com/activerecord-hackery/ransack
@@ -33,7 +34,6 @@
   - [ ] services for retrieving data
   - [ ] Use SASS variable, mixins
   - [ ] roles (cancancan ?)
-  - [ ] Progress indicator route navigation
 
 - [ ] Playwright testing (e2e)
   - [ ] Github action for playwright

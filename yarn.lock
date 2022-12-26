@@ -443,6 +443,13 @@
     deepmerge "^4.0.0"
     qs "^6.9.0"
 
+"@inertiajs/progress@^0.2.7":
+  version "0.2.7"
+  resolved "https://registry.yarnpkg.com/@inertiajs/progress/-/progress-0.2.7.tgz#b42ac849b6f227fe8a45a91d663719c5bd362131"
+  integrity sha512-zxadfLlBPIUvTE9g5k71V/Ayzo8P9kEp4hV4UKywCC2kURufxV7bycbZqU1GeMCFGDT+VRrjXNl676Pwwa1HoQ==
+  dependencies:
+    nprogress "^0.2.0"
+
 "@inertiajs/server@0.1.0":
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/@inertiajs/server/-/server-0.1.0.tgz#bc48738b1c1c1f806bee6c9e9ea827cd03521e16"

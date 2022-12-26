@@ -3,7 +3,9 @@ import { createRoot } from 'react-dom/client';
 import { createInertiaApp, InertiaAppOptionsForCSR } from '@inertiajs/inertia-react';
 import Layout from './Layout';
 import { Props } from '../inertia';
+import { InertiaProgress } from '@inertiajs/progress';
 
+InertiaProgress.init();
 const pages = import.meta.glob('../pages/**/*.tsx');
 
 const app = () => {
