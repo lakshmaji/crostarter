@@ -12,8 +12,13 @@ class Project < ApplicationRecord
   validates :title, presence: true, length: { minimum: 2 }
   validates :end_date, presence: true
   validates :funding_goal, presence: true, numericality: true
+  validates :avatar, attached: true, content_type: [:png, :jpg, :jpeg]
 
-  accepts_nested_attributes_for :rewards
+  accepts_nested_attributes_for :rewards, allow_destroy: true
 
   scope :with_category, ->(id) { where('category_id = ?', id) if id.present? }
+
+  def avatar_url
+    avatar.url if avatar.attached?
+  end
 end

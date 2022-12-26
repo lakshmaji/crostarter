@@ -27,6 +27,7 @@ class ProjectsController < ApplicationController
                 :created_at, # started at
                 :updated_at, # last seen
               ],
+              methods: :avatar_url,
               include: { category: { only: :name } },
             ),
         pagy: pagy_metadata(pagy),
@@ -95,7 +96,56 @@ class ProjectsController < ApplicationController
         { attribute => project.errors.where(attribute).first.full_message }
       end.to_a
 
+      flash[:alert] = project.errors.where('avatar').first.full_message if project.errors.include?(:avatar)
+
       redirect_to(new_project_path, inertia: { errors: })
+    end
+  end
+
+  def edit
+    project = Project.includes([:category, :rewards]).find(params[:id])
+    categories = Category.all
+
+    render(
+      inertia: 'project/EditProject',
+      props: {
+        project: project.as_json(
+          only: [
+            :id,
+            :title,
+            :website,
+            :description,
+            :end_date, # ends at
+            :funding_goal,
+            :details,
+            :category_id,
+            :creator_id,
+            :created_at, # started at
+            :updated_at, # last seen
+            # :avatar
+          ],
+          methods: :avatar_url,
+          include: { category: { only: :name }, rewards: { only: [:title, :id, :description, :amount] } },
+        ),
+        categories:,
+      },
+    )
+  end
+
+  def update
+    project = Project.includes(:category).find(params[:id])
+    # TODO:  duplicate reward records being created
+    if project.update(project_params)
+      redirect_to(edit_project_path(project), notice: 'Project updated.')
+    else
+      error_fields = project.errors.attribute_names
+      errors = error_fields.map do |attribute|
+        { attribute => project.errors.where(attribute).first.full_message }
+      end.to_a
+
+      flash[:alert] = 'Please upload a project picture' if project.errors.include?(:avatar)
+
+      redirect_to(edit_project_path(project), inertia: { errors: })
     end
   end
 
@@ -139,8 +189,9 @@ class ProjectsController < ApplicationController
       :funding_goal,
       :details,
       :category_id,
-      # TODO: add image
+      :avatar,
       rewards_attributes: [
+        :id,
         :title,
         :description,
         :amount,

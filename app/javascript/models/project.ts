@@ -1,5 +1,11 @@
-import { Category } from './category';
+import { ICategory } from './category';
 
+interface IReward {
+  id?: number;
+  title: string;
+  description: string;
+  amount: number;
+}
 export interface IProject {
   id: string;
   title: string;
@@ -13,5 +19,7 @@ export interface IProject {
   created_at: string;
   updated_at: string;
   funded?: number;
-  category?: Category;
+  category?: ICategory;
+  rewards?: IReward[];
+  avatar_url?: string;
 }
