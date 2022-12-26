@@ -77,7 +77,7 @@ gem "inertia_rails", "~> 3.0"
 
 gem "vite_rails", "~> 3.0"
 
-gem "faker", "~> 2.23"
+gem "faker", "~> 3.1"
 
 
 gem "solargraph", "~> 0.47.2", :group => :development
