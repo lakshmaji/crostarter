@@ -69,7 +69,6 @@ bundle exec rubocop --A # force - better not use it
       - [ ] create `cdk` project in typescript (bootstrap is not required for small project)
       - [ ] Run on CI actions
       - [ ] RoR code to upload file
-  - [ ] edit project
   - [ ] Fix CLS - take help from css expert !!
   - [ ] No projects found for filters message
   - [ ] contribute

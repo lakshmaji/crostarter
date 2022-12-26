@@ -99,6 +99,44 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def edit
+    project = Project.includes([:category, :rewards]).find(params[:id])
+    categories = Category.all
+
+    render(
+      inertia: 'project/EditProject',
+      props: {
+        project: project.as_json(
+          only: [
+            :id,
+            :title,
+            :website,
+            :description,
+            :end_date, # ends at
+            :funding_goal,
+            :details,
+            :category_id,
+            :creator_id,
+            :created_at, # started at
+            :updated_at, # last seen
+          ],
+          include: { category: { only: :name }, rewards: { only: [:title, :id, :description, :amount] } },
+        ),
+        categories:,
+      },
+    )
+  end
+
+  def update
+    project = Project.includes(:category).find(params[:id])
+    # TODO:  duplicate reward records being created
+    if project.update(project_params)
+      redirect_to(edit_project_path(project), notice: 'Project updated.')
+    else
+      redirect_to(edit_project_path(project), inertia: { errors: project.errors })
+    end
+  end
+
   def myprojects
     projects = Project
       .includes(:category)
@@ -141,6 +179,7 @@ class ProjectsController < ApplicationController
       :category_id,
       # TODO: add image
       rewards_attributes: [
+        :id,
         :title,
         :description,
         :amount,

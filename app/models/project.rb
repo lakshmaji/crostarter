@@ -13,7 +13,7 @@ class Project < ApplicationRecord
   validates :end_date, presence: true
   validates :funding_goal, presence: true, numericality: true
 
-  accepts_nested_attributes_for :rewards
+  accepts_nested_attributes_for :rewards, allow_destroy: true
 
   scope :with_category, ->(id) { where('category_id = ?', id) if id.present? }
 end

@@ -16,6 +16,9 @@ const Projects: FC<Props> = ({ projects }) => {
       onBefore: () => confirm(`Are you sure you want to delete ${project.title} project?`),
     });
   };
+  const onEdit = (project: IProject) => {
+    Inertia.get(`/projects/${project.id}/edit`);
+  };
   return (
     <div className={styles.container}>
       <div className={classNames(styles.row, styles.row__top_40)}>
@@ -101,7 +104,11 @@ const Projects: FC<Props> = ({ projects }) => {
                         </p>
                       </td>
                       <td className={styles.table_row__td}>
-                        <IoCreateOutline size={24} className={styles.table_row__edit} />
+                        <IoCreateOutline
+                          size={24}
+                          className={styles.table_row__edit}
+                          onClick={() => onEdit(project)}
+                        />
                       </td>
                       <td className={styles.table_row__td}>
                         <IoTrashOutline
