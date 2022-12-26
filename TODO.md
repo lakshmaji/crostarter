@@ -13,7 +13,6 @@
     - [ ] create `cdk` project in typescript (bootstrap is not required for small project)
     - [ ] Run on CI actions
   - [ ] Fix CLS - take help from css expert !!
-  - [ ] No projects found for filters message
   - [ ] contribute
     - [ ] payment gateway integration (stripe)
   - [ ] categories page search
@@ -43,3 +42,5 @@
   - [ ] serializer
   - [ ] jwt
 - [ ] GraphQL
+- [ ] synk
+- [ ] brakeman
