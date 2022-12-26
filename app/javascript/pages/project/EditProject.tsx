@@ -24,16 +24,23 @@ const EditProject: FC<Props> = ({ project, errors, categories }) => {
     funded: project.funded,
     tagline: project.website,
     rewards_attributes: project.rewards || [],
+    picture: undefined,
   };
 
   const onSubmit = (data: RequestPayload) => {
+    console.log('bello on submit, data', data);
+
     const rewards = (data as any).project.rewards_attributes.map((e: any) => e.id);
     const deletedRewards = project.rewards
       ?.filter((r) => !new Set(rewards).has(r.id))
       .map((e) => ({ ...e, _destroy: '1' })) as any;
     const finalRewards = [...(data as any).project.rewards_attributes, ...deletedRewards];
     Inertia.put(`/projects/${project.id}`, {
-      project: { ...(data as any).project, rewards_attributes: finalRewards },
+      project: {
+        ...(data as any).project,
+        rewards_attributes: finalRewards,
+        avatar: (data as any).project.picture[0],
+      },
     });
   };
 
@@ -53,6 +60,7 @@ const EditProject: FC<Props> = ({ project, errors, categories }) => {
             categories={categories}
             errors={errors}
             onSubmitHandler={onSubmit}
+            avatar_url={project.avatar_url}
           />
         </div>
       </section>

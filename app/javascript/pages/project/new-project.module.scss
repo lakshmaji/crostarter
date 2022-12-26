@@ -101,6 +101,17 @@
         margin: 0;
       }
 
+      .img_preview {
+        width: 150px;
+        height: 150px;
+        margin-bottom: 34px;
+
+        img {
+          width: 150px;
+          height: 150px;
+        }
+      }
+
       .wrap_input100 {
         width: 100%;
         position: relative;
@@ -178,7 +189,8 @@
       }
     }
 
-    .validate_form {}
+    .validate_form {
+    }
 
     .rewards {
       display: flex;
@@ -189,6 +201,5 @@
         flex-direction: row;
       }
     }
-
   }
 }

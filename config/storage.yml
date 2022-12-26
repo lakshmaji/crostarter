@@ -13,9 +13,9 @@ amazon:
   secret_access_key: <%= Rails.application.credentials.dig(:aws, :secret_access_key) %>
   region: ap-south-1
   bucket: crostarter
-  http_open_timeout: 0
-  http_read_timeout: 0
-  retry_limit: 0
+  # http_open_timeout: 0
+  # http_read_timeout: 0
+  # retry_limit: 0
   # upload:
   #   server_side_encryption: "" # 'aws:kms' or 'AES256'
 # Remember not to checkin your GCS keyfile to a repository
