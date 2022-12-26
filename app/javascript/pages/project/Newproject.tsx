@@ -10,21 +10,25 @@ interface Props {
 
 const NewProject: FC<Props> = ({ errors, categories }) => {
   const defaultValues: IProjectFormData = {
-    title: '', // faker.commerce.productName(),
-    website: '', // faker.internet.domainName(),
-    description: '', // faker.commerce.productDescription(),
+    title: '',
+    website: '',
+    description: '',
     end_date: '',
-    funding_goal: 0, // +faker.commerce.price(1000, 12000),
-    details: '', // faker.lorem.paragraphs(3),
+    funding_goal: 0,
+    details: '',
     category_id: '',
-    funded: 0, // +faker.commerce.price(1000, 2000),
-    tagline: '', // faker.company.catchPhrase(),
+    funded: 0,
+    tagline: '',
     rewards_attributes: [],
+    picture: undefined,
   };
 
   const onSubmit = (data: RequestPayload) => {
     Inertia.post('/projects', {
-      ...data,
+      project: {
+        ...(data as any).project,
+        avatar: (data as any).project.picture[0],
+      },
     });
   };
 
