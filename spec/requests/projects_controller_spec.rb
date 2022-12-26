@@ -28,11 +28,13 @@ RSpec.describe ProjectsController, type: :request do
 
   describe 'POST /create', inertia: true do
     let(:valid_attributes) do
+      file = fixture_file_upload('spec/fixtures/files/project.jpeg', 'image/jpeg')
       {
         title: 'google x',
         category_id: 1,
         end_date: '12/02/2022',
         funding_goal: 2000,
+        avatar: file,
       }
     end
     let(:user) { User.create(username: 'minion', password: 'donottellanyone') }
@@ -42,7 +44,6 @@ RSpec.describe ProjectsController, type: :request do
       # user = build(:user)
       # allow(controller).to receive(:current_user).and_return(user)
       # controller.stub(:current_user).and_return(user)
-      @file = fixture_file_upload('spec/fixtures/files/project.jpeg', 'image/jpeg')
 
       allow(Category).to receive(:find).and_return(category)
     end
@@ -55,7 +56,6 @@ RSpec.describe ProjectsController, type: :request do
       sign_in
       # allow_any_instance_of(ActionDispatch::Request).to receive(:session).and_return({ current_user_id: '11', })
 
-      valid_attributes['avatar'] = @file
       post projects_path,
            params: {
              project: valid_attributes,
@@ -71,9 +71,7 @@ RSpec.describe ProjectsController, type: :request do
       project_count = Project.count
 
       sign_in
-      # allow_any_instance_of(ActionDispatch::Request).to receive(:session).and_return({ current_user_id: '11', })
 
-      valid_attributes['avatar'] = @file
       post projects_path,
            params: {
              project: valid_attributes,
@@ -86,8 +84,6 @@ RSpec.describe ProjectsController, type: :request do
 
     it 'has no errors for valid input' do
       sign_in
-      # allow_any_instance_of(ActionDispatch::Request).to receive(:session).and_return({ current_user_id: '11', })
-      valid_attributes['avatar'] = @file
       post projects_path,
            params: {
              project: valid_attributes,
