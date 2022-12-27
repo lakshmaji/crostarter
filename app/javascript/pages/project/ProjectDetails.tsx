@@ -1,16 +1,8 @@
-import { InertiaLink } from '@inertiajs/inertia-react';
 import { IProject } from 'app/javascript/models/project';
 import React, { FC, Suspense } from 'react';
 import { classNames } from '../../utils/styles';
 import styles from './project-details.module.scss';
-import { IoPhonePortraitOutline } from '@react-icons/all-files/io5/IoPhonePortraitOutline';
-import { IoTimer } from '@react-icons/all-files/io5/IoTimer';
-import { IoGiftOutline } from '@react-icons/all-files/io5/IoGiftOutline';
-import { IoLogoUsd } from '@react-icons/all-files/io5/IoLogoUsd';
-import { IoAnalyticsSharp } from '@react-icons/all-files/io5/IoAnalyticsSharp';
-import { IoPeopleOutline } from '@react-icons/all-files/io5/IoPeopleOutline';
 import AppHead from '../../components/AppHead';
-import RewardForm from '../../features/project/reward_form/RewardForm';
 import RewardsSection from '../../features/project/rewards/RewardsSection';
 import ProjectStatsEye from '../../features/project/stats/ProjectStatsEye';
 
