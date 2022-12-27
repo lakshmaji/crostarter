@@ -27,7 +27,7 @@
     "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=assets",
     "dev": "bin/vite dev",
     "dev:ssr": "bin/vite ssr",
-    "lint": "eslint app/javascript",
+    "lint": "eslint --cache --cache-location ./node_modules/.cache/eslint app/javascript",
     "lint:fix": "npm run lint -- --fix",
     "prettier": "npx prettier app/javascript --check",
     "prettier:fix": "npm run prettier -- --write",
@@ -35,7 +35,8 @@
     "prepare": "husky install",
     "pretty-quick": "pretty-quick --staged",
     "ci:build:ssr": "vite build --ssr",
-    "analyze": "source-map-explorer 'public/vite/assets/*.js'"
+    "analyze": "source-map-explorer 'public/vite/assets/*.js'",
+    "typescript": "tsc -b"
   },
   "devDependencies": {
     "@types/chroma-js": "^2.1.4",
