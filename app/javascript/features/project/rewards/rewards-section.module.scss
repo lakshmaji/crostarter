@@ -1,0 +1,85 @@
+.section {
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 100px 60px;
+
+    .header {
+      display: flex;
+      .title {
+        font-size: 32px;
+        line-height: 40px;
+      }
+      padding-bottom: 40px;
+    }
+    .wrapper {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .contribution {
+        // width: calc(80% - 60px);
+        max-width: 40vw;
+        .h6 {
+          font-size: 22px;
+          line-height: 30px;
+        }
+
+        .line {
+          height: 1px;
+          background: #74b633;
+          margin: 35px 10px;
+        }
+        .clear_reward {
+          padding: 20px 0px;
+          display: flex;
+          justify-content: center;
+          .clear_text,
+          .btn {
+            font-size: 18px;
+            line-height: 20px;
+            padding-right: 10px;
+          }
+          .btn {
+            border: none;
+            outline: none;
+            background: none;
+            color: #db0a4e;
+          }
+        }
+      }
+
+      .rewards_wrapper {
+        width: calc(90% - 60px);
+        .rewards_list {
+          margin-right: 25px;
+          .reward {
+            border-radius: 5px;
+            cursor: pointer;
+            padding: 20px 15px;
+            // background: #f1f1f1;
+            margin: 15px 0;
+            box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+            .title {
+              font-size: 20px;
+              line-height: 30px;
+            }
+            .note {
+              font-size: 10px;
+              line-height: 30px;
+            }
+            .amount {
+              font-size: 20px;
+              font-weight: bolder;
+            }
+
+            &.active {
+              border: 1px solid rebeccapurple;
+              box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 class ProjectsController < ApplicationController
+  # Used for development only (for generatign urls for images)
+  include ActiveStorage::SetCurrent
+
   def index
     pagy, paged_projects = pagy(
       Project.with_category(params[:category])
@@ -38,7 +41,7 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    project = Project.includes(:category).find(params[:id])
+    project = Project.includes(:category, :rewards).find(params[:id])
     render(
       inertia: 'project/ProjectDetails',
       props: {
@@ -56,10 +59,21 @@ class ProjectsController < ApplicationController
             :created_at, # started at
             :updated_at, # last seen
           ],
-          include: { category: { only: :name } },
+          methods: :avatar_url,
+          include: {
+            category: {
+              only: :name,
+            },
+            rewards: {
+              only: [:title, :description, :amount, :id],
+            },
+          },
         ),
       },
     )
+  rescue ActiveRecord::RecordNotFound
+    flash[:alert] = "Project with #{params[:id]} does not exists"
+    redirect_to(projects_path)
   end
 
   def new

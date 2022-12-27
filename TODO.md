@@ -14,7 +14,7 @@
     - [ ] Run on CI actions
   - [ ] Fix CLS - take help from css expert !!
   - [ ] contribute
-    - [ ] contribution by user
+    - [x] contribution by user
     - [ ] payment gateway integration (stripe)
   - [ ] categories page search
     - [ ] Not elasticsearch though https://github.com/activerecord-hackery/ransack
@@ -23,7 +23,6 @@
     - [ ] recommended projects
   - [ ] Welcome email using sidekiq and redis
   - [ ] Newsletter using aws SNS
-  - [ ] rate limiter
   - [ ] PDF report generation for fund, and contributions (background job using sidekiq)
   - [ ] redis as cache layer
     - [ ] for categories

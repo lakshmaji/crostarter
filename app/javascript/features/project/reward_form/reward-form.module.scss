@@ -1,0 +1,65 @@
+.reward_form {
+  margin-top: 60px;
+  .form_control {
+    .label {
+      color: #999999;
+      font-size: 14px;
+      line-height: 20px;
+    }
+    .input {
+      margin-bottom: 20px;
+      margin-top: 5px;
+      display: inline-block;
+      width: 100%;
+      padding: 0 20px;
+      line-height: 50px;
+      height: 65px;
+      background-color: white;
+      border: 2px solid #e6e6e6;
+      border-bottom-width: 3px;
+      border-radius: 5px;
+      outline: 0;
+      -webkit-transition: all 0.3s ease;
+      transition: all 0.3s ease;
+      &:focus {
+        border-color: #cccccc;
+      }
+    }
+  }
+  .btn_submit {
+    margin-top: 10px;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    padding: 10px 20px;
+    width: 100%;
+    font-size: 1rem;
+    background-color: #f2395a;
+    background-size: 100%;
+    //   rgba(0, 0, 0, 0) 75%,rgba(0, 0, 0, 0));
+    border-radius: 5px;
+
+    background-image: linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.15) 25%,
+      rgba(0, 0, 0, 0) 25%,
+      rgba(0, 0, 0, 0) 50%,
+      rgba(255, 255, 255, 0.15) 50%,
+      rgba(255, 255, 255, 0.15) 75%,
+      rgba(0, 0, 0, 0) 75%,
+      rgba(0, 0, 0, 0)
+    );
+
+    background-size: 20px 20px, 100% 100%;
+    border: 1px solid #f02146;
+    border-bottom-width: 3px;
+    color: white;
+    outline: none;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    &:hover {
+      background-size: 40px 40px;
+    }
+  }
+}

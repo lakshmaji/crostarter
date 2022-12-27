@@ -27,7 +27,7 @@ RSpec.describe Contribution, type: :model do
         project:,
       )
       described_class.new(
-        user:,
+        backer: user,
         reward:,
         amount: 10,
       )
@@ -43,13 +43,13 @@ RSpec.describe Contribution, type: :model do
     end
 
     it 'is not valid with no user' do
-      contribution.user = nil
+      contribution.backer = nil
       expect(contribution).not_to be_valid
     end
   end
 
   describe 'Associations' do
-    it { is_expected.to belong_to(:user) }
+    it { is_expected.to belong_to(:backer) }
     it { is_expected.to belong_to(:reward) }
   end
 end

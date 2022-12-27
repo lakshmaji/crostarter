@@ -1,7 +1,7 @@
 import { IProject } from '../../models/project';
 import React, { FC } from 'react';
 import { classNames } from '../../utils/styles';
-import styles from './project-details.module.scss';
+import styles from './edit-project.module.scss';
 import AppHead from '../../components/AppHead';
 import CreateOrEditProject, { IProjectFormData } from './CreateOrEditProject';
 import { ICategory } from 'app/javascript/models/category';
@@ -52,17 +52,15 @@ const EditProject: FC<Props> = ({ project, errors, categories }) => {
           content={`Crostarter is a blackhole crowd funding application, where you can raise funds, invest in projects. This is a test application. View ${project.title}`}
         />
       </AppHead>
-      <section className={classNames(styles.section, styles.bg_white)}>
-        <div className={styles.container}>
-          <CreateOrEditProject
-            edit
-            defaultValues={defaultValues}
-            categories={categories}
-            errors={errors}
-            onSubmitHandler={onSubmit}
-            avatar_url={project.avatar_url}
-          />
-        </div>
+      <section className={classNames(styles.section)}>
+        <CreateOrEditProject
+          edit
+          defaultValues={defaultValues}
+          categories={categories}
+          errors={errors}
+          onSubmitHandler={onSubmit}
+          avatar_url={project.avatar_url}
+        />
       </section>
     </>
   );

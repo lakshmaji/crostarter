@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './hero.module.scss';
 import Button from '../../../components/Button/Button';
+import heroImg from './hero.jpeg';
 
 const Hero = () => {
   return (
@@ -14,20 +15,12 @@ const Hero = () => {
                 Lorem ipsum sit amet consectetur dolor, adipiscing elit.
               </p>
               <div className={styles.footer}>
-                {/* <a href='/projects' className={styles.btn}>
-                  Get Started
-                  <IoChevronForwardCircle className={styles.btn_icon} />
-                </a> */}
                 <Button title='Get Started' to='/projects' />
               </div>
             </div>
           </div>
           <div className={styles.picture}>
-            <img
-              src='https://mobirise.com/extensions/toolm5/illustration-design/assets/images/features3.jpg'
-              alt='Mobirise'
-              className={styles.avatar}
-            />
+            <img src={heroImg} alt='Crostarter' className={styles.avatar} />
           </div>
         </div>
       </div>

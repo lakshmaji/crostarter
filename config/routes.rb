@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create]
   get 'exit', to: 'sessions#destroy', as: :logout
   resources :categories, only: :index
-  resources :projects, only: [:index, :show, :new, :create, :destroy, :edit, :update]
+  resources :projects, only: [:index, :show, :new, :create, :destroy, :edit, :update] do
+    resources :contributions, only: [:create]
+  end
   get 'myprojects', to: 'projects#myprojects', shallow: true
 
   if Rails.env.production?
