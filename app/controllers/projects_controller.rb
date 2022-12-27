@@ -68,6 +68,9 @@ class ProjectsController < ApplicationController
         ),
       },
     )
+  rescue ActiveRecord::RecordNotFound
+    flash[:alert] = "Project with #{params[:id]} does not exists"
+    redirect_to(projects_path)
   end
 
   def new
