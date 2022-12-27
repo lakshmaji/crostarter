@@ -1,12 +1,13 @@
-import { Inertia } from '@inertiajs/inertia';
+import { Inertia, RequestPayload } from '@inertiajs/inertia';
 import { IReward } from '../../../models/reward';
 import React, { FC, useEffect, useState } from 'react';
 import styles from './reward-form.module.scss';
 
 interface Props {
   chosenReward?: IReward;
+  projectId: string;
 }
-const RewardForm: FC<Props> = ({ chosenReward }) => {
+const RewardForm: FC<Props> = ({ chosenReward, projectId }) => {
   const [values, setValues] = useState({
     amount: 0,
     description: '',
@@ -29,9 +30,25 @@ const RewardForm: FC<Props> = ({ chosenReward }) => {
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    console.log('bello add contribution', values);
 
-    // Inertia.post('/users', values);
+    const reward_amount = chosenReward?.amount || 0;
+    const entered_amount = +values.amount;
+
+    if (!chosenReward?.id) {
+      return 'some error';
+    }
+
+    if (reward_amount > entered_amount) {
+      return 'some error';
+    }
+
+    const payload: RequestPayload = {
+      contribution: {
+        reward_id: chosenReward.id,
+        amount: entered_amount,
+      },
+    } as unknown as RequestPayload;
+    Inertia.post(`/projects/${projectId}/contributions`, payload);
   }
 
   return (

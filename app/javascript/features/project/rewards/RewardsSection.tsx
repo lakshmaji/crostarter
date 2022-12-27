@@ -5,6 +5,9 @@ import styles from './rewards-section.module.scss';
 import RewardForm from '../reward_form/RewardForm';
 import { IReward } from '../../../models/reward';
 
+const NoRewardsConfigured = () => {
+  return <div>No Rewards configured by OP.</div>;
+};
 interface Props {
   project: IProject;
 }
@@ -19,8 +22,8 @@ const RewardsSection: FC<Props> = ({ project }) => {
         <div className={styles.wrapper}>
           <div className={styles.rewards_wrapper}>
             <div className={styles.rewards_list}>
-              {!!project?.rewards?.length &&
-                project.rewards.map((reward, i) => {
+              {project?.rewards?.length !== 0 ? (
+                project.rewards?.map((reward, i) => {
                   return (
                     <div
                       className={classNames(
@@ -39,7 +42,10 @@ const RewardsSection: FC<Props> = ({ project }) => {
                       <div className={styles.amount}>{reward.amount}</div>
                     </div>
                   );
-                })}
+                })
+              ) : (
+                <NoRewardsConfigured />
+              )}
             </div>
           </div>
           <div className={styles.contribution}>
@@ -56,7 +62,7 @@ const RewardsSection: FC<Props> = ({ project }) => {
                 </button>
               </div>
             )}
-            <RewardForm chosenReward={currentReward} />
+            <RewardForm chosenReward={currentReward} projectId={project.id} />
           </div>
         </div>
       </div>

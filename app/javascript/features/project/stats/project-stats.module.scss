@@ -65,7 +65,7 @@
       }
 
       .metrics_list {
-        max-width: 40vw;
+        width: calc(100% - 50px);
         .metrics {
           display: flex;
           flex-wrap: wrap;
