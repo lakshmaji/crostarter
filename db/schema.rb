@@ -49,12 +49,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_19_134547) do
 
   create_table "contributions", force: :cascade do |t|
     t.integer "reward_id", null: false
-    t.integer "user_id", null: false
+    t.integer "backer_id", null: false
     t.decimal "amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["backer_id"], name: "index_contributions_on_backer_id"
     t.index ["reward_id"], name: "index_contributions_on_reward_id"
-    t.index ["user_id"], name: "index_contributions_on_user_id"
   end
 
   create_table "projects", force: :cascade do |t|
@@ -96,7 +96,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_19_134547) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "contributions", "rewards"
-  add_foreign_key "contributions", "users"
+  add_foreign_key "contributions", "users", column: "backer_id"
   add_foreign_key "projects", "categories"
   add_foreign_key "projects", "users", column: "creator_id"
   add_foreign_key "rewards", "projects"
