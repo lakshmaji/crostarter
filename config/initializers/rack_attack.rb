@@ -2,7 +2,7 @@
 
 # Allow max 5 requests
 # In period of 60 seconds
-Rack::Attack.throttle('requests by ip', limit: 5, period: 60.seconds, &:ip)
+Rack::Attack.throttle('requests by ip', limit: 5, period: 60.seconds, &:ip) unless Rails.env.development?
 
 # Throttle login attempts for a given username(email) parameter to 10 reqs/minute
 # Return the *normalized* username as a discriminator on POST /login requests
