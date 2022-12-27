@@ -22,8 +22,8 @@ const Pagination: FC<Props> = ({ meta }) => {
     ...meta.series.map((page) => {
       return {
         label: page,
-        url: url(+page),
-        active: active(+page),
+        url: url(Number(page)),
+        active: active(Number(page)),
       };
     }),
     {

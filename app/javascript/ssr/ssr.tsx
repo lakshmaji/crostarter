@@ -17,10 +17,11 @@ createServer((page: Page) =>
     page,
     render: ReactDOMServer.renderToString,
     resolve: async (name: string) => {
-      const page = ((await pages[`../pages/${name}.tsx`]) as { default: { layout: ComponentType } })
-        .default;
-      page.layout = page.layout || Layout;
-      return page;
+      const currentPage = (
+        (await pages[`../pages/${name}.tsx`]) as { default: { layout: ComponentType } }
+      ).default;
+      currentPage.layout = currentPage.layout || Layout;
+      return currentPage;
     },
     setup: ({ App, props }) => <App {...props} />,
   }),

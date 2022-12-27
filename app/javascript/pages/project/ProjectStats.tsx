@@ -14,13 +14,21 @@ import {
 import styles from './project-stats.module.scss';
 
 const EXPECTED = 5000;
-const contributions: any[] = [];
+interface IContribution {
+  ts: Date;
+  expected: number;
+  received: number;
+  accumulated: number;
+  needed: number;
+  prevAcc: number;
+}
+const contributions: IContribution[] = [];
 
 let accumulated = 0;
 let current = 0;
 do {
   const prevAcc = accumulated;
-  current += +randomIntFromInterval(10, 500);
+  current += Number(randomIntFromInterval(10, 500));
   accumulated += current;
   const needed = EXPECTED - accumulated;
 
@@ -40,7 +48,7 @@ const data = contributions
     return new Date(a.ts).getTime() - new Date(b.ts).getTime();
   })
   .map((c) => {
-    const d = new Date(c.ts[0]);
+    const d = new Date(c.ts);
     const options: Intl.DateTimeFormatOptions = {
       weekday: undefined,
       year: 'numeric',

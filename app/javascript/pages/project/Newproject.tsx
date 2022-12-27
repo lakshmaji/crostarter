@@ -1,7 +1,7 @@
 import { Inertia, RequestPayload } from '@inertiajs/inertia';
 import { ICategory } from '../../models/category';
 import React, { FC } from 'react';
-import CreateOrEditProject, { IProjectFormData } from './CreateOrEditProject';
+import CreateOrEditProject, { FormSubmitData, IProjectFormData } from './CreateOrEditProject';
 
 interface Props {
   errors: Array<Record<string, string>>;
@@ -23,13 +23,13 @@ const NewProject: FC<Props> = ({ errors, categories }) => {
     picture: undefined,
   };
 
-  const onSubmit = (data: RequestPayload) => {
+  const onSubmit = (data: FormSubmitData) => {
     Inertia.post('/projects', {
       project: {
-        ...(data as any).project,
-        avatar: (data as any).project.picture[0],
+        ...data,
+        ...(data.picture?.length && { avatar: data.picture[0] }),
       },
-    });
+    } as unknown as RequestPayload);
   };
 
   return (

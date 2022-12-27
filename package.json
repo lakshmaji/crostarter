@@ -34,7 +34,6 @@
     "format": "npm run prettier:fix && npm run lint:fix",
     "prepare": "husky install",
     "pretty-quick": "pretty-quick --staged",
-    "ci:build:ssr": "vite build --ssr",
     "analyze": "source-map-explorer 'public/vite/assets/*.js'",
     "typescript": "tsc -b"
   },

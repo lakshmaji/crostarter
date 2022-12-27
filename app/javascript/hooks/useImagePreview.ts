@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import usePrevious from './usePrevious';
 
-export default function useImagePreview(files: FileList): string | undefined {
+export default function useImagePreview(files?: FileList): string | undefined {
   const [imgSrc, setImgSrc] = useState<string>();
   const prevValues = usePrevious(imgSrc);
 

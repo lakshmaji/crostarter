@@ -36,7 +36,7 @@ const Wrapper = (
     | string
     | number
     | boolean
-    | React.ReactElement<any, string | React.JSXElementConstructor<any>>
+    | React.ReactElement
     | React.ReactFragment
     | React.ReactPortal
     | null

@@ -13,11 +13,8 @@
     - [ ] create `cdk` project in typescript (bootstrap is not required for small project)
     - [ ] Run on CI actions
   - [ ] Fix CLS - take help from css expert !!
-  - [ ] contribute
-    - [x] contribution by user
-    - [ ] payment gateway integration (stripe)
-  - [ ] categories page search
-    - [ ] Not elasticsearch though https://github.com/activerecord-hackery/ransack
+  - [ ] payment gateway integration (stripe)
+
   - [ ] Elastic search integration
     - [ ] search projects
     - [ ] recommended projects
@@ -43,3 +40,5 @@
 - [ ] GraphQL
 - [ ] synk
 - [ ] brakeman
+- [ ] categories page search
+  - [ ] Not elasticsearch though https://github.com/activerecord-hackery/ransack
