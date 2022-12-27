@@ -1,11 +1,6 @@
 import { ICategory } from './category';
+import { IReward } from './reward';
 
-interface IReward {
-  id?: number;
-  title: string;
-  description: string;
-  amount: number;
-}
 export interface IProject {
   id: string;
   title: string;

@@ -11,7 +11,7 @@ import {
   ResponsiveContainer,
   ReferenceLine,
 } from 'recharts';
-import styles from './project-details.module.scss';
+import styles from './project-stats.module.scss';
 
 const EXPECTED = 5000;
 const contributions: any[] = [];
@@ -56,8 +56,8 @@ const data = contributions
 
 const ProjectStats = () => {
   return (
-    <div className={styles.f_image}>
-      <ResponsiveContainer width={600} height='100%'>
+    <div className={styles.container}>
+      <ResponsiveContainer width='100%' height='100%'>
         <AreaChart
           // width={600}
           height={400}
