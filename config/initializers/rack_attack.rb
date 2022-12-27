@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
-Rack::Attack.throttle('requests by ip', limit: 50, period: 2.minutes, &:ip)
+# Allow max 5 requests
+# In period of 60 seconds
+Rack::Attack.throttle('requests by ip', limit: 5, period: 60.seconds, &:ip)
 
 # Throttle login attempts for a given username(email) parameter to 10 reqs/minute
 # Return the *normalized* username as a discriminator on POST /login requests
@@ -10,4 +12,10 @@ Rack::Attack.throttle('limit logins per username', limit: 10, period: 60.seconds
     # protect against rate limit bypasses.
     req.params['username'].to_s.downcase.gsub(/\s+/, '')
   end
+end
+
+Rack::Attack.throttled_responder = lambda do |_request|
+  # Using 503 because it may make attacker think that they have successfully
+  # DOSed the site. Rack::Attack returns 429 for throttling by default
+  [503, {}, ["This application run on free shared instance, show some love 🥹 \n"]]
 end
