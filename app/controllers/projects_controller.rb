@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 class ProjectsController < ApplicationController
+  # Used for development only (for generatign urls for images)
+  include ActiveStorage::SetCurrent
+
   def index
     pagy, paged_projects = pagy(
       Project.with_category(params[:category])
