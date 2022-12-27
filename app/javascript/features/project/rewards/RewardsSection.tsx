@@ -1,5 +1,5 @@
 import { IProject } from '../../../models/project';
-import React, { FC, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import { classNames } from '../../../utils/styles';
 import styles from './rewards-section.module.scss';
 import RewardForm from '../reward_form/RewardForm';
@@ -13,6 +13,13 @@ interface Props {
 }
 const RewardsSection: FC<Props> = ({ project }) => {
   const [currentReward, setCurrentReward] = useState<IReward>();
+
+  useEffect(() => {
+    if (project.rewards?.length && !currentReward?.id) {
+      setCurrentReward(project.rewards[0]);
+    }
+  }, [currentReward?.id, project.rewards]);
+
   return (
     <section className={classNames(styles.section, styles.bg_blue)}>
       <div className={styles.container}>
