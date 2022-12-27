@@ -12,8 +12,6 @@ interface Props {
   project: IProject;
 }
 const ProjectDetails: FC<Props> = ({ project }) => {
-  console.log(project);
-
   return (
     <>
       <AppHead title='Home'>

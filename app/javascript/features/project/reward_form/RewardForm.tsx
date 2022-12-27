@@ -22,8 +22,8 @@ const RewardForm: FC<Props> = ({ chosenReward, projectId }) => {
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
     const key = e.target.id;
     const value = e.target.value;
-    setValues((values) => ({
-      ...values,
+    setValues((prevValues) => ({
+      ...prevValues,
       [key]: value,
     }));
   }
@@ -32,14 +32,16 @@ const RewardForm: FC<Props> = ({ chosenReward, projectId }) => {
     e.preventDefault();
 
     const reward_amount = chosenReward?.amount || 0;
-    const entered_amount = +values.amount;
+    const entered_amount = Number(values.amount);
 
     if (!chosenReward?.id) {
-      return 'some error';
+      alert('Select a reward');
+      return;
     }
 
     if (reward_amount > entered_amount) {
-      return 'some error';
+      alert(`Amount must be greater than reward amount, ${reward_amount} `);
+      return;
     }
 
     const payload: RequestPayload = {

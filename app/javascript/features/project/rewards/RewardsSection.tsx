@@ -20,6 +20,10 @@ const RewardsSection: FC<Props> = ({ project }) => {
     }
   }, [currentReward?.id, project.rewards]);
 
+  const changeReward = (reward: IReward) => {
+    setCurrentReward(reward);
+  };
+
   return (
     <section className={classNames(styles.section, styles.bg_blue)}>
       <div className={styles.container}>
@@ -30,7 +34,7 @@ const RewardsSection: FC<Props> = ({ project }) => {
           <div className={styles.rewards_wrapper}>
             <div className={styles.rewards_list}>
               {project?.rewards?.length !== 0 ? (
-                project.rewards?.map((reward, i) => {
+                project.rewards?.map((reward) => {
                   return (
                     <div
                       className={classNames(
@@ -38,11 +42,8 @@ const RewardsSection: FC<Props> = ({ project }) => {
                         currentReward?.id === reward.id ? styles.active : '',
                       )}
                       key={reward.id}
-                      onClick={() => setCurrentReward(reward)}
-                      role='button'
-                      tabIndex={i}
-                      // eslint-disable-next-line @typescript-eslint/no-empty-function
-                      onKeyDown={() => {}}
+                      onClick={changeReward.bind(null, reward)}
+                      aria-hidden
                     >
                       <h6 className={styles.title}>{reward.title}</h6>
                       <p className={styles.note}>{reward.description}</p>
@@ -64,7 +65,11 @@ const RewardsSection: FC<Props> = ({ project }) => {
             {currentReward && (
               <div className={styles.clear_reward}>
                 <p className={styles.clear_text}>Don&apos;t want reward click</p>
-                <button className={styles.btn} onClick={() => setCurrentReward(undefined)}>
+                <button
+                  className={styles.btn}
+                  onClick={() => setCurrentReward(undefined)}
+                  type='button'
+                >
                   here
                 </button>
               </div>
