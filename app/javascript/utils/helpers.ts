@@ -17,7 +17,7 @@ export const randomDate = (start: Date, end: Date) => {
 export const deepEqual = function (x: any, y: any) {
   if (x === y) {
     return true;
-  } else if (typeof x == 'object' && x != null && typeof y == 'object' && y != null) {
+  } else if (typeof x == 'object' && x !== null && typeof y == 'object' && y !== null) {
     if (Object.keys(x).length != Object.keys(y).length) return false;
 
     for (const prop in x) {
