@@ -48,7 +48,7 @@ const data = contributions
     return new Date(prev.ts).getTime() - new Date(next.ts).getTime();
   })
   .map((contribution) => {
-    const d = new Date(contribution.ts);
+    const timestamp = new Date(contribution.ts);
     const options: Intl.DateTimeFormatOptions = {
       weekday: undefined,
       year: 'numeric',
@@ -58,7 +58,7 @@ const data = contributions
 
     return {
       ...contribution,
-      month: d.toLocaleDateString('en-IN', options),
+      month: timestamp.toLocaleDateString('en-IN', options),
     };
   });
 
