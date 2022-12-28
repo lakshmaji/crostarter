@@ -7,7 +7,7 @@ import type {
   FormSubmitData,
   IProjectFormData,
 } from '../../features/project/form/CreateOrEditProject';
-import { ICategory } from 'app/javascript/models/category';
+import { ICategory } from '../../models/category';
 import { Inertia, RequestPayload } from '@inertiajs/inertia';
 import { IReward } from '../../models/reward';
 

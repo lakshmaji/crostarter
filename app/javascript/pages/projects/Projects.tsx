@@ -7,7 +7,7 @@ import Categories from '../../features/projects/category/Categories';
 import { classNames } from '../../utils/styles';
 import Pagination from '../../components/Pagination/Pagination';
 import { ICategory } from '../../models/category';
-import { IPagy } from 'app/javascript/models/pagination';
+import { IPagy } from '../../models/pagination';
 import AppHead from '../../components/AppHead';
 import NoProjects from '../../features/projects/empty/NoProjects';
 

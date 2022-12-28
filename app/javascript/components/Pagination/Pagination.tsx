@@ -11,7 +11,7 @@ const Pagination: FC<Props> = ({ meta }) => {
     return pageNumber ? meta.scaffold_url.replace(/__pagy_page__/, pageNumber.toString()) : null;
   };
   const active = (pageNumber: number) => {
-    return meta.page == pageNumber;
+    return meta.page === pageNumber;
   };
 
   const links = [

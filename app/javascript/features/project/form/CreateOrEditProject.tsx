@@ -1,6 +1,6 @@
 import { ICategory } from '../../../models/category';
 import { classNames } from '../../../utils/styles';
-import React, { FC, useState } from 'react';
+import React, { FC, useCallback, useState } from 'react';
 import { useFieldArray, useForm } from 'react-hook-form';
 import styles from './new-project.module.scss';
 import Select, { MultiValue, SingleValue, StylesConfig } from 'react-select';
@@ -10,7 +10,19 @@ import chroma from 'chroma-js';
 import useImagePreview from '../../../hooks/useImagePreview';
 
 const DateInput = React.lazy(() => import('./DateInput'));
-
+const DeleteReward: FC<{ idx: number; removeRewardBlock: (idx: number) => void }> = ({
+  idx,
+  removeRewardBlock,
+}) => {
+  const deleteRow = useCallback(() => {
+    removeRewardBlock(idx);
+  }, [idx, removeRewardBlock]);
+  return (
+    <button type='button' onClick={deleteRow}>
+      Delete
+    </button>
+  );
+};
 const dot = (color = 'transparent') => ({
   alignItems: 'center',
   display: 'flex',
@@ -188,6 +200,10 @@ const CreateOrEditProject: FC<Props> = ({
       end_date: selectedDay,
     } as FormSubmitData);
   };
+  const removeRewardBlock = (index: number) => remove(index);
+  const addRewardBlock = () => {
+    append({ title: '', description: '', amount: 0 });
+  };
 
   return (
     <div className={styles.container_contact100}>
@@ -350,18 +366,11 @@ const CreateOrEditProject: FC<Props> = ({
                       {...register(`rewards_attributes.${index}.amount`, { required: true })}
                     />
                   </div>
-                  <button type='button' onClick={() => remove(index)}>
-                    Delete
-                  </button>
+                  <DeleteReward idx={index} removeRewardBlock={removeRewardBlock} />
                 </div>
               );
             })}
-            <button
-              type='button'
-              onClick={() => {
-                append({ title: '', description: '', amount: 0 });
-              }}
-            >
+            <button type='button' onClick={addRewardBlock}>
               Add Reward
             </button>
           </div>

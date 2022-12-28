@@ -1,5 +1,5 @@
 import { InertiaLink } from '@inertiajs/inertia-react';
-import { IProject } from 'app/javascript/models/project';
+import { IProject } from '../../../models/project';
 import React, { FC } from 'react';
 import { classNames } from '../../../utils/styles';
 import styles from './project-stats.module.scss';
@@ -34,7 +34,7 @@ const ProjectStatsEye: FC<Props> = ({ project }) => {
                 <div className={styles.note}>
                   <h4>Rewards</h4>
                   <p>
-                    {!project.rewards?.length
+                    {project.rewards?.length
                       ? `${project.rewards?.length} rewards`
                       : 'Currently no rewards available'}
                   </p>
@@ -46,7 +46,7 @@ const ProjectStatsEye: FC<Props> = ({ project }) => {
                 </div>
                 <div className={styles.note}>
                   <h4>Contributions</h4>
-                  <p>10 members contributed, counting</p>
+                  <p>{project.total_backers_count} members contributed, counting</p>
                 </div>
               </div>
               <div className={styles.metric}>
@@ -55,7 +55,7 @@ const ProjectStatsEye: FC<Props> = ({ project }) => {
                 </div>
                 <div className={styles.note}>
                   <h4>Funded</h4>
-                  <p>10000 $ raised</p>
+                  <p>{project.funded}$ raised</p>
                 </div>
               </div>
               <div className={styles.metric}>
@@ -64,7 +64,7 @@ const ProjectStatsEye: FC<Props> = ({ project }) => {
                 </div>
                 <div className={styles.note}>
                   <h4>Time</h4>
-                  <p>ends on 12th dec 2022</p>
+                  <p>ends on {project.end_date}</p>
                 </div>
               </div>
             </div>
