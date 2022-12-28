@@ -1,4 +1,4 @@
-import { IProject } from 'app/javascript/models/project';
+import { IProject } from '../../models/project';
 import React, { FC, Suspense } from 'react';
 import { classNames } from '../../utils/styles';
 import styles from './project-details.module.scss';
@@ -6,7 +6,7 @@ import AppHead from '../../components/AppHead';
 import RewardsSection from '../../features/project/rewards/RewardsSection';
 import ProjectStatsEye from '../../features/project/stats/ProjectStatsEye';
 
-const ProjectStats = React.lazy(() => import('./ProjectStats'));
+const ProjectStats = React.lazy(() => import('../../features/project/chart/ProjectStats'));
 
 interface Props {
   project: IProject;

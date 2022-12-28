@@ -3,9 +3,17 @@ import React, { FC } from 'react';
 import { classNames } from '../../utils/styles';
 import styles from './edit-project.module.scss';
 import AppHead from '../../components/AppHead';
-import CreateOrEditProject, { IProjectFormData } from './CreateOrEditProject';
+import type {
+  FormSubmitData,
+  IProjectFormData,
+} from '../../features/project/form/CreateOrEditProject';
 import { ICategory } from 'app/javascript/models/category';
 import { Inertia, RequestPayload } from '@inertiajs/inertia';
+import { IReward } from '../../models/reward';
+
+const CreateOrEditProject = React.lazy(
+  () => import('../../features/project/form/CreateOrEditProject'),
+);
 
 interface Props {
   errors: Array<Record<string, string>>;
@@ -27,21 +35,19 @@ const EditProject: FC<Props> = ({ project, errors, categories }) => {
     picture: undefined,
   };
 
-  const onSubmit = (data: RequestPayload) => {
-    console.log('bello on submit, data', data);
-
-    const rewards = (data as any).project.rewards_attributes.map((e: any) => e.id);
+  const onSubmit = (data: FormSubmitData) => {
+    const rewards = data.rewards_attributes.map((rewardAttr: IReward) => rewardAttr.id);
     const deletedRewards = project.rewards
       ?.filter((r) => !new Set(rewards).has(r.id))
-      .map((e) => ({ ...e, _destroy: '1' })) as any;
-    const finalRewards = [...(data as any).project.rewards_attributes, ...deletedRewards];
+      .map((e) => ({ ...e, _destroy: '1' })) as IReward[];
+    const finalRewards = [...data.rewards_attributes, ...deletedRewards];
     Inertia.put(`/projects/${project.id}`, {
       project: {
-        ...(data as any).project,
+        ...data,
         rewards_attributes: finalRewards,
-        avatar: (data as any).project.picture[0],
+        ...(data.picture && { avatar: data.picture[0] }),
       },
-    });
+    } as unknown as RequestPayload);
   };
 
   return (

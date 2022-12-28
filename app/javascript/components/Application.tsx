@@ -17,8 +17,8 @@ const app = () => {
       return page;
     },
     setup({ el, App, props }) {
-      const container = document.getElementById(el.id);
-      const root = createRoot(container!);
+      const container = document.getElementById(el.id) as HTMLElement;
+      const root = createRoot(container);
       root.render(<App {...props} />);
     },
   });

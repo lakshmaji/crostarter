@@ -2,7 +2,7 @@
 
 [![Deployment][deploy-image]][deploy-url] [![Unit Tests][rspec-image]][rspec-url] [![Rails code style][rubocop-code-style-image]][rubocop-code-style-url] [![Rails Style Guide][rails-code-style-image]][rails-code-style-url]
 [![npm][npm-image]][npm-url] [![ESLint][eslint-image]][eslint-url]
-![ruby][ruby-version]
+![ruby][ruby-version] [![DeepSource][deepsource-image]][deepsource-url]
 
 Demo: [Live](https://crostarter.fly.dev/)
 
@@ -68,3 +68,5 @@ bundle exec rubocop --A # force - better not use it
 [eslint-image]: https://badges.aleen42.com/src/eslint.svg
 [eslint-url]: https://eslint.org/
 [ruby-version]: https://img.shields.io/badge/ruby-3.1+-ruby.svg?colorA=99004d&colorB=cc0066
+[deepsource-image]: https://deepsource.io/gh/lakshmaji/crostarter.svg/?label=active+issues&show_trend=true&token=1iscn-MF5vlAmvh7Nzs1mvHd
+[deepsource-url]: https://deepsource.io/gh/lakshmaji/crostarter/?ref=repository-badge

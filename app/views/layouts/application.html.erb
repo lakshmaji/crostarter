@@ -12,8 +12,10 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= vite_client_tag %>
-    <%= vite_react_refresh_tag %>
+    <% if Rails.env.development? %>
+      <%= vite_client_tag %>
+      <%= vite_react_refresh_tag %>
+    <% end %>
     <%= vite_javascript_tag 'application.tsx' %>
     <!--
       If using a TypeScript entrypoint file:

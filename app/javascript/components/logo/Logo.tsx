@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styles from './logo.module.scss';
 
-const Tortoise = (props: any) => {
+interface TortiseProps {
+  fill: string;
+  stroke: string;
+  className: string;
+}
+const Tortoise: FC<TortiseProps> = (props) => {
   return (
     <svg xmlns='http://www.w3.org/2000/svg' version='1' viewBox='0 0 140 140' {...props}>
       <g stroke='#000' strokeWidth='0'>

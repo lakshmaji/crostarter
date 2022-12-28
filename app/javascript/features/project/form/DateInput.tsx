@@ -29,11 +29,11 @@ const DateInput: FC<Props> = ({ onChooseEndDate, defaultValue = DV }) => {
     onChooseEndDate(`${value?.day}/${value?.month}/${value?.year}`);
   };
 
-  const renderCustomInput = ({ ref }: { ref: React.RefObject<any> }) => {
+  const renderCustomInput = ({ ref }: { ref: React.RefObject<HTMLElement | HTMLInputElement> }) => {
     return (
       <input
         readOnly
-        ref={ref}
+        ref={ref as React.RefObject<HTMLInputElement>}
         placeholder='Select end date'
         value={selectedDay ? `✅ ${selectedDay.day}/${selectedDay.month}/${selectedDay.year}` : ''}
         className={styles.input100}

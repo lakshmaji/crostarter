@@ -16,8 +16,7 @@
     "react-icons": "^4.7.1",
     "react-masonry-css": "^1.0.16",
     "react-select": "^5.6.1",
-    "recharts": "^2.2.0",
-    "vite-plugin-ruby": "3.1.0"
+    "recharts": "^2.2.0"
   },
   "scripts": {
     "clean": "npx rimraf node_modules public/vite-* public/vite",
@@ -34,9 +33,10 @@
     "format": "npm run prettier:fix && npm run lint:fix",
     "prepare": "husky install",
     "pretty-quick": "pretty-quick --staged",
-    "ci:build:ssr": "vite build --ssr",
     "analyze": "source-map-explorer 'public/vite/assets/*.js'",
-    "typescript": "tsc -b"
+    "typecheck": "tsc -b",
+    "ci:build:ssr": "vite build --ssr",
+    "ci:build:csr": "vite build"
   },
   "devDependencies": {
     "@types/chroma-js": "^2.1.4",
@@ -61,6 +61,7 @@
     "source-map-explorer": "^2.5.3",
     "typescript": "4.7.4",
     "vite": "3.0.0",
+    "vite-plugin-ruby": "3.1.0",
     "vite-tsconfig-paths": "3.6.0"
   }
 }

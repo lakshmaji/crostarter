@@ -1,14 +1,13 @@
-import { RequestPayload } from '@inertiajs/inertia';
-import { ICategory } from '../../models/category';
-import { classNames } from '../../utils/styles';
+import { ICategory } from '../../../models/category';
+import { classNames } from '../../../utils/styles';
 import React, { FC, useState } from 'react';
 import { useFieldArray, useForm } from 'react-hook-form';
 import styles from './new-project.module.scss';
 import Select, { MultiValue, SingleValue, StylesConfig } from 'react-select';
 import { useEffect } from 'react';
-import { ColourOption, getRandomColor } from './data';
+import { ColourOption, getRandomColor } from '../../../pages/project/data';
 import chroma from 'chroma-js';
-import useImagePreview from '../../hooks/useImagePreview';
+import useImagePreview from '../../../hooks/useImagePreview';
 
 const DateInput = React.lazy(() => import('./DateInput'));
 
@@ -28,11 +27,11 @@ const dot = (color = 'transparent') => ({
 });
 
 const colourStyles: StylesConfig<ColourOption> = {
-  control: (styles) => ({ ...styles, backgroundColor: 'white' }),
-  option: (styles, { data, isDisabled, isFocused, isSelected }) => {
+  control: (prevStyles) => ({ ...prevStyles, backgroundColor: 'white' }),
+  option: (prevStyles, { data, isDisabled, isFocused, isSelected }) => {
     const color = chroma(data.color);
     return {
-      ...styles,
+      ...prevStyles,
       backgroundColor: isDisabled
         ? undefined
         : isSelected
@@ -50,7 +49,7 @@ const colourStyles: StylesConfig<ColourOption> = {
       cursor: isDisabled ? 'not-allowed' : 'default',
 
       ':active': {
-        ...styles[':active'],
+        ...prevStyles[':active'],
         backgroundColor: !isDisabled
           ? isSelected
             ? data.color
@@ -59,9 +58,9 @@ const colourStyles: StylesConfig<ColourOption> = {
       },
     };
   },
-  input: (styles) => ({ ...styles, ...dot() }),
-  placeholder: (styles) => ({ ...styles, ...dot('#ccc') }),
-  singleValue: (styles, { data }) => ({ ...styles, ...dot(data.color) }),
+  input: (prevStyles) => ({ ...prevStyles, ...dot() }),
+  placeholder: (prevStyles) => ({ ...prevStyles, ...dot('#ccc') }),
+  singleValue: (prevStyles, { data }) => ({ ...prevStyles, ...dot(data.color) }),
   clearIndicator: (base, state) => ({
     ...base,
     cursor: 'pointer',
@@ -87,14 +86,19 @@ export interface IProjectFormData {
   // category?: Category;
   tagline?: string;
   rewards_attributes: IReward[];
-  picture: any;
+  picture?: FileList;
+}
+
+export interface FormSubmitData extends IProjectFormData {
+  category_id: string;
+  end_date: string;
 }
 
 interface Props {
   errors: Array<Record<string, string>>;
   categories: ICategory[];
   defaultValues: IProjectFormData;
-  onSubmitHandler: (data: RequestPayload) => void;
+  onSubmitHandler: (data: FormSubmitData) => void;
   edit?: boolean;
   avatar_url?: string;
 }
@@ -113,18 +117,6 @@ const CreateOrEditProject: FC<Props> = ({
   onSubmitHandler,
   avatar_url,
 }) => {
-  //   const defaultValues: IProjectFormData = {
-  //     title: '', // faker.commerce.productName(),
-  //     website: '', // faker.internet.domainName(),
-  //     description: '', // faker.commerce.productDescription(),
-  //     end_date: '',
-  //     funding_goal: 0, // +faker.commerce.price(1000, 12000),
-  //     details: '', // faker.lorem.paragraphs(3),
-  //     category_id: '',
-  //     funded: 0, // +faker.commerce.price(1000, 2000),
-  //     tagline: '', // faker.company.catchPhrase(),
-  //     rewards_attributes: [],
-  //   };
   const [selectedDay, setSelectedDay] = useState<string>();
 
   const [categoryOptions, setCategoryOptions] = useState<CategoryOption[]>([]);
@@ -132,7 +124,9 @@ const CreateOrEditProject: FC<Props> = ({
 
   useEffect(() => {
     if (defaultValues.category_id && !selectedCategoryOptions) {
-      const cat = categoryOptions.find((c) => +c.value === +defaultValues.category_id);
+      const cat = categoryOptions.find(
+        (c) => c.value.toString() === defaultValues.category_id.toString(),
+      );
       setSelectedCategoryOptions(cat);
     }
   }, [categoryOptions, defaultValues.category_id, selectedCategoryOptions]);
@@ -175,13 +169,7 @@ const CreateOrEditProject: FC<Props> = ({
     };
   }
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors: formErrors },
-    control,
-    watch,
-  } = useForm<IProjectFormData>({
+  const { register, handleSubmit, control, watch } = useForm<IProjectFormData>({
     defaultValues,
   });
 
@@ -193,18 +181,12 @@ const CreateOrEditProject: FC<Props> = ({
   const files = watch('picture');
   const filePreview = useImagePreview(files);
 
-  console.log(formErrors);
-
-  //   const [day, setDay] = React.useState<DayValue>(null);
-
   const onSubmit = (data: IProjectFormData) => {
     onSubmitHandler({
-      project: {
-        ...data,
-        category_id: selectedCategoryOptions?.value,
-        end_date: selectedDay,
-      },
-    } as unknown as RequestPayload);
+      ...data,
+      category_id: selectedCategoryOptions?.value,
+      end_date: selectedDay,
+    } as FormSubmitData);
   };
 
   return (
@@ -384,7 +366,7 @@ const CreateOrEditProject: FC<Props> = ({
             </button>
           </div>
           <div className={styles.container_contact100_form_btn}>
-            <button className={styles.contact100_form_btn}>
+            <button className={styles.contact100_form_btn} type='submit'>
               <span>
                 {edit ? 'Update' : 'Create'}
                 <i className='zmdi zmdi-arrow-right m-l-8'></i>

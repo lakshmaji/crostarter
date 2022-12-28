@@ -38,7 +38,7 @@ const Tag: FC<{ active: boolean; item: ICategory; onClick: (id: number) => void 
   return (
     <div
       className={classNames(styles.item, active ? styles.active : '')}
-      onClick={() => onClick(+item.id)}
+      onClick={() => onClick(Number(item.id))}
       aria-hidden='true'
     >
       <span className={styles.content}>
@@ -124,7 +124,9 @@ const Categories: FC<Props> = ({ items }) => {
       {scrollX !== 0 && <Left slide={slide} />}
       <div className={styles.list} ref={scrollRef}>
         {items.map((item) => {
-          return <Tag key={item.id} item={item} onClick={choose} active={current === +item.id} />;
+          return (
+            <Tag key={item.id} item={item} onClick={choose} active={current === Number(item.id)} />
+          );
         })}
       </div>
       {!scrollEnd && <Right slide={slide} />}
