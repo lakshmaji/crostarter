@@ -1,5 +1,5 @@
 import { InertiaLink } from '@inertiajs/inertia-react';
-import { IProject } from 'app/javascript/models/project';
+import { IProject } from '../../../models/project';
 import React, { FC } from 'react';
 import { classNames } from '../../../utils/styles';
 import styles from './project-stats.module.scss';

@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useRef, useState } from 'react';
+import React, { FC, useCallback, useEffect, useRef, useState } from 'react';
 import styles from './categories.module.scss';
 import { IoTrainOutline } from '@react-icons/all-files/io5/IoTrainOutline';
 import { classNames } from '../../../utils/styles';
@@ -35,7 +35,7 @@ const Tag: FC<{ active: boolean; item: ICategory; onClick: (id: number) => void 
   onClick,
   active,
 }) => {
-  const handleClick = () => onClick(Number(item.id));
+  const handleClick = useCallback(() => onClick(Number(item.id)), [item.id, onClick]);
   return (
     <div
       className={classNames(styles.item, active ? styles.active : '')}

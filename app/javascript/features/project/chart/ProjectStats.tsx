@@ -50,7 +50,7 @@ const transform = (project: IProject) => {
 };
 
 const tune = (project: IProject) => {
-  const contributions = transform(project).sort(function (prev, next) {
+  const contributions = transform(project).sort((prev, next) => {
     return new Date(prev.ts).getTime() - new Date(next.ts).getTime();
   });
 
