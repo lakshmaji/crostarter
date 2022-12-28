@@ -1,4 +1,4 @@
-import { randomDate, randomIntFromInterval } from '../../utils/helpers';
+import { randomDate, randomIntFromInterval } from '../../../utils/helpers';
 import React from 'react';
 import {
   AreaChart,
@@ -44,11 +44,11 @@ do {
 } while (accumulated <= EXPECTED);
 
 const data = contributions
-  .sort(function (a, b) {
-    return new Date(a.ts).getTime() - new Date(b.ts).getTime();
+  .sort(function (current, next) {
+    return new Date(current.ts).getTime() - new Date(next.ts).getTime();
   })
-  .map((c) => {
-    const d = new Date(c.ts);
+  .map((contribution) => {
+    const d = new Date(contribution.ts);
     const options: Intl.DateTimeFormatOptions = {
       weekday: undefined,
       year: 'numeric',
@@ -57,7 +57,7 @@ const data = contributions
     };
 
     return {
-      ...c,
+      ...contribution,
       month: d.toLocaleDateString('en-IN', options),
     };
   });

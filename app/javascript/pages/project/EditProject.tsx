@@ -3,10 +3,17 @@ import React, { FC } from 'react';
 import { classNames } from '../../utils/styles';
 import styles from './edit-project.module.scss';
 import AppHead from '../../components/AppHead';
-import CreateOrEditProject, { FormSubmitData, IProjectFormData } from './CreateOrEditProject';
+import type {
+  FormSubmitData,
+  IProjectFormData,
+} from '../../features/project/form/CreateOrEditProject';
 import { ICategory } from 'app/javascript/models/category';
 import { Inertia, RequestPayload } from '@inertiajs/inertia';
 import { IReward } from '../../models/reward';
+
+const CreateOrEditProject = React.lazy(
+  () => import('../../features/project/form/CreateOrEditProject'),
+);
 
 interface Props {
   errors: Array<Record<string, string>>;

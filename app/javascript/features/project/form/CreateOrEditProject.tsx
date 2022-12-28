@@ -1,13 +1,13 @@
-import { ICategory } from '../../models/category';
-import { classNames } from '../../utils/styles';
+import { ICategory } from '../../../models/category';
+import { classNames } from '../../../utils/styles';
 import React, { FC, useState } from 'react';
 import { useFieldArray, useForm } from 'react-hook-form';
 import styles from './new-project.module.scss';
 import Select, { MultiValue, SingleValue, StylesConfig } from 'react-select';
 import { useEffect } from 'react';
-import { ColourOption, getRandomColor } from './data';
+import { ColourOption, getRandomColor } from '../../../pages/project/data';
 import chroma from 'chroma-js';
-import useImagePreview from '../../hooks/useImagePreview';
+import useImagePreview from '../../../hooks/useImagePreview';
 
 const DateInput = React.lazy(() => import('./DateInput'));
 

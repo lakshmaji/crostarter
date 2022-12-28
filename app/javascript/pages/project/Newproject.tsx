@@ -1,7 +1,13 @@
 import { Inertia, RequestPayload } from '@inertiajs/inertia';
 import { ICategory } from '../../models/category';
 import React, { FC } from 'react';
-import CreateOrEditProject, { FormSubmitData, IProjectFormData } from './CreateOrEditProject';
+import type {
+  FormSubmitData,
+  IProjectFormData,
+} from '../../features/project/form/CreateOrEditProject';
+const CreateOrEditProject = React.lazy(
+  () => import('../../features/project/form/CreateOrEditProject'),
+);
 
 interface Props {
   errors: Array<Record<string, string>>;
