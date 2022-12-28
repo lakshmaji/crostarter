@@ -99,6 +99,6 @@ jobs:
       - name: Install
         run: yarn install --immutable
       - name: SSR Build
-        run: vite build --ssr
+        run: yarn ci:build:ssr
       - name: CSR Build
-        run: vite build
+        run: yarn ci:build:csr

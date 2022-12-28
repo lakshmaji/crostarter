@@ -35,7 +35,9 @@
     "prepare": "husky install",
     "pretty-quick": "pretty-quick --staged",
     "analyze": "source-map-explorer 'public/vite/assets/*.js'",
-    "typescript": "tsc -b"
+    "typecheck": "tsc -b",
+    "ci:build:ssr": "vite build --ssr",
+    "ci:build:csr": "vite build"
   },
   "devDependencies": {
     "@types/chroma-js": "^2.1.4",
