@@ -38,7 +38,7 @@ do {
     received: current,
     accumulated,
     needed: needed > 0 ? needed : 0,
-    prevAcc: prevAcc,
+    prevAcc,
   };
   contributions.push(record);
 } while (accumulated <= EXPECTED);
