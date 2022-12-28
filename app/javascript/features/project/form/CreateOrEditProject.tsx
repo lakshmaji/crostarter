@@ -366,7 +366,7 @@ const CreateOrEditProject: FC<Props> = ({
             </button>
           </div>
           <div className={styles.container_contact100_form_btn}>
-            <button className={styles.contact100_form_btn}>
+            <button className={styles.contact100_form_btn} type='submit'>
               <span>
                 {edit ? 'Update' : 'Create'}
                 <i className='zmdi zmdi-arrow-right m-l-8'></i>

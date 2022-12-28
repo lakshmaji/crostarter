@@ -44,8 +44,8 @@ do {
 } while (accumulated <= EXPECTED);
 
 const data = contributions
-  .sort(function (current, next) {
-    return new Date(current.ts).getTime() - new Date(next.ts).getTime();
+  .sort(function (prev, next) {
+    return new Date(prev.ts).getTime() - new Date(next.ts).getTime();
   })
   .map((contribution) => {
     const d = new Date(contribution.ts);
