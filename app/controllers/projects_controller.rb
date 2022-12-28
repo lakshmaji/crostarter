@@ -41,7 +41,7 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    project = Project.includes(:category, :rewards).find(params[:id])
+    project = Project.includes(:category, rewards: :contributions).find(params[:id])
     render(
       inertia: 'project/ProjectDetails',
       props: {
@@ -59,13 +59,18 @@ class ProjectsController < ApplicationController
             :created_at, # started at
             :updated_at, # last seen
           ],
-          methods: :avatar_url,
+          methods: [:avatar_url, :funded, :total_backers_count],
           include: {
             category: {
               only: :name,
             },
             rewards: {
               only: [:title, :description, :amount, :id],
+              include: {
+                contributions: {
+                  only: [:amount, :created_at],
+                },
+              },
             },
           },
         ),

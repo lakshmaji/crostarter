@@ -1,7 +1,10 @@
 import { ICategory } from './category';
 import { IReward } from './reward';
 
-export interface IProject {
+interface ProjectStats {
+  total_backers_count?: number;
+}
+export interface IProject extends ProjectStats {
   id: string;
   title: string;
   website: string;

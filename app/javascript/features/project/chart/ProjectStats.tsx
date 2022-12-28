@@ -1,5 +1,4 @@
-import { randomDate, randomIntFromInterval } from '../../../utils/helpers';
-import React from 'react';
+import React, { FC } from 'react';
 import {
   AreaChart,
   Area,
@@ -12,42 +11,50 @@ import {
   ReferenceLine,
 } from 'recharts';
 import styles from './project-stats.module.scss';
+import { IProject } from '../../../models/project';
+import { IReward } from '../../../models/reward';
+import { IContribution } from '../../..//models/contribution';
 
-const EXPECTED = 5000;
-interface IContribution {
+interface IContributionGraph {
   ts: Date;
-  expected: number;
+  goal_amount: number;
   received: number;
   accumulated: number;
-  needed: number;
   prevAcc: number;
 }
-const contributions: IContribution[] = [];
 
-let accumulated = 0;
-let current = 0;
-do {
-  const prevAcc = accumulated;
-  current += Number(randomIntFromInterval(10, 500));
-  accumulated += current;
-  const needed = EXPECTED - accumulated;
+const getContributions = (rewards: IReward[]): IContribution[] => {
+  return rewards.map((reward) => reward.contributions as IContribution[]).flat();
+};
+const transform = (project: IProject) => {
+  if (!project.rewards) {
+    return [];
+  }
+  const goal_amount = Number(project.funding_goal);
+  const contributions: IContributionGraph[] = [];
+  let accumulated = 0;
+  getContributions(project.rewards).forEach((contribution) => {
+    const received = Number(contribution.amount);
+    accumulated += received;
 
-  const record = {
-    ts: randomDate(new Date(2012, 0, 1), new Date()), // faker.date.betweens('2020-01-01T00:00:00.000Z', '2030-01-01T00:00:00.000Z'),
-    expected: EXPECTED,
-    received: current,
-    accumulated,
-    needed: needed > 0 ? needed : 0,
-    prevAcc,
-  };
-  contributions.push(record);
-} while (accumulated <= EXPECTED);
+    const record = {
+      ts: new Date(contribution.created_at),
+      goal_amount,
+      received,
+      accumulated,
+      prevAcc: accumulated - received,
+    };
+    contributions.push(record);
+  });
+  return contributions;
+};
 
-const data = contributions
-  .sort(function (prev, next) {
+const tune = (project: IProject) => {
+  const contributions = transform(project).sort(function (prev, next) {
     return new Date(prev.ts).getTime() - new Date(next.ts).getTime();
-  })
-  .map((contribution) => {
+  });
+
+  return contributions.map((contribution) => {
     const timestamp = new Date(contribution.ts);
     const options: Intl.DateTimeFormatOptions = {
       weekday: undefined,
@@ -61,8 +68,13 @@ const data = contributions
       month: timestamp.toLocaleDateString('en-IN', options),
     };
   });
+};
 
-const ProjectStats = () => {
+interface Props {
+  project: IProject;
+}
+const ProjectStats: FC<Props> = ({ project }) => {
+  const data = tune(project);
   return (
     <div className={styles.container}>
       <ResponsiveContainer width='100%' height='100%'>
@@ -85,7 +97,7 @@ const ProjectStats = () => {
 
           <YAxis hide></YAxis>
           <Tooltip />
-          <Area fillOpacity={1} type='monotone' dataKey='needed' stroke='#11b094' fill='#11b094' />
+          {/* <Area fillOpacity={1} type='monotone' dataKey='needed' stroke='#11b094' fill='#11b094' /> */}
 
           <Area
             fillOpacity={1}

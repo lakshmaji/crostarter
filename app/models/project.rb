@@ -8,6 +8,7 @@ class Project < ApplicationRecord
   has_one_attached :avatar
 
   has_many :rewards, inverse_of: :project
+  has_many :contributions, through: :rewards, source: :contributions
 
   validates :title, presence: true, length: { minimum: 2 }
   validates :end_date, presence: true
@@ -20,5 +21,13 @@ class Project < ApplicationRecord
 
   def avatar_url
     avatar.url if avatar.attached?
+  end
+
+  def funded
+    rewards.map(&:total_contributions).reduce(:+)
+  end
+
+  def total_backers_count
+    rewards.map(&:contribution_count).reduce(:+)
   end
 end

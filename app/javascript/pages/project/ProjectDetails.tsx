@@ -52,7 +52,7 @@ const ProjectDetails: FC<Props> = ({ project }) => {
             </div>
             <div className={styles.yd_flex_2}>
               <Suspense fallback={<div>Loading insights...</div>}>
-                <ProjectStats />
+                <ProjectStats project={project} />
               </Suspense>
             </div>
           </div>
