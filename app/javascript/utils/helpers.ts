@@ -18,7 +18,7 @@ export const deepEqual = <T = unknown>(x: T, y: T) => {
   if (x === y) {
     return true;
   } else if (typeof x === 'object' && x !== null && typeof y === 'object' && y !== null) {
-    if (Object.keys(x).length != Object.keys(y).length) return false;
+    if (Object.keys(x).length !== Object.keys(y).length) return false;
 
     for (const prop in x) {
       if (y[prop]) {

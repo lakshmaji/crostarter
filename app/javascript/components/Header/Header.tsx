@@ -52,20 +52,16 @@ const Header = () => {
         </a>
 
         {auth ? (
-          <>
-            <DropdownMenu />
-          </>
+          <DropdownMenu />
         ) : (
-          <>
-            <div className={styles.logout_btn}>
-              <Link href='/sessions/new' className={styles.link}>
-                Get started
-                <span className={styles.icon}>
-                  <IoChevronForwardCircle />
-                </span>
-              </Link>
-            </div>
-          </>
+          <div className={styles.logout_btn}>
+            <Link href='/sessions/new' className={styles.link}>
+              Get started
+              <span className={styles.icon}>
+                <IoChevronForwardCircle />
+              </span>
+            </Link>
+          </div>
         )}
       </div>
     </header>

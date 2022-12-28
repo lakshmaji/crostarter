@@ -45,6 +45,8 @@ export const Flash = () => {
         return styles.info;
       case AlertType.Warn:
         return styles.warn;
+      default:
+        return '';
     }
   };
 

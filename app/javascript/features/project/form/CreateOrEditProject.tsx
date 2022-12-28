@@ -188,6 +188,10 @@ const CreateOrEditProject: FC<Props> = ({
       end_date: selectedDay,
     } as FormSubmitData);
   };
+  const removeRewardBlock = (index: number) => remove(index);
+  const addRewardBlock = () => {
+    append({ title: '', description: '', amount: 0 });
+  };
 
   return (
     <div className={styles.container_contact100}>
@@ -350,18 +354,13 @@ const CreateOrEditProject: FC<Props> = ({
                       {...register(`rewards_attributes.${index}.amount`, { required: true })}
                     />
                   </div>
-                  <button type='button' onClick={() => remove(index)}>
+                  <button type='button' onClick={removeRewardBlock.bind(null, index)}>
                     Delete
                   </button>
                 </div>
               );
             })}
-            <button
-              type='button'
-              onClick={() => {
-                append({ title: '', description: '', amount: 0 });
-              }}
-            >
+            <button type='button' onClick={addRewardBlock}>
               Add Reward
             </button>
           </div>

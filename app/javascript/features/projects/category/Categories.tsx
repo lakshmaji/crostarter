@@ -35,10 +35,11 @@ const Tag: FC<{ active: boolean; item: ICategory; onClick: (id: number) => void 
   onClick,
   active,
 }) => {
+  const handleClick = () => onClick(Number(item.id));
   return (
     <div
       className={classNames(styles.item, active ? styles.active : '')}
-      onClick={() => onClick(Number(item.id))}
+      onClick={handleClick}
       aria-hidden='true'
     >
       <span className={styles.content}>
