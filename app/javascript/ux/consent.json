@@ -1,0 +1,33 @@
+{
+  "policies": [
+    {
+      "id": "essential",
+      "label": "Essential Cookies",
+      "description": "We need to save some technical cookies, for the website to function properly.",
+      "category": "essential"
+    },
+    {
+      "id": "statistics",
+      "label": "Statistics",
+      "category": "statistics",
+      "description": "We need to save some technical cookies, for the website to function properly."
+    }
+  ],
+  "essentialLabel": "Always on",
+  "permissionLabels": {
+    "accept": "Accept",
+    "acceptAll": "Accept all",
+    "decline": "Decline"
+  },
+  "cookiePreferenceKey": "cookie-preferences",
+  "header": {
+    "title": "Your privacy",
+    "subTitle": "Attention Please!",
+    "description": "By clicking “Accept all cookies”, you agree Cro Starer can store cookies on your device and disclose information in accordance with our Cookie Policy."
+  },
+  "cookiePolicy": {
+    "url": "https://crostarter.fly.dev/cookie-policy",
+    "label": "Read the full cookie declaration"
+  },
+  "customizeLabel": "Customize"
+}
