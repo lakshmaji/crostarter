@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root to: 'home#index'
 
   get 'profile', to: 'profile#index'
+  get 'cookie-policy', to: 'static#cookie_policy'
 
   resources :users, only: [:new, :create]
   resources :sessions, only: [:new, :create]
