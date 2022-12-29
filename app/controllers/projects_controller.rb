@@ -197,6 +197,12 @@ class ProjectsController < ApplicationController
     )
   end
 
+  # JSON only action
+  def search
+    projects = Project.search(params[:term])
+    json(projects)
+  end
+
   private
 
   def project_params
