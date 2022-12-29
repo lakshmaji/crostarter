@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { hide, init, onPreferencesChanged, show } from 'cookie-though';
+import cookie from 'cookie-though';
 import { Config, CookiePreferences } from 'cookie-though/dist/types/types';
 import config from '../../ux/consent.json';
 import styles from './consent.module.scss';
@@ -22,19 +22,21 @@ const Consent = () => {
 
   useEffect(() => {
     if (client) {
+      const { init, onPreferencesChanged } = cookie;
       init(config as Config);
 
       onPreferencesChanged((preferences: CookiePreferences) => {
         const trackStats = cookieIsAccepted(preferences, 'statistics');
         if (trackStats) {
           // TODO: remove hide and use the inputs for clarity
-          hide();
+          setClient(true);
         }
       });
     }
   }, [client]);
 
   const viewConsent = () => {
+    const { show } = cookie;
     show();
   };
 
