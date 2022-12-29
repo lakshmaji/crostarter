@@ -1,3 +1,4 @@
+import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import {
   createInertiaApp,
@@ -35,7 +36,7 @@ const cb = (page: Page): Promise<CreateInertiaAppSSRContent> =>
   createInertiaApp<InertiaAppOptionsForSSR<PageProps>>({
     page,
     render: ReactDOMServer.renderToString,
-    resolve: resolve,
+    resolve,
     setup,
   });
 
