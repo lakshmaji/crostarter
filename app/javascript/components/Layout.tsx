@@ -1,5 +1,6 @@
 import React, { FC, ReactNode } from 'react';
 import { Flash } from './Alerts/Flash';
+import Consent from './Consent/Consent';
 import Footer from './Footer/Footer';
 import Header from './Header/Header';
 import NewsLetter from './NewsLetter/NewsLetter';
@@ -27,6 +28,7 @@ const Layout: FC<Props> = ({ children }) => {
         {<NewsLetter />}
         <Footer />
       </section>
+      <Consent />
     </>
   );
 };
