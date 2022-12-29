@@ -3,6 +3,7 @@
 [![Deployment][deploy-image]][deploy-url] [![Unit Tests][rspec-image]][rspec-url] [![Rails code style][rubocop-code-style-image]][rubocop-code-style-url] [![Rails Style Guide][rails-code-style-image]][rails-code-style-url]
 [![npm][npm-image]][npm-url] [![ESLint][eslint-image]][eslint-url]
 ![ruby][ruby-version] [![DeepSource][deepsource-image]][deepsource-url]
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Flakshmaji%2Fcrostarter.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Flakshmaji%2Fcrostarter?ref=badge_shield)
 
 Demo: [Live](https://crostarter.fly.dev/)
 
@@ -53,6 +54,15 @@ bundle exec rubocop --safe-auto-correct
 bundle exec rubocop --A # force - better not use it
 ```
 
+### Environment variables
+
+```yml
+aws:
+  access_key_id: '******'
+  secret_access_key: '******'
+secret_key_base: '******'
+```
+
 ---
 
 [deploy-image]: https://github.com/lakshmaji/kickstarter/actions/workflows/deployment.yml/badge.svg?branch=main
@@ -70,3 +80,5 @@ bundle exec rubocop --A # force - better not use it
 [ruby-version]: https://img.shields.io/badge/ruby-3.1+-ruby.svg?colorA=99004d&colorB=cc0066
 [deepsource-image]: https://deepsource.io/gh/lakshmaji/crostarter.svg/?label=active+issues&show_trend=true&token=1iscn-MF5vlAmvh7Nzs1mvHd
 [deepsource-url]: https://deepsource.io/gh/lakshmaji/crostarter/?ref=repository-badge
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Flakshmaji%2Fcrostarter.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Flakshmaji%2Fcrostarter?ref=badge_large)
