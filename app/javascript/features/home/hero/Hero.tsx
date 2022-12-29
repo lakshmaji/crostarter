@@ -15,7 +15,7 @@ const Hero = () => {
                 Lorem ipsum sit amet consectetur dolor, adipiscing elit.
               </p>
               <div className={styles.footer}>
-                <Button title='Get Started' to='/projects' />
+                <Button title='See Projects' to='/projects' />
               </div>
             </div>
           </div>
