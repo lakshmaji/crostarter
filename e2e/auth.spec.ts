@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('signup', async ({ page }) => {
+test.skip('signup', async ({ page }) => {
   await page.goto('/');
   await page.getByRole('link', { name: 'Get started' }).click();
   await page.getByRole('link', { name: 'New? Create account' }).click();
