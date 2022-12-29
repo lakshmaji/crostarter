@@ -39,7 +39,6 @@
     "storage",
     "tmp",
     "vendor",
-    "yarn.lock",
-    "haus"
+    "yarn.lock"
   ]
 }
