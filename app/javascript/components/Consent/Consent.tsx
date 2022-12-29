@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import cookie from 'cookie-though';
 import { Config, CookiePreferences } from 'cookie-though/dist/types/types';
 import config from '../../ux/consent.json';
@@ -35,10 +35,10 @@ const Consent = () => {
     }
   }, [client]);
 
-  const viewConsent = () => {
+  const viewConsent = useCallback(() => {
     const { show } = cookie;
     show();
-  };
+  }, []);
 
   return (
     <div className={styles.consent_container}>
