@@ -1,4 +1,5 @@
 import React, { FC, ReactNode } from 'react';
+import useClarity from '../hooks/useClarity';
 import { Flash } from './Alerts/Flash';
 import Footer from './Footer/Footer';
 import Header from './Header/Header';
@@ -8,6 +9,8 @@ interface Props {
   children: ReactNode;
 }
 const Layout: FC<Props> = ({ children }) => {
+  useClarity();
+
   return (
     <>
       <Header />
