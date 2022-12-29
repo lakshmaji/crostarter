@@ -52,7 +52,7 @@ const DropdownMenu = () => {
   return (
     <div className={styles.container} ref={dropdownRef}>
       <button onClick={onClick} className={styles.trigger}>
-        <span>{auth.user.name}</span>
+        <span data-testid='username'>{auth.user.name}</span>
         <img
           src='https://avatars.githubusercontent.com/u/14037682?v=4'
           alt=''
