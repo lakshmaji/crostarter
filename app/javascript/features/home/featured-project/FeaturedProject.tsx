@@ -27,7 +27,7 @@ const FeaturedProject: FC<Props> = ({ project, picture, bg }) => {
         <div className={styles.footer}>
           <div className={styles.content}>
             <div className={styles.navigation}>
-              <Button to={`/projects/${project.id}`} title='Get Started' />
+              <Button to={`/projects/${project.id}`} title='View' />
             </div>
             <p className={styles.funded}>12$</p>
           </div>
