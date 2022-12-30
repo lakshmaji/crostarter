@@ -1,0 +1,8 @@
+Description:
+    Create a data seed file
+
+Example:
+    bin/rails generate seed model
+
+    This will create:
+        db/seeds/xxxxx_model

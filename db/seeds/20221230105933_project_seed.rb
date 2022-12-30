@@ -34,6 +34,7 @@ no_of_projects.times do
       title: Faker::Games::Pokemon.name,
       description: Faker::Movie.quote,
       amount: Faker::Commerce.price(range: 1000.0..funding_goal),
+      created_at: Faker::Time.between_dates(from: 2.years.ago, to: 2.months.ago),
     )
   end
 
