@@ -102,3 +102,6 @@ gem "rack-attack", "~> 6.6"
 
 gem "graphql", "~> 2.0"
 gem "graphiql-rails", group: :development
+gem "sidekiq", "~> 7.0"
+
+gem "sinatra", "~> 3.0"

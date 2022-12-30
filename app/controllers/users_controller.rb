@@ -10,6 +10,15 @@ class UsersController < ApplicationController
   def create
     user = User.new(user_params)
     if user.save
+      WelcomeJob.perform_async(
+        user
+                .as_json(
+                  only: [
+                    :id,
+                    :username,
+                  ],
+                ),
+      )
       redirect_to(new_session_path)
     else
 
