@@ -40,6 +40,10 @@ const config: PlaywrightTestConfig = {
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
+    extraHTTPHeaders: {
+      // to ignore throttle
+      ci_api_key: process.env.CI_TEST_API_KEY,
+    },
   },
 
   /* Configure projects for major browsers */
