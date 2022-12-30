@@ -42,7 +42,7 @@ const config: PlaywrightTestConfig = {
     trace: 'on-first-retry',
     extraHTTPHeaders: {
       // to ignore throttle
-      ci_api_key: process.env.CI_TEST_API_KEY,
+      ci_api_key: process.env.CI_TEST_API_KEY as string,
     },
   },
 
@@ -55,19 +55,19 @@ const config: PlaywrightTestConfig = {
       },
     },
 
-    {
-      name: 'firefox',
-      use: {
-        ...devices['Desktop Firefox'],
-      },
-    },
+    // {
+    //   name: 'firefox',
+    //   use: {
+    //     ...devices['Desktop Firefox'],
+    //   },
+    // },
 
-    {
-      name: 'webkit',
-      use: {
-        ...devices['Desktop Safari'],
-      },
-    },
+    // {
+    //   name: 'webkit',
+    //   use: {
+    //     ...devices['Desktop Safari'],
+    //   },
+    // },
 
     /* Test against mobile viewports. */
     // {
