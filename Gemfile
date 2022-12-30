@@ -101,3 +101,4 @@ gem "active_storage_validations", "~> 1.0"
 gem "rack-attack", "~> 6.6"
 
 gem "graphql", "~> 2.0"
+gem "graphiql-rails", group: :development
