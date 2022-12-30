@@ -23,4 +23,13 @@ jobs:
       - uses: superfly/flyctl-actions@1.3
         with:
           args: 'deploy -c fly.toml --remote-only'
+      - uses: superfly/flyctl-actions@1.3
+        with:
+          args: 'echo $(flyctl list apps --json) > flyapps.json'
+          # FIXME: will above command can be understood by action ?
+      - run: |
+          cat flyapps.json | jq '.[] | select(.Name | contains("builder")) | .Name' > builder
+      - uses: superfly/flyctl-actions@1.3
+        with:
+          args: 'flyctl destroy $(cat builder) -y'
       # - run: "flyctl ssh console --command '/app/bin/rails db:seed RAILS_ENV=production DISABLE_DATABASE_ENVIRONMENT_CHECK=1'"
