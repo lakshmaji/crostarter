@@ -11,6 +11,6 @@ no_of_contributions.times do
     reward:,
     backer:,
     amount: Faker::Commerce.price(range: 0..reward.amount / 5.0),
-    created_at: Faker::Time.between_dates(from: reward.created_at, to: Date.today),
+    created_at: Faker::Time.between_dates(from: reward.created_at, to: Time.zone.today),
   )
 end

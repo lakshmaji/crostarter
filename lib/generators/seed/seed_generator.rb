@@ -21,7 +21,7 @@ class SeedGenerator < Rails::Generators::NamedBase
 
   def next_seed_number(dirname)
     number = current_seed_number(dirname) + 1
-    [Time.now.utc.strftime('%Y%m%d%H%M%S'), '%.14d' % number].max
+    [Time.now.utc.strftime('%Y%m%d%H%M%S'), format('%.14d', number)].max
   end
 
   def seed_lookup_at(dirname)
