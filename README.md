@@ -7,6 +7,8 @@
 
 Demo: [Live](https://crostarter.fly.dev/)
 
+An opensource crowd funding platform
+
 ## Getting started
 
 Follow along to run app in your local machine
