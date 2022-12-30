@@ -37,5 +37,13 @@ module Types
     def projects
       Project.all
     end
+
+    field :project, ProjectType, 'Find project by id' do
+      argument :id, Int
+    end
+
+    def project(id:)
+      Project.find(id)
+    end
   end
 end
