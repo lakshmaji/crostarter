@@ -25,5 +25,11 @@ module Types
     def category(id:)
       Category.find(id)
     end
+
+    field :categories, [CategoryType], 'List all categories', null: false
+
+    def categories
+      Category.all
+    end
   end
 end
