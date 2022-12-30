@@ -4,7 +4,6 @@ import {
   Area,
   XAxis,
   YAxis,
-  CartesianGrid,
   Tooltip,
   Legend,
   ResponsiveContainer,
@@ -33,26 +32,29 @@ const transform = (project: IProject) => {
   const goal_amount = Number(project.funding_goal);
   const contributions: IContributionGraph[] = [];
   let accumulated = 0;
-  getContributions(project.rewards).forEach((contribution) => {
-    const received = Number(contribution.amount);
-    accumulated += received;
+  getContributions(project.rewards)
+    .map((contribution) => ({ ...contribution, ts: new Date(contribution.created_at) }))
+    .sort((prev, next) => {
+      return new Date(prev.ts).getTime() - new Date(next.ts).getTime();
+    })
+    .forEach((contribution) => {
+      const received = Number(contribution.amount);
+      accumulated += received;
 
-    const record = {
-      ts: new Date(contribution.created_at),
-      goal_amount,
-      received,
-      accumulated,
-      prevAcc: accumulated - received,
-    };
-    contributions.push(record);
-  });
+      const record = {
+        ts: new Date(contribution.created_at),
+        goal_amount,
+        received,
+        accumulated,
+        prevAcc: accumulated - received,
+      };
+      contributions.push(record);
+    });
   return contributions;
 };
 
 const tune = (project: IProject) => {
-  const contributions = transform(project).sort((prev, next) => {
-    return new Date(prev.ts).getTime() - new Date(next.ts).getTime();
-  });
+  const contributions = transform(project);
 
   return contributions.map((contribution) => {
     const timestamp = new Date(contribution.ts);
@@ -89,8 +91,13 @@ const ProjectStats: FC<Props> = ({ project }) => {
             bottom: 0,
           }}
         >
-          <CartesianGrid strokeDasharray='3 3' />
-          <ReferenceLine y={4800} label='Goal' stroke='#ea8ed9' strokeDasharray='3 1' />
+          {/* <CartesianGrid strokeDasharray='3 3' /> */}
+          <ReferenceLine
+            y={project.funding_goal}
+            label='Goal'
+            stroke='#ea8ed9'
+            strokeDasharray='3 1'
+          />
 
           <XAxis dataKey='month' />
           <Legend verticalAlign='top' height={36} />
