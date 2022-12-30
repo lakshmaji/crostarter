@@ -2,13 +2,6 @@
 
 - [ ] Feature development
 
-  - [x] Run seeds in fly deployment
-
-    ```bash
-      flyctl auth token
-      flyctl ssh console --command '/app/bin/rails db:seed RAILS_ENV=production DISABLE_DATABASE_ENVIRONMENT_CHECK=1' -t <token>
-    ```
-
   - [ ] IaaC
     - [ ] create `cdk` project in typescript (bootstrap is not required for small project)
     - [ ] Run on CI actions
