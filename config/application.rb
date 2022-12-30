@@ -21,5 +21,6 @@ module Rails7ReactBoilerplate
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
     config.exceptions_app = routes
+    config.action_mailer.preview_path = "#{Rails.root}/spec"
   end
 end
