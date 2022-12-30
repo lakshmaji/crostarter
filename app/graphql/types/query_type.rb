@@ -31,5 +31,11 @@ module Types
     def categories
       Category.all
     end
+
+    field :projects, [ProjectType], 'List all projects', null: false
+
+    def projects
+      Project.all
+    end
   end
 end
