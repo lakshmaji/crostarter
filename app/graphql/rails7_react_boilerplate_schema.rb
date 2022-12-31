@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class Rails7ReactBoilerplateSchema < GraphQL::Schema
   mutation(Types::MutationType)
   query(Types::QueryType)
