@@ -2,7 +2,7 @@
 
 module Mutations
   class CategoryCreate < BaseMutation
-    description "Creates a new category"
+    description 'Creates a new category'
 
     field :category, Types::CategoryType, null: false
 
@@ -10,9 +10,14 @@ module Mutations
 
     def resolve(category_input:)
       category = ::Category.new(**category_input)
-      raise GraphQL::ExecutionError.new "Error creating category", extensions: category.errors.to_hash unless category.save
+      unless category.save
+        raise GraphQL::ExecutionError.new(
+          'Error creating category',
+          extensions: category.errors.to_hash,
+        )
+      end
 
-      { category: category }
+      { category: }
     end
   end
 end
