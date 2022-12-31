@@ -19,10 +19,6 @@ class UsersController < ApplicationController
                   ],
                 ),
       )
-      # TODO: move this inside `WelcomeUserMailer` - job done!!!
-      # Tell the UserMailer to send a welcome email after save
-      WelcomeUserMailer.with(user:).welcome_email.deliver_later
-
       redirect_to(new_session_path)
     else
 
