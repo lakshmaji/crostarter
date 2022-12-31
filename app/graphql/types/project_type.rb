@@ -9,7 +9,7 @@ module Types
     field :end_date, GraphQL::Types::ISO8601Date
     field :funding_goal, Float
     field :details, String
-    field :category_id, Integer, null: false
+    field :category, CategoryType, null: false
     field :creator_id, Integer, null: false
     field :created_at, GraphQL::Types::ISO8601DateTime, null: false
     field :updated_at, GraphQL::Types::ISO8601DateTime, null: false
