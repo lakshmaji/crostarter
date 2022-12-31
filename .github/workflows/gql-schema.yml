@@ -1,0 +1,44 @@
+name: Generate GraphQL schema
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'app/graphql/**/*.rb'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  pull-requests: write
+  statuses: write
+
+jobs:
+  generate-schema:
+    name: 'schema.graphql'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Setup ruby
+        uses: ruby/setup-ruby@v1.120.0
+        with:
+          ruby-version: 3.1.2
+          bundler-cache: true
+      - name: Setup database schema
+        run: bin/rails graphql:schema:gen
+      - name: Add schema.graphql to source
+        run: |
+          if [[ `git status --porcelain` ]]; then
+            # Changes
+            git config user.name cro-actions
+            git config user.email lakshmaji@users.noreply.github.com
+            git add app/graphql/schema.graphql
+            git commit -m "chore(schema): update schema.graphql"
+            git push
+          else
+            echo "No changes"
+          fi
