@@ -30,6 +30,18 @@ mutation create {
     }
   }
 }
+
+query listCategoriesWithProjects {
+  categories {
+    id
+    name
+    projectsCount
+    projects {
+      id
+      title
+    }
+  }
+}
 ```
 
 ## User
