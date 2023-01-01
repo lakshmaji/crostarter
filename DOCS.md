@@ -50,3 +50,10 @@ flyctl deploy -c fly.toml --remote-only
     flyctl apps restart crostarter -t <token>
     flyctl ssh console --command '/app/bin/rails db:recreate:seed RAILS_ENV=production DISABLE_DATABASE_ENVIRONMENT_CHECK=1' -t <token> # returns error if trying to drop database while it is using by app
   ```
+
+## Run github actions locally
+
+```bash
+brew install act
+act -s FLY_API_TOKEN=<value> -j deploy -w .github/workflows/deployment.yml
+```
