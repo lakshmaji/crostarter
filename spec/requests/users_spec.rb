@@ -54,10 +54,9 @@ RSpec.describe 'Users', type: :request do
              params: {
                user: valid_attributes,
              }
-        user = User.last
 
         expect(WelcomeJob)
-          .to have_enqueued_sidekiq_job(user.as_json(only: [:id, :username]))
+          .to have_enqueued_sidekiq_job(User.last.id)
       end
     end
 
