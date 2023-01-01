@@ -62,9 +62,11 @@ Rails.application.configure do
 
   # Use a real queuing backend for Active Job (and separate queues per environment).
   # config.active_job.queue_adapter     = :resque
+  config.active_job.queue_adapter = :sidekiq
   # config.active_job.queue_name_prefix = "rails_7_react_boilerplate_production"
 
   config.action_mailer.perform_caching = false
+  config.action_mailer.default_url_options = { host: 'crostarter.fly.dev' }
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.

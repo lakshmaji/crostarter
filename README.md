@@ -63,6 +63,9 @@ aws:
   access_key_id: '******'
   secret_access_key: '******'
 secret_key_base: '******'
+REDIS_URL: redis://localhost:6379
+ci:
+  throttle_key:
 ```
 
 ---

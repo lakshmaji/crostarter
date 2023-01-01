@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'sidekiq/web'
+
 Rails.application.routes.draw do
   mount GraphiQL::Rails::Engine, at: '/graphiql', graphql_path: '/graphql' if Rails.env.development?
   post '/graphql', to: 'graphql#execute'
@@ -22,4 +24,7 @@ Rails.application.routes.draw do
     match '/500', to: 'errors#internal_server_error', via: :all
     match '/422', to: 'errors#unprocessable_entity', via: :all
   end
+
+  # TODO: add protection
+  mount Sidekiq::Web => '/queue/monitor'
 end

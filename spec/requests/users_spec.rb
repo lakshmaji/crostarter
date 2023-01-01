@@ -47,6 +47,17 @@ RSpec.describe 'Users', type: :request do
              }
         expect(User.count).to eq(1)
       end
+
+      it 'enqueues WelcomeJob' do
+        valid_attributes
+        post users_path,
+             params: {
+               user: valid_attributes,
+             }
+
+        expect(WelcomeJob)
+          .to have_enqueued_sidekiq_job(User.last.id)
+      end
     end
 
     context 'with invalid parameters' do
