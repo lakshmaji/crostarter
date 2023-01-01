@@ -3,7 +3,8 @@
 class WelcomeJob
   include Sidekiq::Job
 
-  def perform(*args)
-    WelcomeUserMailer.with(args).welcome_email.deliver
+  def perform(user_id)
+    user = User.find(user_id)
+    WelcomeUserMailer.with(user).welcome_email.deliver
   end
 end

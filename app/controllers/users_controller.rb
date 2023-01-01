@@ -11,13 +11,7 @@ class UsersController < ApplicationController
     user = User.new(user_params)
     if user.save
       WelcomeJob.perform_async(
-        user
-                .as_json(
-                  only: [
-                    :id,
-                    :username,
-                  ],
-                ),
+        user.id,
       )
       redirect_to(new_session_path)
     else
