@@ -3536,10 +3536,10 @@ use-isomorphic-layout-effect@^1.1.2:
   resolved "https://registry.yarnpkg.com/use-isomorphic-layout-effect/-/use-isomorphic-layout-effect-1.1.2.tgz#497cefb13d863d687b08477d9e5a164ad8c1a6fb"
   integrity sha512-49L8yCO3iGT/ZF9QttjwLF/ZD9Iwto5LnH5LmEdk/6cFmXddqi2ulF0edxTwjj+7mqvpVVGQWvbXZdn32wRSHA==
 
-vite-plugin-ruby@3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/vite-plugin-ruby/-/vite-plugin-ruby-3.1.0.tgz#ead78dad8c1407e12d3ae7edbb03d8c498270948"
-  integrity sha512-inI2IBTZytKbAo2pqUeObJbLmZr2CD8pWP3iHVrsMZgAx4mZZpi090gBf+3KGfKHuoEWlXHJxcrikhn/v8P0LQ==
+vite-plugin-ruby@3.1.3:
+  version "3.1.3"
+  resolved "https://registry.yarnpkg.com/vite-plugin-ruby/-/vite-plugin-ruby-3.1.3.tgz#893ee7dc3b25daf5611c16c3dc0ca3420e6a801c"
+  integrity sha512-Y7j0lL8xNMSN1c2/sKBlaLkp0nFtxNFU9/kUReX/GMTOAk8fBylrR9ZdC3fej6EnYzbO3VDtfDDyWzYaoCW3hA==
   dependencies:
     debug "^4.3.4"
     fast-glob "^3.2.11"
