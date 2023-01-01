@@ -24,6 +24,7 @@ namespace :fly do
   task server: :swapfile do
     fork { sh 'bin/vite ssr' }
     fork { sh 'bin/rails server' }
+    fork { sh 'bundle exec sidekiq' }
     Process.wait
   end
 
