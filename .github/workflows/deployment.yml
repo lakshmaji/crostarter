@@ -35,7 +35,6 @@ jobs:
           echo $(flyctl list apps --json) > flyapps.json
       - run: |
           cat flyapps.json | jq '.[] | select(.Name | contains("builder")) | .Name' > builder
-      - name: 'Banana show'
-        run: |
+      - run: |
           flyctl destroy $(cat builder | tr -d '"') -y
           echo "Completed 💣 $(cat builder) ␡ !"
