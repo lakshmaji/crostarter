@@ -37,7 +37,8 @@
     "analyze": "source-map-explorer 'public/vite/assets/*.js'",
     "typecheck": "tsc -b",
     "ci:build:ssr": "vite build --ssr",
-    "ci:build:csr": "vite build"
+    "ci:build:csr": "vite build",
+    "e2e": "npx playwright test"
   },
   "devDependencies": {
     "@playwright/test": "^1.29.1",
