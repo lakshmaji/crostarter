@@ -108,7 +108,7 @@ class ProjectsController < ApplicationController
     project.category = Category.find(project.category_id)
 
     if project.save
-      redirect_to(root_path)
+      redirect_to(root_path, notice: "Project #{project.title} created!")
     else
       error_fields = project.errors.attribute_names
       errors = error_fields.map do |attribute|

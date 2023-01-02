@@ -41,6 +41,7 @@
     "e2e": "npx playwright test"
   },
   "devDependencies": {
+    "@faker-js/faker": "^7.6.0",
     "@playwright/test": "^1.29.1",
     "@types/chroma-js": "^2.1.4",
     "@types/react": "18.0.21",

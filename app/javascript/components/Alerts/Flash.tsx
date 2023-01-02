@@ -55,7 +55,9 @@ export const Flash = () => {
       {messages.map((msg) => {
         return (
           <div key={msg.id.toString()} className={classNames(styles.wrapper, applyClass(msg))}>
-            <div className={styles.message}>{msg.value}</div>
+            <div data-testid='header-message' className={styles.message}>
+              {msg.value}
+            </div>
 
             <div className={styles.close}>
               <IoCloseCircleOutline size={20} onClick={() => clearMessage(msg.id)} />

@@ -212,7 +212,7 @@ const CreateOrEditProject: FC<Props> = ({
           className={classNames(styles.contact100_form, 'validate-form')}
           onSubmit={handleSubmit(onSubmit)}
         >
-          {JSON.stringify(errors)}
+          <div role='alert'>{JSON.stringify(errors)}</div>
           <span className={styles.contact100_form_title}>
             {edit ? defaultValues.title : 'New Project'}
           </span>
@@ -341,10 +341,10 @@ const CreateOrEditProject: FC<Props> = ({
             ></textarea>
             <span className={styles.focus_input100}></span>
           </div>
-          <div className={styles.rewards}>
+          <div className={styles.rewards} role='list'>
             {fields.map((item, index) => {
               return (
-                <div key={item.id} className={styles.reward}>
+                <div key={item.id} className={styles.reward} role='listitem'>
                   <div className={styles.wrap_input100}>
                     <input
                       className={styles.input100}

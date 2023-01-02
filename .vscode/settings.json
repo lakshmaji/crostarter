@@ -23,6 +23,7 @@
         "blackhole",
         "inertiajs",
         "opensource",
-        "Pagy"
+        "Pagy",
+        "testid"
     ],
 }
