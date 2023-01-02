@@ -77,7 +77,7 @@ const Categories: FC<Props> = (props) => {
         </div>
       </section>
       <section className={styles.section}>
-        <div className={styles.container}>
+        <div className={styles.container} id='categories'>
           <Masonry
             breakpointCols={breakpointColumnsObj}
             className={styles.my_masonry_grid}

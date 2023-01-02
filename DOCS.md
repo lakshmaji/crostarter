@@ -71,3 +71,9 @@ redis-cli -h localhost/1 -a eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81
 brew install act
 act -s FLY_API_TOKEN=<value> -j deploy -w .github/workflows/deployment.yml
 ```
+
+## E2E
+
+```bash
+PWDEBUG=console npx playwright test e2e/create-project.spec.ts
+```
