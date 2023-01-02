@@ -1,6 +1,62 @@
 import type { PlaywrightTestConfig } from '@playwright/test';
 import { devices } from '@playwright/test';
 
+const projects = [
+  {
+    name: 'chromium',
+    use: {
+      ...devices['Desktop Chrome'],
+    },
+  },
+
+  /* Test against mobile viewports. */
+  // {
+  //   name: 'Mobile Chrome',
+  //   use: {
+  //     ...devices['Pixel 5'],
+  //   },
+  // },
+  // {
+  //   name: 'Mobile Safari',
+  //   use: {
+  //     ...devices['iPhone 12'],
+  //   },
+  // },
+
+  /* Test against branded browsers. */
+  // {
+  //   name: 'Microsoft Edge',
+  //   use: {
+  //     channel: 'msedge',
+  //   },
+  // },
+  // {
+  //   name: 'Google Chrome',
+  //   use: {
+  //     channel: 'chrome',
+  //   },
+  // },
+];
+const ci_projects = [
+  {
+    name: 'firefox',
+    use: {
+      ...devices['Desktop Firefox'],
+    },
+  },
+
+  {
+    name: 'webkit',
+    use: {
+      ...devices['Desktop Safari'],
+    },
+  },
+];
+
+if (process.env.CI) {
+  projects.push(...ci_projects);
+}
+
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -47,56 +103,7 @@ const config: PlaywrightTestConfig = {
   },
 
   /* Configure projects for major browsers */
-  projects: [
-    {
-      name: 'chromium',
-      use: {
-        ...devices['Desktop Chrome'],
-      },
-    },
-
-    // {
-    //   name: 'firefox',
-    //   use: {
-    //     ...devices['Desktop Firefox'],
-    //   },
-    // },
-
-    // {
-    //   name: 'webkit',
-    //   use: {
-    //     ...devices['Desktop Safari'],
-    //   },
-    // },
-
-    /* Test against mobile viewports. */
-    // {
-    //   name: 'Mobile Chrome',
-    //   use: {
-    //     ...devices['Pixel 5'],
-    //   },
-    // },
-    // {
-    //   name: 'Mobile Safari',
-    //   use: {
-    //     ...devices['iPhone 12'],
-    //   },
-    // },
-
-    /* Test against branded browsers. */
-    // {
-    //   name: 'Microsoft Edge',
-    //   use: {
-    //     channel: 'msedge',
-    //   },
-    // },
-    // {
-    //   name: 'Google Chrome',
-    //   use: {
-    //     channel: 'chrome',
-    //   },
-    // },
-  ],
+  projects,
 
   /* Folder for test artifacts such as screenshots, videos, traces, etc. */
   // outputDir: 'test-results/',
