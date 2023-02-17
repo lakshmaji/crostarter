@@ -26,13 +26,13 @@ jobs:
 
   delete-builder:
     needs: deploy
-    name: Destroy app
+    name: Destroy builder
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: superfly/flyctl-actions/setup-flyctl@master
       - run: |
-          echo $(flyctl list apps --json) > flyapps.json
+          echo $(flyctl apps list --json) > flyapps.json
       - run: |
           cat flyapps.json | jq '.[] | select(.Name | contains("builder")) | .Name' > builder
       - run: |
