@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "3.1.2"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 7.0.4"
+gem "rails", "~> 7.0.4", ">= 7.0.4.3"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
@@ -69,22 +69,22 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
-  gem 'rspec-rails', '~> 6.0.0'
-  gem 'shoulda-matchers', '~> 5.3'
+  gem 'rspec-rails', '~> 6.0.1'
+  gem 'shoulda-matchers', '~> 5.3', '>= 5.3.0'
 end
 
-gem "inertia_rails", "~> 3.0"
+gem "inertia_rails", "~> 3.0", ">= 3.0.0"
 
-gem "vite_rails", "~> 3.0"
+gem "vite_rails", "~> 3.0", ">= 3.0.12"
 
 gem "faker", "~> 3.1"
 
 
 gem "solargraph", "~> 0.47.2", :group => :development
 
-gem "factory_bot_rails", "~> 6.2", :group => :test
+gem "factory_bot_rails", "~> 6.2", ">= 6.2.0", :group => :test
 
-gem "rubocop-rails", "~> 2.17", :group => :development
+gem "rubocop-rails", "~> 2.17", ">= 2.17.4", :group => :development
 
 gem "rubocop-performance", "~> 1.15", :group => :development
 
@@ -92,18 +92,18 @@ gem "rubocop-rspec", "~> 2.15", :group => :development
 
 gem "pg", "~> 1.4"
 
-gem "database_cleaner", "~> 2.0", :group => :test
+gem "database_cleaner", "~> 2.0", ">= 2.0.1", :group => :test
 
-gem "pagy", "~> 5.10"
+gem "pagy", "~> 5.10", ">= 5.10.1"
 
 gem "aws-sdk-s3", require: false
-gem "active_storage_validations", "~> 1.0"
-gem "rack-attack", "~> 6.6"
+gem "active_storage_validations", "~> 1.0", ">= 1.0.3"
+gem "rack-attack", "~> 6.6", ">= 6.6.1"
 
 gem "graphql", "~> 2.0"
 gem "graphiql-rails", group: :development
-gem "sidekiq", "~> 7.0"
+gem "sidekiq", "~> 7.0", ">= 7.0.2"
 
-gem "sinatra", "~> 3.0"
+gem "sinatra", "~> 3.0", ">= 3.0.5"
 
-gem "rspec-sidekiq", "~> 3.1", :group => :test
+gem "rspec-sidekiq", "~> 3.1", ">= 3.1.0", :group => :test
