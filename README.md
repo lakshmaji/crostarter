@@ -15,6 +15,15 @@ Follow along to run app in your local machine
 
 ### Installation
 
+#### Prerequisites
+
+```bash
+rbenv install 3.1.3
+brew install postgresql
+```
+
+#### Setup
+
 ```bash
 bundle install
 yarn install
@@ -22,24 +31,59 @@ yarn install
 
 ### Development
 
-```bash
-cp .env.example .env
+- Create or use keys for credentials
 
-bin/rails server
-yarn dev # This will launch app in non-SSR mode
+  ```bash
+  # Copy or create the secret, below is example of copying existing keys to respective environments
+  cp master.key config/master.key
+  cp development.key config/credentials/development.key
+  cp production.key config/credentials/production.key
+  ```
 
-# Run in SSR mode
-yarn dev:ssr
-# Build for SSR
-yarn build:ssr
-```
+- Copy `.env.example`
 
-OR
+  ```bash
+  cp .env.example .env
+  ```
 
-```bash
-cp .env.example .env
-foreman -f Procfile.dev start
-```
+- Use SQLite as development database,
+
+  ```bash
+  bin/rails db:create
+  bin/rails db:migrate
+  ```
+
+- Launch redis
+
+  ```bash
+  colima start
+  docker-compose up
+  ```
+
+- Seed data
+
+  ```bash
+  bin/rails db:seed
+  ```
+
+- Launch server
+
+  ```bash
+  bin/rails server
+  yarn dev # This will launch app in non-SSR mode
+
+  # Run in SSR mode
+  yarn dev:ssr
+  # Build for SSR
+  yarn build:ssr
+  ```
+
+  OR
+
+  ```bash
+  cp .env.example .env
+  foreman -f Procfile.dev start
+  ```
 
 ### Testing
 

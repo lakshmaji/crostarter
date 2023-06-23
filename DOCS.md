@@ -14,11 +14,31 @@ flyctl volumes list
 ```
 
 ```bash
+bin/rails credentials:show --environment development
+bin/rails credentials:show
+
 EDITOR="code --wait"  bin/rails credentials:edit
 EDITOR="code --wait"  bin/rails credentials:edit --environment=development
 ```
 
 ## Database
+
+```bash
+psql postgres
+
+CREATE ROLE croadmin WITH LOGIN PASSWORD 'password';
+ALTER ROLE croadmin CREATEDB;
+\q
+psql postgres -U croadmin
+CREATE DATABASE crostarter;
+\l # verify database name in the list
+bin/rails db:migrate
+\c crostarter;
+\dt
+
+# postgresql:://croadmin:password@localhost:5432/crostarter
+
+```
 
 ```bash
 flyctl postgres connect -a <database name>
