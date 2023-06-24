@@ -1,19 +1,5 @@
 # Base image
-FROM alpine:3.17.0
-
-# Install dependencies
-RUN apk add --no-cache \
-    build-base \
-    libffi-dev \
-    libressl-dev \
-    postgresql-dev \
-    nodejs \
-    yarn
-
-# Install Ruby and Bundler
-RUN apk add --no-cache ruby=3.1.2-r0 ruby-dev=3.1.2-r0
-RUN gem install bundler:2.2.33
-
+FROM ubuntu:latest
 
 # Set the working directory
 WORKDIR /app
@@ -24,22 +10,22 @@ COPY . /app
 # Copy the .env.example to .env
 COPY .env.example .env
 
-# Install rbenv
-# RUN curl -fsSL https://github.com/rbenv/rbenv-installer/raw/main/bin/rbenv-installer | bash
-# RUN echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
-# RUN echo 'eval "$(rbenv init -)"' >> ~/.bashrc
-# RUN exec $SHELL
+Install rbenv
+RUN curl -fsSL https://github.com/rbenv/rbenv-installer/raw/main/bin/rbenv-installer | bash
+RUN echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+RUN echo 'eval "$(rbenv init -)"' >> ~/.bashrc
+RUN exec $SHELL
 
 # apt install rbenv
 # rbenv init
 
 
 
-# Install Ruby and Rails dependencies
+Install Ruby and Rails dependencies
 # RUN apt-get install -y ruby-build
-# RUN rbenv install 3.1.2
-# RUN rbenv global 3.1.2
-# RUN gem install bundler rails
+RUN rbenv install 3.1.2
+RUN rbenv global 3.1.2
+# RUN gem install bundler
 
 
 # Install rails server dependencies
