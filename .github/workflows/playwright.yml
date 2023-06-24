@@ -2,6 +2,7 @@ name: Playwright Tests
 on:
   pull_request:
     branches: [main]
+  push:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
@@ -11,13 +12,47 @@ jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        redis-version: [6]
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: 16
+
+      # - name: install ssl
+      #   run: |
+      #     apt-get install openssl
+      - uses: ruby/setup-ruby@v1.120.0
+        with:
+          ruby-version: 3.1.2
+          bundler-cache: true
+
       - name: Install dependencies
-        run: yarn
+        run: |
+          yarn
+          gem install bundler
+          bundle install
+
+      - name: Start Redis
+        uses: supercharge/redis-github-action@1.5.0
+        with:
+          redis-version: ${{ matrix.redis-version }}
+
+      - name: Set up database
+        run: |
+          bin/rails db:create
+          bin/rails db:migrate
+          bin/rails db:seed
+
+      - name: Launch server
+        run: |
+          cp .env.example .env
+          yarn build:ssr
+          yarn dev:ssr
+          bin/rails server -p 5000
+
       - name: Install Playwright Browsers
         run: yarn playwright install --with-deps
       - name: Run Playwright tests
@@ -25,6 +60,11 @@ jobs:
         env:
           PLAYWRIGHT_TEST_BASE_URL: ${{ secrets.PLAYWRIGHT_TEST_BASE_URL }}
           CI_TEST_API_KEY: ${{ secrets.CI_TEST_API_KEY }}
+
+      - name: Stop Rails server
+        run: |
+          kill $(lsof -t -i :5000) # Stop the server running on port 5000
+
       - uses: actions/upload-artifact@v3
         if: always()
         with:
