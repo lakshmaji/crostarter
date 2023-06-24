@@ -98,7 +98,7 @@ bundle exec rspec
 
 ```bash
 bundle exec rubocop --safe-auto-correct
-bundle exec rubocop --A # force - better not use it
+bundle exec rubocop -A # force - better not use it
 ```
 
 ### Environment variables
