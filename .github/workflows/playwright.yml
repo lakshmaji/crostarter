@@ -65,14 +65,8 @@ jobs:
           PLAYWRIGHT_TEST_BASE_URL: ${{ secrets.PLAYWRIGHT_TEST_BASE_URL }}
           CI_TEST_API_KEY: ${{ secrets.CI_TEST_API_KEY }}
 
-      - name: Stop Rails server
+      - name: rm database
         run: |
-          lsof -t -i :3000 > log_3000.txt
-          cat 3000.txt
-          lsof -t -i :13714 > log_13714.txt
-          cat 13714.txt
-          # kill $(lsof -t -i :3000) # Stop the server running on port 3000
-          # kill $(lsof -t -i :13714) # Stop the server running on port 13714
           bin/rails db:drop --trace
 
       - uses: actions/upload-artifact@v3
