@@ -32,7 +32,6 @@ jobs:
       - name: Install dependencies
         run: |
           yarn
-          gem install bundler
           bundle install
 
       - name: Start Redis
@@ -50,8 +49,7 @@ jobs:
         run: |
           cp .env.example .env
           yarn build:ssr
-          yarn dev:ssr
-          bin/rails server -p 5000
+          nohup foreman start -f Procfile.dev
 
       - name: Install Playwright Browsers
         run: yarn playwright install --with-deps
@@ -63,7 +61,9 @@ jobs:
 
       - name: Stop Rails server
         run: |
-          kill $(lsof -t -i :5000) # Stop the server running on port 5000
+          kill $(lsof -t -i :3000) # Stop the server running on port 5000
+          kill $(lsof -t -i :13714) # Stop the server running on port 13714
+          bin/rails db:drop
 
       - uses: actions/upload-artifact@v3
         if: always()
