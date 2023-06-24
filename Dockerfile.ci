@@ -1,5 +1,5 @@
 # Base image
-FROM ruby:2.7
+FROM ruby:3.1.2
 
 # Set the working directory
 WORKDIR /app
@@ -15,7 +15,7 @@ RUN bundle install
 RUN gem install foreman
 
 # Install react dependencies
-RUN curl -sL https://deb.nodesource.com/setup_14.x | bash -
+RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
 RUN apt-get install -y nodejs
 RUN npm install --global yarn
 RUN yarn install

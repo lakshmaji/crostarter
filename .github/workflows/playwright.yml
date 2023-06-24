@@ -33,10 +33,10 @@ jobs:
           yarn playwright install --with-deps
 
       - name: Build Docker image
-        run: docker build -t my-rails-app -f Dockerfile.ci .
+        run: docker build -t my-rails-app  -f Dockerfile.ci --build-arg REDIS_URL=redis://redis:${{ job.services.redis.env.REDIS_HOST }}:${{ job.services.redis.env.REDIS_PORT }} .
 
       - name: Start Rails server
-        run: docker run -d -p 3000:3000 --env REDIS_URL=redis://${{ job.services.redis.env.REDIS_HOST }}:${{ job.services.redis.env.REDIS_PORT }} my-rails-app
+        run: docker run -d -p 3000:3000  my-rails-app
 
       - name: Wait for server to start
         run: sleep 10
