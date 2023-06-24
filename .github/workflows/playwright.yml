@@ -30,9 +30,6 @@ jobs:
         with:
           node-version: 16
 
-      # - name: install ssl
-      #   run: |
-      #     apt-get install openssl
       - uses: ruby/setup-ruby@v1.120.0
         with:
           ruby-version: 3.1.2
@@ -73,7 +70,7 @@ jobs:
           lsof -t -i :3000
           lsof -t -i :5000
           lsof -t -i :13714
-          kill $(lsof -t -i :3000) # Stop the server running on port 5000
+          kill $(lsof -t -i :3000) # Stop the server running on port 3000
           kill $(lsof -t -i :13714) # Stop the server running on port 13714
           bin/rails db:drop
 
