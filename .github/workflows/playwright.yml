@@ -12,9 +12,18 @@ jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        redis-version: [6]
+
+    services:
+      redis:
+        image: redis
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 6379:6379
+
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -35,13 +44,9 @@ jobs:
           bundle install
           gem install foreman
 
-      - name: Start Redis
-        uses: supercharge/redis-github-action@1.5.0
-        with:
-          redis-version: ${{ matrix.redis-version }}
-
       - name: Set up database
         run: |
+          export REDIS_URL="redis://localhost:6379"
           bin/rails db:create
           bin/rails db:migrate
           bin/rails db:seed

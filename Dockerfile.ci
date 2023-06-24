@@ -1,5 +1,5 @@
 # Base image
-FROM ubuntu:latest
+FROM ruby:3.1.2
 
 # Set the working directory
 WORKDIR /app
@@ -9,29 +9,6 @@ COPY . /app
 
 # Copy the .env.example to .env
 COPY .env.example .env
-
-RUN apt update && apt install -y curl
-
-# Install rbenv
-# RUN curl -fsSL https://github.com/rbenv/rbenv-installer/raw/main/bin/rbenv-installer | bash
-RUN apt install rbenv -y
-RUN echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
-RUN echo 'eval "$(rbenv init -)"' >> ~/.bashrc
-RUN exec $SHELL
-RUN source ~/.bashrc
-# RUN apt install -y ruby-build
-
-# apt install rbenv
-# rbenv init
-
-
-
-# Install Ruby and Rails dependencies
-# RUN apt-get install -y ruby-build
-RUN rbenv install 3.1.2
-RUN rbenv global 3.1.2
-# RUN gem install bundler
-
 
 # Install rails server dependencies
 RUN bundle install
@@ -49,6 +26,13 @@ RUN yarn build:ssr
 # Accept REDIS_URL from the environment variable
 ARG REDIS_URL
 ENV REDIS_URL=$REDIS_URL
+
+RUN echo "======================================================"
+RUN echo "======================================================"
+RUN echo | cat .env
+RUN echo printenv REDIS_URL
+RUN echo "======================================================"
+RUN echo "======================================================"
 
 # Create sqlite database
 RUN bin/rails db:create
