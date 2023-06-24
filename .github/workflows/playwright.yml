@@ -29,7 +29,7 @@ jobs:
 
       - name: Install Playwright Browsers
         run: |
-          yarn
+          yarn install
           yarn playwright install --with-deps
 
       - name: Build Docker image
