@@ -67,12 +67,15 @@ jobs:
 
       - name: Stop Rails server
         run: |
-          lsof -t -i :3000
-          lsof -t -i :5000
-          lsof -t -i :13714
-          kill $(lsof -t -i :3000) # Stop the server running on port 3000
-          kill $(lsof -t -i :13714) # Stop the server running on port 13714
-          bin/rails db:drop
+          lsof -t -i :3000 > log_3000.txt
+          lsof -t -i :5000 > log_5000.txt
+          lsof -t -i :13714 > log_13714.txt
+          cat 13714.txt
+          cat 3000.txt
+          cat 5000.txt
+          # kill $(lsof -t -i :3000) # Stop the server running on port 3000
+          # kill $(lsof -t -i :13714) # Stop the server running on port 13714
+          # bin/rails db:drop
 
       - uses: actions/upload-artifact@v3
         if: always()
