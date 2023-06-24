@@ -1,0 +1,40 @@
+# Base image
+FROM ruby:2.7
+
+# Set the working directory
+WORKDIR /app
+
+# Copy the source code
+COPY . /app
+
+# Copy the .env.example to .env
+COPY .env.example .env
+
+# Install rails server dependencies
+RUN bundle install
+RUN gem install foreman
+
+# Install react dependencies
+RUN curl -sL https://deb.nodesource.com/setup_14.x | bash -
+RUN apt-get install -y nodejs
+RUN npm install --global yarn
+RUN yarn install
+
+# Build SSR pages
+RUN yarn build:ssr
+
+# Accept REDIS_URL from the environment variable
+ARG REDIS_URL
+ENV REDIS_URL=$REDIS_URL
+
+
+# Create sqlite database
+RUN bin/rails db:create
+RUN bin/rails db:migrate
+RUN bin/rails db:seed
+
+# Expose port 3000
+EXPOSE 3000
+
+# Start rails server and export port 3000
+CMD ["foreman", "start", "-f", "Procfile.dev"]
