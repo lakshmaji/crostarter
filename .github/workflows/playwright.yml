@@ -70,6 +70,9 @@ jobs:
 
       - name: Stop Rails server
         run: |
+          lsof -t -i :3000
+          lsof -t -i :5000
+          lsof -t -i :13714
           kill $(lsof -t -i :3000) # Stop the server running on port 5000
           kill $(lsof -t -i :13714) # Stop the server running on port 13714
           bin/rails db:drop
@@ -79,4 +82,4 @@ jobs:
         with:
           name: playwright-report
           path: playwright-report/
-          retention-days: 30
+          retention-days: 25
