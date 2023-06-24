@@ -30,9 +30,6 @@ jobs:
       - name: Install Playwright Browsers
         run: yarn playwright install --with-deps
 
-      - name: Set up Docker
-        uses: docker/setup-docker@v2
-
       - name: Build Docker image
         run: docker build -t my-rails-app -f Dockerfile.ci .
 
