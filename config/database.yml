@@ -23,4 +23,8 @@ test:
 production:
   <<: *default
   adapter: postgresql
+  <% if ENV['DATABASE_URL'] %>
   url: <%= ENV['DATABASE_URL'] %>
+  <% else %>
+  url: <%= Rails.application.credentials.config[:DATABASE_URL] %>
+  <% end %>

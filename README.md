@@ -82,7 +82,8 @@ yarn install
 
   ```bash
   cp .env.example .env
-  foreman -f Procfile.dev start
+  gem install foreman
+  foreman start -f Procfile.dev
   ```
 
 ### Testing
