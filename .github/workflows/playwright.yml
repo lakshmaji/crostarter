@@ -28,7 +28,9 @@ jobs:
           node-version: 16
 
       - name: Install Playwright Browsers
-        run: yarn playwright install --with-deps
+        run: |
+          yarn
+          yarn playwright install --with-deps
 
       - name: Build Docker image
         run: docker build -t my-rails-app -f Dockerfile.ci .
