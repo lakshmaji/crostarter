@@ -11,6 +11,7 @@ COPY . /app
 COPY .env.example .env
 
 # Install rbenv
+RUN apt install curl
 RUN curl -fsSL https://github.com/rbenv/rbenv-installer/raw/main/bin/rbenv-installer | bash
 RUN echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
 RUN echo 'eval "$(rbenv init -)"' >> ~/.bashrc
