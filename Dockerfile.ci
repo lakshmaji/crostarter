@@ -1,5 +1,36 @@
 # Base image
-FROM ruby:3.1.2
+FROM alpine:latest
+
+
+# Install necessary dependencies
+RUN apk update && \
+    apk add --no-cache \
+    build-base \
+    curl \
+    git \
+    openssl \
+    openssl-dev \
+    readline-dev \
+    zlib-dev
+
+# Install rbenv
+RUN git clone https://github.com/rbenv/rbenv.git ~/.rbenv && \
+    echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc && \
+    echo 'eval "$(rbenv init -)"' >> ~/.bashrc && \
+    source ~/.bashrc && \
+    echo 'source ~/.bashrc' >> ~/.bash_profile
+
+# Install ruby-build as a plugin for rbenv
+RUN git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+
+# Set the environment variables for rbenv
+ENV PATH="/root/.rbenv/bin:/root/.rbenv/shims:${PATH}"
+
+# Install Ruby
+ARG RUBY_VERSION=3.1.2
+RUN rbenv install $RUBY_VERSION && \
+    rbenv global $RUBY_VERSION
+
 
 # Set the working directory
 WORKDIR /app
@@ -9,6 +40,24 @@ COPY . /app
 
 # Copy the .env.example to .env
 COPY .env.example .env
+
+# Install rbenv
+# RUN curl -fsSL https://github.com/rbenv/rbenv-installer/raw/main/bin/rbenv-installer | bash
+# RUN echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+# RUN echo 'eval "$(rbenv init -)"' >> ~/.bashrc
+# RUN exec $SHELL
+
+# apt install rbenv
+# rbenv init
+
+
+
+# Install Ruby and Rails dependencies
+# RUN apt-get install -y ruby-build
+# RUN rbenv install 3.1.2
+# RUN rbenv global 3.1.2
+RUN gem install bundler rails
+
 
 # Install rails server dependencies
 RUN bundle install
@@ -26,7 +75,6 @@ RUN yarn build:ssr
 # Accept REDIS_URL from the environment variable
 ARG REDIS_URL
 ENV REDIS_URL=$REDIS_URL
-
 
 # Create sqlite database
 RUN bin/rails db:create
