@@ -11,13 +11,53 @@ jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+
+    services:
+      redis:
+        image: redis
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 6379:6379
+
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: 16
+
+      - uses: ruby/setup-ruby@v1.120.0
+        with:
+          ruby-version: 3.1.2
+          bundler-cache: true
+
       - name: Install dependencies
-        run: yarn
+        run: |
+          yarn
+          bundle install
+          gem install foreman
+
+      - name: Set up database
+        run: |
+          # TODO: remove database
+          bin/rails db:drop
+          export REDIS_URL="redis://localhost:6379"
+          bin/rails db:create
+          bin/rails db:migrate
+          bin/rails db:seed
+
+      - name: Launch server
+        run: |
+          cp .env.example .env
+          yarn build:ssr
+          foreman start -f Procfile.dev &
+
+      - name: Wait for server to start
+        run: sleep 10
+
       - name: Install Playwright Browsers
         run: yarn playwright install --with-deps
       - name: Run Playwright tests
@@ -25,9 +65,14 @@ jobs:
         env:
           PLAYWRIGHT_TEST_BASE_URL: ${{ secrets.PLAYWRIGHT_TEST_BASE_URL }}
           CI_TEST_API_KEY: ${{ secrets.CI_TEST_API_KEY }}
+
+      - name: rm database
+        run: |
+          bin/rails db:drop --trace
+
       - uses: actions/upload-artifact@v3
         if: always()
         with:
           name: playwright-report
           path: playwright-report/
-          retention-days: 30
+          retention-days: 25

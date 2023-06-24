@@ -19,13 +19,26 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
-
 jobs:
   run-spec:
     name: Run Spec
     runs-on: ubuntu-latest
+
+    # TODO: remove this and mock redis with in request specs
+    services:
+      redis:
+        image: redis
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 6379:6379
+
     env:
       RAILS_ENV: test
+      REDIS_URL: 'redis://localhost:6379'
     steps:
       - name: Checkout code
         uses: actions/checkout@v3

@@ -28,7 +28,8 @@ jobs:
         with:
           # https://github.com/prontolabs/pronto/issues/404
           # RCA: repository.rb:87:in `merge_base': object not found - no match for id (6378c7fa381ab33635bb41b9fd638876286a3d85) (Rugged::OdbError)
-          fetch-depth: 25
+          # TODO: reset to 25
+          fetch-depth: 35
       # Pronto docs suggest limiting the depth of the clone
       # to speed things up.
       - run: |

@@ -82,7 +82,8 @@ yarn install
 
   ```bash
   cp .env.example .env
-  foreman -f Procfile.dev start
+  gem install foreman
+  foreman start -f Procfile.dev
   ```
 
 ### Testing
@@ -97,7 +98,7 @@ bundle exec rspec
 
 ```bash
 bundle exec rubocop --safe-auto-correct
-bundle exec rubocop --A # force - better not use it
+bundle exec rubocop -A # force - better not use it
 ```
 
 ### Environment variables
