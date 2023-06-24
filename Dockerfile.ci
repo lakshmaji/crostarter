@@ -21,7 +21,7 @@ RUN exec $SHELL
 
 
 
-Install Ruby and Rails dependencies
+# Install Ruby and Rails dependencies
 # RUN apt-get install -y ruby-build
 RUN rbenv install 3.1.2
 RUN rbenv global 3.1.2
