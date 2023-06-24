@@ -33,6 +33,7 @@ jobs:
         run: |
           yarn
           bundle install
+          gem install foreman
 
       - name: Start Redis
         uses: supercharge/redis-github-action@1.5.0
