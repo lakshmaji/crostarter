@@ -18,6 +18,7 @@ RUN apt install rbenv -y
 RUN echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
 RUN echo 'eval "$(rbenv init -)"' >> ~/.bashrc
 RUN exec $SHELL
+RUN apt install -y ruby-build
 
 # apt install rbenv
 # rbenv init
