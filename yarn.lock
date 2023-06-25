@@ -417,10 +417,10 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz#b520529ec21d8e5945a1851dfd1c32e94e39ff45"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
-"@inertiajs/core@^1.0.0":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@inertiajs/core/-/core-1.0.2.tgz#93f7b8030591344a11417ac6ae690fe55a365eec"
-  integrity sha512-IJryvuNBcOIEZqKaA1vsX++hroovrLfb4jezym/W6NqxpsacoOkCLqWFneiScTaa5IiU0Wv0Li3lCuxK7DwTEQ==
+"@inertiajs/core@^1.0.7":
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/@inertiajs/core/-/core-1.0.8.tgz#b632970dcb381d3564005cdf8405286559522f0f"
+  integrity sha512-8nr1C76bE9Pfb5OwDGtjtSsiy2g6EG5J7w/w4dWHmoQdY9g01F+VnN3+QYtf/fsFkd8l7A6HoCBgUEZHkwdhXg==
   dependencies:
     axios "^1.2.0"
     deepmerge "^4.0.0"
