@@ -101,6 +101,12 @@ bundle exec rubocop --safe-auto-correct
 bundle exec rubocop -A # force - better not use it
 ```
 
+### Production key
+
+```bash
+fly secrets set  -a crostarter  RAILS_PRODUCTION_KEY=
+```
+
 ### Environment variables
 
 ```yml
