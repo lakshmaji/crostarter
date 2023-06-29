@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "3.1.2"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 7.0.4"
+gem "rails", "~> 7.0.5", ">= 7.0.5.1"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
@@ -16,13 +16,13 @@ gem "sqlite3", "~> 1.4"
 gem "puma", "~> 5.0"
 
 # Bundle and transpile JavaScript [https://github.com/rails/jsbundling-rails]
-gem "jsbundling-rails"
+gem "jsbundling-rails", ">= 1.1.0"
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
-gem "turbo-rails"
+gem "turbo-rails", ">= 1.3.1"
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
-gem "stimulus-rails"
+gem "stimulus-rails", ">= 1.1.1"
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
@@ -69,13 +69,13 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
-  gem 'rspec-rails', '~> 6.0.0'
+  gem 'rspec-rails', '~> 6.0.2'
   gem 'shoulda-matchers', '~> 5.3'
 end
 
 gem "inertia_rails", "~> 3.0"
 
-gem "vite_rails", "~> 3.0"
+gem "vite_rails", "~> 3.0", ">= 3.0.13"
 
 gem "faker", "~> 3.1"
 
@@ -97,11 +97,11 @@ gem "database_cleaner", "~> 2.0", :group => :test
 gem "pagy", "~> 5.10"
 
 gem "aws-sdk-s3", require: false
-gem "active_storage_validations", "~> 1.0"
+gem "active_storage_validations", "~> 1.0", ">= 1.0.4"
 gem "rack-attack", "~> 6.6"
 
 gem "graphql", "~> 2.0"
-gem "graphiql-rails", group: :development
+gem "graphiql-rails", ">= 1.9.0", group: :development
 gem "sidekiq", "~> 7.0"
 
 gem "sinatra", "~> 3.0"
