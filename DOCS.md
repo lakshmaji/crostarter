@@ -3,8 +3,11 @@
 ## Managing secrets
 
 ```bash
+brew install flyctl
+
 flyctl secrets list
 flyctl secrets set RAILS_MASTER_KEY=
+flyctl secrets set RAILS_PRODUCTION_KEY=
 bin/rails credentials:show
 bin/rails credentials:show --environment=development
 flyctl ssh console --command '/app/bin/rails db:seed RAILS_ENV=production DISABLE_DATABASE_ENVIRONMENT_CHECK=1' -t --verbose
@@ -74,7 +77,7 @@ flyctl deploy -c fly.toml --remote-only
 # Redis
 
 ```bash
-docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' 5e972b6fb895
+docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' 4d4cf48fb35f
 # connecting to redis
 redis-cli -h localhost/1 -a eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81
 ```
@@ -91,3 +94,11 @@ redis-cli -h localhost/1 -a eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81
 brew install act
 act -s FLY_API_TOKEN=<value> -j deploy -w .github/workflows/deployment.yml
 ```
+
+- run migrations in prod
+
+  ```bash
+  bin/rails db:migrate  RAILS_ENV=production
+  ```
+
+-

@@ -24,8 +24,6 @@
   - [ ] Use SASS variable, mixins
   - [ ] roles (cancancan ?)
 
-- [ ] Playwright testing (e2e)
-  - [ ] Github action for playwright
 - [ ] REST API
   - [ ] versioning
   - [ ] serializer
