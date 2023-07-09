@@ -63,7 +63,7 @@ jobs:
       - name: Run Playwright tests
         run: yarn playwright test
         env:
-          # PLAYWRIGHT_TEST_BASE_URL: ${{ secrets.PLAYWRIGHT_TEST_BASE_URL }}
+          PLAYWRIGHT_TEST_BASE_URL: ${{ secrets.PLAYWRIGHT_TEST_BASE_URL }}
           CI_TEST_API_KEY: ${{ secrets.CI_TEST_API_KEY }}
 
       - name: rm database
