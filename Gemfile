@@ -106,4 +106,4 @@ gem "sidekiq", "~> 7.0"
 
 gem "sinatra", "~> 3.0"
 
-gem "rspec-sidekiq", "~> 3.1", :group => :test
+gem "rspec-sidekiq", "~> 4.0", ">= 4.0.0", :group => :test
