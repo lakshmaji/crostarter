@@ -73,7 +73,7 @@ group :test do
   gem 'shoulda-matchers', '~> 5.3'
 end
 
-gem "inertia_rails", "~> 3.0"
+gem "inertia_rails", "~> 3.1", ">= 3.1.0"
 
 gem "vite_rails", "~> 3.0"
 
