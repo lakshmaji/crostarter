@@ -82,7 +82,7 @@ gem "faker", "~> 3.1"
 
 gem "solargraph", "~> 0.47.2", :group => :development
 
-gem "factory_bot_rails", "~> 6.2", :group => :test
+gem "factory_bot_rails", "~> 6.3", ">= 6.3.0", :group => :test
 
 gem "rubocop-rails", "~> 2.17", :group => :development
 
