@@ -104,6 +104,6 @@ gem "graphql", "~> 2.0"
 gem "graphiql-rails", group: :development
 gem "sidekiq", "~> 7.0"
 
-gem "sinatra", "~> 3.0"
+gem "sinatra", "~> 4.0", ">= 4.0.0"
 
 gem "rspec-sidekiq", "~> 3.1", :group => :test
