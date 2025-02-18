@@ -73,7 +73,7 @@ group :test do
   gem 'shoulda-matchers', '~> 5.3'
 end
 
-gem "inertia_rails", "~> 3.0"
+gem "inertia_rails", "~> 3.1", ">= 3.1.3"
 
 gem "vite_rails", "~> 3.0"
 
@@ -84,11 +84,11 @@ gem "solargraph", "~> 0.47.2", :group => :development
 
 gem "factory_bot_rails", "~> 6.2", :group => :test
 
-gem "rubocop-rails", "~> 2.17", :group => :development
+gem "rubocop-rails", "~> 2.30", ">= 2.30.0", :group => :development
 
-gem "rubocop-performance", "~> 1.15", :group => :development
+gem "rubocop-performance", "~> 1.24", ">= 1.24.0", :group => :development
 
-gem "rubocop-rspec", "~> 2.15", :group => :development
+gem "rubocop-rspec", "~> 3.5", ">= 3.5.0", :group => :development
 
 gem "pg", "~> 1.4"
 
@@ -101,7 +101,7 @@ gem "active_storage_validations", "~> 1.0"
 gem "rack-attack", "~> 6.6"
 
 gem "graphql", "~> 2.0"
-gem "graphiql-rails", group: :development
+gem "graphiql-rails", ">= 1.10.0", group: :development
 gem "sidekiq", "~> 7.0"
 
 gem "sinatra", "~> 3.0"
