@@ -44,6 +44,9 @@ yarn install
 
   ```bash
   cp .env.example .env
+  # or use master key
+  config/master.key
+  config/credentials/development.key
   ```
 
 - Use SQLite as development database,

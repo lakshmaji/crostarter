@@ -18,6 +18,7 @@ interface Props {
 }
 
 const Projects: FC<Props> = ({ projects, categories, pagy }) => {
+  // TODO: whenever category changed, need to reset page number.
   return (
     <>
       <AppHead title='Home'>

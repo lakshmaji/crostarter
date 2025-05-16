@@ -77,12 +77,15 @@ const Categories: FC<Props> = ({ items }) => {
     if (prevValues) {
       // If any changes in filter values, then request for information
       if (!deepEqual(prevValues, values)) {
-        const query = values.category ? { category: values.category } : {};
+        const query =
+          values.category !== '0'
+            ? { category: values.category, page: 1 }
+            : { page: 1, category: '' };
         Inertia.reload({
           only: ['projects', 'pagy'],
           data: query as RequestPayload,
           replace: true,
-          preserveState: true,
+          preserveState: false,
         });
       }
     }
@@ -124,7 +127,10 @@ const Categories: FC<Props> = ({ items }) => {
     <div className={styles.container}>
       {scrollX !== 0 && <Left slide={slide} />}
       <div className={styles.list} ref={scrollRef}>
-        {items.map((item) => {
+        {[
+          { id: '0', name: 'All', description: 'all', icon_path_name: '' } as ICategory,
+          ...items,
+        ].map((item) => {
           return (
             <Tag key={item.id} item={item} onClick={choose} active={current === Number(item.id)} />
           );

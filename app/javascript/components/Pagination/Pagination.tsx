@@ -7,6 +7,7 @@ interface Props {
   meta: IPagy;
 }
 const Pagination: FC<Props> = ({ meta }) => {
+  console.log('pageiation meta', meta);
   const url = (pageNumber: number) => {
     return pageNumber ? meta.scaffold_url.replace(/__pagy_page__/, pageNumber.toString()) : null;
   };
