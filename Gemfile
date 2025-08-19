@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "3.1.2"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 7.0.4"
+gem "rails", "~> 7.1.5", ">= 7.1.5.2"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
@@ -73,7 +73,7 @@ group :test do
   gem 'shoulda-matchers', '~> 5.3'
 end
 
-gem "inertia_rails", "~> 3.0"
+gem "inertia_rails", "~> 3.1", ">= 3.1.0"
 
 gem "vite_rails", "~> 3.0"
 
@@ -92,12 +92,12 @@ gem "rubocop-rspec", "~> 2.15", :group => :development
 
 gem "pg", "~> 1.4"
 
-gem "database_cleaner", "~> 2.0", :group => :test
+gem "database_cleaner", "~> 2.0", ">= 2.0.2", :group => :test
 
 gem "pagy", "~> 5.10"
 
 gem "aws-sdk-s3", require: false
-gem "active_storage_validations", "~> 1.0"
+gem "active_storage_validations", "~> 1.0", ">= 1.0.4"
 gem "rack-attack", "~> 6.6"
 
 gem "graphql", "~> 2.0"
