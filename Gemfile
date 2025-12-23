@@ -96,7 +96,7 @@ gem "database_cleaner", "~> 2.0", :group => :test
 
 gem "pagy", "~> 5.10"
 
-gem "aws-sdk-s3", require: false
+gem "aws-sdk-s3", ">= 1.208.0", require: false
 gem "active_storage_validations", "~> 1.0"
 gem "rack-attack", "~> 6.6"
 
